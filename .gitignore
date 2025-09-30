@@ -1,0 +1,26 @@
+*.pyc
+*.so
+*.egg-info
+*.whl
+Hello.txt
+.DS_Store
+.mypy_cache/
+.pytest_cache/
+/cache
+/docs/build
+/docs/_autosummary
+.idea
+.vscode
+/test/*.tsv
+/test/*.csv
+/test/*.png
+/test/outputs/
+__pycache__/
+*.log
+
+# virtualenv/venv directories
+/venv/
+/bin/
+/include/
+/lib/
+/share/

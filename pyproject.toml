@@ -1,0 +1,60 @@
+[project]
+name = "temp-python-package"
+version = "0.0.2"
+authors = [
+  { name="Eachan Johnson", email="eachan.johnson@crick.ac.uk" },
+]
+description = "Template python package."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+keywords = [
+  "template",
+]
+
+classifiers = [  
+  
+  "Development Status :: 3 - Alpha",
+
+  # Indicate who your project is intended for
+  #"Intended Audience :: Science/Research",
+  #"Topic :: Scientific/Engineering :: Artificial Intelligence",
+
+  "License :: OSI Approved :: MIT License",
+
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+dependencies = [
+  
+]
+
+[project.optional-dependencies]
+all = []
+#tf = ["duvida", "tensorflow"]
+#jax = ["jax>=0.5.3"]
+
+[project.urls]
+"Homepage" = "https://github.com/scbirlab/py-template"
+"Bug Tracker" = "https://github.com/scbirlab/py-template/issues"
+
+[project.scripts] 
+pytemplate = "py_template.cli:main"
+
+[tool.setuptools]
+# If there are data files included in your packages that need to be
+# installed, specify them here.
+package-data = {pytemplate = ["data/*.json"]}
+
+[build-system]
+# These are the assumed default build requirements from pip:
+# https://pip.pypa.io/en/stable/reference/pip/#pep-517-and-518-support
+requires = ["setuptools>=43.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[test]
+deps = ["pytest>=7.4", "pytest-cov", "py-template[all]"] 
