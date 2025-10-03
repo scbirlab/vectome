@@ -176,7 +176,7 @@ def get_landmark_ids(
         force=force,
         cache_dir=cache_dir,
     )
-    landmarks = [
+    return [
         ":".join(str(info[key]) for key in id_keys)
         for info in landmark_info
     ]

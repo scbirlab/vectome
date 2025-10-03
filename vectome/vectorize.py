@@ -198,5 +198,5 @@ def vectorize(
             scale=1. / np.sqrt(projection), 
             size=(vectors.shape[1], projection),
         )
-        print_err("Projecting...")
+        print_err(f"Projecting to {projection}.")
         return vectors @ projector
