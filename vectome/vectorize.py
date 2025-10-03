@@ -81,7 +81,7 @@ def _vectorize_landmark(
     **kwargs
 ):
     landmarks = [
-        info.files["fasta"] 
+        info["files"]["fasta"] 
         for info in fetch_landmarks(group=group, cache_dir=cache_dir)
     ]
     landmark_mh = [
@@ -180,7 +180,7 @@ def vectorize(
 
     query_mh = [
         sketch_genome(
-            file=info.files["fasta"],
+            file=info["files"]["fasta"],
             k=k,
             cache_dir=cache_dir,
         ) for info in genome_info
