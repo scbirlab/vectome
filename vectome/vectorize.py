@@ -162,7 +162,10 @@ def vectorize(
     import numpy as np
 
     cache_dir = cache_dir or CACHE_DIR
-    mem = Memory(location=os.path.join(cache_dir, "vectors"))
+    mem = Memory(
+        location=os.path.join(cache_dir, "vectors"),
+        verbose=0,
+    )
 
     genome_info = [
         name_or_taxon_to_genome_info(

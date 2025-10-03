@@ -43,5 +43,5 @@ def api_get(
         return wraps(f)(cache(api_call))
     else:
         from joblib import Memory
-        mem = Memory(location=cache_dir)
+        mem = Memory(location=cache_dir, verbose=0)
         return wraps(f)(cache(mem.cache(api_call)))
