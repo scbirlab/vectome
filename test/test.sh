@@ -5,10 +5,12 @@ set -euox pipefail
 OUTDIR=test/outputs
 CACHE=$OUTDIR/.cache
 TEST_LIST=$OUTDIR/test-inputs.txt
+GROUP=1
+PROJ=8
 
 mkdir -p $OUTDIR
 
-vectome build 1 --cache "$CACHE"
+vectome build $GROUP --cache "$CACHE"
 
 queries=("Escherichia coli" 83332 83333 "Klebsiella pneumoniae")
 for q in "${queries[@]}"
@@ -17,8 +19,8 @@ do
 done
 
 vectome embed "$TEST_LIST" --cache "$CACHE" > $OUTDIR/test1.tsv
-vectome embed "$TEST_LIST" --projection 8 --seed 0 --cache "$CACHE" > $OUTDIR/test2.tsv
-vectome embed "$TEST_LIST" --projection 8 --seed 42 --cache "$CACHE" > $OUTDIR/test3.tsv
+vectome embed "$TEST_LIST" --projection $PROJ --seed 0 --cache "$CACHE" > $OUTDIR/test2.tsv
+vectome embed "$TEST_LIST" --projection $PROJ --seed 42 --cache "$CACHE" > $OUTDIR/test3.tsv
 
 if [ "$(diff $OUTDIR/test2.tsv $OUTDIR/test3.tsv | wc -l)" -eq "0" ]
 then
@@ -26,8 +28,8 @@ then
     exit 1
 fi
 
-vectome embed "$TEST_LIST" --method landmark --cache "$CACHE" > $OUTDIR/test4.tsv
-vectome embed "$TEST_LIST" --method landmark --projection 8 --cache "$CACHE" > $OUTDIR/test5.tsv
+vectome embed "$TEST_LIST" --method landmark --group $GROUP --cache "$CACHE" > $OUTDIR/test4.tsv
+vectome embed "$TEST_LIST" --method landmark --group $GROUP --projection $PROJ --cache "$CACHE" > $OUTDIR/test5.tsv
 
 for f in $OUTDIR/test?.tsv
 do 
