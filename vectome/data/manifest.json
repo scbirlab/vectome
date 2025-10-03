@@ -1,0 +1,1132 @@
+[
+    {
+        "query": "Acinetobacter baumannii 81",
+        "spellchecked": "acinetobacter baumannii",
+        "taxon_id": "470",
+        "accession": "GCF_009035845.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_009035845.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_009035845.1.gff"
+        }
+    },
+    {
+        "query": "Acinetobacter pittii PHEA-2",
+        "spellchecked": "acinetobacter pitti phea",
+        "taxon_id": "1785128",
+        "accession": "GCF_013122135.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_013122135.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_013122135.1.gff"
+        }
+    },
+    {
+        "query": "Agathobacter rectalis ATCC 33656",
+        "spellchecked": "agathobacter rectalis atcc",
+        "taxon_id": "515619",
+        "accession": "GCF_000020605.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000020605.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000020605.1.gff"
+        }
+    },
+    {
+        "query": "Akkermansia muciniphila Muc",
+        "spellchecked": "akkermansia muciniphila muc",
+        "taxon_id": "349741",
+        "accession": "GCF_000020225.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000020225.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000020225.1.gff"
+        }
+    },
+    {
+        "query": "Anaerostipes hadrus SSC/2",
+        "spellchecked": "anaerostipes hadrus ssc",
+        "taxon_id": "649756",
+        "accession": "GCF_030864025.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_030864025.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_030864025.1.gff"
+        }
+    },
+    {
+        "query": "Bacillus anthracis Ames",
+        "spellchecked": "bacillus anthracis ames",
+        "taxon_id": "198094",
+        "accession": "GCF_000007845.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000007845.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000007845.1.gff"
+        }
+    },
+    {
+        "query": "Bacillus cereus ATCC 14579",
+        "spellchecked": "bacillus cereus atcc",
+        "taxon_id": "405917",
+        "accession": "GCF_000181595.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000181595.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000181595.1.gff"
+        }
+    },
+    {
+        "query": "Bacillus subtilis 168",
+        "spellchecked": "bacillus subtilis",
+        "taxon_id": "1423",
+        "accession": "GCF_029537415.2",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_029537415.2.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_029537415.2.gff"
+        }
+    },
+    {
+        "query": "Bacteroides caccae CL03T12C61",
+        "spellchecked": "bacteroides caccae cl03t12c61",
+        "taxon_id": "997873",
+        "accession": "GCF_018292205.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_018292205.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_018292205.1.gff"
+        }
+    },
+    {
+        "query": "Bacteroides fragilis EN-2",
+        "spellchecked": "bacteroides fragilis en",
+        "taxon_id": "817",
+        "accession": "GCF_005706655.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_005706655.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_005706655.1.gff"
+        }
+    },
+    {
+        "query": "Bacteroides fragilis enterotoxigenic 20656-2- 1",
+        "spellchecked": "bacteroides fragilis enterotoxigenic",
+        "taxon_id": "817",
+        "accession": "GCF_005706655.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_005706655.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_005706655.1.gff"
+        }
+    },
+    {
+        "query": "Bacteroides fragilis YCH46",
+        "spellchecked": "bacteroides fragilis ych46",
+        "taxon_id": "295405",
+        "accession": "GCF_000009925.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000009925.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000009925.1.gff"
+        }
+    },
+    {
+        "query": "Bacteroides ovatus ATCC 8483",
+        "spellchecked": "bacteroides ovatus atcc",
+        "taxon_id": "411476",
+        "accession": "GCF_000154125.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000154125.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000154125.1.gff"
+        }
+    },
+    {
+        "query": "Bacteroides thetaiotaomicron E50",
+        "spellchecked": "bacteroides thetaiotaomicron e50",
+        "taxon_id": "818",
+        "accession": "GCF_014131755.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_014131755.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_014131755.1.gff"
+        }
+    },
+    {
+        "query": "Bacteroides uniformis dnLKV",
+        "spellchecked": "bacteroides uniformis dmlv",
+        "taxon_id": "820",
+        "accession": "GCF_044361425.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_044361425.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_044361425.1.gff"
+        }
+    },
+    {
+        "query": "Bacteroides uniformis str. 3978 T3 ii",
+        "spellchecked": "bacteroides uniformis str t3 ii",
+        "taxon_id": "997890",
+        "accession": "GCF_018292165.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_018292165.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_018292165.1.gff"
+        }
+    },
+    {
+        "query": "Bacteroides vulgatus DSM 1447",
+        "spellchecked": "bacteroides vulgatus dsm",
+        "taxon_id": "821",
+        "accession": "GCF_047948285.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_047948285.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_047948285.1.gff"
+        }
+    },
+    {
+        "query": "Bacteroides xylanisolvens CL03T12C04",
+        "spellchecked": "bacteroides xylanisolvens cl03t12c04",
+        "taxon_id": "997892",
+        "accession": "GCF_018492835.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_018492835.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_018492835.1.gff"
+        }
+    },
+    {
+        "query": "Bifidobacterium adolescentis E194a (Variant a)",
+        "spellchecked": "bifidobacterium adolescentis e194a variant a",
+        "taxon_id": "1680",
+        "accession": "GCF_036322895.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_036322895.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_036322895.1.gff"
+        }
+    },
+    {
+        "query": "Bifidobacterium breve",
+        "spellchecked": "bifidobacterium breve",
+        "taxon_id": "1685",
+        "accession": "GCF_900637145.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_900637145.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_900637145.1.gff"
+        }
+    },
+    {
+        "query": "Bifidobacterium breve DSM 20213",
+        "spellchecked": "bifidobacterium breve dsm",
+        "taxon_id": "518634",
+        "accession": "GCF_001025175.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_001025175.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_001025175.1.gff"
+        }
+    },
+    {
+        "query": "Bifidobacterium longum NCC 2705",
+        "spellchecked": "bifidobacterium longum ncc",
+        "taxon_id": "206672",
+        "accession": "GCF_000007525.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000007525.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000007525.1.gff"
+        }
+    },
+    {
+        "query": "Bifidobacterium longum subsp. infantis CCUG 52486",
+        "spellchecked": "bifidobacterium longum subsp infantis ccug",
+        "taxon_id": "1682",
+        "accession": "GCF_900637215.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_900637215.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_900637215.1.gff"
+        }
+    },
+    {
+        "query": "Bilophila wadsworthia (strain 3_1_6) (3_1_6)",
+        "spellchecked": "bilophila wadsworthia strain",
+        "taxon_id": "563192",
+        "accession": "GCF_000185705.2",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000185705.2.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000185705.2.gff"
+        }
+    },
+    {
+        "query": "Blautia obeum VPI B3-21",
+        "spellchecked": "blautia obeum vpi b3",
+        "taxon_id": "40520",
+        "accession": "GCF_051624795.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_051624795.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_051624795.1.gff"
+        }
+    },
+    {
+        "query": "Bordetella pertussis Tohama I",
+        "spellchecked": "bordetella pertussis tohama i",
+        "taxon_id": "257313",
+        "accession": "GCF_000195715.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000195715.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000195715.1.gff"
+        }
+    },
+    {
+        "query": "Borrelia burgdorferi B31",
+        "spellchecked": "borrelia burgdorferi b31",
+        "taxon_id": "224326",
+        "accession": "GCF_000008685.2",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000008685.2.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000008685.2.gff"
+        }
+    },
+    {
+        "query": "Brucella melitensis 16M",
+        "spellchecked": "brucella melitensis 16m",
+        "taxon_id": "1143191",
+        "accession": "GCF_000250835.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000250835.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000250835.1.gff"
+        }
+    },
+    {
+        "query": "Burkholderia multivorans ATCC 17616",
+        "spellchecked": "burkholderia multivorans atcc",
+        "taxon_id": "395019",
+        "accession": "GCF_000010545.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000010545.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000010545.1.gff"
+        }
+    },
+    {
+        "query": "Burkholderia pseudomallei K96243",
+        "spellchecked": "burkholderia pseudomallei k96243",
+        "taxon_id": "272560",
+        "accession": "GCF_000959285.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000959285.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000959285.1.gff"
+        }
+    },
+    {
+        "query": "Campylobacter jejuni NCTC 11168",
+        "spellchecked": "campylobacter jejuni nctc",
+        "taxon_id": "32022",
+        "accession": "GCF_003999645.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_003999645.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_003999645.1.gff"
+        }
+    },
+    {
+        "query": "Chlamydia pneumoniae CWL029",
+        "spellchecked": "chlamydia pneumoniae cwl029",
+        "taxon_id": "115713",
+        "accession": "GCF_000008745.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000008745.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000008745.1.gff"
+        }
+    },
+    {
+        "query": "Chlamydia trachomatis D/UW-3/CX",
+        "spellchecked": "chlamydia trachomatis d uw cx",
+        "taxon_id": "272561",
+        "accession": "GCF_000008725.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000008725.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000008725.1.gff"
+        }
+    },
+    {
+        "query": "Christensenella minuta DSM 22607",
+        "spellchecked": "christensenella minuta dsm",
+        "taxon_id": "626937",
+        "accession": "GCF_003628755.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_003628755.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_003628755.1.gff"
+        }
+    },
+    {
+        "query": "Citrobacter freundii ICC168",
+        "spellchecked": "citrobacter freundii icc168",
+        "taxon_id": "546",
+        "accession": "GCF_904859905.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_904859905.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_904859905.1.gff"
+        }
+    },
+    {
+        "query": "Clostridioides difficile (strain R20291)",
+        "spellchecked": "clostridioides difficile strain r20291",
+        "taxon_id": "1496",
+        "accession": "GCF_018885085.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_018885085.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_018885085.1.gff"
+        }
+    },
+    {
+        "query": "Clostridium bolteae WAL 16351",
+        "spellchecked": "clostridiumbolteae wal",
+        "taxon_id": "8319",
+        "accession": "GCF_031143425.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_031143425.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_031143425.1.gff"
+        }
+    },
+    {
+        "query": "Clostridium botulinum A Hall",
+        "spellchecked": "clostridium botulinum a hall",
+        "taxon_id": "36826",
+        "accession": "GCF_036630055.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_036630055.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_036630055.1.gff"
+        }
+    },
+    {
+        "query": "Clostridium perfringens ATCC 13124",
+        "spellchecked": "clostridium perfringens atcc",
+        "taxon_id": "195103",
+        "accession": "GCF_000013285.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000013285.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000013285.1.gff"
+        }
+    },
+    {
+        "query": "Clostridium perfringens C36",
+        "spellchecked": "clostridium perfringens c36",
+        "taxon_id": "1502",
+        "accession": "GCF_016027375.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_016027375.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_016027375.1.gff"
+        }
+    },
+    {
+        "query": "Clostridium ramosum 113-I",
+        "spellchecked": "clostridium ramos i",
+        "taxon_id": "1522",
+        "accession": "GCF_012317185.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_012317185.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_012317185.1.gff"
+        }
+    },
+    {
+        "query": "Clostridium saccharolyticum WM1",
+        "spellchecked": "clostridium saccharolyticum wm1",
+        "taxon_id": "610130",
+        "accession": "GCF_000144625.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000144625.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000144625.1.gff"
+        }
+    },
+    {
+        "query": "Clostridium scindens ATCC 35704",
+        "spellchecked": "clostridium scindens atcc",
+        "taxon_id": "411468",
+        "accession": "GCF_004295125.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_004295125.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_004295125.1.gff"
+        }
+    },
+    {
+        "query": "Collinsella aerofaciens VPI 1003",
+        "spellchecked": "collinsella aerofaciens vpi",
+        "taxon_id": "74426",
+        "accession": "GCF_003856815.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_003856815.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_003856815.1.gff"
+        }
+    },
+    {
+        "query": "Coprococcus comes VPI CI-38",
+        "spellchecked": "coprococcus comes pvi ci",
+        "taxon_id": "410072",
+        "accession": "GCF_016904155.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_016904155.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_016904155.1.gff"
+        }
+    },
+    {
+        "query": "Corynebacterium diphtheriae NCTC 13129",
+        "spellchecked": "corynebacterium diphtheriae nctc",
+        "taxon_id": "257309",
+        "accession": "GCF_000195815.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000195815.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000195815.1.gff"
+        }
+    },
+    {
+        "query": "Desulfovibrio piger ATCC 29098",
+        "spellchecked": "desulfovibrio niger atcc",
+        "taxon_id": "5061",
+        "accession": "GCF_000002855.4",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000002855.4.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000002855.4.gff"
+        }
+    },
+    {
+        "query": "Dorea formicigenerans VPI C8-13",
+        "spellchecked": "dorea formicigenerans vpi c8",
+        "taxon_id": "39486",
+        "accession": "GCF_025150245.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_025150245.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_025150245.1.gff"
+        }
+    },
+    {
+        "query": "Eggerthella lenta 1899 B",
+        "spellchecked": "eggerthella lenta b",
+        "taxon_id": "84112",
+        "accession": "GCF_021378605.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_021378605.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_021378605.1.gff"
+        }
+    },
+    {
+        "query": "Enterobacter cloacae ATCC 13047",
+        "spellchecked": "enterobacter cloacae atcc",
+        "taxon_id": "550",
+        "accession": "GCF_905331265.2",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_905331265.2.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_905331265.2.gff"
+        }
+    },
+    {
+        "query": "Enterococcus faecalis V583",
+        "spellchecked": "enterococcus faecalis v583",
+        "taxon_id": "226185",
+        "accession": "GCF_000007785.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000007785.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000007785.1.gff"
+        }
+    },
+    {
+        "query": "Enterococcus faecium DO",
+        "spellchecked": "enterococcus faecium do",
+        "taxon_id": "333849",
+        "accession": "GCF_000174395.2",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000174395.2.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000174395.2.gff"
+        }
+    },
+    {
+        "query": "Escherichia coli ED1a",
+        "spellchecked": "escherichia coli ed1a",
+        "taxon_id": "585397",
+        "accession": "GCF_000026305.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000026305.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000026305.1.gff"
+        }
+    },
+    {
+        "query": "Escherichia coli K-12",
+        "spellchecked": "escherichia coli k",
+        "taxon_id": "83333",
+        "accession": "GCF_001559675.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_001559675.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_001559675.1.gff"
+        }
+    },
+    {
+        "query": "Escherichia coli O6:H1 CFT073",
+        "spellchecked": "escherichia coli o h1 cft073",
+        "taxon_id": "2491873",
+        "accession": "GCA_013040605.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCA_013040605.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCA_013040605.1.gff"
+        }
+    },
+    {
+        "query": "Eubacterium eligens C15-B4",
+        "spellchecked": "eubacterium eligens c15 b4",
+        "taxon_id": "39485",
+        "accession": "GCF_020735745.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_020735745.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_020735745.1.gff"
+        }
+    },
+    {
+        "query": "Faecalibacterium prausnitzii L2-6",
+        "spellchecked": "faecalibacterium prausnitzii l2",
+        "taxon_id": "718252",
+        "accession": "GCF_000210735.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000210735.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000210735.1.gff"
+        }
+    },
+    {
+        "query": "Francisella tularensis U112",
+        "spellchecked": "francisella tularensis u112",
+        "taxon_id": "263",
+        "accession": "GCF_003955815.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_003955815.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_003955815.1.gff"
+        }
+    },
+    {
+        "query": "Fusobacterium nucleatum subsp. nucleatum 1612A",
+        "spellchecked": "fusobacterium nucleatum subsp nucleatum 1612a",
+        "taxon_id": "76856",
+        "accession": "GCF_037889005.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_037889005.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_037889005.1.gff"
+        }
+    },
+    {
+        "query": "Haemophilus influenzae KW20",
+        "spellchecked": "haemophilus influenzae kw20",
+        "taxon_id": "71421",
+        "accession": "GCF_000027305.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000027305.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000027305.1.gff"
+        }
+    },
+    {
+        "query": "Helicobacter pylori 26695",
+        "spellchecked": "helicobacter pylori",
+        "taxon_id": "210",
+        "accession": "GCF_025998455.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_025998455.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_025998455.1.gff"
+        }
+    },
+    {
+        "query": "Kitasatospora aureofaciens (Streptomyces aureofaciens) ATCC 10762",
+        "spellchecked": "kitasatospora aureofaciens streptomyces aureofaciens atcc",
+        "taxon_id": "1894",
+        "accession": "GCF_014649975.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_014649975.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_014649975.1.gff"
+        }
+    },
+    {
+        "query": "Klebsiella aerogenes ATCC 13048",
+        "spellchecked": "klebsiella aerogenes atcc",
+        "taxon_id": "548",
+        "accession": "GCF_019048125.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_019048125.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_019048125.1.gff"
+        }
+    },
+    {
+        "query": "Klebsiella pneumoniae",
+        "spellchecked": "klebsiella pneumoniae",
+        "taxon_id": "573",
+        "accession": "GCF_022869665.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_022869665.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_022869665.1.gff"
+        }
+    },
+    {
+        "query": "Lacticaseibacillus rhamnosus GG",
+        "spellchecked": "lacticaseibacillus rhamnosus gg",
+        "taxon_id": "568703",
+        "accession": "GCF_003353455.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_003353455.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_003353455.1.gff"
+        }
+    },
+    {
+        "query": "Lactiplantibacillus plantarum WCFS1",
+        "spellchecked": "lactiplantibacillus plantarum wcfs",
+        "taxon_id": "220668",
+        "accession": "GCF_000203855.3",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000203855.3.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000203855.3.gff"
+        }
+    },
+    {
+        "query": "Lactobacillus acidophilus NCFM",
+        "spellchecked": "lactobacillus acidophilus ncfm",
+        "taxon_id": "272621",
+        "accession": "GCF_000011985.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000011985.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000011985.1.gff"
+        }
+    },
+    {
+        "query": "Lactobacillus paracasei LPC-37",
+        "spellchecked": "lactobacillus paracasei lpc",
+        "taxon_id": "1597",
+        "accession": "GCF_051123965.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_051123965.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_051123965.1.gff"
+        }
+    },
+    {
+        "query": "Legionella pneumophila Philadelphia-1",
+        "spellchecked": "legionella pneumophila philadelphia",
+        "taxon_id": "446",
+        "accession": "GCF_001941585.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_001941585.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_001941585.1.gff"
+        }
+    },
+    {
+        "query": "Listeria monocytogenes EGD-e",
+        "spellchecked": "listeria monocytogenes egd e",
+        "taxon_id": "1334565",
+        "accession": "GCF_000582845.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000582845.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000582845.1.gff"
+        }
+    },
+    {
+        "query": "Mycobacterium abscessus L948",
+        "spellchecked": "mycobacterium abscessus l948",
+        "taxon_id": "36809",
+        "accession": "GCF_001677215.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_001677215.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_001677215.1.gff"
+        }
+    },
+    {
+        "query": "Mycobacterium fortuitum CT6",
+        "spellchecked": "mycobacterium fortuitum ct6",
+        "taxon_id": "1766",
+        "accession": "GCF_027570695.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_027570695.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_027570695.1.gff"
+        }
+    },
+    {
+        "query": "Mycobacterium tuberculosis H37Rv",
+        "spellchecked": "mycobacterium tuberculosis h37rv",
+        "taxon_id": "83332",
+        "accession": "GCF_000195955.2",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000195955.2.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000195955.2.gff"
+        }
+    },
+    {
+        "query": "Mycoplasma genitalium G37",
+        "spellchecked": "mycoplasma genitalium g37",
+        "taxon_id": "243273",
+        "accession": "GCF_000027325.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000027325.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000027325.1.gff"
+        }
+    },
+    {
+        "query": "Mycoplasma pneumoniae M129",
+        "spellchecked": "mycoplasma pneumoniae m129",
+        "taxon_id": "272634",
+        "accession": "GCF_910574535.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_910574535.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_910574535.1.gff"
+        }
+    },
+    {
+        "query": "Neisseria gonorrhoeae FA 1090",
+        "spellchecked": "neisseria gonorrhoeae fa",
+        "taxon_id": "528352",
+        "accession": "GCF_000156835.2",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000156835.2.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000156835.2.gff"
+        }
+    },
+    {
+        "query": "Neisseria meningitidis MC58",
+        "spellchecked": "neisseria meningitidis mc58",
+        "taxon_id": "122586",
+        "accession": "GCF_000008805.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000008805.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000008805.1.gff"
+        }
+    },
+    {
+        "query": "Odoribacter splanchnicus 1651/6",
+        "spellchecked": "odoribacter splanchnicus",
+        "taxon_id": "28118",
+        "accession": "GCF_900187175.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_900187175.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_900187175.1.gff"
+        }
+    },
+    {
+        "query": "Parabacteroides distasonis DSM 20701",
+        "spellchecked": "parabacteroides distasonis dsm",
+        "taxon_id": "823",
+        "accession": "GCF_018279895.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_018279895.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_018279895.1.gff"
+        }
+    },
+    {
+        "query": "Parabacteroides merdae CL03T12C32",
+        "spellchecked": "parabacteroides merdae cl03t12c32",
+        "taxon_id": "999420",
+        "accession": "GCF_000307345.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000307345.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000307345.1.gff"
+        }
+    },
+    {
+        "query": "Peptoclostridium difficile 630",
+        "spellchecked": "peptoclostridium difficile",
+        "taxon_id": "1496",
+        "accession": "GCF_018885085.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_018885085.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_018885085.1.gff"
+        }
+    },
+    {
+        "query": "Prevotella copri CB7",
+        "spellchecked": "prevotella copii cb7",
+        "taxon_id": "165179",
+        "accession": "GCF_019249655.2",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_019249655.2.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_019249655.2.gff"
+        }
+    },
+    {
+        "query": "Proteus mirabilis HI4320",
+        "spellchecked": "proteus mirabilis hi4320",
+        "taxon_id": "529507",
+        "accession": "GCF_000069965.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000069965.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000069965.1.gff"
+        }
+    },
+    {
+        "query": "Pseudomonas aeruginosa PAO1",
+        "spellchecked": "pseudomonas aeruginosa pao",
+        "taxon_id": "208964",
+        "accession": "GCF_000006765.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000006765.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000006765.1.gff"
+        }
+    },
+    {
+        "query": "Rickettsia rickettsii Sheila Smith",
+        "spellchecked": "rickettsia rickettsii sheila smith",
+        "taxon_id": "392021",
+        "accession": "GCF_000018225.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000018225.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000018225.1.gff"
+        }
+    },
+    {
+        "query": "Roseburia hominis A2-183",
+        "spellchecked": "roseburia hominis a2",
+        "taxon_id": "585394",
+        "accession": "GCF_000225345.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000225345.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000225345.1.gff"
+        }
+    },
+    {
+        "query": "Roseburia intestinalis L1-82",
+        "spellchecked": "roseburia intestinalis l1",
+        "taxon_id": "536231",
+        "accession": "GCF_900537995.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_900537995.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_900537995.1.gff"
+        }
+    },
+    {
+        "query": "Roseburia intestinalis LI-82",
+        "spellchecked": "roseburia intestinalis li",
+        "taxon_id": "166486",
+        "accession": "GCF_025151715.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_025151715.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_025151715.1.gff"
+        }
+    },
+    {
+        "query": "Ruminococcus bromii VPI 6883",
+        "spellchecked": "ruminococcus bromii vpi",
+        "taxon_id": "40518",
+        "accession": "GCF_014863965.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_014863965.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_014863965.1.gff"
+        }
+    },
+    {
+        "query": "Ruminococcus gnavus VPI C7-9",
+        "spellchecked": "ruminococcus gnavus vpi c7",
+        "taxon_id": "33038",
+        "accession": "GCF_026278305.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_026278305.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_026278305.1.gff"
+        }
+    },
+    {
+        "query": "Ruminococcus torques VPI B2-51",
+        "spellchecked": "ruminococcus torques vpi b2",
+        "taxon_id": "33039",
+        "accession": "GCF_044591705.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_044591705.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_044591705.1.gff"
+        }
+    },
+    {
+        "query": "Salmonella enterica subsp. Typhimurium LT2",
+        "spellchecked": "salmonella enterica subs typhimurium lt2",
+        "taxon_id": "90371",
+        "accession": "GCF_041080895.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_041080895.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_041080895.1.gff"
+        }
+    },
+    {
+        "query": "Shigella dysenteriae Sd197",
+        "spellchecked": "shigella dysenteriae sd197",
+        "taxon_id": "300267",
+        "accession": "GCF_000012005.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000012005.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000012005.1.gff"
+        }
+    },
+    {
+        "query": "Shigella flexneri 2a 301",
+        "spellchecked": "shigella flexneri 2a",
+        "taxon_id": "42897",
+        "accession": "GCF_002950215.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_002950215.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_002950215.1.gff"
+        }
+    },
+    {
+        "query": "Staphylococcus aureus PS 47",
+        "spellchecked": "staphylococcus aureus ps",
+        "taxon_id": "1280",
+        "accession": "GCF_026167765.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_026167765.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_026167765.1.gff"
+        }
+    },
+    {
+        "query": "Staphylococcus epidermidis ATCC 12228",
+        "spellchecked": "staphylococcus epidermidis atcc",
+        "taxon_id": "176279",
+        "accession": "GCF_000011925.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000011925.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000011925.1.gff"
+        }
+    },
+    {
+        "query": "Staphylococcus saprophyticus ATCC 15305",
+        "spellchecked": "staphylococcus saprophyticus atcc",
+        "taxon_id": "29385",
+        "accession": "GCF_016067635.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_016067635.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_016067635.1.gff"
+        }
+    },
+    {
+        "query": "Stenotrophomonas maltophilia K279a",
+        "spellchecked": "stenotrophomonas maltophilia k279a",
+        "taxon_id": "522373",
+        "accession": "GCF_000072485.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000072485.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000072485.1.gff"
+        }
+    },
+    {
+        "query": "Streptococcus agalactiae 2603V/R",
+        "spellchecked": "streptococcus agalactiae 2603v r",
+        "taxon_id": "208435",
+        "accession": "GCF_000007265.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000007265.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000007265.1.gff"
+        }
+    },
+    {
+        "query": "Streptococcus mutans UA159",
+        "spellchecked": "streptococcus mutans ua159",
+        "taxon_id": "210007",
+        "accession": "GCF_000007465.2",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000007465.2.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000007465.2.gff"
+        }
+    },
+    {
+        "query": "Streptococcus parasanguinis DSM 6778",
+        "spellchecked": "streptococcus parasanguinis dsm",
+        "taxon_id": "760570",
+        "accession": "GCF_000164675.2",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000164675.2.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000164675.2.gff"
+        }
+    },
+    {
+        "query": "Streptococcus pneumoniae R6",
+        "spellchecked": "streptococcus pneumoniae r6",
+        "taxon_id": "171101",
+        "accession": "GCF_000007045.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000007045.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000007045.1.gff"
+        }
+    },
+    {
+        "query": "Streptococcus pyogenes M1",
+        "spellchecked": "streptococcus pyogenes m",
+        "taxon_id": "160491",
+        "accession": "GCF_000009385.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000009385.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000009385.1.gff"
+        }
+    },
+    {
+        "query": "Streptococcus salivarius K12",
+        "spellchecked": "streptococcus salivarius k12",
+        "taxon_id": "1200793",
+        "accession": "GCF_000286295.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000286295.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000286295.1.gff"
+        }
+    },
+    {
+        "query": "Streptococcus suis BM407",
+        "spellchecked": "streptococcus suis bm407",
+        "taxon_id": "568814",
+        "accession": "GCF_000026745.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000026745.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000026745.1.gff"
+        }
+    },
+    {
+        "query": "Streptomyces coelicolor M145",
+        "spellchecked": "streptomyces coelicolor m145",
+        "taxon_id": "1902",
+        "accession": "GCF_013307045.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_013307045.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_013307045.1.gff"
+        }
+    },
+    {
+        "query": "Streptomyces griseus NCTC7807",
+        "spellchecked": "streptomyces griseus nctc7807",
+        "taxon_id": "1911",
+        "accession": "GCF_040685215.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_040685215.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_040685215.1.gff"
+        }
+    },
+    {
+        "query": "Streptomyces orientalis",
+        "spellchecked": "streptomyces orientalis",
+        "taxon_id": "31958",
+        "accession": "GCF_000943515.2",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000943515.2.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000943515.2.gff"
+        }
+    },
+    {
+        "query": "Treponema pallidum Nichols",
+        "spellchecked": "treponema pallidum nichols",
+        "taxon_id": "243276",
+        "accession": "GCF_000410535.2",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000410535.2.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000410535.2.gff"
+        }
+    },
+    {
+        "query": "Veillonella parvula",
+        "spellchecked": "veillonella parvula",
+        "taxon_id": "29466",
+        "accession": "GCF_900186885.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_900186885.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_900186885.1.gff"
+        }
+    },
+    {
+        "query": "Vibrio cholerae O1 El Tor N16961",
+        "spellchecked": "vibrio cholerae o el tor n16961",
+        "taxon_id": "243277",
+        "accession": "GCF_900205735.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_900205735.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_900205735.1.gff"
+        }
+    },
+    {
+        "query": "Vibrio vulnificus YJ016",
+        "spellchecked": "vibrio vulnificus yj016",
+        "taxon_id": "196600",
+        "accession": "GCF_000009745.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000009745.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000009745.1.gff"
+        }
+    },
+    {
+        "query": "Yersinia pestis CO-92",
+        "spellchecked": "yersinia pestis co",
+        "taxon_id": "214092",
+        "accession": "GCF_000009065.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000009065.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/GCF_000009065.1.gff"
+        }
+    }
+]

@@ -1,10 +1,10 @@
 [project]
-name = "temp-python-package"
-version = "0.0.2"
+name = "vectome"
+version = "0.0.1"
 authors = [
   { name="Eachan Johnson", email="eachan.johnson@crick.ac.uk" },
 ]
-description = "Template python package."
+description = "Deterministic vectorization of genomes."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
@@ -30,7 +30,15 @@ classifiers = [
 ]
 
 dependencies = [
-  
+  "bioino",
+  "carabiner-tools>=0.0.4",
+  "joblib",
+  "numpy",
+  "platformdirs>=4.4.0",
+  "pyyaml",
+  "requests",
+  "sourmash",
+  "tqdm",
 ]
 
 [project.optional-dependencies]
@@ -39,16 +47,16 @@ all = []
 #jax = ["jax>=0.5.3"]
 
 [project.urls]
-"Homepage" = "https://github.com/scbirlab/py-template"
-"Bug Tracker" = "https://github.com/scbirlab/py-template/issues"
+"Homepage" = "https://github.com/scbirlab/vectome"
+"Bug Tracker" = "https://github.com/scbirlab/vectome/issues"
 
 [project.scripts] 
-pytemplate = "py_template.cli:main"
+vectome = "vectome.cli:main"
 
 [tool.setuptools]
 # If there are data files included in your packages that need to be
 # installed, specify them here.
-package-data = {pytemplate = ["data/*.json"]}
+package-data = {vectome = ["data/*.json"]}
 
 [build-system]
 # These are the assumed default build requirements from pip:
@@ -57,4 +65,4 @@ requires = ["setuptools>=43.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [test]
-deps = ["pytest>=7.4", "pytest-cov", "py-template[all]"] 
+deps = ["pytest>=7.4", "pytest-cov"] 

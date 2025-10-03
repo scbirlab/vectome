@@ -1,0 +1,13 @@
+groups:
+  - name: group-0
+    queries:
+      - file://strain-list.txt
+  - name: group-1
+    queries:
+      - Escherichia coli MG1655
+      - Mycobacterium tuberculosis H37Rv
+      - Mycobacterium smegmatis MC2155
+      - Klebsiella pneumoniae
+  - name: group-2
+    queries:
+      - Serratia marescens

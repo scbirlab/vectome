@@ -35,9 +35,9 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
+        set -x
         # run doctests as individual packages
-        #pytest $(basename ${{ github.repository }}) --doctest-modules
-        pytest py_template --doctest-modules
+        pytest $(basename ${{ github.repository }}) --doctest-modules
         # run other tests
         #pytest test/test_evaluation.py
     - name: Test CLI

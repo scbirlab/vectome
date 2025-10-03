@@ -1,0 +1,113 @@
+Acinetobacter baumannii 81
+Acinetobacter pittii PHEA-2
+Agathobacter rectalis ATCC 33656
+Akkermansia muciniphila Muc
+Anaerostipes hadrus SSC/2
+Bacillus anthracis Ames
+Bacillus cereus ATCC 14579
+Bacillus subtilis 168
+Bacteroides caccae CL03T12C61
+Bacteroides fragilis EN-2
+Bacteroides fragilis enterotoxigenic 20656-2- 1
+Bacteroides fragilis YCH46
+Bacteroides ovatus ATCC 8483
+Bacteroides thetaiotaomicron E50
+Bacteroides uniformis dnLKV
+Bacteroides uniformis str. 3978 T3 ii
+Bacteroides vulgatus DSM 1447
+Bacteroides xylanisolvens CL03T12C04
+Bifidobacterium adolescentis E194a (Variant a)
+Bifidobacterium breve
+Bifidobacterium breve DSM 20213
+Bifidobacterium longum NCC 2705
+Bifidobacterium longum subsp. infantis CCUG 52486
+Bilophila wadsworthia (strain 3_1_6) (3_1_6)
+Blautia obeum VPI B3-21
+Bordetella pertussis Tohama I
+Borrelia burgdorferi B31
+Brucella melitensis 16M
+Burkholderia multivorans ATCC 17616
+Burkholderia pseudomallei K96243
+Campylobacter jejuni NCTC 11168
+Chlamydia pneumoniae CWL029
+Chlamydia trachomatis D/UW-3/CX
+Christensenella minuta DSM 22607
+Citrobacter freundii ICC168
+Clostridioides difficile (strain R20291)
+Clostridium bolteae WAL 16351
+Clostridium botulinum A Hall
+Clostridium perfringens ATCC 13124
+Clostridium perfringens C36
+Clostridium ramosum 113-I
+Clostridium saccharolyticum WM1
+Clostridium scindens ATCC 35704
+Collinsella aerofaciens VPI 1003
+Coprococcus comes VPI CI-38
+Corynebacterium diphtheriae NCTC 13129
+Desulfovibrio piger ATCC 29098
+Dorea formicigenerans VPI C8-13
+Eggerthella lenta 1899 B
+Enterobacter cloacae ATCC 13047
+Enterococcus faecalis V583
+Enterococcus faecium DO
+Escherichia coli ED1a
+Escherichia coli K-12
+Escherichia coli O6:H1 CFT073
+Eubacterium eligens C15-B4
+Faecalibacterium prausnitzii L2-6
+Francisella tularensis U112
+Fusobacterium nucleatum subsp. nucleatum 1612A
+Haemophilus influenzae KW20
+Helicobacter pylori 26695
+Kitasatospora aureofaciens (Streptomyces aureofaciens) ATCC 10762
+Klebsiella aerogenes ATCC 13048
+Klebsiella pneumoniae
+Lacticaseibacillus rhamnosus GG
+Lactiplantibacillus plantarum WCFS1
+Lactobacillus acidophilus NCFM
+Lactobacillus paracasei LPC-37
+Legionella pneumophila Philadelphia-1
+Listeria monocytogenes EGD-e
+Mycobacterium abscessus L948
+Mycobacterium fortuitum CT6
+Mycobacterium tuberculosis H37Rv
+Mycoplasma genitalium G37
+Mycoplasma pneumoniae M129
+Neisseria gonorrhoeae FA 1090
+Neisseria meningitidis MC58
+Odoribacter splanchnicus 1651/6
+Parabacteroides distasonis DSM 20701
+Parabacteroides merdae CL03T12C32
+Peptoclostridium difficile 630
+Prevotella copri CB7
+Proteus mirabilis HI4320
+Pseudomonas aeruginosa PAO1
+Rickettsia rickettsii Sheila Smith
+Roseburia hominis A2-183
+Roseburia intestinalis L1-82
+Roseburia intestinalis LI-82
+Ruminococcus bromii VPI 6883
+Ruminococcus gnavus VPI C7-9
+Ruminococcus torques VPI B2-51
+Salmonella enterica subsp. Typhimurium LT2
+Shigella dysenteriae Sd197
+Shigella flexneri 2a 301
+Staphylococcus aureus PS 47
+Staphylococcus epidermidis ATCC 12228
+Staphylococcus saprophyticus ATCC 15305
+Stenotrophomonas maltophilia K279a
+Streptococcus agalactiae 2603V/R
+Streptococcus mutans UA159
+Streptococcus parasanguinis DSM 6778
+Streptococcus pneumoniae R6
+Streptococcus pyogenes M1
+Streptococcus salivarius K12
+Streptococcus suis BM407
+Streptomyces coelicolor M145
+Streptomyces griseus NCTC7807
+Streptomyces orientalis
+Treponema pallidum Nichols
+Veillonella parvula
+Vibrio cholerae O1 El Tor N16961
+Vibrio vulnificus YJ016
+Yersinia pestis CO-92
