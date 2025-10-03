@@ -74,7 +74,7 @@ def name_or_taxon_to_genome_info(
         taxon_id=taxon_id,
         accession=accession,
         files=data_files,
-    )
+    ).__dict__()
 
 
 def fetch_landmarks(
