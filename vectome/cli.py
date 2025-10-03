@@ -34,12 +34,14 @@ def embed(args: Namespace) -> None:
         from .ncbi import get_landmark_ids
         header = get_landmark_ids(group=args.group, cache_dir=args.cache)
     else:
-        header = list(map(str, range(vectors.shape[-1])))
-        
-    print(
-        "\t".join(["query"] + header),
-        file=args.output,
-    )
+        print_err(f"{vectors.shape=}")
+        header = list(map(str, range(vectors.shape[1])))
+    
+    if header is not None:
+        print(
+            "\t".join(["query"] + header),
+            file=args.output,
+        )
     for row, query in zip(vectors, strains):
         print(
             "\t".join([query] + list(map(str, row))), 
