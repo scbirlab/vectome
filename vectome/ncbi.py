@@ -1,6 +1,7 @@
 """Fetching remote data."""
 
 from typing import Iterable, List, Optional, Union
+from io import BytesIO
 import json
 import os
 
@@ -41,7 +42,7 @@ def download_genomic_info(
     r,
     cache_dir: Optional[str] = None,
 ) -> List[str]:
-    from io import BytesIO
+
     from zipfile import ZipFile
     cache_dir = cache_dir or CACHE_DIR
     z = ZipFile(BytesIO(r.content))
