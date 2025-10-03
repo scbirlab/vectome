@@ -2,6 +2,7 @@
 
 from typing import Any, Callable, Mapping, Optional
 from functools import cache, wraps
+import os
 import time
 
 from carabiner import print_err, pprint_dict
@@ -12,16 +13,22 @@ from requests import Response
 
 @decorator_with_params
 def api_get(
-    f: Callable[[Response], Any],
+    f: Callable[[str, Response], Any],
     url: str,
+    max_tries: int = 3,
     query_key: Optional[str] = None,
     default_params: Optional[Mapping[str, Any]] = None,
     cache_dir: Optional[str] = None
-):
+) -> Callable[[Optional[str], Optional[dict]], Any]:
     default_params = default_params or {}
     url0 = url
 
-    def api_call(query=None, params=None, *args, **kwargs):
+    def api_call(
+        query=None, 
+        params=None,
+        _try: int = 0,
+        *args, **kwargs
+    ):
         time.sleep(.2)
         params = default_params | (params or {})
         url = url0
@@ -33,15 +40,28 @@ def api_get(
             params,
             message=f"Downloading from {url} with the following parameters"
         )
-        r = requests.get(url, params=params)
-        print_err(f"Trying {r.url}", end="")
-        r.raise_for_status()
-        print_err(f"... {r.status_code} ok")
-        return f(query, r, *args, **kwargs)
+        try:
+            r = requests.get(url, params=params)
+        except requests.exceptions.ConnectionError as e:
+            next_try = _try + 1
+            if next_try < max_tries:
+                return api_call(
+                    query=query, 
+                    params=params,
+                    _try=next_try,
+                    *args, **kwargs
+                )
+            else:
+                raise e
+        else:
+            print_err(f"Trying {r.url}", end="")
+            r.raise_for_status()
+            print_err(f"... {r.status_code} ok")
+            return f(query, r, *args, **kwargs)
 
-    if cache_dir is None or not isinstance(cache_dir, str):
-        return wraps(f)(cache(api_call))
-    else:
+    if cache_dir is not None and isinstance(cache_dir, str):
         from joblib import Memory
-        mem = Memory(location=cache_dir, verbose=0)
-        return wraps(f)(cache(mem.cache(api_call)))
+        mem = Memory(location=os.path.join(cache_dir, "api_calls"), verbose=0)
+        api_call = mem.cache(api_call)
+        
+    return wraps(f)(cache(api_call))

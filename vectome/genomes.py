@@ -7,6 +7,7 @@ import os
 
 from carabiner import pprint_dict, print_err
 
+from .edits import delete_loci
 from .names import _extract_species, Strain, parse_strain_label
 
 @dataclass
@@ -28,7 +29,7 @@ def name_or_taxon_to_genome_info(
     check_spelling: bool = False,
     cache_dir: Optional[str] = None
 ):  
-    from .ncbi import download_genomic_info, name_to_taxon, spellcheck, taxon_to_accession
+    from .ncbi import download_genomic_info, name_to_taxon_ncbi, spellcheck, taxon_to_accession
     print_err(f"Fetching {query}...")
     if isinstance(query, int) or (isinstance(query, str) and query.isdigit()):
         spellchecked = str(query)
@@ -38,15 +39,19 @@ def name_or_taxon_to_genome_info(
     else:
         species, remainder = _extract_species(query)
         spellchecked = spellcheck(species) if check_spelling else species
-        strain_info = parse_strain_label(spellchecked + remainder)
+        strain_info = parse_strain_label(spellchecked + " " + remainder)
         search_query = strain_info.species
         for key in ("strain", "substrain"):
             if getattr(strain_info, key) is not None:
                 search_query += " " + getattr(strain_info, key)
-        taxon_id = name_to_taxon_ncbi(search_query)
+        taxon_id = name_to_taxon_ncbi(search_query, key="tax_id")
     accession = taxon_to_accession(taxon_id)
+    if accession is None:
+        raise KeyError(
+            f"Genome lookup {taxon_id=} {search_query=} failed: {strain_info}"
+        )
     data_files = download_genomic_info(
-        accession, 
+        query=accession, 
         cache_dir=cache_dir,
     )
     if (
@@ -57,7 +62,7 @@ def name_or_taxon_to_genome_info(
         new_fasta = delete_loci(
             fasta_file=data_files["fasta"],
             gff_file=data_files["gff"],
-            loci=strain_info.deletions,
+            loci=tuple(strain_info.deletions),
             cache_dir=cache_dir,
         )
         data_files["fasta"] = new_fasta

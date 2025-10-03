@@ -1,14 +1,10 @@
 """Fetching remote data."""
 
 from typing import Iterable, List, Optional, Union
-from io import BytesIO
 import json
 import os
-from zipfile import ZipFile
 
 from carabiner import print_err
-
-from requests import Response
 
 from .caching import CACHE_DIR
 from .http import api_get
@@ -21,7 +17,7 @@ NCBI_CACHE = os.path.join(CACHE_DIR, "ncbi")
     query_key="term",
     cache_dir=NCBI_CACHE,
 )
-def spellcheck(query, r: Response) -> str:
+def spellcheck(query, r) -> str:
     import xml.etree.ElementTree as ET
     tree = ET.parse(BytesIO(r.content))
     root = tree.getroot()
@@ -42,9 +38,11 @@ def spellcheck(query, r: Response) -> str:
 )
 def download_genomic_info(
     query,
-    r: Response,
+    r,
     cache_dir: Optional[str] = None,
 ) -> List[str]:
+    from io import BytesIO
+    from zipfile import ZipFile
     cache_dir = cache_dir or CACHE_DIR
     z = ZipFile(BytesIO(r.content))
 
@@ -84,8 +82,11 @@ def download_genomic_info(
     },
     cache_dir=NCBI_CACHE,
 )
-def taxon_to_accession(query, r: Response) -> str:
-    return r.json()["reports"][0]["accession"]
+def taxon_to_accession(query, r) -> str:
+    try:
+        return r.json()["reports"][0]["accession"]
+    except KeyError:
+        return None
 
 
 @api_get(
@@ -96,15 +97,17 @@ def taxon_to_accession(query, r: Response) -> str:
     },
     cache_dir=NCBI_CACHE,
 )
-def name_to_taxon_ncbi(query, r: Response, key: str = "taxid", rank: Optional[str] = None) -> str:
+def name_to_taxon_ncbi(query, r, key: str = "tax_id", rank: Optional[str] = None) -> str:
     try:
         call_results = r.json()["sci_name_and_ids"]
     except KeyError:
         return None
     else:
-        results = []
-        for item in call_results:
-            if rank is not None:
+        if rank is None:
+            results = call_results
+        else:
+            results = []
+            for item in call_results:
                 try:
                     item_rank = item["rank"]
                 except KeyError:
@@ -112,8 +115,6 @@ def name_to_taxon_ncbi(query, r: Response, key: str = "taxid", rank: Optional[st
                 else:
                     if item_rank.casefold() == rank.casefold():
                         results.append(item)
-            else:
-                results.append(item)
         return results[0].get(key)
 
 
@@ -127,7 +128,7 @@ def name_to_taxon_ncbi(query, r: Response, key: str = "taxid", rank: Optional[st
     query_key="query",
     cache_dir=NCBI_CACHE,
 )
-def name_to_taxon(query, r: Response, key: str = "taxonId") -> str:
+def name_to_taxon(query, r, key: str = "taxonId") -> str:
     try:
         return r.json()["results"][0]["taxonomy"][key]
     except KeyError:

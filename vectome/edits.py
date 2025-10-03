@@ -1,6 +1,6 @@
 """Functions for editing genomes."""
 
-from typing import Iterable, Optional
+from typing import Iterable, Optional, Union
 from functools import cache
 from hashlib import md5
 import os
@@ -28,9 +28,14 @@ def _delete_locus(
     locus: Iterable[int]
 ):
     made_edit = False
+    chr, start, stop = locus
+    deletion_size = stop - start + 1
     for seq in fasta.sequences:
-        if seq.name == chr:
-            seq.name = f"{seq.name}_delta-{'-'.join(interval)}"
+        try:
+            this_chr = seq.name
+        except AttributeError as e:
+            raise AttributeError(f"Sequence is type {type(seq)}: {seq}")
+        if this_chr == chr:
             seq.sequence = (
                 seq.sequence[:(start-1)]
                 + ("N" * deletion_size)
@@ -48,17 +53,17 @@ def _resolve_gene(
 ):
     intervals = [
         (line.columns.seqid, line.columns.start, line.columns.end, key)
-        for _locus in locus
         for key in ATTRIBUTE_KEY_PRECEDENT
-        for line in gff
-        if key in line.attributes and line.attributes[key] == gene_name
+        for line in gff.lines
+        if key in line.attributes and line.attributes[key].casefold() == gene_name.casefold()
     ]
 
-    if len(gene_intervals) == 0:
+    if len(intervals) == 0:
         raise ValueError(f"Searched in {gff=}, but could not find {gene_name=}")
-    print_err(f"Found {len(gene_intervals)} intervals matching {gene_name=}")
-    print_err(f"Taking first match for {gene_name=}: {interval[0]}")
-    return interval[0]
+    print_err(f"Found {len(intervals)} intervals matching {gene_name=}")
+    interval = intervals[0]
+    print_err(f"Taking first match for {gene_name=}: {interval}")
+    return interval
 
 
 @cache
@@ -68,13 +73,14 @@ def _resolve_gene_loci(
     loci: Union[str, Iterable[str]]
 ):
     from bioino import GffFile
-    if isinstance(locus, str):
-        locus = [locus]
+    if isinstance(loci, str):
+        loci = [loci]
     
     gff = GffFile.from_file(gff_file)
+    gff.lines = tuple(gff.lines)
     intervals = []
     
-    for gene_name in locus:
+    for gene_name in loci:
         intervals.append(
             _resolve_gene(
                 gff,
@@ -82,8 +88,8 @@ def _resolve_gene_loci(
             )
         )
     intervals = sorted(intervals)
-    chr, start, _ = intervals[0]
-    _, _, end = intervals[-1]
+    chr, start, _ = intervals[0][:3]
+    _, _, end = intervals[-1][:3]
     return (chr, start, end)
 
 
@@ -97,7 +103,7 @@ def delete_loci(
     cache_dir = cache_dir or CACHE_DIR
 
     if isinstance(loci, str):
-        loci = []
+        loci = [loci]
     else:
         loci = list(loci)
     
@@ -119,7 +125,7 @@ def delete_loci(
             )
         elif (
             isinstance(locus, (tuple, list))
-            and len(locus) == 3
+            and len(locus) >= 3
             and isinstance(locus[1], int)
         ):
             loci_to_delete.append(locus)
@@ -129,18 +135,24 @@ def delete_loci(
     loci_to_delete = sorted(loci_to_delete)
 
     _hash = md5(repr(loci_to_delete).encode()).hexdigest()
-    output_file = os.path.join(cache_dir, f"{os.path.basename(fasta)}_delta-{_hash}.fna")
+    output_file = os.path.join(cache_dir, f"{os.path.basename(fasta_file)}_delta-{_hash}.fna")
     
     if os.path.exists(output_file):
         return output_file
     else:
         from bioino import FastaCollection
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
-        fasta = FastaCollection(fasta_file)
+        fasta = FastaCollection.from_file(fasta_file)
+        fasta.sequences = tuple(fasta.sequences)
         for locus in loci_to_delete:
-            fasta = _delete_locus(fasta, locus)  
+            print_err(f"Deleting {locus}...")
+            fasta = _delete_locus(
+                fasta=fasta, 
+                locus=locus,
+            )  
         print_err(f"Caching edited sequence at {output_file}...", end=" ")
-        fasta.write(output_file)
+        with open(output_file, "w") as fh:
+            fasta.write(fh)
         print_err("ok")
 
     return output_file
