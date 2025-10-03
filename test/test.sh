@@ -14,7 +14,7 @@ vectome build $GROUP --force --cache "$CACHE"
 vectome info
 vectome info --cache "$CACHE"
 
-queries=("Escherichia coli" "E. coli strain K-12 acrAB (fimC-fimH) lacZ" 83333 83332 "Klebsiella pneumoniae")
+queries=("Escherichia coli" "E. coli strain K-12 acrAB (fimC-fimH) lacZ-" 83333 83332 "Klebsiella pneumoniae")
 for q in "${queries[@]}"
 do
     echo "$q" >> $TEST_LIST
