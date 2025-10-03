@@ -31,7 +31,7 @@ def embed(args: Namespace) -> None:
     
     if args.method == "landmark" and args.projection is None:
         from .ncbi import get_landmark_ids
-        header = get_landmark_ids(group=args.group, cache=args.cache)
+        header = get_landmark_ids(group=args.group, cache_dir=args.cache)
     else:
         header = list(map(str, range(vectors.shape[-1])))
         
