@@ -10,7 +10,7 @@ PROJ=8
 
 mkdir -p $OUTDIR
 
-vectome build $GROUP --cache "$CACHE"
+vectome build $GROUP --force
 
 queries=("Escherichia coli" 83332 83333 "Klebsiella pneumoniae")
 for q in "${queries[@]}"
