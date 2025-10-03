@@ -114,13 +114,13 @@ def _vectorize_countsketch(
 
     Examples
     ========
-    >>> # _vectorize_countsketch on a tiny "MinHash-like" dummy:
+    >>> import numpy as np; np.set_printoptions(legacy="1.25")
     >>> class _DummyMH:  # exposes .hashes like sourmash.MinHash
-    ...     def __init__(self, ints): self.hashes = {int(x): 1 for x in ints}
+    ...     def __init__(self, ints): 
+    ...         self.hashes = {int(x): 1 for x in ints}
     >>> v = _vectorize_countsketch(_DummyMH([0x1234, 0xBEEF]), dim=16, num_hash_fns=3)
-    >>> len(v), float((v @ v) ** 0.5)  # length and unit norm
+    >>> len(v), float((v @ v) ** .5)  # length and unit norm
     (16, 1.0)
-    >>> # Expected nonzeros after normalization (see analysis):
     >>> round(v[4], 3), round(v[10], 3), round(v[13], 3), round(v[0], 3), round(v[11], 3)
     (-0.5, -0.5, 0.5, -0.5, 0.0)
 

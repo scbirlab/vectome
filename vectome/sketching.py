@@ -4,7 +4,6 @@ from typing import Optional
 from functools import cache
 import os
 
-from bioino import FastaCollection
 from carabiner import print_err
 from sourmash import load_one_signature, MinHash, SourmashSignature, save_signatures
 
@@ -42,6 +41,8 @@ def sketch_genome(
         else:
             print_err("ok")
     else:
+        from bioino import FastaCollection
+
         os.makedirs(cache_dir, exist_ok=True)
         mh = MinHash(n=n, ksize=k, **kwargs)
         fasta = FastaCollection.from_file(file)
