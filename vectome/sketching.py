@@ -15,7 +15,7 @@ from .ncbi import fetch_landmarks
 def sketch_genome(
     file: str,
     k: int = 51,
-    n: int = 5000,
+    n: int = 20_000,
     force: bool = False,
     cache_dir: Optional[str] = None,
     **kwargs
@@ -61,6 +61,7 @@ def sketch_genome(
 
 def sketch_landmarks(
     group: int = 0,
+    check_spelling: bool = False,
     force: bool = False,
     cache_dir: Optional[str] = None
 ):
@@ -68,6 +69,7 @@ def sketch_landmarks(
 
     cache_dir = cache_dir or APPDATA_DIR
     landmark_info = fetch_landmarks(
+        check_spelling=check_spelling,
         group=group,
         force=force,
         cache_dir=cache_dir,

@@ -12,6 +12,7 @@ from carabiner import print_err, pprint_dict
 from requests import Response
 
 from .caching import CACHE_DIR
+from .edits import detect_deletion, delete_gene
 from .http import api_get
 
 NCBI_CACHE = os.path.join(CACHE_DIR, "ncbi")
@@ -96,29 +97,44 @@ def taxon_to_accession(query, r: Response) -> str:
     },
     cache_dir=NCBI_CACHE,
 )
-def name_to_taxon(query, r: Response) -> str:
+def name_to_taxon_ncbi(query, r: Response) -> str:
     try:
         return r.json()["sci_name_and_ids"][0]["tax_id"]
     except KeyError:
         return None
 
 
+@api_get(
+    url="https://rest.uniprot.org/proteomes/search",
+    query_key="query",
+    cache_dir=NCBI_CACHE,
+)
+def name_to_taxon(query, r: Response) -> str:
+    try:
+        return r.json()["results"][0]["taxonomy"]["taxon_id"]
+    except KeyError:
+        return None
+
+
 def name_or_taxon_to_genome_info(
     query,
-    cache_dir: Optional[str] = None,
+    check_spelling: bool = False,
+    cache_dir: Optional[str] = None
 ):
     print_err(f"Fetching {query}...")
     if isinstance(query, int) or (isinstance(query, str) and query.isdigit()):
         spellchecked = str(query)
+        check_spelling = False
         taxon_id = spellchecked
     else:
-        spellchecked = spellcheck(query)
+        spellchecked = spellcheck(query) if check_spelling else query
         taxon_id = name_to_taxon(spellchecked)
     accession = taxon_to_accession(taxon_id)
     data_files = download_genomic_info(accession, cache_dir=cache_dir)
     return {
         "query": query,
         "spellchecked": spellchecked,
+        "did_spellcheck": check_spelling,
         "taxon_id": taxon_id,
         "accession": accession,
         "files": data_files,
@@ -127,6 +143,7 @@ def name_or_taxon_to_genome_info(
 
 def fetch_landmarks(
     group: int = 0,
+    check_spelling: bool = False,
     force: bool = False,
     cache_dir: Optional[str] = None
 ):
@@ -155,6 +172,7 @@ def fetch_landmarks(
         for q in group_queries:
             results.append(name_or_taxon_to_genome_info(
                 query=q,
+                check_spelling=check_spelling,
                 cache_dir=cache_dir,
             ))
             pprint_dict(results[-1])
@@ -166,12 +184,14 @@ def fetch_landmarks(
 
 def get_landmark_ids(
     group: int = 0,
+    check_spelling: bool = False,
     id_keys: Optional[Iterable[Union[int, str]]] = None,
     force: bool = False,
     cache_dir: Optional[str] = None
 ):
     id_keys = id_keys or ("query", "taxon_id", "accession")
     landmark_info = fetch_landmarks(
+        check_spelling=check_spelling,
         group=group,
         force=force,
         cache_dir=cache_dir,

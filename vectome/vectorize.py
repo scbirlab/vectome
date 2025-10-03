@@ -75,6 +75,7 @@ def _bucket_sign(h: int, salt: int) -> int:
 
 def _vectorize_landmark(
     query_mh: MinHash,
+    k: int = 51,
     group: int = 0,
     cache_dir: Optional[str] = None,
     **kwargs
@@ -86,6 +87,7 @@ def _vectorize_landmark(
     landmark_mh = [
         sketch_genome(
             file=f,
+            k=k,
             cache_dir=cache_dir,
         ) for f in landmarks
     ]
@@ -151,6 +153,7 @@ def _vectorize_countsketch(
 
 def vectorize(
     query: Union[str, int, Iterable[Union[str, int]]],
+    check_spelling: bool = False,
     k: int = 51,
     method: str = "countsketch",
     projection: Optional[int] = None,
@@ -169,7 +172,8 @@ def vectorize(
 
     genome_info = [
         name_or_taxon_to_genome_info(
-            q, 
+            str(q), 
+            check_spelling=check_spelling,
             cache_dir=cache_dir,
         ) for q in cast(query, to=list)
     ]
@@ -177,6 +181,8 @@ def vectorize(
     query_mh = [
         sketch_genome(
             file=info["files"]["fasta"],
+            k=k,
+            cache_dir=cache_dir,
         ) for info in genome_info
     ]
 
@@ -188,7 +194,13 @@ def vectorize(
         raise ValueError(f"Vectorization {method=} is not implemented.")
 
     vectors = np.stack([
-        fn(mh, cache_dir=cache_dir, **kwargs) for mh in tqdm(query_mh, desc="Vectorizing genomes")
+        fn(
+            mh, 
+            k=k,
+            cache_dir=cache_dir, 
+            **kwargs,
+        ) 
+        for mh in tqdm(query_mh, desc="Vectorizing genomes")
     ], axis=0)
 
     if projection is None:

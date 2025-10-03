@@ -6,7 +6,7 @@ OUTDIR=test/outputs
 CACHE=$OUTDIR/.cache
 TEST_LIST=$OUTDIR/test-inputs.txt
 GROUP=1
-PROJ=8
+PROJ=4
 
 mkdir -p $OUTDIR
 
