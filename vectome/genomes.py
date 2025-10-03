@@ -111,7 +111,7 @@ def fetch_landmarks(
                 check_spelling=check_spelling,
                 cache_dir=cache_dir,
             ))
-            print_err(results[-1])
+            pprint_dict(results[-1], message="Parsed strain name:")
         with open(manifest_filename, "w") as f:
             json.dump(results, f, indent=4)
         
