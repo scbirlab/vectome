@@ -12,7 +12,7 @@ from requests import Response
 
 @decorator_with_params
 def api_get(
-    f: Callable[Response, ...],
+    f: Callable[[Response], Any],
     url: str,
     query_key: Optional[str] = None,
     default_params: Optional[Mapping[str, Any]] = None,

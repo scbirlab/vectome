@@ -1,13 +1,13 @@
 """Load package data."""
 
-from typing import Dict, Optional
+from typing import Any, Dict, Optional
 import os
 
 APPDATA_DIR = os.path.dirname(__file__)
 
 def load_landmarks(
     cache_dir: Optional[str] = None
-) -> Dict[str, ...]:
+) -> Dict[str, Any]:
 
     import yaml
 
