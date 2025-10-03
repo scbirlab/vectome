@@ -1,0 +1,12 @@
+[
+    {
+        "query": "Serratia marescens",
+        "spellchecked": "serratia marcescens",
+        "taxon_id": "615",
+        "accession": "GCF_030291735.1",
+        "files": {
+            "fasta": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/landmarks/group-2/GCF_030291735.1.fna",
+            "gff": "/nemo/lab/johnsone/home/users/johnsoe/github/vectome/vectome/data/landmarks/group-2/GCF_030291735.1.gff"
+        }
+    }
+]
