@@ -20,8 +20,8 @@ def sketch_genome(
     cache_dir: Optional[str] = None,
     **kwargs
 ):
-    cache_dir = cache_dir or CACHE_DIR
-    cache_dir = os.path.join(cache_dir, "sketches")
+    
+    cache_dir = os.path.join(cache_dir or CACHE_DIR, "sketches")
     sketch_file = os.path.join(cache_dir, f"{file}_{n=}_{k=}.sig")
 
     if os.path.exists(sketch_file) and not force:
@@ -43,7 +43,6 @@ def sketch_genome(
     else:
         from bioino import FastaCollection
 
-        os.makedirs(cache_dir, exist_ok=True)
         mh = MinHash(n=n, ksize=k, **kwargs)
         fasta = FastaCollection.from_file(file)
         for seq in fasta.sequences:
@@ -51,8 +50,9 @@ def sketch_genome(
 
         sig = SourmashSignature(mh, name=os.path.basename(file))
 
+        os.makedirs(os.path.dirname(sketch_file), exist_ok=True)
+        print_err(f"Caching signature for {file} at {sketch_file}...", end=" ")
         with open(sketch_file, "w") as f:
-            print_err(f"Caching signature for {file} at {sketch_file}...", end=" ")
             save_signatures([sig], f)
             print_err("ok")
 
