@@ -22,6 +22,7 @@ def embed(args: Namespace) -> None:
     strains = [line.rstrip() for line in args.strain]
     vectors = vectorize(
         strains,
+        check_spelling=args.spellcheck,
         method=args.method,
         group=args.group,
         dim=args.dimensionality,
@@ -31,7 +32,7 @@ def embed(args: Namespace) -> None:
     )
     
     if args.method == "landmark" and args.projection is None:
-        from .ncbi import get_landmark_ids
+        from .genomes import get_landmark_ids
         header = get_landmark_ids(
             group=args.group, 
             cache_dir=args.cache,
@@ -57,6 +58,7 @@ def build(args: Namespace) -> None:
     from .sketching import sketch_landmarks
     results = sketch_landmarks(
         group=args.group,
+        check_spelling=args.spellcheck,
         force=args.force,
         cache_dir=args.cache,
     )
@@ -118,6 +120,11 @@ def main() -> None:
             action="store_true",
             help="Ignore cache and rebuild.",
         ),
+        "spellcheck": CLIOption(
+            "--spellcheck", "-s",
+            action="store_true",
+            help="Ignore cache and rebuild.",
+        ),
         "projection": CLIOption(
             "--projection", "-z",
             type=int,
@@ -155,6 +162,7 @@ def main() -> None:
                 description="Turn one or more species/strain names or accession IDs into a vector.",
                 options=[
                     options["strain"],
+                    options["spellcheck"],
                     options["dimensionality"],
                     options["method"],
                     options["projection"],
@@ -170,6 +178,7 @@ def main() -> None:
                 description="Build landmark database.",
                 options=[
                     options["group"],
+                    options["spellcheck"],
                     options["force"],
                     options["cache"].replace(default=None),
                 ],

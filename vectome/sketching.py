@@ -9,7 +9,7 @@ from sourmash import load_one_signature, MinHash, SourmashSignature, save_signat
 
 from .caching import CACHE_DIR
 from .data import APPDATA_DIR
-from .ncbi import fetch_landmarks
+from .genomes import fetch_landmarks
 
 @cache
 def sketch_genome(
