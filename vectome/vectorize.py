@@ -76,14 +76,17 @@ def _bucket_sign(h: int, salt: int) -> int:
 def _vectorize_landmark(
     query_mh: MinHash,
     group: int = 0,
+    cache_dir: Optional[str] = None,
     **kwargs
 ):
     landmarks = [
-        info["files"]["fasta"] for info in fetch_landmarks(group=group)
+        info["files"]["fasta"] 
+        for info in fetch_landmarks(group=group, cache_dir=cache_dir)
     ]
     landmark_mh = [
         sketch_genome(
             file=f,
+            cache_dir=cache_dir,
         ) for f in landmarks
     ]
 
@@ -182,7 +185,7 @@ def vectorize(
         raise ValueError(f"Vectorization {method=} is not implemented.")
 
     vectors = np.stack([
-        fn(mh, **kwargs) for mh in tqdm(query_mh, desc="Vectorizing genomes")
+        fn(mh, cache_dir=cache_dir, **kwargs) for mh in tqdm(query_mh, desc="Vectorizing genomes")
     ], axis=0)
 
     if projection is None:
