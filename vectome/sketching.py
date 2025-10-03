@@ -22,7 +22,7 @@ def sketch_genome(
 ):
     
     cache_dir = os.path.join(cache_dir or CACHE_DIR, "sketches")
-    sketch_file = os.path.join(cache_dir, f"{file}_{n=}_{k=}.sig")
+    sketch_file = os.path.join(cache_dir, f"{os.path.basename(file)}_{n=}_{k=}.sig")
 
     if os.path.exists(sketch_file) and not force:
         print_err(f"Loading cached signature for {file} at {sketch_file}...", end=" ")
