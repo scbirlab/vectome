@@ -177,6 +177,7 @@ def vectorize(
             cache_dir=cache_dir,
         ) for q in cast(query, to=list)
     ]
+    print_err(genome_info)
 
     query_mh = [
         sketch_genome(
