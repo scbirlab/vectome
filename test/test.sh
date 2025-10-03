@@ -11,6 +11,7 @@ PROJ=8
 mkdir -p $OUTDIR
 
 vectome build $GROUP --force --cache "$CACHE"
+vectome info
 vectome info --cache "$CACHE"
 
 queries=("Escherichia coli" 83332 83333 "Klebsiella pneumoniae")
