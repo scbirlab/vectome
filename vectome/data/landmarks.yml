@@ -1,7 +1,7 @@
 groups:
   - name: group-0
     queries:
-      - file://strain-list.txt
+      - file://strain-list-0.txt
   - name: group-1
     queries:
       - Escherichia coli MG1655
@@ -9,5 +9,8 @@ groups:
       - Mycobacterium smegmatis MC2155
       - Klebsiella pneumoniae
   - name: group-2
+    queries:
+      - file://strain-list-2.txt
+  - name: group-3
     queries:
       - Serratia marescens

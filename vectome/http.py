@@ -10,6 +10,9 @@ from carabiner.decorators import decorator_with_params
 import requests
 from requests import Response
 
+from . import app_name, __version__, __author__
+from importlib.metadata import metadata
+
 
 @decorator_with_params
 def api_get(
@@ -22,6 +25,16 @@ def api_get(
 ) -> Callable[[Optional[str], Optional[dict]], Any]:
     default_params = default_params or {}
     url0 = url
+
+    headers = {
+        "User-Agent": f"{app_name}/{__version__}",
+        "From": (
+            metadata(app_name)["Author-email"]
+            .replace(__author__, "")
+            .strip()
+        ),
+    }
+
 
     def api_call(
         query=None, 
@@ -41,7 +54,7 @@ def api_get(
             message=f"Downloading from {url} with the following parameters"
         )
         try:
-            r = requests.get(url, params=params)
+            r = requests.get(url, params=params, headers=headers)
         except requests.exceptions.ConnectionError as e:
             next_try = _try + 1
             if next_try < max_tries:

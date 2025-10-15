@@ -22,11 +22,18 @@ done
 
 vectome embed "$TEST_LIST" --cache "$CACHE" > $OUTDIR/test1.tsv
 vectome embed "$TEST_LIST" --projection $PROJ --seed 0 --cache "$CACHE" > $OUTDIR/test2.tsv
+vectome embed "$TEST_LIST" --projection $PROJ --seed 0 --cache "$CACHE" > $OUTDIR/test2a.tsv
 vectome embed "$TEST_LIST" --projection $PROJ --seed 42 --cache "$CACHE" > $OUTDIR/test3.tsv
 
 if [ "$(diff $OUTDIR/test2.tsv $OUTDIR/test3.tsv | wc -l)" -eq "0" ]
 then
     >&2 echo "Seed did not change output!"
+    exit 1
+fi
+
+if [ ! "$(diff $OUTDIR/test2.tsv $OUTDIR/test2a.tsv | wc -l)" -eq "0" ]
+then
+    >&2 echo "Seed did not repeat output!"
     exit 1
 fi
 
