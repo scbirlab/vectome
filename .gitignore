@@ -24,3 +24,7 @@ __pycache__/
 /include/
 /lib/
 /share/
+
+# data
+/vectome/data/landmarks/
+vectome/data/sketches/
