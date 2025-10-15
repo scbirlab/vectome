@@ -13,8 +13,11 @@ groups:
       - file://strain-list-3.txt
   - name: group-4
     queries:
-      - Serratia marescens
+      - file://strain-list-4.txt
   - name: group-5
+    queries:
+      - Serratia marescens
+  - name: group-6
     queries:
       - Escherichia coli MG1655
       - Mycobacterium tuberculosis H37Rv
