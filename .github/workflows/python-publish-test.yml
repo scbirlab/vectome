@@ -36,6 +36,7 @@ jobs:
       run: |
         pip install -e . 
         vectome build 0
+        vectome build 1
     - name: Build package
       run: python -m build --sdist --wheel --outdir dist
     - name: Upload data artifact (CI artifact, not PyPI)
