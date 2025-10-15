@@ -83,6 +83,8 @@ def fetch_landmarks(
     force: bool = False,
     cache_dir: Optional[str] = None
 ):
+    from tqdm.auto import tqdm
+    
     from .data import load_landmarks, APPDATA_DIR
 
     landmarks_info = load_landmarks()
@@ -105,7 +107,7 @@ def fetch_landmarks(
         os.makedirs(cache_dir, exist_ok=True)
 
         results = []
-        for q in group_queries:
+        for q in tqdm(group_queries, desc="Fetching landmarks"):
             results.append(name_or_taxon_to_genome_info(
                 query=q,
                 check_spelling=check_spelling,
