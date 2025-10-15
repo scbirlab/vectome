@@ -36,6 +36,7 @@ def name_or_taxon_to_genome_info(
         check_spelling = False
         taxon_id = spellchecked
         strain_info = parse_strain_label(taxon_id)
+        search_query = strain_info.species
     else:
         species, remainder = _extract_species(query)
         spellchecked = spellcheck(species) if check_spelling else species
@@ -84,7 +85,7 @@ def fetch_landmarks(
     cache_dir: Optional[str] = None
 ):
     from tqdm.auto import tqdm
-    
+
     from .data import load_landmarks, APPDATA_DIR
 
     landmarks_info = load_landmarks()
