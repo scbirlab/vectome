@@ -127,7 +127,7 @@ def fetch_landmarks(
             message = f"[ERROR] Failed to fetch {len(errors)} queries!"
             print_err(message)
             print_err("\n".join(errors))
-            raise ValueError(message)
+            raise ValueError(errors[list(errors)[0]])
         with open(manifest_filename, "w") as f:
             json.dump(results, f, indent=4)
         
