@@ -48,22 +48,27 @@ def _extract_species(
         (species_full, remainder_text)
 
     """
-    query = query.strip()
-    # e.g., "E. coli", "Escherichia coli", allow extra words after species
-    m = re.match(
-        r"^\s*(?P<genus>[A-Z][a-z]*|[A-Z]\.)\s+(?P<species>[a-z][a-z_-]+)\b", 
-        query,
-    )
-    if not m:
-        return query, ""
-    genus = m.group("genus")
-    species = m.group("species").replace("_", "-")
-    remainder = query[m.end():].strip()
-    species_full = f"{genus} {species}"
-    if normalize:
-        species_full = name_to_taxon_ncbi(species_full, key="sci_name", rank="species")
-        species_full = _extract_species(species_full, normalize=False)[0]
-    return species_full, remainder
+    if isinstance(query, str):
+        query = query.strip()
+        # e.g., "E. coli", "Escherichia coli", allow extra words after species
+        m = re.match(
+            r"^\s*(?P<genus>[A-Z][a-z]*|[A-Z]\.)\s+(?P<species>[a-z][a-z_-]+)\b", 
+            query,
+        )
+        if not m:
+            return query, ""
+        genus = m.group("genus")
+        species = m.group("species").replace("_", "-")
+        remainder = query[m.end():].strip()
+        species_full = f"{genus} {species}"
+        if normalize:
+            species_full = name_to_taxon_ncbi(species_full, key="sci_name", rank="species")
+            species_full = _extract_species(species_full, normalize=False)[0]
+        return species_full, remainder
+    elif query is None:
+        return None, None
+    else:
+        raise ValueError(f"Query {query} (type {type(query)}) is not string or None.")
 
 
 def _extract_strain_and_substrain(query: str) -> Tuple[Optional[str], Optional[str], str]:
@@ -235,8 +240,12 @@ def parse_strain_label(
     if isinstance(query, int) or (isinstance(query, str) and query.isdigit()):
         query = name_to_taxon_ncbi(query, key="sci_name")
     species, remainder = _extract_species(query, normalize=True)
-    strain, substrain, remainder = _extract_strain_and_substrain(remainder)
-    deletions = _parse_deletions(remainder)
+    if remainder is not None:
+        strain, substrain, remainder = _extract_strain_and_substrain(remainder)
+        deletions = _parse_deletions(remainder)
+    else:
+        strain, substrain, remainder = "", "", ""
+        deletions = []
     to_exclude = set()
     for d in deletions:
         if isinstance(d, tuple):

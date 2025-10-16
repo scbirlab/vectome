@@ -33,6 +33,17 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install build
+    - name: Build data artifact
+      run: |
+        pip install -e . 
+        vectome build
+    - name: Build package
+      run: python -m build --sdist --wheel --outdir dist
+    - name: Upload data artifact (CI artifact, not PyPI)
+      uses: actions/upload-artifact@v4
+      with:
+        name: built-data
+        path: vectome/data
     - name: Build package
       run: python -m build --sdist --wheel --outdir dist
     - name: Publish package

@@ -7,7 +7,7 @@ import os
 
 from carabiner import print_err
 from joblib import Memory
-
+ 
 from .caching import CACHE_DIR
 
 mem = Memory(location=CACHE_DIR, verbose=0)
@@ -59,7 +59,7 @@ def _resolve_gene(
     ]
 
     if len(intervals) == 0:
-        raise ValueError(f"Searched in {gff=}, but could not find {gene_name=}")
+        raise ValueError(f"Searched in GFF, but could not find {gene_name=}")
     print_err(f"Found {len(intervals)} intervals matching {gene_name=}")
     interval = intervals[0]
     print_err(f"Taking first match for {gene_name=}: {interval}")
