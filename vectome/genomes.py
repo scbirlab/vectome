@@ -121,7 +121,7 @@ def fetch_landmarks(
                 errors[q] = e
                 print_err(f"[WARN] Failed to get genome info for query {q}!")
             else:
-                pprint_dict(results[-1], message="Parsed strain name:")
+                pprint_dict(genome_info, message="Parsed strain name:")
             results.append(genome_info)
         if len(errors) > 0:
             message = f"[ERROR] Failed to fetch {len(errors)} queries!"

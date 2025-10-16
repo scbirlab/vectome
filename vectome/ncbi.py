@@ -117,8 +117,8 @@ def name_to_taxon_ncbi(query, r, key: str = "tax_id", rank: Optional[str] = None
                 else:
                     if isinstance(item_rank, str) and item_rank.casefold() == rank.casefold():
                         rank_results.append(item)
-        if len(results) > 0:
-            return results[0].get(key)
+        if len(rank_results) > 0:
+            return rank_results[0].get(key)
     
     return None
 
