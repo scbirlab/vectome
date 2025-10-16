@@ -108,13 +108,26 @@ def fetch_landmarks(
         os.makedirs(cache_dir, exist_ok=True)
 
         results = []
+        errors = {}
         for q in tqdm(group_queries, desc="Fetching landmarks"):
-            results.append(name_or_taxon_to_genome_info(
-                query=q,
-                check_spelling=check_spelling,
-                cache_dir=cache_dir,
-            ))
-            pprint_dict(results[-1], message="Parsed strain name:")
+            try:
+                genome_info = name_or_taxon_to_genome_info(
+                    query=q,
+                    check_spelling=check_spelling,
+                    cache_dir=cache_dir,
+                )
+            except Exception as e:
+                genome_info = None
+                errors[q] = e
+                print_err(f"[WARN] Failed to get genome info for query {q}!")
+            else:
+                pprint_dict(results[-1], message="Parsed strain name:")
+            results.append(genome_info)
+        if len(errors) > 0:
+            message = f"[ERROR] Failed to fetch {len(errors)} queries!"
+            print_err(message)
+            print_err("\n".join(errors))
+            raise ValueError(message)
         with open(manifest_filename, "w") as f:
             json.dump(results, f, indent=4)
         

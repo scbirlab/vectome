@@ -22,7 +22,10 @@ def spellcheck(query, r) -> str:
     import xml.etree.ElementTree as ET
     tree = ET.parse(BytesIO(r.content))
     root = tree.getroot()
-    return root.find("CorrectedQuery").text
+    try:
+        return root.find("CorrectedQuery").text
+    except Exception:
+        return None
 
 
 @api_get(
@@ -84,9 +87,10 @@ def download_genomic_info(
     cache_dir=NCBI_CACHE,
 )
 def taxon_to_accession(query, r) -> str:
-    try:
-        return r.json()["reports"][0]["accession"]
-    except KeyError:
+    call_results = r.json().get("reports")
+    if call_results is not None and isinstance(call_results, list) and len(call_results) > 0:
+        return call_results[0].get("accession")
+    else:
         return None
 
 
@@ -99,27 +103,24 @@ def taxon_to_accession(query, r) -> str:
     cache_dir=NCBI_CACHE,
 )
 def name_to_taxon_ncbi(query, r, key: str = "tax_id", rank: Optional[str] = None) -> str:
-    try:
-        call_results = r.json()["sci_name_and_ids"]
-    except KeyError:
-        return None
-    else:
+    call_results = r.json().get("sci_name_and_ids")
+    if call_results is not None and isinstance(call_results, list):
         if rank is None:
-            results = call_results
+            rank_results = call_results
         else:
-            results = []
+            rank_results = []
             for item in call_results:
                 try:
                     item_rank = item["rank"]
                 except KeyError:
                     pass
                 else:
-                    if item_rank.casefold() == rank.casefold():
-                        results.append(item)
+                    if isinstance(item_rank, str) and item_rank.casefold() == rank.casefold():
+                        rank_results.append(item)
         if len(results) > 0:
             return results[0].get(key)
-        else:
-            return None
+    
+    return None
 
 
 @api_get(
@@ -133,7 +134,8 @@ def name_to_taxon_ncbi(query, r, key: str = "tax_id", rank: Optional[str] = None
     cache_dir=NCBI_CACHE,
 )
 def name_to_taxon(query, r, key: str = "taxonId") -> str:
-    try:
-        return r.json()["results"][0]["taxonomy"][key]
-    except KeyError:
+    call_results = r.json().get("results")
+    if call_results is not None and isinstance(call_results, list) and len(call_results) > 0:
+        return call_results[0].get("taxonomy")
+    else:
         return None
