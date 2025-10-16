@@ -5,7 +5,7 @@ set -euox pipefail
 OUTDIR=test/outputs
 CACHE=$OUTDIR/.cache
 TEST_LIST=$OUTDIR/test-inputs.txt
-GROUP=3
+GROUP=6
 PROJ=4
 
 mkdir -p $OUTDIR

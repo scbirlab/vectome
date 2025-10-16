@@ -33,18 +33,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install build
         pip install -e .
-    - name: Cache landmarks 3
-      uses: actions/cache@v4
-      id: cache-data-3
-      with:
-        path: |
-          vectome/data/landmarks/group-3
-          vectome/data/sketches/group-3
-        key: data-${{ hashFiles('vectome/data/strain-list-3.txt') }}
-    - name: Build landmarks 3
-      if: steps.cache-data-3.outputs.cache-hit != 'true'
-      run: |
-        vectome build 3
     - name: Cache landmarks 0
       uses: actions/cache@v4
       id: cache-data-0
@@ -57,18 +45,6 @@ jobs:
       if: steps.cache-data-0.outputs.cache-hit != 'true'
       run: |
         vectome build 0
-    - name: Cache landmarks 1
-      uses: actions/cache@v4
-      id: cache-data-1
-      with:
-        path: |
-          vectome/data/landmarks/group-1
-          vectome/data/sketches/group-1
-        key: data-${{ hashFiles('vectome/data/strain-list-1.txt') }}
-    - name: Build landmarks 1
-      if: steps.cache-data-1.outputs.cache-hit != 'true'
-      run: |
-        vectome build 1
     - name: Build package
       run: python -m build --sdist --wheel --outdir dist
     - name: Upload data artifact (CI artifact)
