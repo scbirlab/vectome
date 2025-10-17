@@ -44,6 +44,7 @@ def download_genomic_info(
     query,
     r,
     cache_dir: Optional[str] = None,
+    _landmark: bool = False  # prevents cache hits on landmark downloads
 ) -> List[str]:
 
     from zipfile import ZipFile
@@ -71,8 +72,10 @@ def download_genomic_info(
         os.rename(f, destination)
         normalized_files[key] = destination
     os.rmdir(os.path.dirname(f))
-
-    return normalized_files
+    if all(os.path.exists(f) for key, f in normalized_files.items()):
+        return normalized_files
+    else:
+        raise IOError(f"Some files are missing! {({key: f for key, f in normalized_files.items() if not os.path.exists(f)})}")
 
 
 @api_get(

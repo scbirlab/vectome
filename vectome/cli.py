@@ -1,6 +1,7 @@
 """Command-line interface for vectome."""
 
 from argparse import FileType, Namespace
+from functools import cache
 import sys
 
 from carabiner import (
@@ -19,7 +20,8 @@ from .caching import CACHE_DIR
 @clicommand(message="Running embed")
 def embed(args: Namespace) -> None:
     from .vectorize import vectorize
-    strains = [line.rstrip() for line in args.strain]
+    strains = tuple(line.rstrip() for line in args.strain)
+    vectorize = cache(vectorize)
     vectors = vectorize(
         strains,
         check_spelling=args.spellcheck,
