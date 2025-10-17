@@ -27,8 +27,10 @@ def _delete_locus(
     fasta,
     locus: Iterable[int]
 ):
-    made_edit = False
     chr, start, stop = locus
+    if start == stop and start < 0:
+        return fasta  # interval wasn't found
+    made_edit = False
     deletion_size = stop - start + 1
     for seq in fasta.sequences:
         try:
@@ -50,6 +52,7 @@ def _delete_locus(
 def _resolve_gene(
     gff,
     gene_name: str,
+    strict: bool = False
 ):
     intervals = [
         (line.columns.seqid, line.columns.start, line.columns.end, key)
@@ -59,7 +62,12 @@ def _resolve_gene(
     ]
 
     if len(intervals) == 0:
-        raise ValueError(f"Searched in GFF, but could not find {gene_name=}")
+        if strict:
+            raise ValueError(f"Searched in GFF, but could not find {gene_name=}")
+        else:
+            print_err(f"[WARN] Could not find feature {gene_name=} in GFF")
+            line = list(gff.lines)[0]
+            return (line.columns.seqid, -1, -1, ATTRIBUTE_KEY_PRECEDENT[0])
     print_err(f"Found {len(intervals)} intervals matching {gene_name=}")
     interval = intervals[0]
     print_err(f"Taking first match for {gene_name=}: {interval}")
@@ -134,8 +142,9 @@ def delete_loci(
 
     loci_to_delete = sorted(loci_to_delete)
 
-    _hash = md5(repr(loci_to_delete).encode()).hexdigest()
-    output_file = os.path.join(cache_dir, f"{os.path.basename(fasta_file)}_delta-{_hash}.fna")
+    fasta_basename = os.path.basename(fasta_file)
+    _hash = md5((repr(loci_to_delete) + fasta_basename).encode()).hexdigest()
+    output_file = os.path.join(cache_dir, f"{fasta_basename.split('_delta-')[0]}_delta-{_hash}.fna")
     
     if os.path.exists(output_file):
         return output_file

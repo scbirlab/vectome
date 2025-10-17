@@ -15,9 +15,10 @@ from .genomes import fetch_landmarks
 def sketch_genome(
     file: str,
     k: int = 51,
-    n: int = 20_000,
+    n: int = 100_000,
     force: bool = False,
     cache_dir: Optional[str] = None,
+    _landmark: bool = False,  # prevents cache hits on landmark downloads
     **kwargs
 ):
     
@@ -36,6 +37,7 @@ def sketch_genome(
                 n=n,
                 force=True,
                 cache_dir=os.path.dirname(cache_dir),
+                _landmark=_landmark,
                 **kwargs,
             )
         else:
@@ -79,10 +81,11 @@ def sketch_landmarks(
         info["files"]["fasta"] 
         for info in landmark_info
     ]
-    return [
+    return tuple(
         sketch_genome(
             file=f,
             force=force,
             cache_dir=cache_dir,
+            _landmark=True,
         ) for f in tqdm(landmarks, desc="Sketching landmarks")
-    ]
+    )

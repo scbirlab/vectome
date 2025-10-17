@@ -39,10 +39,11 @@ def api_get(
     def api_call(
         query=None, 
         params=None,
+        wait: float = .2,
         _try: int = 0,
         *args, **kwargs
     ):
-        time.sleep(.2)
+        time.sleep(wait)
         params = default_params | (params or {})
         url = url0
         if query_key is not None and query is not None:
@@ -51,25 +52,30 @@ def api_get(
             url = url.format(query=query)
         pprint_dict(
             params,
-            message=f"Downloading from {url} with the following parameters"
+            message=f"Downloading from '{url}' with the following parameters"
         )
         try:
             r = requests.get(url, params=params, headers=headers)
         except requests.exceptions.ConnectionError as e:
+            print_err(e)
             next_try = _try + 1
+            print_err(f"[INFO] Tried {next_try} / {max_tries} times...", end=" ")
             if next_try < max_tries:
+                print_err("")
                 return api_call(
                     query=query, 
                     params=params,
+                    wait=wait * 2,
                     _try=next_try,
                     *args, **kwargs
                 )
             else:
+                print_err("stopping!")
                 raise e
         else:
-            print_err(f"Trying {r.url}", end="")
+            print_err(f"Trying {r.url}... {r.status_code}", end="")
             r.raise_for_status()
-            print_err(f"... {r.status_code} ok")
+            print_err(f"... ok")
             return f(query, r, *args, **kwargs)
 
     if cache_dir is not None and isinstance(cache_dir, str):

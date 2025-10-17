@@ -74,7 +74,7 @@ def _bucket_sign(h: int, salt: int) -> int:
 
 
 def _vectorize_landmark(
-    query_mh: MinHash,
+    file: str,
     k: int = 51,
     group: int = 0,
     cache_dir: Optional[str] = None,
@@ -92,13 +92,48 @@ def _vectorize_landmark(
         ) for f in landmarks
     ]
 
+    query_mh = sketch_genome(
+        file=file,
+        k=k,
+        cache_dir=cache_dir,
+    )
+
     return [query_mh.similarity(lm) for lm in landmark_mh]
 
 
-def _vectorize_countsketch(
-    query_mh: MinHash,
+def _vectorize_countsketch_from_file(
+    file: str,
     dim: int = None, 
     num_hash_fns: int = 3,
+    k: int = 51,
+    cache_dir: Optional[str] = None,
+    **kwargs
+):
+    """Convert a sourmash MinHash (which holds a set of 64-bit hashes) into a fixed-length
+    real-valued vector using CountSketch/feature hashing.
+
+    """
+
+    query_mh = sketch_genome(
+        file=file,
+        k=k,
+        cache_dir=cache_dir,
+    )
+
+    return _vectorize_countsketch(
+        query_mh,
+        dim=dim,
+        num_hash_fns=num_hash_fns,
+        cache_dir=cache_dir,
+        **kwargs,
+    )
+
+
+def _vectorize_countsketch(
+    query_mh,
+    dim: int = None, 
+    num_hash_fns: int = 3,
+    cache_dir: Optional[str] = None,
     **kwargs
 ):
     """Convert a sourmash MinHash (which holds a set of 64-bit hashes) into a fixed-length
@@ -177,31 +212,22 @@ def vectorize(
             cache_dir=cache_dir,
         ) for q in cast(query, to=list)
     ]
-    print_err(genome_info)
-
-    query_mh = [
-        sketch_genome(
-            file=info["files"]["fasta"],
-            k=k,
-            cache_dir=cache_dir,
-        ) for info in genome_info
-    ]
 
     if method == "landmark":
-        fn = mem.cache(_vectorize_landmark)
+        fn = cache(mem.cache(_vectorize_landmark))
     elif method == "countsketch":
-        fn = mem.cache(_vectorize_countsketch)
+        fn = cache(mem.cache(_vectorize_countsketch_from_file))
     else:
         raise ValueError(f"Vectorization {method=} is not implemented.")
 
     vectors = np.stack([
         fn(
-            mh, 
+            file=info["files"]["fasta"], 
             k=k,
             cache_dir=cache_dir, 
             **kwargs,
         ) 
-        for mh in tqdm(query_mh, desc="Vectorizing genomes")
+        for info in tqdm(genome_info, desc="Vectorizing genomes")
     ], axis=0)
 
     if projection is None:

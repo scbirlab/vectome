@@ -17,7 +17,7 @@ class Strain:
 
 
 def _strip_punctuation(s: str) -> str:
-    return s.strip(" ,;:/()[]{}")
+    return s.strip(" ,;/()[]{}")
 
 
 def _split_operon(query: str) -> List[str]:
@@ -29,11 +29,11 @@ def _split_operon(query: str) -> List[str]:
         Gene names.
 
     """
-    m = re.fullmatch(r"([a-z]{3})([A-Z]{2,})", query)
+    m = re.fullmatch(r"([A-Za-z][a-z]{2})([A-Z]{2,})", query)
     if not m:
         return [query]
     base, caps = m.groups()
-    return [base + c for c in caps]
+    return tuple(base.casefold() + c for c in caps)
 
 
 def _extract_species(
@@ -52,7 +52,7 @@ def _extract_species(
         query = query.strip()
         # e.g., "E. coli", "Escherichia coli", allow extra words after species
         m = re.match(
-            r"^\s*(?P<genus>[A-Z][a-z]*|[A-Z]\.)\s+(?P<species>[a-z][a-z_-]+)\b", 
+            r"^\s*(?P<genus>[A-Z][a-z]*|[A-Z]\.)\s+(?P<species>[a-z][a-z]+)\b", 
             query,
         )
         if not m:
@@ -95,7 +95,7 @@ def _extract_strain_and_substrain(query: str) -> Tuple[Optional[str], Optional[s
 
     # strain indicators
     m = re.search(
-        r"\b(?:strain|str\.|serovar\.?)\s+(ATCC\s[0-9]+|[A-Za-z0-9._-]+)\b", 
+        r"\b(?:strain|str\.|serovar\.?)\s+(ATCC\s[0-9]+|NCTC\s[0-9]+|[A-Za-z0-9._-]+)\b", 
         query, 
         flags=re.IGNORECASE,
     )
@@ -106,7 +106,7 @@ def _extract_strain_and_substrain(query: str) -> Tuple[Optional[str], Optional[s
     # fallback: common alphanumeric early in the string
     if strain is None:
         m = re.search(
-            r"\b([A-Za-z]\-[0-9]+|[A-Za-z0-9]{2,})\b", 
+            r"\b([A-Za-z]\-[0-9]+|[A-Za-z0-9]{2,}|ATCC\s[0-9]+|NCTC\s[0-9]+)\b", 
             query,
         )
         if m:
@@ -118,10 +118,10 @@ def _extract_strain_and_substrain(query: str) -> Tuple[Optional[str], Optional[s
 
     # second token as substrain if we saw two alphanum tokens in a row (e.g., "K-12 MG1655")
     if substrain is None:
-        m = re.search(r"\b([A-Za-z0-9._-]{3,})\b", query)
+        m = re.search(r"\s([A-Za-z0-9_-]{3,})\s", query)
         if m:
             candidate = _strip_punctuation(m.group(1))
-            if re.match(r"^[A-Z]{0,2}\d*[A-Za-z0-9._-]+$", candidate) and not re.match(r"^[a-z]+[A-Z]{2,}$", candidate):
+            if re.match(r"^[A-Z]{0,2}\d*[A-Za-z0-9_-]+$", candidate) and not any(s in candidate for s in ("::","Δ")) and not candidate.endswith(("::","-")):
                 # avoid operon-like acrAB
                 if strain and candidate != strain:
                     substrain = candidate
@@ -143,18 +143,16 @@ def _parse_deletions(query: str) -> List[Union[str, Tuple[str, str]]]:
         Gene names.
 
     """
-    deletions: List[Union[str, Tuple[str, str]]] = []
-
-    # KO insertions "gene::something"
-    for m in re.finditer(
-        r"\b([A-Za-z][A-Za-z0-9._-]{1,})::[A-Za-z0-9._-]{2,}\b", 
-        query,
-    ):
-        deletions.append(m.group(1))
+    deletions = []
+    chunks = (chunk for chunk in query.split() if len(chunk) > 0)
+    for chunk in chunks:
+        if "::" in chunk and re.match(r"^([A-Za-z][a-z]{2}[A-Z0-9]{1,})::[A-Za-z0-9]+$", chunk):
+            g = _split_operon(_normalize_gene(chunk.split("::")[0]))
+            deletions.append(g)
 
     # Explicit Δ / delta / del
     for m in re.finditer(
-        r"(?:Δ|delta|del)[\s-]*\(?([A-Za-z0-9_]+)(?:-([A-Za-z0-9._-]+))?\)?",
+        r"(?:Δ|delta|del|_)\s?\(?([A-Za-z][a-z]{2}[A-Z]?[0-9]?)(?:-([A-Za-z][a-z]{2}[A-Z][0-9]?))?\)?-?",
         query, 
         flags=re.IGNORECASE,
     ):
@@ -169,17 +167,22 @@ def _parse_deletions(query: str) -> List[Union[str, Tuple[str, str]]]:
 
     # Standalone operon shorthand with trailing '-' (e.g., 'acrAB-')
     for m in re.finditer(
-        r"\b([a-z]+[A-Z]{2,})-?\b",
+        r"\b([A-Za-z][a-z]{2}[A-Z]{1,})-?\s",
         query,
     ):
-        genes = _split_operon(m.group(1))
+        genes = _split_operon(_normalize_gene(m.group(1)))
         deletions.extend(genes)
 
     normed = []
+    deletions = tuple(tuple(d) if isinstance(d, list) else d for d in deletions)
     for d in set(deletions):
         if isinstance(d, tuple):
-            a, b = d
-            normed.append((_normalize_gene(a), _normalize_gene(b)))
+            if len(d) == 2:
+                normed.append(d)
+            elif len(d) == 1:
+                normed.append(d[0])
+            else:
+                normed += [_normalize_gene(_d) for _d in d]
         else:
             normed.append(_normalize_gene(d))
 
@@ -200,7 +203,7 @@ def _parse_mutations(
     """
     mutations = []
     for m in re.finditer(
-        r"\b([A-Za-z][A-Za-z0-9_]*\d+[A-Z0-9_]*)\b", 
+        r"(?:^|\s)([A-Z][A-Za-z]{0,2}\d+[A-Z][A-Za-z]{0,2}|[A-Za-z][a-z]{2}[A-Z][0-9]{1,3})\b", 
         query,
     ):
         candidate = _strip_punctuation(m.group(1))
@@ -244,7 +247,7 @@ def parse_strain_label(
         strain, substrain, remainder = _extract_strain_and_substrain(remainder)
         deletions = _parse_deletions(remainder)
     else:
-        strain, substrain, remainder = "", "", ""
+        strain, substrain, remainder = None, None, ""
         deletions = []
     to_exclude = set()
     for d in deletions:
