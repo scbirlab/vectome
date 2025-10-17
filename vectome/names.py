@@ -121,7 +121,6 @@ def _extract_strain_and_substrain(query: str) -> Tuple[Optional[str], Optional[s
         m = re.search(r"\s([A-Za-z0-9_-]{3,})\s", query)
         if m:
             candidate = _strip_punctuation(m.group(1))
-            print(f"{candidate=}")
             if re.match(r"^[A-Z]{0,2}\d*[A-Za-z0-9_-]+$", candidate) and not any(s in candidate for s in ("::","Δ")) and not candidate.endswith(("::","-")):
                 # avoid operon-like acrAB
                 if strain and candidate != strain:
@@ -176,7 +175,6 @@ def _parse_deletions(query: str) -> List[Union[str, Tuple[str, str]]]:
 
     normed = []
     deletions = tuple(tuple(d) if isinstance(d, list) else d for d in deletions)
-    print(deletions)
     for d in set(deletions):
         if isinstance(d, tuple):
             if len(d) == 2:
