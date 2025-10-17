@@ -101,11 +101,38 @@ def _vectorize_landmark(
     return [query_mh.similarity(lm) for lm in landmark_mh]
 
 
-def _vectorize_countsketch(
+def _vectorize_countsketch_from_file(
     file: str,
     dim: int = None, 
     num_hash_fns: int = 3,
     k: int = 51,
+    cache_dir: Optional[str] = None,
+    **kwargs
+):
+    """Convert a sourmash MinHash (which holds a set of 64-bit hashes) into a fixed-length
+    real-valued vector using CountSketch/feature hashing.
+
+    """
+
+    query_mh = sketch_genome(
+        file=file,
+        k=k,
+        cache_dir=cache_dir,
+    )
+
+    return _vectorize_countsketch(
+        query_mh,
+        dim=dim,
+        num_hash_fns=num_hash_fns,
+        cache_dir=cache_dir,
+        **kwargs,
+    )
+
+
+def _vectorize_countsketch(
+    query_mh,
+    dim: int = None, 
+    num_hash_fns: int = 3,
     cache_dir: Optional[str] = None,
     **kwargs
 ):
@@ -142,12 +169,6 @@ def _vectorize_countsketch(
 
     dim = dim or 4096
     vector = np.zeros((dim,))
-
-    query_mh = sketch_genome(
-        file=file,
-        k=k,
-        cache_dir=cache_dir,
-    )
 
     for _hash in query_mh.hashes.keys():
         base = _hash & 0xFFFFFFFFFFFFFFFF
@@ -195,7 +216,7 @@ def vectorize(
     if method == "landmark":
         fn = cache(mem.cache(_vectorize_landmark))
     elif method == "countsketch":
-        fn = cache(mem.cache(_vectorize_countsketch))
+        fn = cache(mem.cache(_vectorize_countsketch_from_file))
     else:
         raise ValueError(f"Vectorization {method=} is not implemented.")
 
