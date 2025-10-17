@@ -12,7 +12,7 @@ from tqdm.auto import tqdm
 
 from .caching import CACHE_DIR
 from .genomes import fetch_landmarks, name_or_taxon_to_genome_info
-from .sketching import sketch_genome
+from .sketching import sketch_genome, DEFAULT_K, DEFAULT_N
 
 
 def _mix_u64(x: int) -> int:
@@ -75,7 +75,7 @@ def _bucket_sign(h: int, salt: int) -> int:
 
 def _vectorize_landmark(
     file: str,
-    k: int = 51,
+    k: int = DEFAULT_K,
     group: int = 0,
     cache_dir: Optional[str] = None,
     **kwargs
@@ -104,8 +104,8 @@ def _vectorize_landmark(
 def _vectorize_countsketch_from_file(
     file: str,
     dim: int = None, 
-    num_hash_fns: int = 3,
-    k: int = 51,
+    num_hash_fns: int = 4,
+    k: int = DEFAULT_K,
     cache_dir: Optional[str] = None,
     **kwargs
 ):
@@ -132,7 +132,7 @@ def _vectorize_countsketch_from_file(
 def _vectorize_countsketch(
     query_mh,
     dim: int = None, 
-    num_hash_fns: int = 3,
+    num_hash_fns: int = 4,
     cache_dir: Optional[str] = None,
     **kwargs
 ):
@@ -189,7 +189,7 @@ def _vectorize_countsketch(
 def vectorize(
     query: Union[str, int, Iterable[Union[str, int]]],
     check_spelling: bool = False,
-    k: int = 51,
+    k: int = DEFAULT_K,
     method: str = "countsketch",
     projection: Optional[int] = None,
     seed: int = 42,

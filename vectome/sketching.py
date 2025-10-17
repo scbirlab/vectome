@@ -11,11 +11,14 @@ from .caching import CACHE_DIR
 from .data import APPDATA_DIR
 from .genomes import fetch_landmarks
 
+DEFAULT_K: int = 101
+DEFAULT_N: int = 200_000
+
 @cache
 def sketch_genome(
     file: str,
-    k: int = 51,
-    n: int = 100_000,
+    k: int = DEFAULT_K,
+    n: int = DEFAULT_N,
     force: bool = False,
     cache_dir: Optional[str] = None,
     _landmark: bool = False,  # prevents cache hits on landmark downloads
