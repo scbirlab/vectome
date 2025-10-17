@@ -95,7 +95,7 @@ def _extract_strain_and_substrain(query: str) -> Tuple[Optional[str], Optional[s
 
     # strain indicators
     m = re.search(
-        r"\b(?:strain|str\.|serovar\.?)\s+(ATCC\s[0-9]+|NCTC\s[0-9]+|[A-Za-z0-9._-]+)\b", 
+        r"\b(?:str(?:ain)?\.?|serovar\.?)\s+([A-Za-z0-9._-]+\s?([A-Za-z0-9._-]+)?)\b", 
         query, 
         flags=re.IGNORECASE,
     )
@@ -106,15 +106,15 @@ def _extract_strain_and_substrain(query: str) -> Tuple[Optional[str], Optional[s
     # fallback: common alphanumeric early in the string
     if strain is None:
         m = re.search(
-            r"\b([A-Za-z]\-[0-9]+|[A-Za-z0-9]{2,}|ATCC\s[0-9]+|NCTC\s[0-9]+)\b", 
+            r"\b([A-Za-z]+-[0-9]+|[A-Z]|[A-Za-z0-9]{2,}|ATCC\s[0-9]+|NCTC\s[0-9]+)\b", 
             query,
         )
         if m:
             candidate = _strip_punctuation(m.group(1))
             # Heuristic: treat as strain if it looks like K-12 or a lab nickname, and is not a gene token
-            if re.match(r"^[A-Za-z]\-\d+$", candidate) or re.match(r"^[A-Z][A-Za-z0-9._-]{2,}$", candidate):
-                strain = candidate
-                query = (query[:m.start()] + query[m.end():]).strip()
+            # if re.match(r"^[A-Z][A-Za-z0-9._-]{2,}$", candidate):
+            strain = candidate
+            query = (query[:m.start()] + query[m.end():]).strip()
 
     # second token as substrain if we saw two alphanum tokens in a row (e.g., "K-12 MG1655")
     if substrain is None:
