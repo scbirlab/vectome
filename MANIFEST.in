@@ -1,1 +1,1 @@
-recursive-include vectome/data *.yml *.txt *.fna *.gff
+recursive-include vectome/data *.yml *.txt

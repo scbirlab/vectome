@@ -54,7 +54,7 @@ vectome = "vectome.cli:main"
 [tool.setuptools]
 # If there are data files included in your packages that need to be
 # installed, specify them here.
-package-data = {vectome = ["data/*.yml", "data/strain-list-*.yml", "data/landmarks/GC{A,F}_*.{fna,gff}"]}
+package-data = {vectome = ["data/*.yml", "data/strain-list-*.txt"]}
 
 
 [build-system]
