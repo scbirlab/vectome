@@ -152,7 +152,7 @@ def _parse_deletions(query: str) -> List[Union[str, Tuple[str, str]]]:
 
     # Explicit Δ / delta / del
     for m in re.finditer(
-        r"(?:Δ|delta|del|_)[\s-]*\(?([A-Za-z][a-z]{2}[A-Z]?[0-9]?)(?:-([A-Za-z][a-z]{2}[A-Z0-9][A-Z][0-9]?))?\)?-?",
+        r"(?:Δ|delta|del|_)\s?\(?([A-Za-z][a-z]{2}[A-Z]?[0-9]?)(?:-([A-Za-z][a-z]{2}[A-Z][0-9]?))?\)?-?",
         query, 
         flags=re.IGNORECASE,
     ):
