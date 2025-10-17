@@ -2,6 +2,7 @@
 
 from typing import Iterable, Optional, Tuple, Union
 from dataclasses import asdict, dataclass
+from functools import cache
 import json
 import os
 
@@ -24,6 +25,7 @@ class GenomeInfo:
         return asdict(self)
 
 
+@cache
 def name_or_taxon_to_genome_info(
     query: Union[str, int],
     check_spelling: bool = False,
