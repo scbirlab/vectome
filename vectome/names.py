@@ -153,7 +153,7 @@ def _parse_deletions(query: str) -> List[Union[str, Tuple[str, str]]]:
 
     # Explicit Δ / delta / del
     for m in re.finditer(
-        r"(?:Δ|delta|del|_)[\s-]*\(?([A-Za-z][a-z]{2}[A-Z0-9])(?:-([A-Za-z][a-z]{2}[A-Z0-9]{1}))?\)?-?",
+        r"(?:Δ|delta|del|_)[\s-]*\(?([A-Za-z][a-z]{2}[A-Z]?[0-9]?)(?:-([A-Za-z][a-z]{2}[A-Z0-9][A-Z][0-9]?))?\)?-?",
         query, 
         flags=re.IGNORECASE,
     ):
@@ -168,7 +168,7 @@ def _parse_deletions(query: str) -> List[Union[str, Tuple[str, str]]]:
 
     # Standalone operon shorthand with trailing '-' (e.g., 'acrAB-')
     for m in re.finditer(
-        r"\b([A-Za-z][a-z]{2}[A-Z]{1,})-?\b",
+        r"\b([A-Za-z][a-z]{2}[A-Z]{1,})-?\s",
         query,
     ):
         genes = _split_operon(_normalize_gene(m.group(1)))
@@ -176,9 +176,15 @@ def _parse_deletions(query: str) -> List[Union[str, Tuple[str, str]]]:
 
     normed = []
     deletions = tuple(tuple(d) if isinstance(d, list) else d for d in deletions)
+    print(deletions)
     for d in set(deletions):
         if isinstance(d, tuple):
-            normed += [_normalize_gene(_d) for _d in d]
+            if len(d) == 2:
+                normed.append(d)
+            elif len(d) == 1:
+                normed.append(d[0])
+            else:
+                normed += [_normalize_gene(_d) for _d in d]
         else:
             normed.append(_normalize_gene(d))
 
@@ -199,7 +205,7 @@ def _parse_mutations(
     """
     mutations = []
     for m in re.finditer(
-        r"\b([A-Z][A-Za-z]{0,2}\d+[A-Z][A-Za-z]{0,2})\b", 
+        r"(?:^|\s)([A-Z][A-Za-z]{0,2}\d+[A-Z][A-Za-z]{0,2}|[A-Za-z][a-z]{2}[A-Z][0-9]{1,3})\b", 
         query,
     ):
         candidate = _strip_punctuation(m.group(1))
