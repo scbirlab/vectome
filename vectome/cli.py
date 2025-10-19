@@ -17,6 +17,17 @@ from . import app_name, __author__, __version__
 from .caching import CACHE_DIR
 
 
+@clicommand(message="Running parse")
+def parse(args: Namespace) -> None:
+    from .names import parse_strain_label
+    strains = tuple(line.rstrip() for line in args.strain)
+    parser = cache(parse_strain_label)
+    for strain in strains:
+        result = parser(strain)
+        print(result, file=args.output)
+    return None
+
+
 @clicommand(message="Running embed")
 def embed(args: Namespace) -> None:
     from .vectorize import vectorize
@@ -192,6 +203,17 @@ def main() -> None:
                 description="Provide information on landmarks.",
                 options=[
                     options["cache"].replace(default=None),
+                ],
+            ),
+            CLICommand(
+                "parse",
+                main=parse,
+                description="Parse strain names.",
+                options=[
+                    options["strain"],
+                    options["spellcheck"],
+                    options["cache"],
+                    options["output"],
                 ],
             ),
         ],
