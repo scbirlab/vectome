@@ -1,7 +1,7 @@
 """Convert species names into vectors."""
 
 from typing import Iterable, Optional, Union
-from functools import cache
+from functools import cache, partial
 import hashlib
 import os
 
@@ -194,6 +194,7 @@ def vectorize(
     projection: Optional[int] = None,
     seed: int = 42,
     cache_dir: Optional[str] = None,
+    quiet: bool = False,
     **kwargs
 ):
     from joblib import Memory
@@ -220,6 +221,7 @@ def vectorize(
     else:
         raise ValueError(f"Vectorization {method=} is not implemented.")
 
+    _iter = iter if quiet else partial(tqdm, desc="Vectorizing genomes")
     vectors = np.stack([
         fn(
             file=info["files"]["fasta"], 
@@ -227,7 +229,7 @@ def vectorize(
             cache_dir=cache_dir, 
             **kwargs,
         ) 
-        for info in tqdm(genome_info, desc="Vectorizing genomes")
+        for info in _iter(genome_info)
     ], axis=0)
 
     if projection is None:

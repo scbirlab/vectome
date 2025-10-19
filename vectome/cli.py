@@ -31,6 +31,7 @@ def embed(args: Namespace) -> None:
         projection=args.projection,
         seed=args.seed,
         cache_dir=args.cache,
+        quiet=False,
     )
     
     if args.method == "landmark" and args.projection is None:
