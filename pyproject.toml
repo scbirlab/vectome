@@ -1,6 +1,6 @@
 [project]
 name = "vectome"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
   { name="Eachan Johnson", email="eachan.johnson@crick.ac.uk" },
 ]
@@ -43,6 +43,7 @@ dependencies = [
 
 [project.optional-dependencies]
 all = []
+dev = ["pytest", "flake8"]
 
 [project.urls]
 "Homepage" = "https://github.com/scbirlab/vectome"
@@ -64,4 +65,4 @@ requires = ["setuptools>=43.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [test]
-deps = ["pytest>=7.4", "pytest-cov"] 
+deps = ["pytest>=7.4", "pytest-cov", "vectome[dev]"] 
