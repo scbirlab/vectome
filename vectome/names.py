@@ -52,7 +52,7 @@ def _extract_species(
         query = query.strip()
         # e.g., "E. coli", "Escherichia coli", allow extra words after species
         m = re.match(
-            r"^\s*(?P<genus>[A-Z][a-z]*|[A-Z]\.)\s+(?P<species>[a-z][a-z]+)\b", 
+            r"^(?P<genus>[A-Za-z][a-z]*|[A-Z]\.)\s+(?P<species>[a-z]{4,})\b", 
             query,
         )
         if not m:
