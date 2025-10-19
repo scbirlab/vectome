@@ -95,7 +95,7 @@ def _extract_strain_and_substrain(query: str) -> Tuple[Optional[str], Optional[s
 
     # strain indicators
     m = re.search(
-        r"\b(?:str(?:ain)?\.?|serovar\.?)\s+([A-Za-z0-9._-]+\s?([A-Za-z0-9._-]+)?)\b", 
+        r"\b(?:str(?:ain)?\.?|serovar\.?\s+)?(ATCC\s[0-9]{4,6}|NCTC\s[0-9]{4,6}|[A-Za-z0-9._-]+(\s?[A-Za-z0-9._-]+)?)\b", 
         query, 
         flags=re.IGNORECASE,
     )
@@ -106,7 +106,7 @@ def _extract_strain_and_substrain(query: str) -> Tuple[Optional[str], Optional[s
     # fallback: common alphanumeric early in the string
     if strain is None:
         m = re.search(
-            r"\b([A-Za-z]+-[0-9]+|[A-Z]|[A-Za-z0-9]{2,}|ATCC\s[0-9]+|NCTC\s[0-9]+)\b", 
+            r"\b([A-Za-z]+-[0-9]{1,5}|[A-Z]|[A-Za-z0-9]{2,}|)\b", 
             query,
         )
         if m:
@@ -232,6 +232,10 @@ def parse_strain_label(
     ========
     >>> parse_strain_label("E. coli K-12 substr. MG1655 gyrA96 acrAB- Δ(fimB-fimE) ΔompF tolC::FRT")
     Strain(query='E. coli K-12 substr. MG1655 gyrA96 acrAB- Δ(fimB-fimE) ΔompF tolC::FRT', species='Escherichia coli', remainder='gyrA96 acrAB- Δ(fimB-fimE) ΔompF tolC::FRT', strain='K-12', substrain='MG1655', deletions=['acrA', 'acrB', ('fimB', 'fimE'), 'ompF', 'tolC'], mutations=['gyrA96'])
+    >>> parse_strain_label("Acinetobacter baumannii ATCC 17978")
+    Strain(query='Acinetobacter baumannii ATCC 17978', species='Acinetobacter baumannii', remainder='', strain='ATCC 17978', substrain=None, deletions=[], mutations=[])
+    >>> parse_strain_label("Mycobacterium marinum M")
+    Strain(query='Mycobacterium marinum M', species='Mycobacterium marinum', remainder='', strain='M', substrain=None, deletions=[], mutations=[])
     >>> parse_strain_label("S. enterica serovar Typhimurium")
     Strain(query='S. enterica serovar Typhimurium', species='Salmonella enterica', remainder='', strain='Typhimurium', substrain=None, deletions=[], mutations=[])
     >>> parse_strain_label("S. aureus RN4220 Δspa")
