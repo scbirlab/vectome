@@ -67,7 +67,8 @@ def name_or_taxon_to_genome_info(
     print_err(f"[INFO] Parsed {search_query=} -> {taxon_id=}")
     print_err(strain_info)
     data_files = download_genomic_info(
-        query=accession, 
+        query=accession,
+        params={"filename": f"ncbi-dataset_{accession}.zip"},
         cache_dir=cache_dir,
         _landmark=_landmark,
     )

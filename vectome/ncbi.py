@@ -53,14 +53,14 @@ def download_genomic_info(
 
     contents = z.namelist() 
     files = {
-        "fasta": [
+        "fasta": next(
             z.extract(f, path=cache_dir) for f in contents
             if f.endswith(".fna")
-        ][0],
-        "gff": [
+        ),
+        "gff": next(
             z.extract(f, path=cache_dir) for f in contents
             if f.endswith(".gff")
-        ][0],
+        ),
     }
 
     # normalize filenames
