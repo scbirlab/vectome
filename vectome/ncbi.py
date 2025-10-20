@@ -81,7 +81,7 @@ def download_genomic_info(
 @api_get(
     url="https://api.ncbi.nlm.nih.gov/datasets/v2/genome/taxon/{query}/dataset_report",
     default_params={
-        "filters.has_annotation": True,
+        # "filters.has_annotation": True,  # can exclude valid TaxID if assembly doesn't pass filter
         "filters.exclude_paired_reports": True,
         "filters.assembly_version": "current",
         "tax_exact_match": True,
