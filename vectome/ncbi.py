@@ -69,7 +69,14 @@ def download_genomic_info(
         _, ext = os.path.splitext(f)
         destination = os.path.join(cache_dir, f"{query}{ext}")
         print_err(f"Saving {f} at {destination}")
-        os.rename(f, destination)
+        try:
+            os.rename(f, destination)
+        except FileNotFoundError as e:
+            # another process got there first?
+            if os.path.exists(destination):
+                pass  # another process moved it, nothing to do
+            else:
+                raise e  # something else went wrong
         normalized_files[key] = destination
     os.rmdir(os.path.dirname(f))
     if all(os.path.exists(f) for key, f in normalized_files.items()):
