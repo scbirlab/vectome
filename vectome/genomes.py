@@ -30,6 +30,7 @@ def name_or_taxon_to_genome_info(
     query: Union[str, int],
     check_spelling: bool = False,
     cache_dir: Optional[str] = None,
+    strict: bool = False,    # `True` allows fallback to species name
     _landmark: bool = False  # prevents cache hits on landmark downloads
 ):  
     from .ncbi import download_genomic_info, name_to_taxon_ncbi, spellcheck, taxon_to_accession
@@ -51,9 +52,18 @@ def name_or_taxon_to_genome_info(
         taxon_id = name_to_taxon_ncbi(search_query, key="tax_id")
     accession = taxon_to_accession(taxon_id)
     if accession is None:
-        raise KeyError(
-            f"Genome lookup {taxon_id=} {search_query=} failed: {strain_info}"
-        )
+        if strict or _landmark:
+            raise KeyError(
+                f"Genome lookup {taxon_id=} {search_query=} failed: {strain_info}"
+            )
+        else:
+            return name_or_taxon_to_genome_info(
+                query=strain_info.species,
+                check_spelling=check_spelling,
+                cache_dir=cache_dir,
+                strict=True,
+                _landmark=_landmark,
+            )
     print_err(f"[INFO] Parsed {search_query=} -> {taxon_id=}")
     print_err(strain_info)
     data_files = download_genomic_info(
