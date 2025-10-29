@@ -19,11 +19,14 @@ from .caching import CACHE_DIR
 
 @clicommand(message="Running parse")
 def parse(args: Namespace) -> None:
-    from .names import parse_strain_label
-    strains = tuple(line.rstrip() for line in args.strain)
-    parser = cache(parse_strain_label)
-    for strain in strains:
-        result = parser(strain)
+    if args.genome:
+        from .genomes import name_or_taxon_to_genome_info
+        parser = cache(name_or_taxon_to_genome_info)
+    else:
+        from .names import parse_strain_label
+        parser = cache(parse_strain_label)
+    for line in args.strain:
+        result = parser(line.rstrip())
         print(result, file=args.output)
     return None
 
@@ -139,6 +142,11 @@ def main() -> None:
             action="store_true",
             help="Ignore cache and rebuild.",
         ),
+        "genome": CLIOption(
+            "--genome", "-g",
+            action="store_true",
+            help="Also fetch genome info.",
+        ),
         "projection": CLIOption(
             "--projection", "-z",
             type=int,
@@ -212,6 +220,7 @@ def main() -> None:
                 options=[
                     options["strain"],
                     options["spellcheck"],
+                    options["genome"],
                     options["cache"],
                     options["output"],
                 ],

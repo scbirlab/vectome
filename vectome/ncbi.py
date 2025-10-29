@@ -53,14 +53,20 @@ def download_genomic_info(
 
     contents = z.namelist() 
     files = {
-        "fasta": [
-            z.extract(f, path=cache_dir) for f in contents
-            if f.endswith(".fna")
-        ][0],
-        "gff": [
-            z.extract(f, path=cache_dir) for f in contents
+        "fasta": next(
+            z.extract(f, path=cache_dir) 
+            if not os.path.exists(os.path.join(cache_dir, f))  # another process got there first?
+            else os.path.join(cache_dir, f)  # another process extracted it, nothing to do
+            for f in contents
+            if f.endswith(".fna") 
+        ),
+        "gff": next(
+            z.extract(f, path=cache_dir) 
+            if not os.path.exists(os.path.join(cache_dir, f))  # another process got there first?
+            else os.path.join(cache_dir, f)  # another process extracted it, nothing to do
+            for f in contents
             if f.endswith(".gff")
-        ][0],
+        ),
     }
 
     # normalize filenames
@@ -69,9 +75,16 @@ def download_genomic_info(
         _, ext = os.path.splitext(f)
         destination = os.path.join(cache_dir, f"{query}{ext}")
         print_err(f"Saving {f} at {destination}")
-        os.rename(f, destination)
+        try:
+            os.rename(f, destination)
+        except FileNotFoundError as e:
+            # another process got there first?
+            if os.path.exists(destination):
+                pass  # another process moved it, nothing to do
+            else:
+                raise e  # something else went wrong
         normalized_files[key] = destination
-    os.rmdir(os.path.dirname(f))
+#    os.rmdir(os.path.dirname(f))
     if all(os.path.exists(f) for key, f in normalized_files.items()):
         return normalized_files
     else:
@@ -81,7 +94,7 @@ def download_genomic_info(
 @api_get(
     url="https://api.ncbi.nlm.nih.gov/datasets/v2/genome/taxon/{query}/dataset_report",
     default_params={
-        "filters.has_annotation": True,
+        # "filters.has_annotation": True,  # can exclude valid TaxID if assembly doesn't pass filter
         "filters.exclude_paired_reports": True,
         "filters.assembly_version": "current",
         "tax_exact_match": True,
