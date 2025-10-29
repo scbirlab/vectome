@@ -146,13 +146,13 @@ def _parse_deletions(query: str) -> List[Union[str, Tuple[str, str]]]:
     deletions = []
     chunks = (chunk for chunk in query.split() if len(chunk) > 0)
     for chunk in chunks:
-        if "::" in chunk and re.match(r"^([A-Za-z][a-z]{2}[A-Z0-9]{1,})::[A-Za-z0-9]+$", chunk):
+        if "::" in chunk and re.match(r"^([A-Za-z][a-z]{2}[A-Z0-9]{1,})(?:[0-9]{2,4})?::[A-Za-z0-9]+$", chunk):
             g = _split_operon(_normalize_gene(chunk.split("::")[0]))
             deletions.append(g)
 
     # Explicit Δ / delta / del
     for m in re.finditer(
-        r"(?:Δ|delta|del|_)\s?\(?([A-Za-z][a-z]{2}[A-Z]?[0-9]?)(?:-([A-Za-z][a-z]{2}[A-Z][0-9]?))?\)?-?",
+        r"(?:Δ|delta|del|_)\s?\(?([A-Za-z][a-z]{2}[A-Z]?[0-9]?)(?:-([A-Za-z][a-z]{2}[A-Z][0-9]?))?\)?(?:[0-9]{2,4})?-?",
         query, 
         flags=re.IGNORECASE,
     ):
@@ -203,7 +203,7 @@ def _parse_mutations(
     """
     mutations = []
     for m in re.finditer(
-        r"(?:^|\s)([A-Z][A-Za-z]{0,2}\d+[A-Z][A-Za-z]{0,2}|[A-Za-z][a-z]{2}[A-Z][0-9]{1,3})\b", 
+        r"(?:^|\s)([A-Z][A-Za-z]{0,2}[0-9]+[A-Z][A-Za-z]{0,2}|[A-Za-z][a-z]{2}[A-Z]?-?(?:[0-9]{1,3}))\b", 
         query,
     ):
         candidate = _strip_punctuation(m.group(1))

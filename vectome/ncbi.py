@@ -54,11 +54,17 @@ def download_genomic_info(
     contents = z.namelist() 
     files = {
         "fasta": next(
-            z.extract(f, path=cache_dir) for f in contents
-            if f.endswith(".fna")
+            z.extract(f, path=cache_dir) 
+            if not os.path.exists(os.path.join(cache_dir, f))  # another process got there first?
+            else os.path.join(cache_dir, f)  # another process extracted it, nothing to do
+            for f in contents
+            if f.endswith(".fna") 
         ),
         "gff": next(
-            z.extract(f, path=cache_dir) for f in contents
+            z.extract(f, path=cache_dir) 
+            if not os.path.exists(os.path.join(cache_dir, f))  # another process got there first?
+            else os.path.join(cache_dir, f)  # another process extracted it, nothing to do
+            for f in contents
             if f.endswith(".gff")
         ),
     }
@@ -78,7 +84,7 @@ def download_genomic_info(
             else:
                 raise e  # something else went wrong
         normalized_files[key] = destination
-    os.rmdir(os.path.dirname(f))
+#    os.rmdir(os.path.dirname(f))
     if all(os.path.exists(f) for key, f in normalized_files.items()):
         return normalized_files
     else:
