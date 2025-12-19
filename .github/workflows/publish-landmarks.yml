@@ -1,0 +1,59 @@
+name: publish-landmarks
+
+on:
+  push:
+    tags:
+      - "landmarks-v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to create releases and upload assets
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Generate landmarks 50
+        run: |
+          vectome build 50 --force --cache _landmarks
+
+      - name: Generate landmarks 100
+        run: |
+          vectome build 100 --force --cache _landmarks
+
+      - name: Package landmarks
+        run: |
+          tar -C _landmarks -czf vectome-landmarks.tar.gz .
+
+      - name: Create checksums.json
+        run: |
+          python - <<'PY'
+          import hashlib, json, os
+          filename = "vectome-landmarks.tar.gz"
+          h = hashlib.sha256()
+          with open(filename, "rb") as f:
+            for chunk in iter(lambda: f.read(1024*1024), b""):
+              h.update(chunk)
+          data = {filename: {"sha256": h.hexdigest(), "bytes": os.path.getsize(filename)}}
+          with open("checksums.json", "w") as f:
+            json.dump(data, f, indent=2)
+          print(data)
+          PY
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            vectome-landmarks.tar.gz
+            checksums.json
