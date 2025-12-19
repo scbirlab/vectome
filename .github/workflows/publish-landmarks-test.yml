@@ -1,7 +1,6 @@
 name: build-landmarks-test
 
 on:
-  push:
   workflow_dispatch:
 
 permissions:
@@ -22,9 +21,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .
 
-      - name: Generate landmarks 6
+      - name: Generate landmarks 4
         run: |
-          vectome build 6 --force --cache _landmarks
+          vectome build 4 --force --cache _landmarks
 
       - name: Generate landmarks 50
         run: |
