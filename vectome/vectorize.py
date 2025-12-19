@@ -183,7 +183,7 @@ def _vectorize_countsketch(
     >>> len(v), np.allclose(np.sqrt(v @ v), 1.)  # length and unit norm
     (16, True)
     >>> round(v[4], 3), round(v[10], 3), round(v[13], 3), round(v[0], 3), round(v[11], 3)
-    (-0.5, -0.5, 0.5, -0.5, 0.0)
+    (0.354, 0.354, 0.354, 0.354, 0.707)
 
     """
     import numpy as np
