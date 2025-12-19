@@ -1,11 +1,11 @@
 groups:
-  - name: group-6
+  - name: group-4
     queries:
       - Escherichia coli K-12 substr. MG1655
       - Mycobacterium tuberculosis H37Rv
       - Mycobacterium smegmatis MC2155
       - Klebsiella pneumoniae
-  - name: group-9
+  - name: group-8900
     queries:
       - file://strain-list-report-taxid.txt
   - name: group-113
