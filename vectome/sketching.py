@@ -81,6 +81,7 @@ def sketch_landmarks(
     group: int = 0,
     check_spelling: bool = False,
     force: bool = False,
+    validate_fasta: bool = True,
     cache_dir: Optional[str] = None,
     max_workers: int = 1,
     **kwargs
@@ -93,6 +94,7 @@ def sketch_landmarks(
         check_spelling=check_spelling,
         group=group,
         force=force,
+        allow_missing_files=not validate_fasta,
         cache_dir=cache_dir,
     )
 
@@ -107,13 +109,9 @@ def sketch_landmarks(
         _landmark=True,
         **kwargs,
     )
-    return process_map(fn, landmarks, max_workers=max_workers, desc="Sketching landmarks")
-    # return tuple(
-    #     sketch_genome(
-    #         file=f,
-    #         force=force,
-    #         cache_dir=cache_dir,
-    #         _landmark=True,
-    #         **kwargs,
-    #     ) for f in tqdm(landmarks, desc="Sketching landmarks")
-    # )
+    return process_map(
+        fn, 
+        landmarks, 
+        max_workers=max_workers, 
+        desc="Sketching landmarks",
+    )

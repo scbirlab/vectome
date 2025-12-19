@@ -89,7 +89,11 @@ class GenomeInfo:
             )
 
 
-def resolve_file_url(file: str, cache_dir: str, quiet: bool = False) -> Tuple[bool, str]:
+def resolve_file_url(
+    file: str, 
+    cache_dir: str, 
+    quiet: bool = False
+) -> Tuple[bool, str]:
     if file.startswith("file://"):
         file = file.split("file://")[-1]
         is_url = False
@@ -239,6 +243,7 @@ def fetch_landmarks(
     force: bool = False,
     quiet: bool = False,
     hide_progress: bool = False,
+    allow_missing_files: bool = False,
     cache_dir: Optional[str] = None
 ):
     from tqdm.auto import tqdm
@@ -309,7 +314,7 @@ def fetch_landmarks(
     rebuild = False
     for item in results:
         for key, filename in item["files"].items():
-            if not os.path.exists(filename):
+            if not allow_missing_files and not os.path.exists(filename):
                 if not quiet:
                     print_err(
                         f"[WARN] The '{key}' file ({filename}) for {item['query']} is missing!",
@@ -352,6 +357,9 @@ def get_landmark_ids(
         cache_dir=cache_dir,
     )
     return [
-        ":".join(os.path.basename(str(info[key])) for key in id_keys if key is not None)
+        ":".join(
+            os.path.basename(str(info[key])) 
+            for key in id_keys if key is not None
+        )
         for info in landmark_info
     ]
