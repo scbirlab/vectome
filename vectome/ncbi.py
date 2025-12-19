@@ -10,6 +10,7 @@ from carabiner import print_err
 
 from .caching import CACHE_DIR
 from .http import api_get
+from . import __version__
 
 NCBI_CACHE = os.path.join(CACHE_DIR, "ncbi")
 
@@ -89,6 +90,8 @@ def download_genomic_info(
 
     from zipfile import ZipFile
     cache_dir = cache_dir or CACHE_DIR
+    if _landmark:
+        cache_dir = os.path.join(cache_dir, __version__)
     z = ZipFile(BytesIO(r.content))
 
     contents = z.namelist() 
