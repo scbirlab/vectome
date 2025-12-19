@@ -280,9 +280,22 @@ def fetch_landmarks(
                     cache_dir=cache_dir,
                 )
     elif not redownload:
-        cache_dir = download_landmark_cache(cache_dir=cache_dir)
-        with open(manifest_filename, "r") as f:
-            results = json.load(f)
+        try:
+            cache_dir = download_landmark_cache(cache_dir=cache_dir)
+        except Exception:
+            return fetch_landmarks(
+                group=group,
+                check_spelling=check_spelling,
+                force=force,
+                redownload=True,
+                allow_missing_files=allow_missing_files,
+                quiet=quiet,
+                hide_progress=hide_progress,
+                cache_dir=cache_dir,
+            )
+        else:
+            with open(manifest_filename, "r") as f:
+                results = json.load(f)
     else:
         os.makedirs(cache_dir, exist_ok=True)
 
