@@ -1,28 +1,16 @@
 groups:
-  - name: group-0
-    queries:
-      - file://strain-list-0.txt
-  - name: group-1
-    queries:
-      - file://strain-list-1.txt
-  - name: group-2
-    queries:
-      - file://strain-list-2.txt
-  - name: group-3
-    queries:
-      - file://strain-list-report.txt
-  - name: group-4
-    queries:
-      - file://strain-list-4.txt
-  - name: group-5
-    queries:
-      - Serratia marescens
   - name: group-6
     queries:
       - Escherichia coli K-12 substr. MG1655
       - Mycobacterium tuberculosis H37Rv
       - Mycobacterium smegmatis MC2155
       - Klebsiella pneumoniae
+  - name: group-9
+    queries:
+      - file://strain-list-report-taxid.txt
+  - name: group-113
+    queries:
+      - file://strain-list-113-taxid.txt
   - name: group-50
     queries:
       - file://strain-list-ENA2018-bacteria-50.txt
