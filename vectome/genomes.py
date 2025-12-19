@@ -1,4 +1,4 @@
- vectome/genomes.py"""Getting and processing genome data."""
+"""Getting and processing genome data."""
 
 from typing import Iterable, Optional, Tuple, Union
 from dataclasses import asdict, dataclass
