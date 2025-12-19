@@ -35,8 +35,8 @@ jobs:
         pip install -e .
 
     - name: Generate landmarks 4
-        run: |
-          vectome build 4 --force
+      run: |
+        vectome build 4 --force
 
     - name: Generate landmarks 50
       run: |
