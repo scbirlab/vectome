@@ -36,6 +36,22 @@ jobs:
         run: |
           VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 100 --force --cache _landmarks
 
+      - name: Generate landmarks 113
+        run: |
+          VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 113 --force --cache _landmarks
+
+      - name: Generate landmarks 1000
+        run: |
+          VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 1000 --force --cache _landmarks
+
+      - name: Generate landmarks 1000
+        run: |
+          VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 1000 --force --cache _landmarks
+
+      - name: Generate landmarks 8900
+        run: |
+          VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 8900 --force --cache _landmarks
+
       - name: Package landmarks
         run: |
           tar -C _landmarks -czf vectome-landmarks.tar.gz .

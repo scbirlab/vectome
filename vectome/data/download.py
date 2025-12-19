@@ -2,6 +2,7 @@
 
 from typing import Optional
 from glob import glob
+import json
 import tarfile
 import os
 import shutil
@@ -47,12 +48,22 @@ def download_landmark_cache(
     os.rmdir(dl_dir_temp)
     landmark_destination = os.path.join(cache_dir, "landmarks", landmark_version)
     for landmark_dir in glob(os.path.join(dl_dir, "landmarks", "*", "group-*")):
-        # print(f"{landmark_dir=}")
-        # print(f"{landmark_destination=}")
+        this_destination = os.path.join(landmark_destination, os.path.basename(landmark_dir))
+        print(f"{landmark_dir=}")
+        print(f"{landmark_destination=}")
+        if os.path.exists(this_destination):
+            shutil.rmtree(this_destination)
         shutil.move(
             landmark_dir,
-            os.path.join(landmark_destination, os.path.basename(landmark_dir)),
+            this_destination,
         )
+        with open(os.path.join(this_destination, "manifest.json"), "r") as f:
+            d = json.load(f)
+        for item in d:
+            for key in item["files"]:
+                item["files"][key] = os.path.join(this_destination, os.path.basename(item["files"][key]))
+        with open(os.path.join(this_destination, "manifest.json"), "w") as f:
+            json.dump(d, f, indent=4)
     sketch_destination = os.path.join(cache_dir, "sketches")
     os.makedirs(sketch_destination, exist_ok=True)
     for sketch_file in glob(os.path.join(dl_dir, "sketches", "*.sig")):
