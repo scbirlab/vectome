@@ -3,7 +3,7 @@
 from typing import Any, Dict, Optional
 import os
 
-from .. import version
+from .. import __version__
 
 APPDATA_DIR = os.path.dirname(__file__)
 
