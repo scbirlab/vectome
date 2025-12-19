@@ -23,6 +23,9 @@ groups:
       - Mycobacterium tuberculosis H37Rv
       - Mycobacterium smegmatis MC2155
       - Klebsiella pneumoniae
+  - name: group-50
+    queries:
+      - file://strain-list-ENA2018-bacteria-50.txt
   - name: group-100
     queries:
       - file://strain-list-ENA2018-bacteria-100.txt
