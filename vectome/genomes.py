@@ -283,6 +283,7 @@ def fetch_landmarks(
         try:
             cache_dir = download_landmark_cache(cache_dir=cache_dir)
         except Exception:
+            print_err("Could not find downloadable cache. Downloading from original source")
             return fetch_landmarks(
                 group=group,
                 check_spelling=check_spelling,
