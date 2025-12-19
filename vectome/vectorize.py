@@ -181,7 +181,7 @@ def _vectorize_countsketch(
     ...         self.hashes = {int(x): 1 for x in ints}
     >>> v = _vectorize_countsketch(_DummyMH([0x1234, 0xBEEF]), dim=16, num_hash_fns=3)
     >>> len(v), np.allclose(np.sqrt(v @ v), 1.)  # length and unit norm
-    (16, 1.0)
+    (16, True)
     >>> round(v[4], 3), round(v[10], 3), round(v[13], 3), round(v[0], 3), round(v[11], 3)
     (-0.5, -0.5, 0.5, -0.5, 0.0)
 
