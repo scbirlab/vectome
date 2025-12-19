@@ -2,6 +2,7 @@
 
 from argparse import FileType, Namespace
 from functools import cache
+import os
 import sys
 
 from carabiner import (
@@ -64,7 +65,7 @@ def embed(args: Namespace) -> None:
         )
     for row, query in zip(vectors, strains):
         print(
-            "\t".join([query] + list(map(str, row))), 
+            "\t".join([os.path.basename(query)] + list(map(str, row))), 
             file=args.output,
         )
     return None

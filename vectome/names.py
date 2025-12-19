@@ -250,6 +250,9 @@ def parse_strain_label(
     if remainder is not None:
         strain, substrain, remainder = _extract_strain_and_substrain(remainder)
         deletions = _parse_deletions(remainder)
+    elif isinstance(query, str) and query.startswith(("GCF_", "GCA_")) and query[-1].isdigit():
+        strain, substrain, remainder = query, None, ""
+        deletions = []
     else:
         strain, substrain, remainder = None, None, ""
         deletions = []

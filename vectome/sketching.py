@@ -1,7 +1,8 @@
 """"""
 
-from typing import Optional
-from functools import cache
+from typing import Optional, Tuple
+from functools import cache, partial
+from io import StringIO
 import os
 
 from carabiner import print_err
@@ -11,8 +12,8 @@ from .caching import CACHE_DIR
 from .data import APPDATA_DIR
 from .genomes import fetch_landmarks
 
-DEFAULT_K: int = 101
-DEFAULT_N: int = 200_000
+DEFAULT_K: int = 21
+DEFAULT_N: int = 10_000
 
 @cache
 def sketch_genome(
@@ -20,16 +21,18 @@ def sketch_genome(
     k: int = DEFAULT_K,
     n: int = DEFAULT_N,
     force: bool = False,
+    quiet: bool = False,
     cache_dir: Optional[str] = None,
     _landmark: bool = False,  # prevents cache hits on landmark downloads
     **kwargs
-):
+) -> MinHash:
     
     cache_dir = os.path.join(cache_dir or CACHE_DIR, "sketches")
     sketch_file = os.path.join(cache_dir, f"{os.path.basename(file)}_{n=}_{k=}.sig")
 
     if os.path.exists(sketch_file) and not force:
-        print_err(f"Loading cached signature for {file} at {sketch_file}...", end=" ")
+        if not quiet:
+            print_err(f"Loading cached signature for {file} at {sketch_file}...", end=" ")
         try:
             mh = load_one_signature(sketch_file).minhash
         except ValueError: # no signatures to load
@@ -44,22 +47,32 @@ def sketch_genome(
                 **kwargs,
             )
         else:
-            print_err("ok")
+            if not quiet:
+                print_err("ok")
     else:
+        import gzip
         from bioino import FastaCollection
 
         mh = MinHash(n=n, ksize=k, **kwargs)
-        fasta = FastaCollection.from_file(file)
-        for seq in fasta.sequences:
-            mh.add_sequence(seq.sequence, force=True)
+        opener = partial(gzip.open, mode="rb") if file.endswith(".gz") else partial(open, mode="r")
+        with opener(file) as f:
+            contents = f.read()
+            if isinstance(contents, bytes):
+                contents = contents.decode()
+            fr = StringIO(contents)
+            fasta = FastaCollection.from_file(fr)
+            for seq in fasta.sequences:
+                mh.add_sequence(seq.sequence, force=True)
 
         sig = SourmashSignature(mh, name=os.path.basename(file))
 
         os.makedirs(os.path.dirname(sketch_file), exist_ok=True)
-        print_err(f"Caching signature for {file} at {sketch_file}...", end=" ")
+        if not quiet:
+            print_err(f"Caching signature for {file} at {sketch_file}...", end=" ")
         with open(sketch_file, "w") as f:
             save_signatures([sig], f)
-            print_err("ok")
+            if not quiet:
+                print_err("ok")
 
     return mh
 
@@ -68,9 +81,12 @@ def sketch_landmarks(
     group: int = 0,
     check_spelling: bool = False,
     force: bool = False,
-    cache_dir: Optional[str] = None
-):
+    cache_dir: Optional[str] = None,
+    max_workers: int = 1,
+    **kwargs
+) -> Tuple[MinHash]:
     from tqdm.auto import tqdm
+    from tqdm.contrib.concurrent import process_map
 
     cache_dir = cache_dir or APPDATA_DIR
     landmark_info = fetch_landmarks(
@@ -84,11 +100,20 @@ def sketch_landmarks(
         info["files"]["fasta"] 
         for info in landmark_info
     ]
-    return tuple(
-        sketch_genome(
-            file=f,
-            force=force,
-            cache_dir=cache_dir,
-            _landmark=True,
-        ) for f in tqdm(landmarks, desc="Sketching landmarks")
+    fn = partial(
+        sketch_genome, 
+        force=force,
+        cache_dir=cache_dir,
+        _landmark=True,
+        **kwargs,
     )
+    return process_map(fn, landmarks, max_workers=max_workers, desc="Sketching landmarks")
+    # return tuple(
+    #     sketch_genome(
+    #         file=f,
+    #         force=force,
+    #         cache_dir=cache_dir,
+    #         _landmark=True,
+    #         **kwargs,
+    #     ) for f in tqdm(landmarks, desc="Sketching landmarks")
+    # )

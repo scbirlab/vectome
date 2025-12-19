@@ -11,8 +11,10 @@ from sourmash import MinHash
 from tqdm.auto import tqdm
 
 from .caching import CACHE_DIR
-from .genomes import fetch_landmarks, name_or_taxon_to_genome_info
+from .genomes import GenomeInfo, fetch_landmarks, name_or_taxon_to_genome_info
 from .sketching import sketch_genome, DEFAULT_K, DEFAULT_N
+
+DEFAULT_DIM: int = 256
 
 
 def _mix_u64(x: int) -> int:
@@ -76,29 +78,43 @@ def _bucket_sign(h: int, salt: int) -> int:
 def _vectorize_landmark(
     file: str,
     k: int = DEFAULT_K,
+    n: int = DEFAULT_N,
     group: int = 0,
+    quiet: bool = False,
+    hide_progress: bool = False,
     cache_dir: Optional[str] = None,
     **kwargs
 ):
     landmarks = [
         info["files"]["fasta"] 
-        for info in fetch_landmarks(group=group, cache_dir=cache_dir)
+        for info in fetch_landmarks(
+            group=group, 
+            quiet=quiet,
+            hide_progress=hide_progress,
+            cache_dir=cache_dir,
+        )
     ]
+    _iter = iter if hide_progress else partial(tqdm, desc="Sketching landmarks") 
     landmark_mh = [
         sketch_genome(
             file=f,
             k=k,
+            n=n,
+            quiet=quiet,
             cache_dir=cache_dir,
-        ) for f in landmarks
+        ) for f in _iter(landmarks)
     ]
 
     query_mh = sketch_genome(
         file=file,
         k=k,
+        n=n,
+        quiet=quiet,
         cache_dir=cache_dir,
     )
 
-    return [query_mh.similarity(lm) for lm in landmark_mh]
+    _iter = iter if hide_progress else partial(tqdm, desc="Calculating landmark similarity") 
+    return [query_mh.similarity(lm) for lm in _iter(landmark_mh)]
 
 
 def _vectorize_countsketch_from_file(
@@ -106,6 +122,8 @@ def _vectorize_countsketch_from_file(
     dim: int = None, 
     num_hash_fns: int = 4,
     k: int = DEFAULT_K,
+    n: int = DEFAULT_N,
+    quiet: bool = False,
     cache_dir: Optional[str] = None,
     **kwargs
 ):
@@ -117,6 +135,8 @@ def _vectorize_countsketch_from_file(
     query_mh = sketch_genome(
         file=file,
         k=k,
+        n=n,
+        quiet=quiet,
         cache_dir=cache_dir,
     )
 
@@ -133,6 +153,7 @@ def _vectorize_countsketch(
     query_mh,
     dim: int = None, 
     num_hash_fns: int = 4,
+    use_sign: bool = False,
     cache_dir: Optional[str] = None,
     **kwargs
 ):
@@ -167,7 +188,7 @@ def _vectorize_countsketch(
     """
     import numpy as np
 
-    dim = dim or 4096
+    dim = dim or DEFAULT_DIM
     vector = np.zeros((dim,))
 
     for _hash in query_mh.hashes.keys():
@@ -175,7 +196,10 @@ def _vectorize_countsketch(
         for i in range(num_hash_fns):
             hk = _mix_u64(base ^ i)
             idx = _bucket_index(hk, dim, i)
-            sign = _bucket_sign(hk, i)
+            if use_sign:
+                sign = _bucket_sign(hk, i)
+            else:
+                sign = 1.
             vector[idx] += float(sign)
 
     # L2 normalize to decouple vector length from sketch size
@@ -195,8 +219,10 @@ def vectorize(
     seed: int = 42,
     cache_dir: Optional[str] = None,
     quiet: bool = False,
+    hide_progress: bool = False,
     **kwargs
 ):
+    from dataclasses import asdict
     from joblib import Memory
     import numpy as np
 
@@ -206,12 +232,15 @@ def vectorize(
         verbose=0,
     )
 
+    _iter = iter if hide_progress else partial(tqdm, desc="Gathering genomes")
     genome_info = [
-        name_or_taxon_to_genome_info(
-            str(q), 
+        GenomeInfo.from_any(
+            q, 
             check_spelling=check_spelling,
+            quiet=quiet,
             cache_dir=cache_dir,
-        ) for q in cast(query, to=list)
+        ) if q is not None else None
+        for q in _iter(cast(query, to=list))
     ]
 
     if method == "landmark":
@@ -221,14 +250,28 @@ def vectorize(
     else:
         raise ValueError(f"Vectorization {method=} is not implemented.")
 
-    _iter = iter if quiet else partial(tqdm, desc="Vectorizing genomes")
+    _iter = iter if hide_progress else partial(tqdm, desc="Vectorizing genomes")
+    default_size = fn(
+        file=GenomeInfo.from_any(
+            83333,  # E. coli K-12 MG1655
+            check_spelling=False,
+            quiet=quiet,
+            cache_dir=cache_dir,
+        ).files["fasta"], 
+        k=k,
+        cache_dir=cache_dir, 
+        quiet=True,
+        **kwargs,
+    )
     vectors = np.stack([
         fn(
-            file=info["files"]["fasta"], 
+            file=info.files["fasta"], 
             k=k,
             cache_dir=cache_dir, 
+            quiet=quiet,
+            hide_progress=hide_progress,
             **kwargs,
-        ) 
+        ) if info is not None else np.zeros_like(default_size)
         for info in _iter(genome_info)
     ], axis=0)
 
