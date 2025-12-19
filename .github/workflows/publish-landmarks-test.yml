@@ -1,16 +1,14 @@
-name: publish-landmarks
+name: build-landmarks-test
 
 on:
   push:
-    tags:
-      - "landmarks-v*"
   workflow_dispatch:
 
 permissions:
-  contents: write   # required to create releases and upload assets
+  contents: read
 
 jobs:
-  build-and-release:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -44,20 +42,22 @@ jobs:
         run: |
           python - <<'PY'
           import hashlib, json, os
-          filename = "vectome-landmarks.tar.gz"
+          fn = "vectome-landmarks.tar.gz"
           h = hashlib.sha256()
-          with open(filename, "rb") as f:
+          with open(fn, "rb") as f:
             for chunk in iter(lambda: f.read(1024*1024), b""):
               h.update(chunk)
-          data = {filename: {"sha256": h.hexdigest(), "bytes": os.path.getsize(filename)}}
+          data = {fn: {"sha256": h.hexdigest(), "bytes": os.path.getsize(fn)}}
           with open("checksums.json", "w") as f:
             json.dump(data, f, indent=2)
-          print(data)
+          print(json.dumps(data, indent=2))
           PY
 
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
         with:
-          files: |
+          name: vectome-landmarks
+          path: |
             vectome-landmarks.tar.gz
             checksums.json
+          retention-days: 7
