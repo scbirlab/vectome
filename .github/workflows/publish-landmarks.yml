@@ -2,6 +2,8 @@ name: publish-landmarks
 
 on:
   push:
+    tags:
+      - "landmarks-v*"
   workflow_dispatch:
 
 permissions:
