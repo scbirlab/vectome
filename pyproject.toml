@@ -55,8 +55,13 @@ vectome = "vectome.cli:main"
 [tool.setuptools]
 # If there are data files included in your packages that need to be
 # installed, specify them here.
-package-data = {vectome = ["data/*.yml", "data/strain-list-*.txt"]}
-
+package-data = {vectome = [
+  "data/*.yml", 
+  "data/strain-list-*.txt",
+  "data/landmarks/group-*/*.json",
+  "data/landmarks/group-*/*.fa.gz",
+  "data/sketches/*.sig"
+]}
 
 [build-system]
 # These are the assumed default build requirements from pip:
