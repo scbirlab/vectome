@@ -24,15 +24,15 @@ jobs:
 
       - name: Generate landmarks 4
         run: |
-          vectome build 4 --force --cache _landmarks
+          VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 4 --force --cache _landmarks
 
       - name: Generate landmarks 50
         run: |
-          vectome build 50 --force --cache _landmarks
+          VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 50 --force --cache _landmarks
 
       - name: Generate landmarks 100
         run: |
-          vectome build 100 --force --cache _landmarks
+          VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 100 --force --cache _landmarks
 
       - name: Package landmarks
         run: |

@@ -46,7 +46,7 @@ def download_landmark_cache(
     os.remove(archive)
     os.rmdir(dl_dir_temp)
     landmark_destination = os.path.join(cache_dir, "landmarks", landmark_version)
-    for landmark_dir in glob(os.path.join(dl_dir, "landmarks", "group-*")):
+    for landmark_dir in glob(os.path.join(dl_dir, "landmarks", "*", "group-*")):
         # print(f"{landmark_dir=}")
         # print(f"{landmark_destination=}")
         shutil.move(
