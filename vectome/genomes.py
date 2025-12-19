@@ -1,4 +1,4 @@
-"""Getting and processing genome data."""
+ vectome/genomes.py"""Getting and processing genome data."""
 
 from typing import Iterable, Optional, Tuple, Union
 from dataclasses import asdict, dataclass
@@ -8,6 +8,7 @@ import os
 
 from carabiner import pprint_dict, print_err
 
+from .data.download import download_landmark_cache
 from .edits import delete_loci
 from .names import _extract_species, Strain, parse_strain_label
 
@@ -244,6 +245,7 @@ def fetch_landmarks(
     quiet: bool = False,
     hide_progress: bool = False,
     allow_missing_files: bool = False,
+    redownload: bool = False,
     cache_dir: Optional[str] = None
 ):
     from tqdm.auto import tqdm
@@ -277,6 +279,10 @@ def fetch_landmarks(
                     hide_progress=hide_progress,
                     cache_dir=cache_dir,
                 )
+    elif not redownload:
+        cache_dir = download_landmark_cache(cache_dir=cache_dir)
+        with open(manifest_filename, "r") as f:
+            results = json.load(f)
     else:
         os.makedirs(cache_dir, exist_ok=True)
 
@@ -334,6 +340,8 @@ def fetch_landmarks(
             group=group,
             check_spelling=check_spelling,
             force=True,
+            redownload=redownload,
+            allow_missing_files=allow_missing_files,
             quiet=quiet,
             hide_progress=hide_progress,
             cache_dir=cache_dir,
