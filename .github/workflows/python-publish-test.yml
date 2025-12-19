@@ -39,9 +39,6 @@ jobs:
     - name: Generate landmarks 100
       run: |
         vectome build 100 --force
-    - name: Generate landmarks 1k
-      run: |
-        vectome build 1000 --force
     - name: Build package
       run: python -m build --sdist --wheel --outdir dist
     - name: Publish package
