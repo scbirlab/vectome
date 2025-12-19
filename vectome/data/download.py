@@ -4,6 +4,7 @@ from typing import Optional
 from glob import glob
 import tarfile
 import os
+import shutil
 
 from ..caching import CACHE_DIR
 from ..http import download_url
@@ -30,13 +31,14 @@ def download_landmark_cache(
 ) -> str:
     cache_dir = cache_dir or CACHE_DIR
     landmark_version = os.environ.get('VECTOME_LANDMARKS_VERSION', f"v{version}")
-    dl_dir = os.path.join(cache_dir, "landmark-dl", version)
+    dl_dir = os.path.join(cache_dir, "landmark-dl", landmark_version)
     dl_dir_temp = os.path.join(dl_dir, "temp")
     os.makedirs(dl_dir_temp, exist_ok=True)
     
+    url = _release_url(landmark_version)
     archive = download_url(
-        _release_url(landmark_version),
-        destination=dl_dir_temp,
+        url,
+        destination=os.path.join(dl_dir_temp, os.path.basename(url)),
     )
 
     with tarfile.open(archive, "r:*") as tf:
@@ -44,11 +46,13 @@ def download_landmark_cache(
     os.remove(archive)
     os.rmdir(dl_dir_temp)
     landmark_destination = os.path.join(cache_dir, "landmarks", landmark_version)
-    os.makedirs(landmark_destination, exist_ok=True)
-    os.rename(
-        os.path.join(dl_dir, "landmarks"),
-        landmark_destination,
-    )
+    for landmark_dir in glob(os.path.join(dl_dir, "landmarks", "group-*")):
+        # print(f"{landmark_dir=}")
+        # print(f"{landmark_destination=}")
+        shutil.move(
+            landmark_dir,
+            os.path.join(landmark_destination, os.path.basename(landmark_dir)),
+        )
     sketch_destination = os.path.join(cache_dir, "sketches")
     os.makedirs(sketch_destination, exist_ok=True)
     for sketch_file in glob(os.path.join(dl_dir, "sketches", "*.sig")):

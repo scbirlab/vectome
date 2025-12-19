@@ -90,8 +90,6 @@ def download_genomic_info(
 
     from zipfile import ZipFile
     cache_dir = cache_dir or CACHE_DIR
-    if _landmark:
-        cache_dir = os.path.join(cache_dir, __version__)
     z = ZipFile(BytesIO(r.content))
 
     contents = z.namelist() 

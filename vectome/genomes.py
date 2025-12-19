@@ -11,6 +11,7 @@ from carabiner import pprint_dict, print_err
 from .data.download import download_landmark_cache
 from .edits import delete_loci
 from .names import _extract_species, Strain, parse_strain_label
+from . import __version__
 
 @dataclass
 class GenomeInfo:
@@ -249,6 +250,7 @@ def fetch_landmarks(
     cache_dir: Optional[str] = None
 ):
     from tqdm.auto import tqdm
+    from requests import HTTPError
 
     from .data import load_landmarks, APPDATA_DIR
 
@@ -262,8 +264,9 @@ def fetch_landmarks(
         )
     
     cache_dir = cache_dir or APPDATA_DIR
-    cache_dir = os.path.join(cache_dir, "landmarks", f"group-{group}")
-    manifest_filename = os.path.join(cache_dir, "manifest.json")
+    landmark_version = os.environ.get('VECTOME_LANDMARKS_VERSION', f"v{__version__}")
+    landmarks_dir = os.path.join(cache_dir, "landmarks", landmark_version, f"group-{group}")
+    manifest_filename = os.path.join(landmarks_dir, "manifest.json")
 
     if os.path.exists(manifest_filename) and not force:
         with open(manifest_filename, "r") as f:
@@ -281,8 +284,10 @@ def fetch_landmarks(
                 )
     elif not redownload:
         try:
-            cache_dir = download_landmark_cache(cache_dir=cache_dir)
-        except Exception:
+            _ = download_landmark_cache(
+                cache_dir=cache_dir,
+            )
+        except HTTPError:
             print_err("Could not find downloadable cache. Downloading from original source")
             return fetch_landmarks(
                 group=group,
@@ -298,7 +303,7 @@ def fetch_landmarks(
             with open(manifest_filename, "r") as f:
                 results = json.load(f)
     else:
-        os.makedirs(cache_dir, exist_ok=True)
+        os.makedirs(landmarks_dir, exist_ok=True)
 
         results = []
         errors = {}
@@ -308,7 +313,7 @@ def fetch_landmarks(
                 genome_info = GenomeInfo.from_any(
                     query=q,
                     check_spelling=check_spelling,
-                    cache_dir=cache_dir,
+                    cache_dir=landmarks_dir,
                     _landmark=True,
                 )
             except Exception as e:
