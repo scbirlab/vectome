@@ -110,7 +110,7 @@ def main() -> None:
         "group flag": CLIOption(
             "--group", "-g",
             type=int,
-            default=0,
+            default=50,
             help="Landmark group number.",
         ),
         "strain": CLIOption(
