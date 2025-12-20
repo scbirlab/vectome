@@ -44,10 +44,6 @@ jobs:
         run: |
           VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 1000 --force --cache _landmarks
 
-      - name: Generate landmarks 8900
-        run: |
-          VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 8900 --force --cache _landmarks
-
       - name: Generate landmarks 10000
         run: |
           VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 10000 --force --cache _landmarks
