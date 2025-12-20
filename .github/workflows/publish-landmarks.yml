@@ -47,6 +47,7 @@ jobs:
 
       - name: Package landmarks
         run: |
+          set -x
           for f in landmarks-*/; do tar -C $f -czf vectome-${f%/}.tar.gz .; done
 
       - name: Create checksums.json
@@ -62,7 +63,7 @@ jobs:
                 h.update(chunk)
             data[filename] = {
               "sha256": h.hexdigest(), 
-              "bytes": os.path.getsize(filename)},
+              "bytes": os.path.getsize(filename),
             }
           with open("checksums.json", "w") as f:
             json.dump(data, f, indent=4)
