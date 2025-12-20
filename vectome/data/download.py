@@ -25,7 +25,7 @@ def _release_url(
     version: str = __version__,
     filename: str = ASSET_NAME
 ) -> str:
-    return f"{_base_url()}/{version}/{filename}-{suffiz}.tar.gz"
+    return f"{_base_url()}/{version}/{filename}-{suffix}.tar.gz"
 
 
 def download_landmark_cache(
