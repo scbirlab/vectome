@@ -48,7 +48,10 @@ jobs:
       - name: Package landmarks
         run: |
           set -x
-          for f in landmarks-*/; do tar -C $f -cvf . | gzip --best > vectome-${f%/}.tar.gz; done
+          for f in landmarks-*/; do 
+            tar -C $f -cvf vectome-${f%/}.tar . 
+            gzip --best vectome-${f%/}.tar
+          done
 
       - name: Create checksums.json
         run: |
