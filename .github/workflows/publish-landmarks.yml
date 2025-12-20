@@ -31,6 +31,7 @@ jobs:
           VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 50 --force --cache landmarks-50
 
       - name: Generate landmarks 100
+        if: github.ref_type == 'tag'
         run: |
           VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 100 --force --cache landmarks-100
 
@@ -46,7 +47,7 @@ jobs:
 
       - name: Package landmarks
         run: |
-          for f in landmeks-*/; do tar -C $f -czf vectome-$f.tar.gz .
+          for f in landmeks-*/; do tar -C $f -czf vectome-$f.tar.gz .; done
 
       - name: Create checksums.json
         run: |
