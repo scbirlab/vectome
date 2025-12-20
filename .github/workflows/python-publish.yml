@@ -9,6 +9,7 @@
 name: Upload Python Package
 
 on:
+  workflow_dispatch:
   release:
     types: [published]
 
@@ -46,8 +47,18 @@ jobs:
       run: python -m build --sdist --wheel --outdir dist
     - name: Publish package
       uses: pypa/gh-action-pypi-publish@release/v1
+      if: github.event_name == 'release'
       with:
         user: __token__
         password: ${{ secrets.PYPI_API_TOKEN }}
+        verbose: true
+
+    - name: Publish package test
+      uses: pypa/gh-action-pypi-publish@release/v1
+      if: github.event_name == 'workflow_dispatch'
+      with:
+        repository-url: https://test.pypi.org/legacy/
+        user: __token__
+        password: ${{ secrets.TEST_PIPI_TOKEN }}
         verbose: true
         
