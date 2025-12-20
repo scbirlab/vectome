@@ -21,12 +21,15 @@ def _base_url() -> str:
     return os.environ.get(ENV_BASE_URL, DEFAULT_BASE_URL).rstrip("/")
 
 def _release_url(
-    version: str = __version__, 
+    suffix: str,
+    version: str = __version__,
     filename: str = ASSET_NAME
 ) -> str:
-    return f"{_base_url()}/{version}/{filename}"
+    return f"{_base_url()}/{version}/{filename}-{suffiz}.tar.gz"
+
 
 def download_landmark_cache(
+    suffix: str,
     version: str = __version__,
     cache_dir: Optional[str] = None
 ) -> str:
@@ -36,7 +39,7 @@ def download_landmark_cache(
     dl_dir_temp = os.path.join(dl_dir, "temp")
     os.makedirs(dl_dir_temp, exist_ok=True)
     
-    url = _release_url(landmark_version)
+    url = _release_url(suffix=suffix, version=landmark_version)
     archive = download_url(
         url,
         destination=os.path.join(dl_dir_temp, os.path.basename(url)),

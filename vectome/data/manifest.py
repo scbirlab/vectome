@@ -1,5 +1,5 @@
 
-ASSET_NAME = "vectome-landmarks.tar.gz"
+ASSET_NAME = "vectome-landmarks"
 CHECKSUMS_NAME = "checksums.json"
 
 ENV_BASE_URL = "VECTOME_LANDMARKS_BASE_URL"
