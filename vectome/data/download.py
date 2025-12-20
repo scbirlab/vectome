@@ -7,6 +7,8 @@ import tarfile
 import os
 import shutil
 
+from requests import HTTPError
+
 from ..caching import CACHE_DIR
 from ..http import download_url
 from .. import __version__
@@ -40,10 +42,15 @@ def download_landmark_cache(
     os.makedirs(dl_dir_temp, exist_ok=True)
     
     url = _release_url(suffix=suffix, version=landmark_version)
-    archive = download_url(
-        url,
-        destination=os.path.join(dl_dir_temp, os.path.basename(url)),
-    )
+    try:
+        archive = download_url(
+            url,
+            destination=os.path.join(dl_dir_temp, os.path.basename(url)),
+        )
+    except HTTPError as e:
+        os.rmdir(dl_dir_temp)
+        os.rmdir(dl_dir)
+        raise e
 
     with tarfile.open(archive, "r:*") as tf:
         tf.extractall(dl_dir)
@@ -75,5 +82,6 @@ def download_landmark_cache(
             os.path.join(sketch_destination, os.path.basename(sketch_file)),
         )
     os.rmdir(os.path.join(dl_dir, "sketches"))
+    os.rmdir(dl_dir)
     return cache_dir
     
