@@ -82,6 +82,5 @@ def download_landmark_cache(
             os.path.join(sketch_destination, os.path.basename(sketch_file)),
         )
     os.rmdir(os.path.join(dl_dir, "sketches"))
-    os.rmdir(dl_dir)
     return cache_dir
     
