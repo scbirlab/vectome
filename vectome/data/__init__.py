@@ -3,6 +3,8 @@
 from typing import Any, Dict, Optional
 import os
 
+from .. import __version__
+
 APPDATA_DIR = os.path.dirname(__file__)
 
 def load_landmarks(
@@ -44,7 +46,7 @@ def landmark_info(
         for key, value in load_landmarks(cache_dir=cache_dir).items()
     }
     cache_dir = cache_dir or APPDATA_DIR
-    cache_dir = os.path.join(cache_dir, "landmarks")
+    cache_dir = os.path.join(cache_dir, "landmarks", __version__)
 
     for key in info:
         group_cache = os.path.join(cache_dir, key)

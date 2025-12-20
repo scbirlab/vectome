@@ -1,8 +1,10 @@
 """Functions for editing genomes."""
 
 from typing import Iterable, Optional, Union
-from functools import cache
+from functools import cache, partial
+import gzip
 from hashlib import md5
+from io import StringIO
 import os
 
 from carabiner import print_err
@@ -84,8 +86,14 @@ def _resolve_gene_loci(
     if isinstance(loci, str):
         loci = [loci]
     
-    gff = GffFile.from_file(gff_file)
-    gff.lines = tuple(gff.lines)
+    opener = partial(gzip.open, mode="rb") if gff_file.endswith(".gz") else partial(open, mode="r")
+    with opener(gff_file) as f:
+        contents = f.read()
+        if isinstance(contents, bytes):
+            contents = contents.decode()
+        fr = StringIO(contents)
+        gff = GffFile.from_file(fr)
+        gff.lines = tuple(gff.lines)
     intervals = []
     
     for gene_name in loci:
@@ -151,8 +159,14 @@ def delete_loci(
     else:
         from bioino import FastaCollection
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
-        fasta = FastaCollection.from_file(fasta_file)
-        fasta.sequences = tuple(fasta.sequences)
+        opener = partial(gzip.open, mode="rb") if fasta_file.endswith(".gz") else partial(open, mode="r")
+        with opener(fasta_file) as f:
+            contents = f.read()
+            if isinstance(contents, bytes):
+                contents = contents.decode()
+            fr = StringIO(contents)
+            fasta = FastaCollection.from_file(fr)
+            fasta.sequences = tuple(fasta.sequences)
         for locus in loci_to_delete:
             print_err(f"Deleting {locus}...")
             fasta = _delete_locus(

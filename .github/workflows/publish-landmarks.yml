@@ -1,0 +1,90 @@
+name: publish-landmarks
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to create releases and upload assets
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Generate landmarks 4
+        run: |
+          VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 4 --force --cache landmarks-4
+
+      - name: Generate landmarks 50
+        run: |
+          VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 50 --force --cache landmarks-50
+
+      - name: Generate landmarks 100
+        if: github.ref_type == 'tag'
+        run: |
+          VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 100 --force --cache landmarks-100
+
+      - name: Generate landmarks 113
+        if: github.ref_type == 'tag'
+        run: |
+          VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 113 --force --cache landmarks-113
+
+      - name: Generate landmarks 1000
+        if: github.ref_type == 'tag'
+        run: |
+          VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 1000 --force --cache landmarks-1000
+
+      - name: Package landmarks
+        run: |
+          set -x
+          for f in landmarks-*/; do tar -C $f -cvf . | gzip --best > vectome-${f%/}.tar.gz; done
+
+      - name: Create checksums.json
+        run: |
+          python - <<'PY'
+          import hashlib, json, os
+          from glob import glob
+          data = {}
+          for filename in glob("vectome-landmarks-*.tar.gz"):
+            h = hashlib.sha256()
+            with open(filename, "rb") as f:
+              for chunk in iter(lambda: f.read(1024*1024), b""):
+                h.update(chunk)
+            data[filename] = {
+              "sha256": h.hexdigest(), 
+              "bytes": os.path.getsize(filename),
+            }
+          with open("checksums.json", "w") as f:
+            json.dump(data, f, indent=4)
+          print(data)
+          PY
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: github.ref_type == 'tag'
+        with:
+          draft: true
+          generate_release_notes: true
+          files: |
+            vectome-landmarks-*.tar.gz
+            checksums.json
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: vectome-landmarks
+          path: |
+            vectome-landmarks-*.tar.gz
+            checksums.json
+          retention-days: 7

@@ -1,14 +1,16 @@
 """Fetching remote data."""
 
-from typing import Iterable, List, Optional, Union
+from typing import Dict, Iterable, List, Mapping, Optional, Union
 from io import BytesIO
 import json
 import os
+import shutil
 
 from carabiner import print_err
 
 from .caching import CACHE_DIR
 from .http import api_get
+from . import __version__
 
 NCBI_CACHE = os.path.join(CACHE_DIR, "ncbi")
 
@@ -26,6 +28,45 @@ def spellcheck(query, r) -> str:
         return root.find("CorrectedQuery").text
     except Exception:
         return None
+
+
+def _normalize_and_compress(
+    files: Mapping[str, str],
+    query: str,
+    cache_dir: str,
+    quiet: bool = False,
+    move: bool = False
+) -> Dict[str, str]:
+    # normalize filenames
+    import gzip
+    normalized_files = {}
+    for key, f in files.items():
+        if f is not None:
+            _, ext = os.path.splitext(f)
+            destination = os.path.join(cache_dir, f"{query}{ext}{'.gz' if ext != '.gz' else ''}")
+            if not quiet and f != destination:
+                print_err(f"Saving {f} at {destination}")
+            try:
+                if not f.endswith(".gz"):
+                    with gzip.open(destination, "wb") as o, open(f, "rb") as fr:
+                        o.write(fr.read())
+                    if move:
+                        os.remove(f)
+                elif f != destination:
+                    if move:
+                        os.rename(f, destination)
+                    else:
+                        shutil.copy2(f, destination)
+                else:
+                    pass
+            except FileNotFoundError as e:
+                # another process got there first?
+                if os.path.exists(destination):
+                    pass  # another process moved it, nothing to do
+                else:
+                    raise e  # something else went wrong               
+            normalized_files[key] = destination
+    return normalized_files
 
 
 @api_get(
@@ -70,21 +111,13 @@ def download_genomic_info(
     }
 
     # normalize filenames
-    normalized_files = {}
-    for key, f in files.items():
-        _, ext = os.path.splitext(f)
-        destination = os.path.join(cache_dir, f"{query}{ext}")
-        print_err(f"Saving {f} at {destination}")
-        try:
-            os.rename(f, destination)
-        except FileNotFoundError as e:
-            # another process got there first?
-            if os.path.exists(destination):
-                pass  # another process moved it, nothing to do
-            else:
-                raise e  # something else went wrong
-        normalized_files[key] = destination
-#    os.rmdir(os.path.dirname(f))
+    normalized_files = _normalize_and_compress(
+        files,
+        query=query,
+        quiet=True,
+        cache_dir=cache_dir,
+        move=True,
+    )
     if all(os.path.exists(f) for key, f in normalized_files.items()):
         return normalized_files
     else:

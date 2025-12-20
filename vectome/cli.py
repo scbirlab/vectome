@@ -2,6 +2,8 @@
 
 from argparse import FileType, Namespace
 from functools import cache
+from glob import glob
+import os
 import sys
 
 from carabiner import (
@@ -28,6 +30,26 @@ def parse(args: Namespace) -> None:
     for line in args.strain:
         result = parser(line.rstrip())
         print(result, file=args.output)
+    return None
+
+
+@clicommand(message="Cleaning cache")
+def clean(args: Namespace) -> None:
+    import shutil
+    leaves = ["api_calls", "sketches", "vectors", "joblib", "ncbi"]
+    if args.genomic:
+        leaves += ["landmarks", "downloads", "ncbi_dataset"]
+    for leaf in leaves:
+        path = os.path.join(args.cache, leaf)
+        if os.path.exists(path):
+            if args.force:
+                print_err(f"Deleting {path}")
+                shutil.rmtree(path)
+            else:
+                print_err(f"Would delete {path} (use --force to make it happen)")
+        else:
+            print_err(f"Skipping non-existent {path}")
+
     return None
 
 
@@ -64,7 +86,7 @@ def embed(args: Namespace) -> None:
         )
     for row, query in zip(vectors, strains):
         print(
-            "\t".join([query] + list(map(str, row))), 
+            "\t".join([os.path.basename(query)] + list(map(str, row))), 
             file=args.output,
         )
     return None
@@ -109,7 +131,7 @@ def main() -> None:
         "group flag": CLIOption(
             "--group", "-g",
             type=int,
-            default=0,
+            default=50,
             help="Landmark group number.",
         ),
         "strain": CLIOption(
@@ -165,6 +187,11 @@ def main() -> None:
             default=cache_dir,
             help="Where to cache data.",
         ),
+        "genomic": CLIOption(
+            "--genomic", "-g",
+            action="store_true",
+            help="Whether to also remove genomic data.",
+        ),
         "output": CLIOption(
             "--output", "-o",
             default=sys.stdout,
@@ -192,6 +219,16 @@ def main() -> None:
                     options["group flag"],
                     options["cache"],
                     options["output"],
+                ],
+            ),
+            CLICommand(
+                "clean",
+                main=clean,
+                description="Clean caches.",
+                options=[
+                    options["cache"],
+                    options["genomic"],
+                    options["force"],
                 ],
             ),
             CLICommand(

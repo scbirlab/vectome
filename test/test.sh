@@ -5,7 +5,7 @@ set -euox pipefail
 OUTDIR=test/outputs
 CACHE=$OUTDIR/.cache
 TEST_LIST=$OUTDIR/test-inputs.txt
-GROUP=6
+GROUP=50
 PROJ=4
 
 mkdir -p $OUTDIR
@@ -14,7 +14,12 @@ vectome build $GROUP --force --cache "$CACHE"
 vectome info
 vectome info --cache "$CACHE"
 
-queries=("Escherichia coli" "E. coli strain K-12 acrAB- Δ(fimC-fimH) lacZ- tolC::aph ΔompF" 83333 83332 "Klebsiella pneumoniae")
+if [ -e "$TEST_LIST" ]
+then 
+    rm "$TEST_LIST"
+fi
+
+queries=("https://ftp.ebi.ac.uk/pub/databases/ENA2018-bacteria-661k/Assemblies/batch_000/SAMD00000344.contigs.fa.gz" "Escherichia coli" "E. coli str. K-12 acrAB- Δ(fimC-fimH) lacZ- tolC::aph ΔompF" 83333 83332 "Klebsiella pneumoniae")
 for q in "${queries[@]}"
 do
     echo "$q" >> $TEST_LIST

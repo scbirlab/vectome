@@ -39,6 +39,7 @@ def api_get(
     def api_call(
         query=None, 
         params=None,
+        quiet: bool = False,
         wait: float = .2,
         _try: int = 0,
         *args, **kwargs
@@ -50,16 +51,18 @@ def api_get(
             params = params | {query_key: query}
         elif query is not None:
             url = url.format(query=query)
-        pprint_dict(
-            params,
-            message=f"Downloading from '{url}' with the following parameters"
-        )
+        if not quiet:
+            pprint_dict(
+                params,
+                message=f"Downloading from '{url}' with the following parameters"
+            )
         try:
             r = requests.get(url, params=params, headers=headers)
         except requests.exceptions.ConnectionError as e:
             print_err(e)
             next_try = _try + 1
-            print_err(f"[INFO] Tried {next_try} / {max_tries} times...", end=" ")
+            if not quiet:
+                print_err(f"[INFO] Tried {next_try} / {max_tries} times...", end=" ")
             if next_try < max_tries:
                 print_err("")
                 return api_call(
@@ -73,9 +76,11 @@ def api_get(
                 print_err("stopping!")
                 raise e
         else:
-            print_err(f"Trying {r.url}... {r.status_code}", end="")
+            if not quiet:
+                print_err(f"Trying {r.url}... {r.status_code}", end="")
             r.raise_for_status()
-            print_err(f"... ok")
+            if not quiet:
+                print_err(f"... ok")
             return f(query, r, *args, **kwargs)
 
     if cache_dir is not None and isinstance(cache_dir, str):
@@ -84,3 +89,28 @@ def api_get(
         api_call = mem.cache(api_call)
         
     return wraps(f)(cache(api_call))
+
+
+def download_url(
+    url: str,
+    destination: str,
+    max_tries: int = 3,
+    wait: float = .2,
+    quiet: bool = False,
+    cache_dir: Optional[str] = None
+) -> str:
+
+    @api_get(
+        url=url,
+        max_tries=max_tries,
+        cache_dir=cache_dir,
+    )
+    def _download_url(
+        query,
+        r: Response
+    ):
+        with open(destination, 'wb') as f:
+            f.write(r.content)
+        return destination
+
+    return _download_url(query=(url, destination), quiet=quiet, wait=wait)
