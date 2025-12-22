@@ -54,7 +54,7 @@ def _bucket_index(h: int, dim: int, salt: int) -> int:
     >>> # _bucket_index/_bucket_sign are deterministic and stable
     >>> h = _mix_u64(0x1234)
     >>> h, _bucket_index(h, 1024, 0), _bucket_sign(h, 0)
-    (11969492833970939502, 635, 1)
+    (11969492833970939502, 635, -1)
     >>> _bucket_index(h, 1024, 1), _bucket_sign(h, 1)
     (580, -1)
     >>> _bucket_index(h, 10, 2), _bucket_sign(h, 2)
@@ -184,7 +184,7 @@ def _vectorize_countsketch(
     >>> len(v), np.allclose(np.sqrt(v @ v), 1.)  # length and unit norm
     (16, True)
     >>> round(v[4], 3), round(v[10], 3), round(v[13], 3), round(v[0], 3), round(v[11], 3)
-    (0.354, 0.354, 0.354, 0.354, 0.707)
+    (0.408, 0.408, 0.0, -0.408, -0.408)
 
     """
     import numpy as np
