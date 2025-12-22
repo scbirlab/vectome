@@ -14,7 +14,7 @@ from .caching import CACHE_DIR
 from .genomes import GenomeInfo, fetch_landmarks, name_or_taxon_to_genome_info
 from .sketching import sketch_genome, DEFAULT_K, DEFAULT_N
 
-DEFAULT_DIM: int = 256
+DEFAULT_DIM: int = 4096
 
 
 def _mix_u64(x: int) -> int:
@@ -72,9 +72,10 @@ def _bucket_sign(h: int, salt: int) -> int:
     across Python versions/platforms.
     """
     b = h.to_bytes(8, "little", signed=False) + salt.to_bytes(4, "little", signed=False)
-    return 1 if (int(hashlib.sha1(b).hexdigest(), 16) & 1) else -1    
+    return 1 if (_mix_u64(hk ^ (salt * C)) & 1) else -1    
 
 
+@cache
 def _vectorize_landmark(
     file: str,
     k: int = DEFAULT_K,
@@ -153,7 +154,7 @@ def _vectorize_countsketch(
     query_mh,
     dim: int = None, 
     num_hash_fns: int = 4,
-    use_sign: bool = False,
+    drop_sign: bool = False,
     cache_dir: Optional[str] = None,
     **kwargs
 ):
@@ -194,9 +195,9 @@ def _vectorize_countsketch(
     for _hash in query_mh.hashes.keys():
         base = _hash & 0xFFFFFFFFFFFFFFFF
         for i in range(num_hash_fns):
-            hk = _mix_u64(base ^ i)
+            hk = _mix_u64(base)
             idx = _bucket_index(hk, dim, i)
-            if use_sign:
+            if not drop_sign:
                 sign = _bucket_sign(hk, i)
             else:
                 sign = 1.
@@ -218,6 +219,7 @@ def vectorize(
     projection: Optional[int] = None,
     seed: int = 42,
     cache_dir: Optional[str] = None,
+    max_workers: int = 1,
     quiet: bool = False,
     hide_progress: bool = False,
     **kwargs
@@ -225,6 +227,7 @@ def vectorize(
     from dataclasses import asdict
     from joblib import Memory
     import numpy as np
+    # from tqdm.contrib.concurrent import process_map
 
     cache_dir = cache_dir or CACHE_DIR
     mem = Memory(
@@ -250,7 +253,12 @@ def vectorize(
     else:
         raise ValueError(f"Vectorization {method=} is not implemented.")
 
-    _iter = iter if hide_progress else partial(tqdm, desc="Vectorizing genomes")
+    _iter = iter if hide_progress else partial(
+        tqdm, 
+        # max_workers=max_workers,
+        total=len(genome_info),
+        desc="Vectorizing genomes",
+    )
     default_size = fn(
         file=GenomeInfo.from_any(
             83333,  # E. coli K-12 MG1655
