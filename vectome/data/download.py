@@ -33,6 +33,7 @@ def _release_url(
 def download_landmark_cache(
     suffix: str,
     version: str = __version__,
+    quiet: bool = True,
     cache_dir: Optional[str] = None
 ) -> str:
     cache_dir = cache_dir or CACHE_DIR
@@ -45,6 +46,7 @@ def download_landmark_cache(
     try:
         archive = download_url(
             url,
+            quiet=quiet,
             destination=os.path.join(dl_dir_temp, os.path.basename(url)),
         )
     except HTTPError as e:
@@ -59,8 +61,6 @@ def download_landmark_cache(
     landmark_destination = os.path.join(cache_dir, "landmarks", landmark_version)
     for landmark_dir in glob(os.path.join(dl_dir, "landmarks", "*", "group-*")):
         this_destination = os.path.join(landmark_destination, os.path.basename(landmark_dir))
-        print(f"{landmark_dir=}")
-        print(f"{landmark_destination=}")
         if os.path.exists(this_destination):
             shutil.rmtree(this_destination)
         shutil.move(

@@ -1,0 +1,870 @@
+sample_id	major_species	abundance	taxid	phylum	class	order	family	genus	species
+SAMN06817955	Oleiphilus messinensis	1.832	141451	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Oleiphilaceae	Oleiphilus	Oleiphilus messinensis
+SAMN08776294	Candidatus Paracaedibacter acanthamoebae	1.984	91604	Proteobacteria	Alphaproteobacteria	Holosporales	Candidatus Paracaedibacteraceae	Candidatus Paracaedibacter	Candidatus Paracaedibacter acanthamoebae
+SAMN09074859	Thiohalobacter thiocyanaticus	2.698	585455	Proteobacteria	Gammaproteobacteria	Chromatiales		Thiohalobacter	Thiohalobacter thiocyanaticus
+SAMN09074758	Sphingomonas sp. JJ-A5	2.942	1921510	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Tardibacter	Tardibacter chloracetimidivorans
+SAMN04580785	Ketobacter alkanivorans	2.986	1917421	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Alcanivoracaceae	Ketobacter	Ketobacter alkanivorans
+SAMN02440412	Bacteroidetes bacterium Omega	3.121	1457365	Balneolaeota				Candidatus Cyclonatronum	Candidatus Cyclonatronum proteinivorum
+SAMN02732492	Chlorobaculum tepidum	3.412	1097	Chlorobi	Chlorobia	Chlorobiales	Chlorobiaceae	Chlorobaculum	Chlorobaculum tepidum
+SAMN02745206	Syntrophobacter fumaroxidans	4.226	119484	Proteobacteria	Deltaproteobacteria	Syntrophobacterales	Syntrophobacteraceae	Syntrophobacter	Syntrophobacter fumaroxidans
+SAMN07621686	Salinibacterium sp. CGMCC 1.16371	4.233	2079791	Actinobacteria	Actinobacteria	Micrococcales	Microbacteriaceae	Salinibacterium	Salinibacterium sp. CGMCC 1.16371
+SAMN02199009	Desulfobulbus sp. ORNL	4.277	1986146	Proteobacteria	Deltaproteobacteria	Desulfobacterales	Desulfobulbaceae	Desulfobulbus	Desulfobulbus oralis
+SAMN06335524	Croceicoccus naphthovorans	4.344	1348774	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Erythrobacteraceae	Croceicoccus	Croceicoccus naphthovorans
+SAMN02199244	Neomicrococcus aestuarii	4.411	556325	Actinobacteria	Actinobacteria	Micrococcales	Micrococcaceae	Neomicrococcus	Neomicrococcus aestuarii
+SAMN07621003	Candidatus Portiera aleyrodidarum	4.787	91844	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Halomonadaceae	Candidatus Portiera	Candidatus Portiera aleyrodidarum
+SAMN09074748	Algibacter alginicilyticus	4.928	1736674	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Algibacter	Algibacter alginicilyticus
+SAMN06266982	Micropruina glycogenica	5.009	75385	Actinobacteria	Actinobacteria	Propionibacteriales	Nocardioidaceae	Micropruina	Micropruina glycogenica
+SAMN06016259	Candidatus Ruthia magnifica	5.056	386487	Proteobacteria	Gammaproteobacteria			Candidatus Ruthia	Candidatus Ruthia magnifica
+SAMN07621367	Buchnera aphidicola	5.153	9	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	Buchnera	Buchnera aphidicola
+SAMN02745528	Oceanicoccus sagamiensis	5.314	716816	Proteobacteria	Gammaproteobacteria	Cellvibrionales	Spongiibacteraceae	Oceanicoccus	Oceanicoccus sagamiensis
+SAMN06264854	Persicobacter sp. JZB09	5.338	1085624	Bacteroidetes	Cytophagia	Cytophagales	Persicobacteraceae	Persicobacter	Persicobacter sp. JZB09
+SAMN02744796	Methyloceanibacter sp. wino2	5.432	2170729	Proteobacteria	Alphaproteobacteria	Rhizobiales		Methyloceanibacter	Methyloceanibacter sp. wino2
+SAMN02744810	Solibacillus sp. R5-41	5.44	2048654	Firmicutes	Bacilli	Bacillales	Planococcaceae	Solibacillus	Solibacillus sp. R5-41
+SAMN02584972	Halotalea alkalilenta	5.468	376489	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Halomonadaceae	Halotalea	Halotalea alkalilenta
+SAMN00773127	Halothermothrix orenii	5.602	31909	Firmicutes	Clostridia	Halanaerobiales	Halanaerobiaceae	Halothermothrix	Halothermothrix orenii
+SAMN08886522	Sphingorhabdus sp. Alg231-15	5.828	1922222	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingorhabdus	Sphingorhabdus sp. Alg231-15
+SAMN08775544	Aminomonas paucivorans	5.902	81412	Synergistetes	Synergistia	Synergistales	Synergistaceae	Aminomonas	Aminomonas paucivorans
+SAMN02198965	Agarivorans gilvus	6.143	680279	Proteobacteria	Gammaproteobacteria	Alteromonadales	Alteromonadaceae	Agarivorans	Agarivorans gilvus
+SAMN04488134	Amphibacillus xylanus	6.22	1449	Firmicutes	Bacilli	Bacillales	Bacillaceae	Amphibacillus	Amphibacillus xylanus
+SAMN02194783	Candidatus Solibacter usitatus	6.639	332163	Acidobacteria	Acidobacteriia	Bryobacterales	Solibacteraceae	Candidatus Solibacter	Candidatus Solibacter usitatus
+SAMN02745502	Wigglesworthia glossinidia	6.86	51229	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	Wigglesworthia	Wigglesworthia glossinidia
+SAMN02199417	Sediminicola sp. YIK13	6.959	1453352	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Sediminicola	Sediminicola sp. YIK13
+SAMN05192529	Arachidicoccus sp. BS20	7.232	1850526	Bacteroidetes	Chitinophagia	Chitinophagales	Chitinophagaceae	Arachidicoccus	Arachidicoccus sp. BS20
+SAMN02441406	Micavibrio aeruginosavorus	7.236	349221	Proteobacteria	Alphaproteobacteria			Micavibrio	Micavibrio aeruginosavorus
+SAMN02199408	Gottschalkia acidurici	7.263	1556	Firmicutes	Tissierellia	Tissierellales	Gottschalkiaceae	Gottschalkia	Gottschalkia acidurici
+SAMN05414138	Rhodoplanes sp. Z2-YC6860	7.47	674703	Proteobacteria	Alphaproteobacteria	Rhizobiales	Hyphomicrobiaceae	Rhodoplanes	Rhodoplanes sp. Z2-YC6860
+SAMN07621134	Paraoerskovia marina	7.51	545619	Actinobacteria	Actinobacteria	Micrococcales	Cellulomonadaceae	Paraoerskovia	Paraoerskovia marina
+SAMN02261255	Arthrospira platensis	7.643	118562	Cyanobacteria		Oscillatoriales	Microcoleaceae	Arthrospira	Arthrospira platensis
+SAMN02745245	Peptoniphilus sp. ING2-D1G	8.121	1912856	Firmicutes	Tissierellia	Tissierellales	Peptoniphilaceae	Peptoniphilus	Peptoniphilus sp. ING2-D1G
+SAMN08770121	Roseibacterium elongatum	8.251999999999999	159346	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Roseibacterium	Roseibacterium elongatum
+SAMN00262208	Pseudarcicella sp. HME7025	8.376	998844	Bacteroidetes	Cytophagia	Cytophagales	Cytophagaceae	Allopseudarcicella	Allopseudarcicella aquatilis
+SAMN07622098	Thiolapillus brandeum	8.446	1076588	Proteobacteria	Gammaproteobacteria			Thiolapillus	Thiolapillus brandeum
+SAMN07313991	Jeotgalibacillus malaysiensis	8.604000000000001	1508404	Firmicutes	Bacilli	Bacillales	Planococcaceae	Jeotgalibacillus	Jeotgalibacillus malaysiensis
+SAMN02746022	Methylocella silvestris	8.751	199596	Proteobacteria	Alphaproteobacteria	Rhizobiales	Beijerinckiaceae	Methylocella	Methylocella silvestris
+SAMEA3374943	Luteipulveratus mongoliensis	9.025	571913	Actinobacteria	Actinobacteria	Micrococcales	Dermacoccaceae	Luteipulveratus	Luteipulveratus mongoliensis
+SAMN02198975	Saccharospirillum mangrovi	9.031	2161747	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Saccharospirillaceae	Saccharospirillum	Saccharospirillum mangrovi
+SAMN02745865	Saccharophagus degradans	9.134	86304	Proteobacteria	Gammaproteobacteria	Cellvibrionales	Cellvibrionaceae	Saccharophagus	Saccharophagus degradans
+SAMN05216289	Dokdonella koreensis	9.157	323415	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Rhodanobacteraceae	Dokdonella	Dokdonella koreensis
+SAMN04488091	Pelagibaca abyssi	9.219	1250539	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Pelagibaca	Pelagibaca abyssi
+SAMN04488079	Methylophaga nitratireducenticrescens	9.395	754476	Proteobacteria	Gammaproteobacteria	Thiotrichales	Piscirickettsiaceae	Methylophaga	Methylophaga nitratireducenticrescens
+SAMN02441404	Candidatus Phycorickettsia trachydisci	9.452	2115978	Proteobacteria	Alphaproteobacteria	Rickettsiales	Rickettsiaceae	Candidatus Phycorickettsia	Candidatus Phycorickettsia trachydisci
+SAMN05421753	Planctomyces sp. SH-PL14	9.517	1632864	Planctomycetes	Planctomycetia	Planctomycetales	Planctomycetaceae	Planctomyces	Planctomyces sp. SH-PL14
+SAMN02441727	Candidatus Evansia muelleri	9.536	1495769	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Halomonadaceae	Candidatus Evansia	Candidatus Evansia muelleri
+SAMN02261357	Halomicronema hongdechloris	9.713	1209493	Cyanobacteria		Synechococcales	Prochlorotrichaceae	Halomicronema	Halomicronema hongdechloris
+SAMN04580802	Bacterioplanes sanyensis	9.779	1249553	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Oceanospirillaceae	Bacterioplanes	Bacterioplanes sanyensis
+SAMN02199222	Candidatus Hamiltonella defensa	9.793	138072	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Candidatus Hamiltonella	Candidatus Hamiltonella defensa
+SAMN07621254	Jiangella sp. DSM 45060	9.858	1798224	Actinobacteria	Actinobacteria	Jiangellales	Jiangellaceae	Jiangella	Jiangella sp. DSM 45060
+SAMN02744861	Melioribacter roseus	10.008	1134405	Ignavibacteriae	Ignavibacteria	Ignavibacteriales	Melioribacteraceae	Melioribacter	Melioribacter roseus
+SAMEA3869528	Jeotgalibaca sp. PTS2502	10.304	1903686	Firmicutes	Bacilli	Lactobacillales	Carnobacteriaceae	Jeotgalibaca	Jeotgalibaca sp. PTS2502
+SAMN04099187	Siansivirga zeaxanthinifaciens	10.372	762954	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Siansivirga	Siansivirga zeaxanthinifaciens
+SAMN09074941	Sulfuritalea hydrogenivorans	10.449	748811	Proteobacteria	Betaproteobacteria	Nitrosomonadales	Sterolibacteriaceae	Sulfuritalea	Sulfuritalea hydrogenivorans
+SAMN07313993	Salinivirga cyanobacteriivorans	10.498	1307839	Bacteroidetes	Bacteroidia	Marinilabiliales	Salinivirgaceae	Salinivirga	Salinivirga cyanobacteriivorans
+SAMN09081302	Parvibaculum lavamentivorans	10.501	256618	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhodobiaceae	Parvibaculum	Parvibaculum lavamentivorans
+SAMN02441591	Salinibacter ruber	10.548	146919	Bacteroidetes		Bacteroidetes Order II. Incertae sedis	Rhodothermaceae	Salinibacter	Salinibacter ruber
+SAMEA3643000	Phenylobacterium zucineum	10.647	284016	Proteobacteria	Alphaproteobacteria	Caulobacterales	Caulobacteraceae	Phenylobacterium	Phenylobacterium zucineum
+SAMN02708690	Salinispira pacifica	10.745	1307761	Spirochaetes	Spirochaetia	Spirochaetales	Spirochaetaceae	Salinispira	Salinispira pacifica
+SAMEA3594168	Slackia heliotrinireducens	10.761	84110	Actinobacteria	Coriobacteriia	Eggerthellales	Eggerthellaceae	Slackia	Slackia heliotrinireducens
+SAMN09064081	Paraliobacillus sp. X-1125	10.819	2213194	Firmicutes	Bacilli	Bacillales	Bacillaceae	Paraliobacillus	Paraliobacillus sp. X-1125
+SAMN02193989	Jeongeupia sp. USM3	10.834	1906741	Proteobacteria	Betaproteobacteria	Neisseriales	Chromobacteriaceae	Jeongeupia	Jeongeupia sp. USM3
+SAMN02194949	Halocynthiibacter arcticus	11.043	1579316	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Halocynthiibacter	Halocynthiibacter arcticus
+SAMN02256467	Methyloversatilis sp. RAC08	11.056	1842540	Proteobacteria	Betaproteobacteria	Nitrosomonadales	Sterolibacteriaceae	Methyloversatilis	Methyloversatilis sp. RAC08
+SAMN08769561	Acidobacterium capsulatum	11.07	33075	Acidobacteria	Acidobacteriia	Acidobacteriales	Acidobacteriaceae	Acidobacterium	Acidobacterium capsulatum
+SAMN06452492	Paludibacter propionicigenes	11.106	185300	Bacteroidetes	Bacteroidia	Bacteroidales	Paludibacteraceae	Paludibacter	Paludibacter propionicigenes
+SAMN05720355	Defluviimonas alba	11.424	1335048	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Defluviimonas	Defluviimonas alba
+SAMEA104281821	Libanicoccus massiliensis	11.657	1871022	Actinobacteria	Coriobacteriia	Coriobacteriales	Atopobiaceae	Libanicoccus	Libanicoccus massiliensis
+SAMEA104098236	Confluentimicrobium sp. EMB200-NS6	11.852	1609966	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Confluentimicrobium	Confluentimicrobium sp. EMB200-NS6
+SAMN02199316	Oblitimonas alkaliphila	12.225	1697053	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Oblitimonas	Oblitimonas alkaliphila
+SAMEA3643198	Microcella alkaliphila	12.291	279828	Actinobacteria	Actinobacteria	Micrococcales	Microbacteriaceae	Microcella	Microcella alkaliphila
+SAMN02194935	Formosa sp. Hel1_31_208	12.372	1798225	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Formosa	Formosa sp. Hel1_31_208
+SAMN02261300	Fibrella aestuarina	12.419	651143	Bacteroidetes	Cytophagia	Cytophagales	Cytophagaceae	Fibrella	Fibrella aestuarina
+SAMN02194318	Chloracidobacterium thermophilum	12.506	458033	Acidobacteria	Blastocatellia			Chloracidobacterium	Chloracidobacterium thermophilum
+SAMN09074689	Vagococcus teuberi	12.511	519472	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	Vagococcus	Vagococcus teuberi
+SAMN02745131	Flavisolibacter tropicus	12.77	1492898	Bacteroidetes	Chitinophagia	Chitinophagales	Chitinophagaceae	Flavisolibacter	Flavisolibacter tropicus
+SAMN02745513	Candidatus Promineofilum breve	12.803	1806508	Chloroflexi	Ardenticatenia	Ardenticatenales	Ardenticatenaceae	Candidatus Promineofilum	Candidatus Promineofilum breve
+SAMN05421845	Kutzneria albida	13.04	43357	Actinobacteria	Actinobacteria	Pseudonocardiales	Pseudonocardiaceae	Kutzneria	Kutzneria albida
+SAMN08017095	Desulfurivibrio alkaliphilus	13.065	427923	Proteobacteria	Deltaproteobacteria	Desulfobacterales	Desulfobulbaceae	Desulfurivibrio	Desulfurivibrio alkaliphilus
+SAMEA104102235	Sagittula sp. P11	13.556	2009329	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Sagittula	Sagittula sp. P11
+SAMN05660860	Geoalkalibacter subterraneus	13.84	483547	Proteobacteria	Deltaproteobacteria	Desulfuromonadales	Geobacteraceae	Geoalkalibacter	Geoalkalibacter subterraneus
+SAMN02199141	Acidihalobacter prosperus	13.987	160660	Proteobacteria	Gammaproteobacteria	Chromatiales	Ectothiorhodospiraceae	Acidihalobacter	Acidihalobacter prosperus
+SAMN02744808	Desulfotalea psychrophila	14.212	84980	Proteobacteria	Deltaproteobacteria	Desulfobacterales	Desulfobulbaceae	Desulfotalea	Desulfotalea psychrophila
+SAMN04490243	Robiginitalea biformata	14.222	252307	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Robiginitalea	Robiginitalea biformata
+SAMN05216176	Nitratireductor sp. OM-1	14.378	1756988	Proteobacteria	Alphaproteobacteria	Rhizobiales	Phyllobacteriaceae	Nitratireductor	Nitratireductor sp. OM-1
+SAMN04488057	Cyclobacterium marinum	14.588	104	Bacteroidetes	Cytophagia	Cytophagales	Cyclobacteriaceae	Cyclobacterium	Cyclobacterium marinum
+SAMN06265377	Flagellimonas sp. HME9304	14.588	1383885	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Flagellimonas	Flagellimonas maritima
+SAMN00810968	Verminephrobacter eiseniae	14.651	364317	Proteobacteria	Betaproteobacteria	Burkholderiales	Comamonadaceae	Verminephrobacter	Verminephrobacter eiseniae
+SAMN06457421	Elusimicrobium minutum	14.673	423605	Elusimicrobia	Elusimicrobia	Elusimicrobiales	Elusimicrobiaceae	Elusimicrobium	Elusimicrobium minutum
+SAMN08776301	Denitrovibrio acetiphilus	14.69	118000	Deferribacteres	Deferribacteres	Deferribacterales	Deferribacteraceae	Denitrovibrio	Denitrovibrio acetiphilus
+SAMN05216224	Thioclava nitratireducens	14.885	1915078	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Thioclava	Thioclava nitratireducens
+SAMN03571290	Desulfarculus baarsii	15.083	453230	Proteobacteria	Deltaproteobacteria	Desulfarculales	Desulfarculaceae	Desulfarculus	Desulfarculus baarsii
+SAMN07622102	Roseiflexus sp. RS-1	15.142	357808	Chloroflexi	Chloroflexia	Chloroflexales	Roseiflexaceae	Roseiflexus	Roseiflexus sp. RS-1
+SAMN02989441	Thalassotalea crassostreae	15.338	1763536	Proteobacteria	Gammaproteobacteria	Alteromonadales	Colwelliaceae	Thalassotalea	Thalassotalea crassostreae
+SAMEA2444351	Sneathia amnii	15.638	187101	Fusobacteria	Fusobacteriia	Fusobacteriales	Leptotrichiaceae	Sneathia	Sneathia amnii
+SAMN07622142	Isosphaera pallida	15.66	128	Planctomycetes	Planctomycetia	Isosphaerales	Isosphaeraceae	Isosphaera	Isosphaera pallida
+SAMN06320170	Candidatus Babela massiliensis	15.691	673862		Candidatus Babeliae	Candidatus Babeliales	Candidatus Babeliaceae	Candidatus Babela	Candidatus Babela massiliensis
+SAMN02745863	Thermovirga lienii	15.816	336261	Synergistetes	Synergistia	Synergistales	Synergistaceae	Thermovirga	Thermovirga lienii
+SAMN08769588	Leptothrix cholodnii	15.891	34029	Proteobacteria	Betaproteobacteria	Burkholderiales		Leptothrix	Leptothrix cholodnii
+SAMN02441290	Flammeovirga sp. MY04	15.939999999999998	1191459	Bacteroidetes	Cytophagia	Cytophagales	Flammeovirgaceae	Flammeovirga	Flammeovirga sp. MY04
+SAMN07314129	Basilea psittacipulmonis	16.12	1472345	Proteobacteria	Betaproteobacteria	Burkholderiales	Alcaligenaceae	Basilea	Basilea psittacipulmonis
+SAMN07622194	Thermoclostridium stercorarium	16.133	1510	Firmicutes	Clostridia	Clostridiales	Hungateiclostridiaceae	Thermoclostridium	Thermoclostridium stercorarium
+SAMN02745199	Thermosipho africanus	16.161	2421	Thermotogae	Thermotogae	Thermotogales	Fervidobacteriaceae	Thermosipho	Thermosipho africanus
+SAMN08779373	Pusillimonas sp. T7-7	16.308	1007105	Proteobacteria	Betaproteobacteria	Burkholderiales	Alcaligenaceae	Pusillimonas	Pusillimonas sp. T7-7
+SAMN02199410	Moorea producens	16.342	1155739	Cyanobacteria		Oscillatoriales	Oscillatoriaceae	Moorea	Moorea producens
+SAMN05443287	Verrucosispora maris	16.411	1003110	Actinobacteria	Actinobacteria	Micromonosporales	Micromonosporaceae	Verrucosispora	Verrucosispora maris
+SAMN05720261	Rhodoferax antarcticus	16.717	81479	Proteobacteria	Betaproteobacteria	Burkholderiales	Comamonadaceae	Rhodoferax	Rhodoferax antarcticus
+SAMN05216219	Mycetocola sp. CGMCC 1.16372	16.776	2079792	Actinobacteria	Actinobacteria	Micrococcales	Microbacteriaceae	Mycetocola	Mycetocola sp. 449
+SAMN02744815	Hahella chejuensis	17.019000000000002	158327	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Hahellaceae	Hahella	Hahella chejuensis
+SAMN09074747	Seonamhaeicola sp. S2-3	17.271	1936081	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Seonamhaeicola	Seonamhaeicola sp. S2-3
+SAMN02745075	Lutibacter sp. LPB0138	17.34	1850246	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Urechidicola	Urechidicola croceus
+SAMN02745864	Sulfurovum lithotrophicum	17.436	206403	Proteobacteria	Epsilonproteobacteria			Sulfurovum	Sulfurovum lithotrophicum
+SAMEA4043111	Propionimicrobium sp. Marseille-P3275	17.471	1871034	Actinobacteria	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Propionimicrobium	Propionimicrobium sp. Marseille-P3275
+SAMN02744599	Alkaliphilus metalliredigens	17.482	208226	Firmicutes	Clostridia	Clostridiales	Clostridiaceae	Alkaliphilus	Alkaliphilus metalliredigens
+SAMN05421838	Aquifex aeolicus	17.777	63363	Aquificae	Aquificae	Aquificales	Aquificaceae	Aquifex	Aquifex aeolicus
+SAMEA3643197	Nocardioides sp. CF8	17.925	110319	Actinobacteria	Actinobacteria	Propionibacteriales	Nocardioidaceae	Nocardioides	Nocardioides sp. CF8
+SAMN02745086	Chondromyces crocatus	18.706	52	Proteobacteria	Deltaproteobacteria	Myxococcales	Polyangiaceae	Chondromyces	Chondromyces crocatus
+SAMN08537594	Brochothrix thermosphacta	19.276	2756	Firmicutes	Bacilli	Bacillales	Listeriaceae	Brochothrix	Brochothrix thermosphacta
+SAMN05216343	Oscillibacter valericigenes	19.28	351091	Firmicutes	Clostridia	Clostridiales	Oscillospiraceae	Oscillibacter	Oscillibacter valericigenes
+SAMN02745601	Rhodospirillum rubrum	19.339	1085	Proteobacteria	Alphaproteobacteria	Rhodospirillales	Rhodospirillaceae	Rhodospirillum	Rhodospirillum rubrum
+SAMN00013141	Filifactor alocis	19.647	143361	Firmicutes	Clostridia	Clostridiales	Peptostreptococcaceae	Filifactor	Filifactor alocis
+SAMN02441045	Haliscomenobacter hydrossis	19.912	2350	Bacteroidetes	Saprospiria	Saprospirales	Haliscomenobacteraceae	Haliscomenobacter	Haliscomenobacter hydrossis
+SAMN05444482	Gillisia sp. Hel1_33_143	19.965	1336796	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Gillisia	Gillisia sp. Hel1_33_143
+SAMN02745129	Ferrimonas balearica	20.163	44012	Proteobacteria	Gammaproteobacteria	Alteromonadales	Ferrimonadaceae	Ferrimonas	Ferrimonas balearica
+SAMN06264868	Sulfurihydrogenibium sp. YO3AOP1	20.375	436114	Aquificae	Aquificae	Aquificales	Hydrogenothermaceae	Sulfurihydrogenibium	Sulfurihydrogenibium sp. YO3AOP1
+SAMN05720314	Sulfuriferula sp. AH1	20.596	1985873	Proteobacteria	Betaproteobacteria	Nitrosomonadales	Gallionellaceae	Sulfuriferula	Sulfuriferula sp. AH1
+SAMN02745607	Lutibacter profundi	20.623	1622118	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Lutibacter	Lutibacter profundi
+SAMN02584951	Chelativorans sp. BNC1	20.672	266779	Proteobacteria	Alphaproteobacteria	Rhizobiales	Phyllobacteriaceae	Chelativorans	Chelativorans sp. BNC1
+SAMN02440403	Candidatus Accumulibacter phosphatis	20.754	327160	Proteobacteria	Betaproteobacteria			Candidatus Accumulibacter	Candidatus Accumulibacter phosphatis
+SAMN02745477	Fimbriimonas ginsengisoli	20.877	1005039	Armatimonadetes	Fimbriimonadia	Fimbriimonadales	Fimbriimonadaceae	Fimbriimonas	Fimbriimonas ginsengisoli
+SAMN06457797	Desulfurispirillum indicum	21.008	936456	Chrysiogenetes	Chrysiogenetes	Chrysiogenales	Chrysiogenaceae	Desulfurispirillum	Desulfurispirillum indicum
+SAMN08537581	Fictibacillus arsenicus	21.145	255247	Firmicutes	Bacilli	Bacillales	Bacillaceae	Fictibacillus	Fictibacillus arsenicus
+SAMN02801811	Candidatus Sulcia muelleri	21.501	336810	Bacteroidetes	Flavobacteriia	Flavobacteriales		Candidatus Sulcia	Candidatus Sulcia muelleri
+SAMN08537579	Simkania negevensis	21.582	83561	Chlamydiae	Chlamydiia	Parachlamydiales	Simkaniaceae	Simkania	Simkania negevensis
+SAMN01797751	Chondrocystis sp. NIES-4102	21.704	2005460	Cyanobacteria		Chroococcales	Chroococcaceae	Chondrocystis	Chondrocystis sp. NIES-4102
+SAMN06320198	Gemmatirosa kalamazoonesis	21.902	861299	Gemmatimonadetes	Gemmatimonadetes	Gemmatimonadales	Gemmatimonadaceae	Gemmatirosa	Gemmatirosa kalamazoonesis
+SAMN02440521	Opitutus sp. GAS368	22.048	1882749	Verrucomicrobia	Opitutae	Opitutales	Opitutaceae	Opitutus	Opitutus sp. GAS368
+SAMN04488056	Cohaesibacter sp. ES.047	22.077	1798205	Proteobacteria	Alphaproteobacteria	Rhizobiales	Cohaesibacteraceae	Cohaesibacter	Cohaesibacter sp. ES.047
+SAMN09083407	Brachybacterium saurashtrense	22.38	556288	Actinobacteria	Actinobacteria	Micrococcales	Dermabacteraceae	Brachybacterium	Brachybacterium saurashtrense
+SAMN02199349	Afipia sp. GAS231	22.829	1882747	Proteobacteria	Alphaproteobacteria	Rhizobiales	Bradyrhizobiaceae	Afipia	Afipia sp. GAS231
+SAMN02745979	Dehalogenimonas lykanthroporepellens	22.947	552810	Chloroflexi	Dehalococcoidia			Dehalogenimonas	Dehalogenimonas lykanthroporepellens
+SAMN07314134	Pseudohongiella spirulinae	23.32	1249552	Proteobacteria	Gammaproteobacteria			Pseudohongiella	Pseudohongiella spirulinae
+SAMN02745394	Nautilia profundicola	23.566	244787	Proteobacteria	Epsilonproteobacteria	Nautiliales	Nautiliaceae	Nautilia	Nautilia profundicola
+SAMN02441808	Oligotropha carboxidovorans	23.7	40137	Proteobacteria	Alphaproteobacteria	Rhizobiales	Bradyrhizobiaceae	Oligotropha	Oligotropha carboxidovorans
+SAMN02441034	Thiobacillus denitrificans	23.909	36861	Proteobacteria	Betaproteobacteria	Nitrosomonadales	Thiobacillaceae	Thiobacillus	Thiobacillus denitrificans
+SAMN08779861	Hyphomonas sp. Mor2	24.04	1906738	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Hyphomonadaceae	Hyphomonas	Hyphomonas sp. Mor2
+SAMN02744795	Anderseniella sp. Alg231-50	24.174	1922226	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhodobiaceae	Anderseniella	Anderseniella sp. Alg231-50
+SAMN05192569	Parageobacillus thermoglucosidasius	24.373	1426	Firmicutes	Bacilli	Bacillales	Bacillaceae	Parageobacillus	Parageobacillus thermoglucosidasius
+SAMN05661080	Modestobacter marinus	24.737	477641	Actinobacteria	Actinobacteria	Geodermatophilales	Geodermatophilaceae	Modestobacter	Modestobacter marinus
+SAMN06473665	Mordavella sp. Marseille-P3756	24.764	2086584	Firmicutes	Clostridia	Clostridiales		Massilistercora	Massilistercora timonensis
+SAMEA43989418	Acutalibacter muris	24.877	1796620	Firmicutes	Clostridia	Clostridiales	Ruminococcaceae	Acutalibacter	Acutalibacter muris
+SAMN02584944	Dechloromonas aromatica	25.095	259537	Proteobacteria	Betaproteobacteria	Rhodocyclales	Azonexaceae	Dechloromonas	Dechloromonas aromatica
+SAMN02199144	Ornithinimicrobium sp. AMA3305	25.829	2283195	Actinobacteria	Actinobacteria	Micrococcales	Intrasporangiaceae	Ornithinimicrobium	Ornithinimicrobium sp. AMA3305
+SAMN08125750	Tenacibaculum dicentrarchi	25.834	669041	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Tenacibaculum	Tenacibaculum dicentrarchi
+SAMN02745373	Melaminivora sp. SC2-9	25.836	2109913	Proteobacteria	Betaproteobacteria	Burkholderiales	Comamonadaceae	Melaminivora	Melaminivora sp. SC2-9
+SAMN00773125	Alkalitalea saponilacus	25.879	889453	Bacteroidetes	Bacteroidia	Marinilabiliales	Marinilabiliaceae	Alkalitalea	Alkalitalea saponilacus
+SAMEA3642916	Frondihabitans sp. PAMC 28766	26.096	1795630	Actinobacteria	Actinobacteria	Micrococcales	Microbacteriaceae	Frondihabitans	Frondihabitans sp. PAMC 28766
+SAMN06269117	Desulfurobacterium thermolithotrophum	26.122	64160	Aquificae	Aquificae	Desulfurobacteriales	Desulfurobacteriaceae	Desulfurobacterium	Desulfurobacterium thermolithotrophum
+SAMN02256460	Mariprofundus ferrinatatus	26.205	1921087	Proteobacteria	Zetaproteobacteria	Mariprofundales	Mariprofundaceae	Mariprofundus	Mariprofundus ferrinatatus
+SAMN02923806	Ezakiella massiliensis	26.244	1852374	Firmicutes	Tissierellia			Ezakiella	Ezakiella massiliensis
+SAMN02745066	Polaromonas naphthalenivorans	26.295	216465	Proteobacteria	Betaproteobacteria	Burkholderiales	Comamonadaceae	Polaromonas	Polaromonas naphthalenivorans
+SAMN02745452	Candidatus Nucleicultrix amoebiphila	26.347	1509244	Proteobacteria	Alphaproteobacteria	Holosporales	Caedimonadaceae	Candidatus Nucleicultrix	Candidatus Nucleicultrix amoebiphila
+SAMN02745508	Arcticibacterium luteifluviistationis	26.366	1784714	Bacteroidetes	Cytophagia	Cytophagales	Cytophagaceae	Arcticibacterium	Arcticibacterium luteifluviistationis
+SAMN00102821	Cellulosilyticum lentocellum	26.457000000000004	29360	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Cellulosilyticum	Cellulosilyticum lentocellum
+SAMN05421644	Allochromatium vinosum	26.461	1049	Proteobacteria	Gammaproteobacteria	Chromatiales	Chromatiaceae	Allochromatium	Allochromatium vinosum
+SAMN06289276	Endozoicomonas montiporae	26.540000000000003	1027273	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Endozoicomonadaceae	Endozoicomonas	Endozoicomonas montiporae
+SAMN02746001	Rufibacter sp. DG31D	27.096	1379910	Bacteroidetes	Cytophagia	Cytophagales	Hymenobacteraceae	Rufibacter	Rufibacter sp. DG31D
+SAMN05192560	Methylobacillus flagellatus	27.316	405	Proteobacteria	Betaproteobacteria	Nitrosomonadales	Methylophilaceae	Methylobacillus	Methylobacillus flagellatus
+SAMN02261341	Anabaena cylindrica	27.326	1165	Cyanobacteria		Nostocales	Nostocaceae	Anabaena	Anabaena cylindrica
+SAMN02194236	Paucibacter sp. KCTC 42545	27.83	1768242	Proteobacteria	Betaproteobacteria	Burkholderiales		Paucibacter	Paucibacter sp. KCTC 42545
+SAMN09075504	Hydromonas sp. F02	28.218	2268024	Proteobacteria	Betaproteobacteria	Burkholderiales	Burkholderiaceae	Ephemeroptericola	Ephemeroptericola cinctiostellae
+SAMN02744601	Riemerella anatipestifer	28.682	34085	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Riemerella	Riemerella anatipestifer
+SAMN02261251	Scytonema sp. HK-05	28.958	1137095	Cyanobacteria		Nostocales	Scytonemataceae	Scytonema	Scytonema sp. HK-05
+SAMN08201030	Spiroplasma citri	29.171	2133	Tenericutes	Mollicutes	Entomoplasmatales	Spiroplasmataceae	Spiroplasma	Spiroplasma citri
+SAMN06320185	Ammonifex degensii	29.486	42838	Firmicutes	Clostridia	Thermoanaerobacterales	Thermoanaerobacteraceae	Ammonifex	Ammonifex degensii
+SAMN09062770	Verrucomicrobium spinosum	29.846	2736	Verrucomicrobia	Verrucomicrobiae	Verrucomicrobiales	Verrucomicrobiaceae	Verrucomicrobium	Verrucomicrobium spinosum
+SAMN07838523	Ignavibacterium album	29.857	591197	Ignavibacteriae	Ignavibacteria	Ignavibacteriales	Ignavibacteriaceae	Ignavibacterium	Ignavibacterium album
+SAMN02745945	Peptoclostridium acidaminophilum	29.87	1731	Firmicutes	Clostridia	Clostridiales	Peptostreptococcaceae	Peptoclostridium	Peptoclostridium acidaminophilum
+SAMN07501428	Pseudoclostridium thermosuccinogenes	30.019	84032	Firmicutes	Clostridia	Clostridiales	Hungateiclostridiaceae	Pseudoclostridium	Pseudoclostridium thermosuccinogenes
+SAMN02199145	Ramlibacter tataouinensis	30.118	94132	Proteobacteria	Betaproteobacteria	Burkholderiales	Comamonadaceae	Ramlibacter	Ramlibacter tataouinensis
+SAMN03031236	Paenarthrobacter aurescens	30.173	43663	Actinobacteria	Actinobacteria	Micrococcales	Micrococcaceae	Paenarthrobacter	Paenarthrobacter aurescens
+SAMN05660826	Thermosediminibacter oceani	30.447	291990	Firmicutes	Clostridia	Thermoanaerobacterales	Thermoanaerobacterales Family III. Incertae Sedis	Thermosediminibacter	Thermosediminibacter oceani
+SAMN02440771	Runella slithyformis	30.49	106	Bacteroidetes	Cytophagia	Cytophagales	Cytophagaceae	Runella	Runella slithyformis
+SAMN07620951	Woeseia oceani	31.043	1548547	Proteobacteria	Gammaproteobacteria	Chromatiales	Woeseiaceae	Woeseia	Woeseia oceani
+SAMN02910383	Beijerinckia indica	31.255	533	Proteobacteria	Alphaproteobacteria	Rhizobiales	Beijerinckiaceae	Beijerinckia	Beijerinckia indica
+SAMN07621485	Maribacter sp. T28	31.698	1836467	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Maribacter	Maribacter sp. T28
+SAMN05880591	Niveispirillum cyanobacteriorum	32.413	1612173	Proteobacteria	Alphaproteobacteria	Rhodospirillales	Rhodospirillaceae	Niveispirillum	Niveispirillum cyanobacteriorum
+SAMN08537571	Chlorobium phaeobacteroides	32.475	1096	Chlorobi	Chlorobia	Chlorobiales	Chlorobiaceae	Chlorobium	Chlorobium phaeobacteroides
+SAMN02194989	Thermodesulfatator indicus	32.785	171695	Thermodesulfobacteria	Thermodesulfobacteria	Thermodesulfobacteriales	Thermodesulfobacteriaceae	Thermodesulfatator	Thermodesulfatator indicus
+SAMN05192558	Alloactinosynnema sp. L-07	33.22	1653480	Actinobacteria	Actinobacteria	Pseudonocardiales	Pseudonocardiaceae	Alloactinosynnema	Alloactinosynnema sp. L-07
+SAMN04489712	Thermomonospora curvata	33.257	2020	Actinobacteria	Actinobacteria	Streptosporangiales	Thermomonosporaceae	Thermomonospora	Thermomonospora curvata
+SAMN06453974	Aminobacterium colombiense	33.333	81468	Synergistetes	Synergistia	Synergistales	Synergistaceae	Aminobacterium	Aminobacterium colombiense
+SAMN08770174	Gluconacetobacter diazotrophicus	33.767	33996	Proteobacteria	Alphaproteobacteria	Rhodospirillales	Acetobacteraceae	Gluconacetobacter	Gluconacetobacter diazotrophicus
+SAMN02744711	Syntrophothermus lipocalidus	33.927	86170	Firmicutes	Clostridia	Clostridiales	Syntrophomonadaceae	Syntrophothermus	Syntrophothermus lipocalidus
+SAMN06266871	Herbinix luporum	33.937	1679721	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Herbinix	Herbinix luporum
+SAMN06320192	Pelobacter acetylenicus	34.162	29542	Proteobacteria	Deltaproteobacteria	Desulfuromonadales	Desulfuromonadaceae	Pelobacter	Pelobacter acetylenicus
+SAMN07622187	Sideroxydans lithotrophicus	34.194	63745	Proteobacteria	Betaproteobacteria	Nitrosomonadales	Gallionellaceae	Sideroxydans	Sideroxydans lithotrophicus
+SAMN06173316	Mobiluncus curtisii	34.203	2051	Actinobacteria	Actinobacteria	Actinomycetales	Actinomycetaceae	Mobiluncus	Mobiluncus curtisii
+SAMN02745332	Symbiobacterium thermophilum	34.394	2734	Firmicutes	Clostridia	Clostridiales	Symbiobacteriaceae	Symbiobacterium	Symbiobacterium thermophilum
+SAMN08777574	Cellvibrio sp. PSBB023	34.575	1945512	Proteobacteria	Gammaproteobacteria	Cellvibrionales	Cellvibrionaceae	Cellvibrio	Cellvibrio sp. PSBB023
+SAMEA2201859	Ndongobacter massiliensis	34.959	1871025	Firmicutes				Ndongobacter	Ndongobacter massiliensis
+SAMN04515665	Blastococcus saxobsidens	35.14	138336	Actinobacteria	Actinobacteria	Geodermatophilales	Geodermatophilaceae	Blastococcus	Blastococcus saxobsidens
+SAMN06264853	Marinifilaceae bacterium SPP2	35.207	1717717	Bacteroidetes	Bacteroidia	Marinilabiliales	Marinifilaceae	Labilibaculum	Labilibaculum antarcticum
+SAMN06314132	Conexibacter woesei	35.628	191495	Actinobacteria	Thermoleophilia	Solirubrobacterales	Conexibacteraceae	Conexibacter	Conexibacter woesei
+SAMN02199137	Aequorivita sublithincola	35.808	101385	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Aequorivita	Aequorivita sublithincola
+SAMN02261317	Methylovulum psychrotolerans	36.667	1704499	Proteobacteria	Gammaproteobacteria	Methylococcales	Methylococcaceae	Methylovulum	Methylovulum psychrotolerans
+SAMN06296013	Polynucleobacter necessarius	37.117	576610	Proteobacteria	Betaproteobacteria	Burkholderiales	Burkholderiaceae	Polynucleobacter	Polynucleobacter necessarius
+SAMN02744835	Sulfuricaulis limicola	37.246	1620215	Proteobacteria	Gammaproteobacteria	Acidiferrobacterales	Acidiferrobacteraceae	Sulfuricaulis	Sulfuricaulis limicola
+SAMN05720340	Hydrogenovibrio crunogenus	38.01	39765	Proteobacteria	Gammaproteobacteria	Thiotrichales	Piscirickettsiaceae	Hydrogenovibrio	Hydrogenovibrio crunogenus
+SAMEA79010668	Sinomonas atrocyanea	38.483	37927	Actinobacteria	Actinobacteria	Micrococcales	Micrococcaceae	Sinomonas	Sinomonas atrocyanea
+SAMN06265182	Persephonella marina	38.734	309805	Aquificae	Aquificae	Aquificales	Hydrogenothermaceae	Persephonella	Persephonella marina
+SAMN08770185	Blastomonas sp. RAC04	39.06	1842535	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Blastomonas	Blastomonas sp. RAC04
+SAMN04489760	Syntrophus aciditrophicus	39.133	316277	Proteobacteria	Deltaproteobacteria	Syntrophobacterales	Syntrophaceae	Syntrophus	Syntrophus aciditrophicus
+SAMN02440603	Sedimenticola thiotaurini	39.719	1543721	Proteobacteria	Gammaproteobacteria			Sedimenticola	Sedimenticola thiotaurini
+SAMN02361231	Mogibacterium pumilum	40.567	86332	Firmicutes	Clostridia	Clostridiales	Clostridiales Family XIII. Incertae Sedis	Mogibacterium	Mogibacterium pumilum
+SAMN02198983	Leminorella richardii	40.698	158841	Proteobacteria	Gammaproteobacteria	Enterobacterales	Budviciaceae	Leminorella	Leminorella richardii
+SAMN05660859	Starkeya novella	41.053	921	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Starkeya	Starkeya novella
+SAMN02256451	Candidatus Thiodictyon syntrophicum	41.077000000000005	1166950	Proteobacteria	Gammaproteobacteria	Chromatiales	Chromatiaceae	Thiodictyon	Candidatus Thiodictyon syntrophicum
+SAMN02745370	Porphyrobacter sp. CACIAM 03H1	41.173	2003315	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Erythrobacteraceae	Porphyrobacter	Porphyrobacter sp. CACIAM 03H1
+SAMN06265353	Hydrogenobacter thermophilus	42.261	940	Aquificae	Aquificae	Aquificales	Aquificaceae	Hydrogenobacter	Hydrogenobacter thermophilus
+SAMN02597189	Tolumonas auensis	42.317	43948	Proteobacteria	Gammaproteobacteria	Aeromonadales	Aeromonadaceae	Tolumonas	Tolumonas auensis
+SAMN06318805	Sandaracinus amylolyticus	42.816	927083	Proteobacteria	Deltaproteobacteria	Myxococcales	Sandaracinaceae	Sandaracinus	Sandaracinus amylolyticus
+SAMN03159434	Phytobacter sp. SCO41	43.175	1756993	Proteobacteria	Gammaproteobacteria	Enterobacterales		Phytobacter	Phytobacter sp. SCO41
+SAMN01041250	Onion yellows phytoplasma	43.179	100379	Tenericutes	Mollicutes	Acholeplasmatales	Acholeplasmataceae	Candidatus Phytoplasma	Onion yellows phytoplasma
+SAMN08565656	Herminiimonas arsenicoxydans	43.787	204773	Proteobacteria	Betaproteobacteria	Burkholderiales	Oxalobacteraceae	Herminiimonas	Herminiimonas arsenicoxydans
+SAMN02744071	Luteitalea pratensis	43.808	1855912	Acidobacteria	Vicinamibacteria		Vicinamibacteraceae	Luteitalea	Luteitalea pratensis
+SAMN02744802	Desulfocapsa sulfexigens	44.214	65555	Proteobacteria	Deltaproteobacteria	Desulfobacterales	Desulfobulbaceae	Desulfocapsa	Desulfocapsa sulfexigens
+SAMEA3642966	Marmoricola scoriae	44.673	642780	Actinobacteria	Actinobacteria	Propionibacteriales	Nocardioidaceae	Marmoricola	Marmoricola scoriae
+SAMN02743345	Methylosinus trichosporium	44.937	426	Proteobacteria	Alphaproteobacteria	Rhizobiales	Methylocystaceae	Methylosinus	Methylosinus trichosporium
+SAMN07621195	Algoriphagus sp. M8-2	45.31	1727163	Bacteroidetes	Cytophagia	Cytophagales	Cyclobacteriaceae	Algoriphagus	Algoriphagus sanaruensis
+SAMN03436215	Kytococcus sedentarius	45.497	1276	Actinobacteria	Actinobacteria	Micrococcales	Dermacoccaceae	Kytococcus	Kytococcus sedentarius
+SAMN04488123	Ruegeria sp. NKC1-1	45.719	2099786	Firmicutes	Bacilli	Bacillales	Bacillaceae	Salicibibacter	Salicibibacter kimchii
+SAMN03842091	Anaerococcus prevotii	45.86	33034	Firmicutes	Tissierellia	Tissierellales	Peptoniphilaceae	Anaerococcus	Anaerococcus prevotii
+SAMEA1032401	Oceanisphaera avium	45.864	1903694	Proteobacteria	Gammaproteobacteria	Aeromonadales	Aeromonadaceae	Oceanisphaera	Oceanisphaera avium
+SAMN04488245	Yangia pacifica	46.026	311180	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Yangia	Yangia pacifica
+SAMN06453970	Brevefilum fermentans	46.278	1986204	Chloroflexi	Anaerolineae	Anaerolineales	Anaerolineaceae	Brevefilum	Brevefilum fermentans
+SAMN09579956	Rhodovulum sulfidophilum	46.593	35806	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Rhodovulum	Rhodovulum sulfidophilum
+SAMN09065087	Phyllobacterium zundukense	46.761	1867719	Proteobacteria	Alphaproteobacteria	Rhizobiales	Phyllobacteriaceae	Phyllobacterium	Phyllobacterium zundukense
+SAMN06891246	Advenella kashmirensis	47.174	310575	Proteobacteria	Betaproteobacteria	Burkholderiales	Alcaligenaceae	Advenella	Advenella kashmirensis
+SAMEA4003649	Arsenicicoccus sp. oral taxon 190	47.43	1658671	Actinobacteria	Actinobacteria	Micrococcales	Intrasporangiaceae	Arsenicicoccus	Arsenicicoccus sp. oral taxon 190
+SAMN02666715	Acidiphilium cryptum	47.847	524	Proteobacteria	Alphaproteobacteria	Rhodospirillales	Acetobacteraceae	Acidiphilium	Acidiphilium cryptum
+SAMN05519226	Cycloclasticus zancles	48.486	1329899	Proteobacteria	Gammaproteobacteria	Thiotrichales	Piscirickettsiaceae	Cycloclasticus	Cycloclasticus zancles
+SAMN08778656	Phreatobacter cathodiphilus	48.711	1868589	Proteobacteria	Alphaproteobacteria			Phreatobacter	Phreatobacter cathodiphilus
+SAMEA3725545	[Clostridium] innocuum	49.304	1522	Firmicutes	Erysipelotrichia	Erysipelotrichales	Erysipelotrichaceae	Erysipelatoclostridium	[Clostridium] innocuum
+SAMN02597282	Microvirga ossetica	49.939	1882682	Proteobacteria	Alphaproteobacteria	Rhizobiales	Methylobacteriaceae	Microvirga	Microvirga ossetica
+SAMD00008974	Tetragenococcus halophilus	50.036	51669	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	Tetragenococcus	Tetragenococcus halophilus
+SAMN05446813	Dyella japonica	50.446000000000005	231455	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Rhodanobacteraceae	Dyella	Dyella japonica
+SAMN02256405	Methylotenera mobilis	50.749	359408	Proteobacteria	Betaproteobacteria	Nitrosomonadales	Methylophilaceae	Methylotenera	Methylotenera mobilis
+SAMN02440814	Agrococcus carbonis	50.76	684552	Actinobacteria	Actinobacteria	Micrococcales	Microbacteriaceae	Agrococcus	Agrococcus carbonis
+SAMN09074860	Alkalilimnicola ehrlichii	51.264	351052	Proteobacteria	Gammaproteobacteria	Chromatiales	Ectothiorhodospiraceae	Alkalilimnicola	Alkalilimnicola ehrlichii
+SAMEA3643196	Phycicoccus dokdonensis	51.69	443156	Actinobacteria	Actinobacteria	Micrococcales	Intrasporangiaceae	Phycicoccus	Phycicoccus dokdonensis
+SAMEA3492688	Labrenzia aggregata	52.705	187304	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Labrenzia	Labrenzia aggregata
+SAMN02194530	Hirschia baltica	52.738	2724	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Hyphomonadaceae	Hirschia	Hirschia baltica
+SAMN08778888	Hymenobacter sp. DG25A	53.345	1385663	Bacteroidetes	Cytophagia	Cytophagales	Hymenobacteraceae	Hymenobacter	Hymenobacter sp. DG25A
+SAMN02194802	Marinobacterium aestuarii	53.376000000000005	1821621	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Oceanospirillaceae	Marinobacterium	Marinobacterium aestuarii
+SAMN02440500	Aureimonas sp. AU20	53.576	1349819	Proteobacteria	Alphaproteobacteria	Rhizobiales	Aurantimonadaceae	Aureimonas	Aureimonas sp. AU20
+SAMN05421756	Friedmanniella sagamiharensis	53.699	546874	Actinobacteria	Actinobacteria	Propionibacteriales	Nocardioidaceae	Friedmanniella	Friedmanniella sagamiharensis
+SAMN05428960	Mitsuaria sp. 7	53.735	1658665	Proteobacteria	Betaproteobacteria	Burkholderiales		Mitsuaria	Mitsuaria sp. 7
+SAMN02194209	Yoonia vestfoldensis	53.917	245188	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Yoonia	Yoonia vestfoldensis
+SAMN08777569	Asticcacaulis excentricus	54.652	78587	Proteobacteria	Alphaproteobacteria	Caulobacterales	Caulobacteraceae	Asticcacaulis	Asticcacaulis excentricus
+SAMN06297061	Nonomuraea sp. ATCC 55076	54.995	1909395	Actinobacteria	Actinobacteria	Streptosporangiales	Streptosporangiaceae	Nonomuraea	Nonomuraea sp. ATCC 55076
+SAMN06295967	Belliella baltica	55.145	232259	Bacteroidetes	Cytophagia	Cytophagales	Cyclobacteriaceae	Belliella	Belliella baltica
+SAMN02194611	Oceanimonas sp. GK1	55.146	511062	Proteobacteria	Gammaproteobacteria	Aeromonadales	Aeromonadaceae	Oceanimonas	Oceanimonas sp. GK1
+SAMN08775161	Microterricola viridarii	55.306	412690	Actinobacteria	Actinobacteria	Micrococcales	Microbacteriaceae	Microterricola	Microterricola viridarii
+SAMN04488078	Antarctobacter heliothermus	55.542	74033	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Antarctobacter	Antarctobacter heliothermus
+SAMN03246068	Tateyamaria omphalii	55.863	299262	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Tateyamaria	Tateyamaria omphalii
+SAMN04580810	Thalassolituus oleivorans	56.039	187493	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Oceanospirillaceae	Thalassolituus	Thalassolituus oleivorans
+SAMEA1405469	Zobellella denitrificans	56.061	347534	Proteobacteria	Gammaproteobacteria	Aeromonadales	Aeromonadaceae	Zobellella	Zobellella denitrificans
+SAMN04498914	Christensenella massiliensis	57.561	1805714	Firmicutes	Clostridia	Clostridiales	Christensenellaceae	Christensenella	Christensenella massiliensis
+SAMN09075503	Aquaspirillum sp. LM1	57.897	1938604	Proteobacteria	Betaproteobacteria	Neisseriales	Chromobacteriaceae	Aquaspirillum	Aquaspirillum sp. LM1
+SAMN02746006	Candidatus Puniceispirillum marinum	59.419	767892	Proteobacteria	Alphaproteobacteria			Candidatus Puniceispirillum	Candidatus Puniceispirillum marinum
+SAMN04487800	Snodgrassella alvi	59.422	1196083	Proteobacteria	Betaproteobacteria	Neisseriales	Neisseriaceae	Snodgrassella	Snodgrassella alvi
+SAMN08776295	Lentzea guizhouensis	59.612	1586287	Actinobacteria	Actinobacteria	Pseudonocardiales	Pseudonocardiaceae	Lentzea	Lentzea guizhouensis
+SAMN02597196	Pseudogulbenkiania sp. NH8B	59.773	748280	Proteobacteria	Betaproteobacteria	Neisseriales	Chromobacteriaceae	Pseudogulbenkiania	Pseudogulbenkiania sp. NH8B
+SAMN07501387	Syntrophomonas wolfei	60.499	863	Firmicutes	Clostridia	Clostridiales	Syntrophomonadaceae	Syntrophomonas	Syntrophomonas wolfei
+SAMN06213931	Kribbella flavida	60.901	182640	Actinobacteria	Actinobacteria	Propionibacteriales	Nocardioidaceae	Kribbella	Kribbella flavida
+SAMN05444281	Wenyingzhuangia fucanilytica	62.169	1790137	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Wenyingzhuangia	Wenyingzhuangia fucanilytica
+SAMN02745975	Geosporobacter ferrireducens	62.253	1424294	Firmicutes	Clostridia	Clostridiales	Clostridiaceae	Geosporobacter	Geosporobacter ferrireducens
+SAMN02198987	Stappia sp. ES.058	62.259	1881061	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Stappia	Stappia sp. ES.058
+SAMD00003289	Obesumbacterium proteus	62.522	82983	Proteobacteria	Gammaproteobacteria	Enterobacterales	Hafniaceae	Obesumbacterium	Obesumbacterium proteus
+SAMN06453967	Candidatus Koribacter versatilis	63.107	658062	Acidobacteria	Acidobacteriia	Acidobacteriales	Acidobacteriaceae	Candidatus Koribacter	Candidatus Koribacter versatilis
+SAMN07312426	Pantoea calida	63.858	665913	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	Mixta	Mixta calida
+SAMEA3448420	Limnohabitans sp. 63ED37-2	63.99399999999999	1678128	Proteobacteria	Betaproteobacteria	Burkholderiales	Comamonadaceae	Limnohabitans	Limnohabitans sp. 63ED37-2
+SAMN08778573	Kordia sp. SMS9	64.274	2282170	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Kordia	Kordia sp. SMS9
+SAMN05216238	Lentibacillus amyloliquefaciens	64.373	1472767	Firmicutes	Bacilli	Bacillales	Bacillaceae	Lentibacillus	Lentibacillus amyloliquefaciens
+SAMEA3642848	Pseudarthrobacter equi	64.874	728066	Actinobacteria	Actinobacteria	Micrococcales	Micrococcaceae	Pseudarthrobacter	Pseudarthrobacter equi
+SAMN03943231	Shinella sp. HZN7	67.217	879274	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Shinella	Shinella sp. HZN7
+SAMN05661096	Marivirga tractuosa	67.305	1006	Bacteroidetes	Cytophagia	Cytophagales	Flammeovirgaceae	Marivirga	Marivirga tractuosa
+SAMN05421595	Austwickia chelonae	68.257	100225	Actinobacteria	Actinobacteria	Micrococcales	Dermatophilaceae	Austwickia	Austwickia chelonae
+SAMN02440712	Acetobacterium sp. KB-1	68.708	2184575	Firmicutes	Clostridia	Clostridiales	Eubacteriaceae	Acetobacterium	Acetobacterium sp. KB-1
+SAMN08769778	Maricaulis maris	69.173	74318	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Hyphomonadaceae	Maricaulis	Maricaulis maris
+SAMN03840667	Chelatococcus daeguensis	71.202	444444	Proteobacteria	Alphaproteobacteria	Rhizobiales	Chelatococcaceae	Chelatococcus	Chelatococcus daeguensis
+SAMN02199248	Serinicoccus sp. JLT9	71.495	1758689	Actinobacteria	Actinobacteria	Micrococcales	Intrasporangiaceae	Serinicoccus	Serinicoccus sp. JLT9
+SAMN00839618	Neorhizobium galegae	72.72800000000001	399	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Neorhizobium	Neorhizobium galegae
+SAMN08778907	Luteibacter rhizovicinus	72.875	242606	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Rhodanobacteraceae	Luteibacter	Luteibacter rhizovicinus
+SAMN05443639	Stigmatella aurantiaca	73.129	41	Proteobacteria	Deltaproteobacteria	Myxococcales	Archangiaceae	Stigmatella	Stigmatella aurantiaca
+SAMN09769431	Herbaspirillum hiltneri	73.91	341045	Proteobacteria	Betaproteobacteria	Burkholderiales	Oxalobacteraceae	Herbaspirillum	Herbaspirillum hiltneri
+SAMN02256431	Methylocystis sp. SC2	73.913	187303	Proteobacteria	Alphaproteobacteria	Rhizobiales	Methylocystaceae	Methylocystis	Methylocystis sp. SC2
+SAMN06213936	Kibdelosporangium phytohabitans	74.241	860235	Actinobacteria	Actinobacteria	Pseudonocardiales	Pseudonocardiaceae	Kibdelosporangium	Kibdelosporangium phytohabitans
+SAMN09780794	Thermaerobacter marianensis	74.901	73919	Firmicutes	Clostridia	Clostridiales	Clostridiales Family XVII. Incertae Sedis	Thermaerobacter	Thermaerobacter marianensis
+SAMN02923804	Negativicoccus massiliensis	75.593	1702287	Firmicutes	Negativicutes	Veillonellales	Veillonellaceae	Negativicoccus	Negativicoccus massiliensis
+SAMN04515619	Collimonas fungivorans	76.825	158899	Proteobacteria	Betaproteobacteria	Burkholderiales	Oxalobacteraceae	Collimonas	Collimonas fungivorans
+SAMN08125768	Paraglaciecola psychrophila	77.789	326544	Proteobacteria	Gammaproteobacteria	Alteromonadales	Alteromonadaceae	Paraglaciecola	Paraglaciecola psychrophila
+SAMN07782285	Janthinobacterium sp. B9-8	78.08800000000001	1236179	Proteobacteria	Betaproteobacteria	Burkholderiales	Oxalobacteraceae	Janthinobacterium	Janthinobacterium sp. B9-8
+SAMN07280044	Sulfuricurvum kujiense	78.206	148813	Proteobacteria	Epsilonproteobacteria	Campylobacterales	Helicobacteraceae	Sulfuricurvum	Sulfuricurvum kujiense
+SAMN02441182	Jeotgalicoccus saudimassiliensis	78.315	1461582	Firmicutes	Bacilli	Bacillales	Staphylococcaceae	Jeotgalicoccus	Jeotgalicoccus saudimassiliensis
+SAMN04198240	Glutamicibacter arilaitensis	78.757	256701	Actinobacteria	Actinobacteria	Micrococcales	Micrococcaceae	Glutamicibacter	Glutamicibacter arilaitensis
+SAMN06473672	Gordonibacter urolithinfaciens	79.799	1335613	Actinobacteria	Coriobacteriia	Eggerthellales	Eggerthellaceae	Gordonibacter	Gordonibacter urolithinfaciens
+SAMN02232029	Halothece sp. PCC 7418	80.392	65093	Cyanobacteria		Chroococcales	Aphanothecaceae	Halothece	Halothece sp. PCC 7418
+SAMN05421829	Azoarcus sp. CIB	80.433	198107	Proteobacteria	Betaproteobacteria	Rhodocyclales	Zoogloeaceae	Azoarcus	Azoarcus sp. CIB
+SAMEA3642996	Methylibium petroleiphilum	80.725	105560	Proteobacteria	Betaproteobacteria	Burkholderiales		Methylibium	Methylibium petroleiphilum
+SAMN02441375	Spirosoma aerolatum	80.782	1211326	Bacteroidetes	Cytophagia	Cytophagales	Cytophagaceae	Spirosoma	Spirosoma aerolatum
+SAMN05421830	Desulfomicrobium baculatum	80.809	899	Proteobacteria	Deltaproteobacteria	Desulfovibrionales	Desulfomicrobiaceae	Desulfomicrobium	Desulfomicrobium baculatum
+SAMN05421678	Actinopolymorpha singaporensis	80.817	117157	Actinobacteria	Actinobacteria	Propionibacteriales	Nocardioidaceae	Actinopolymorpha	Actinopolymorpha singaporensis
+SAMN02441025	Kangiella profundi	81.211	1561924	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Kangiellaceae	Kangiella	Kangiella profundi
+SAMN06468391	Shigella dysenteriae	81.501	622	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Shigella	Shigella dysenteriae
+SAMN00778811	Cloacibacillus porcorum	81.541	1197717	Synergistetes	Synergistia	Synergistales	Synergistaceae	Cloacibacillus	Cloacibacillus porcorum
+SAMN07621227	Dyadobacter fermentans	82.203	94254	Bacteroidetes	Cytophagia	Cytophagales	Cytophagaceae	Dyadobacter	Dyadobacter fermentans
+SAMN05720377	Gallionella capsiferriformans	82.743	370405	Proteobacteria	Betaproteobacteria	Nitrosomonadales	Gallionellaceae	Gallionella	Gallionella capsiferriformans
+SAMN03840601	Anoxybacillus flavithermus	83.032	33934	Firmicutes	Bacilli	Bacillales	Bacillaceae	Anoxybacillus	Anoxybacillus flavithermus
+SAMN05860954	Paucimonas lemoignei	84.222	29443	Proteobacteria	Betaproteobacteria	Burkholderiales	Burkholderiaceae	Paucimonas	Paucimonas lemoignei
+SAMN05718038	Pseudonocardia sp. AL041005-10	84.34	445576	Actinobacteria	Actinobacteria	Pseudonocardiales	Pseudonocardiaceae	Pseudonocardia	Pseudonocardia sp. AL041005-10
+SAMN02194395	Rubrivivax gelatinosus	84.432	28068	Proteobacteria	Betaproteobacteria	Burkholderiales		Rubrivivax	Rubrivivax gelatinosus
+SAMN04487930	Cytophaga hutchinsonii	85.37	985	Bacteroidetes	Cytophagia	Cytophagales	Cytophagaceae	Cytophaga	Cytophaga hutchinsonii
+SAMN04244580	Xanthobacter autotrophicus	85.391	280	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Xanthobacter	Xanthobacter autotrophicus
+SAMN03216776	Brevibacterium linens	86.326	1703	Actinobacteria	Actinobacteria	Micrococcales	Brevibacteriaceae	Brevibacterium	Brevibacterium linens
+SAMN07658235	Mycolicibacter sinensis	86.381	875328	Actinobacteria	Actinobacteria	Corynebacteriales	Mycobacteriaceae	Mycolicibacter	Mycolicibacter sinensis
+SAMN00118193	Ectothiorhodospira sp. BSL-9	86.983	1442136	Proteobacteria	Gammaproteobacteria	Chromatiales	Ectothiorhodospiraceae	Ectothiorhodospira	Ectothiorhodospira sp. BSL-9
+SAMN06295950	Arthrobacter crystallopoietes	87.321	37928	Actinobacteria	Actinobacteria	Micrococcales	Micrococcaceae	Arthrobacter	Arthrobacter crystallopoietes
+SAMN08178025	Bosea vaviloviae	87.937	1526658	Proteobacteria	Alphaproteobacteria	Rhizobiales	Bradyrhizobiaceae	Bosea	Bosea vaviloviae
+SAMN04488546	Geodermatophilus obscurus	88.01	1861	Actinobacteria	Actinobacteria	Geodermatophilales	Geodermatophilaceae	Geodermatophilus	Geodermatophilus obscurus
+SAMN02142155	Amycolatopsis orientalis	88.155	31958	Actinobacteria	Actinobacteria	Pseudonocardiales	Pseudonocardiaceae	Amycolatopsis	Amycolatopsis orientalis
+SAMN06299279	Salinicola tamaricis	88.385	1771309	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Halomonadaceae	Salinicola	Salinicola tamaricis
+SAMN03080605	Arenibacter algicola	88.468	616991	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Arenibacter	Arenibacter algicola
+SAMN05921184	Microcystis aeruginosa	88.569	1126	Cyanobacteria		Chroococcales	Microcystaceae	Microcystis	Microcystis aeruginosa
+SAMN05660816	Niastella koreensis	88.735	354356	Bacteroidetes	Chitinophagia	Chitinophagales	Chitinophagaceae	Niastella	Niastella koreensis
+SAMN05781237	Trichodesmium erythraeum	88.917	1206	Cyanobacteria		Oscillatoriales	Microcoleaceae	Trichodesmium	Trichodesmium erythraeum
+SAMN06295984	Sphingopyxis terrae	88.99	33052	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingopyxis	Sphingopyxis terrae
+SAMEA3864775	Actinoplanes sp. SE50/110	89.07000000000001	134676	Actinobacteria	Actinobacteria	Micromonosporales	Micromonosporaceae	Actinoplanes	Actinoplanes sp. SE50/110
+SAMN02261330	Cyanobium gracile	89.63799999999999	59930	Cyanobacteria		Synechococcales	Synechococcaceae	Cyanobium	Cyanobium gracile
+SAMN03159353	Cedecea neteri	89.988	158822	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Cedecea	Cedecea neteri
+SAMN03420899	Geobacillus thermoleovorans	90.397	33941	Firmicutes	Bacilli	Bacillales	Bacillaceae	Geobacillus	Geobacillus thermoleovorans
+SAMN04244565	Azospirillum brasilense	90.582	192	Proteobacteria	Alphaproteobacteria	Rhodospirillales	Rhodospirillaceae	Azospirillum	Azospirillum brasilense
+SAMN09074693	Chromohalobacter salexigens	90.844	158080	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Halomonadaceae	Chromohalobacter	Chromohalobacter salexigens
+SAMN06296388	Paraburkholderia rhizoxinica	91.025	412963	Proteobacteria	Betaproteobacteria	Burkholderiales	Burkholderiaceae	Mycetohabitans	Paraburkholderia rhizoxinica
+SAMEA102060418	Marinovum algicola	91.111	42444	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Marinovum	Marinovum algicola
+SAMN09081311	Alcanivorax xenomutans	91.141	1094342	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Alcanivoracaceae	Alcanivorax	Alcanivorax xenomutans
+SAMN05660766	Curtobacterium pusillum	91.176	69373	Actinobacteria	Actinobacteria	Micrococcales	Microbacteriaceae	Curtobacterium	Curtobacterium pusillum
+SAMN07246942	Rhodopirellula baltica	91.453	265606	Planctomycetes	Planctomycetia	Pirellulales	Pirellulaceae	Rhodopirellula	Rhodopirellula baltica
+SAMN05192567	Methylobacterium phyllosphaerae	91.65	418223	Proteobacteria	Alphaproteobacteria	Rhizobiales	Methylobacteriaceae	Methylobacterium	Methylobacterium phyllosphaerae
+SAMN05216364	Petrimonas mucosa	91.738	1642646	Bacteroidetes	Bacteroidia	Bacteroidales	Porphyromonadaceae	Petrimonas	Petrimonas mucosa
+SAMEA3725541	Cellulosimicrobium sp. TH-20	92.115	1980001	Actinobacteria	Actinobacteria	Micrococcales	Promicromonosporaceae	Cellulosimicrobium	Cellulosimicrobium sp. TH-20
+SAMN02194846	Simiduia agarivorans	92.315	447471	Proteobacteria	Gammaproteobacteria	Cellvibrionales	Cellvibrionaceae	Simiduia	Simiduia agarivorans
+SAMN02471431	Hydrogenophaga sp. PBC	92.347	795665	Proteobacteria	Betaproteobacteria	Burkholderiales	Comamonadaceae	Hydrogenophaga	Hydrogenophaga sp. PBC
+SAMN08125766	Psychromonas ingrahamii	92.397	357794	Proteobacteria	Gammaproteobacteria	Alteromonadales	Psychromonadaceae	Psychromonas	Psychromonas ingrahamii
+SAMEA3545242	Roseburia hominis	92.448	301301	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Roseburia	Roseburia hominis
+SAMEA2421762	Tatumella ptyseos	92.943	82987	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	Tatumella	Tatumella ptyseos
+SAMN04580770	Erythrobacter flavus	92.977	192812	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Erythrobacteraceae	Erythrobacter	Erythrobacter flavus
+SAMN06173321	Psychrobacter cryohalolentis	93.125	330922	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Psychrobacter	Psychrobacter cryohalolentis
+SAMN04495803	Eikenella corrodens	93.422	539	Proteobacteria	Betaproteobacteria	Neisseriales	Neisseriaceae	Eikenella	Eikenella corrodens
+SAMN02923810	Leptotrichia sp. oral taxon 212	93.489	712357	Fusobacteria	Fusobacteriia	Fusobacteriales	Leptotrichiaceae	Leptotrichia	Leptotrichia sp. oral taxon 212
+SAMN02441553	Candidatus Methylopumilus planktonicus	93.506	1581557	Proteobacteria	Betaproteobacteria	Nitrosomonadales	Methylophilaceae	Candidatus Methylopumilus	Candidatus Methylopumilus planktonicus
+SAMN06297142	Thermoanaerobacter mathranii	93.549	583357	Firmicutes	Clostridia	Thermoanaerobacterales	Thermoanaerobacteraceae	Thermoanaerobacter	Thermoanaerobacter mathranii
+SAMN00203937	Planktomarina temperata	93.681	1284658	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Planktomarina	Planktomarina temperata
+SAMN08125772	Psychroflexus torquis	93.743	57029	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Psychroflexus	Psychroflexus torquis
+SAMN02745503	Sulfitobacter sp. SK025	93.82	1389011	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Sulfitobacter	Sulfitobacter sp. SK025
+SAMN05216365	Proteiniphilum saccharofermentans	94.049	1642647	Bacteroidetes	Bacteroidia	Bacteroidales	Dysgonamonadaceae	Proteiniphilum	Proteiniphilum saccharofermentans
+SAMEA4553727	Cobetia marina	94.151	28258	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Halomonadaceae	Cobetia	Cobetia marina
+SAMN06294336	Chromobacterium violaceum	94.183	536	Proteobacteria	Betaproteobacteria	Neisseriales	Chromobacteriaceae	Chromobacterium	Chromobacterium violaceum
+SAMN02194887	Pannonibacter phragmitetus	94.184	121719	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Pannonibacter	Pannonibacter phragmitetus
+SAMN09302856	Synechocystis sp. PCC 6714	94.231	1147	Cyanobacteria		Synechococcales	Merismopediaceae	Synechocystis	Synechocystis sp. PCC 6714
+SAMN02194604	Methylophilus sp. TWE2	94.313	1662285	Proteobacteria	Betaproteobacteria	Nitrosomonadales	Methylophilaceae	Methylophilus	Methylophilus sp. TWE2
+SAMN02910415	[Mannheimia] succiniciproducens	94.41	157673	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Basfia	[Mannheimia] succiniciproducens
+SAMN05216479	Magnetospirillum gryphiswaldense	94.43	55518	Proteobacteria	Alphaproteobacteria	Rhodospirillales	Rhodospirillaceae	Magnetospirillum	Magnetospirillum gryphiswaldense
+SAMN00690848	Parvimonas micra	94.489	33033	Firmicutes	Tissierellia	Tissierellales	Peptoniphilaceae	Parvimonas	Parvimonas micra
+SAMN06296429	Janibacter indicus	94.559	857417	Actinobacteria	Actinobacteria	Micrococcales	Intrasporangiaceae	Janibacter	Janibacter indicus
+SAMN05421681	Lysobacter enzymogenes	94.66	69	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Lysobacter	Lysobacter enzymogenes
+SAMN00811179	Brucella abortus	94.777	235	Proteobacteria	Alphaproteobacteria	Rhizobiales	Brucellaceae	Brucella	Brucella abortus
+SAMN08779097	Winogradskyella sp. RHA_55	94.797	1249933	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Winogradskyella	Winogradskyella sp. RHA_55
+SAMN00115033	Dermacoccus nishinomiyaensis	94.826	1274	Actinobacteria	Actinobacteria	Micrococcales	Dermacoccaceae	Dermacoccus	Dermacoccus nishinomiyaensis
+SAMN06272740	Epibacterium mobile	94.871	379347	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Epibacterium	Epibacterium mobile
+SAMN06265362	Xenorhabdus bovienii	94.887	40576	Proteobacteria	Gammaproteobacteria	Enterobacterales	Morganellaceae	Xenorhabdus	Xenorhabdus bovienii
+SAMD00064380	Micromonospora aurantiaca	94.903	47850	Actinobacteria	Actinobacteria	Micromonosporales	Micromonosporaceae	Micromonospora	Micromonospora aurantiaca
+SAMN05417667	Gordonia terrae	94.931	2055	Actinobacteria	Actinobacteria	Corynebacteriales	Gordoniaceae	Gordonia	Gordonia terrae
+SAMN02198996	Gramella sp. MAR_2010_102	94.991	1250231	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Gramella	Gramella sp. MAR_2010_102
+SAMEA4668384	Sorangium cellulosum	95.014	56	Proteobacteria	Deltaproteobacteria	Myxococcales	Polyangiaceae	Sorangium	Sorangium cellulosum
+SAMN05421758	Salimicrobium jeotgali	95.164	1230341	Firmicutes	Bacilli	Bacillales	Bacillaceae	Salimicrobium	Salimicrobium jeotgali
+SAMN02745120	Acetoanaerobium sticklandii	95.19	1511	Firmicutes	Clostridia	Clostridiales	Peptostreptococcaceae	Acetoanaerobium	Acetoanaerobium sticklandii
+SAMN05216353	Halobacillus halophilus	95.357	1570	Firmicutes	Bacilli	Bacillales	Bacillaceae	Halobacillus	Halobacillus halophilus
+SAMN07312439	Lelliottia amnigena	95.409	61646	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Lelliottia	Lelliottia amnigena
+SAMN04488569	Marinilactibacillus sp. 15R	95.659	1911586	Firmicutes	Bacilli	Lactobacillales	Carnobacteriaceae	Marinilactibacillus	Marinilactibacillus sp. 15R
+SAMN04487905	Actinopolyspora erythraea	95.662	414996	Actinobacteria	Actinobacteria	Actinopolysporales	Actinopolysporaceae	Actinopolyspora	Actinopolyspora erythraea
+SAMN00690724	Adlercreutzia equolifaciens	95.726	446660	Actinobacteria	Coriobacteriia	Eggerthellales	Eggerthellaceae	Adlercreutzia	Adlercreutzia equolifaciens
+SAMN07774668	Edwardsiella tarda	95.729	636	Proteobacteria	Gammaproteobacteria	Enterobacterales	Hafniaceae	Edwardsiella	Edwardsiella tarda
+SAMN07944235	Cryobacterium sp. LW097	95.806	1978566	Actinobacteria	Actinobacteria	Micrococcales	Microbacteriaceae	Cryobacterium	Cryobacterium sp. LW097
+SAMN09083419	Azorhizobium caulinodans	95.889	7	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Azorhizobium	Azorhizobium caulinodans
+SAMN05444415	Salipiger profundus	95.956	1229727	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Salipiger	Salipiger profundus
+SAMN02745723	Pragia fontium	96.009	82985	Proteobacteria	Gammaproteobacteria	Enterobacterales	Budviciaceae	Pragia	Pragia fontium
+SAMN09009630	Asaia bogorensis	96.027	91915	Proteobacteria	Alphaproteobacteria	Rhodospirillales	Acetobacteraceae	Asaia	Asaia bogorensis
+SAMN02194208	Vitreoscilla sp. C1	96.059	96942	Proteobacteria	Betaproteobacteria	Neisseriales	Neisseriaceae	Vitreoscilla	Vitreoscilla sp. C1
+SAMN03850950	Finegoldia magna	96.079	1260	Firmicutes	Tissierellia	Tissierellales	Peptoniphilaceae	Finegoldia	Finegoldia magna
+SAMN08932708	Dermabacter vaginalis	96.151	1630135	Actinobacteria	Actinobacteria	Micrococcales	Dermabacteraceae	Dermabacter	Dermabacter vaginalis
+SAMN06295909	Plantibacter flavus	96.211	150123	Actinobacteria	Actinobacteria	Micrococcales	Microbacteriaceae	Plantibacter	Plantibacter flavus
+SAMN04487941	Pontibacter akesuensis	96.233	388950	Bacteroidetes	Cytophagia	Cytophagales	Hymenobacteraceae	Pontibacter	Pontibacter akesuensis
+SAMN09083212	Idiomarina loihiensis	96.318	135577	Proteobacteria	Gammaproteobacteria	Alteromonadales	Idiomarinaceae	Idiomarina	Idiomarina loihiensis
+SAMN08131257	Virgibacillus pantothenticus	96.417	1473	Firmicutes	Bacilli	Bacillales	Bacillaceae	Virgibacillus	Virgibacillus pantothenticus
+SAMN02214607	Gemella morbillorum	96.421	29391	Firmicutes	Bacilli	Bacillales		Gemella	Gemella morbillorum
+SAMN05661042	Salegentibacter salegens	96.454	143223	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Salegentibacter	Salegentibacter salegens
+SAMN08932709	Eggerthella lenta	96.534	84112	Actinobacteria	Coriobacteriia	Eggerthellales	Eggerthellaceae	Eggerthella	Eggerthella lenta
+SAMN04244547	Azotobacter vinelandii	96.545	354	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Azotobacter	Azotobacter vinelandii
+SAMN08667746	Coprothermobacter proteolyticus	96.554	35786	Coprothermobacterota	Coprothermobacteria	Coprothermobacterales	Coprothermobacteraceae	Coprothermobacter	Coprothermobacter proteolyticus
+SAMN05421766	Zobellia galactanivorans	96.557	63186	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Zobellia	Zobellia galactanivorans
+SAMN02375020	Rhodomicrobium vannielii	96.588	1069	Proteobacteria	Alphaproteobacteria	Rhizobiales	Hyphomicrobiaceae	Rhodomicrobium	Rhodomicrobium vannielii
+SAMN08117974	Macrococcus caseolyticus	96.662	69966	Firmicutes	Bacilli	Bacillales	Staphylococcaceae	Macrococcus	Macrococcus caseolyticus
+SAMN02194408	Methylococcus capsulatus	96.739	414	Proteobacteria	Gammaproteobacteria	Methylococcales	Methylococcaceae	Methylococcus	Methylococcus capsulatus
+SAMN08775231	Petrotoga mobilis	96.766	69499	Thermotogae	Thermotogae	Petrotogales	Petrotogaceae	Petrotoga	Petrotoga mobilis
+SAMN02261504	Planktothrix agardhii	96.812	1160	Cyanobacteria		Oscillatoriales	Microcoleaceae	Planktothrix	Planktothrix agardhii
+SAMN08769784	Marinobacter hydrocarbonoclasticus	96.834	2743	Proteobacteria	Gammaproteobacteria	Alteromonadales	Alteromonadaceae	Marinobacter	Marinobacter hydrocarbonoclasticus
+SAMEA3545250	Collinsella aerofaciens	96.876	74426	Actinobacteria	Coriobacteriia	Coriobacteriales	Coriobacteriaceae	Collinsella	Collinsella aerofaciens
+SAMN03273550	Allofrancisella guangzhouensis	96.933	594679	Proteobacteria	Gammaproteobacteria	Thiotrichales	Francisellaceae	Allofrancisella	Allofrancisella guangzhouensis
+SAMEA3545427	[Eubacterium] hallii	96.936	39488	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Anaerobutyricum	Anaerobutyricum hallii
+SAMN06040408	Leclercia sp. LSNIH3	96.939	1920116	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Leclercia	Leclercia sp. LSNIH3
+SAMN03021535	Exiguobacterium sp. ZWU0009	96.982	1224749	Firmicutes	Bacilli	Bacillales		Exiguobacterium	Exiguobacterium sp. ZWU0009
+SAMN02745466	Sulfurimonas gotlandica	97.005	1176482	Proteobacteria	Epsilonproteobacteria	Campylobacterales	Helicobacteraceae	Sulfurimonas	Sulfurimonas gotlandica
+SAMEA104711405	Rickettsia typhi	97.031	785	Proteobacteria	Alphaproteobacteria	Rickettsiales	Rickettsiaceae	Rickettsia	Rickettsia typhi
+SAMN09932324	Oceanobacillus iheyensis	97.07	182710	Firmicutes	Bacilli	Bacillales	Bacillaceae	Oceanobacillus	Oceanobacillus iheyensis
+SAMN01919351	Thermotoga maritima	97.143	2336	Thermotogae	Thermotogae	Thermotogales	Thermotogaceae	Thermotoga	Thermotoga maritima
+SAMN08769261	Intestinimonas butyriciproducens	97.147	1297617	Firmicutes	Clostridia	Clostridiales		Intestinimonas	Intestinimonas butyriciproducens
+SAMN02261325	Methylomicrobium alcaliphilum	97.205	271065	Proteobacteria	Gammaproteobacteria	Methylococcales	Methylococcaceae	Methylomicrobium	Methylomicrobium alcaliphilum
+SAMN09064162	Roseateles depolymerans	97.272	76731	Proteobacteria	Betaproteobacteria	Burkholderiales		Roseateles	Roseateles depolymerans
+SAMD00027372	Tistrella mobilis	97.301	171437	Proteobacteria	Alphaproteobacteria	Rhodospirillales	Rhodospirillaceae	Tistrella	Tistrella mobilis
+SAMEA1411908	Fluoribacter dumoffii	97.331	463	Proteobacteria	Gammaproteobacteria	Legionellales	Legionellaceae	Fluoribacter	Fluoribacter dumoffii
+SAMN04488061	Candidatus Filomicrobium marinum	97.331	1608628	Proteobacteria	Alphaproteobacteria	Rhizobiales	Hyphomicrobiaceae	Filomicrobium	Candidatus Filomicrobium marinum
+SAMN03468742	Acidovorax avenae	97.447	80867	Proteobacteria	Betaproteobacteria	Burkholderiales	Comamonadaceae	Acidovorax	Acidovorax avenae
+SAMN02849403	[Clostridium] sphenoides	97.51	29370	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Lacrimispora	Lacrimispora sphenoides
+SAMN08720249	Streptacidiphilus sp. DSM 106435	97.545	2126346	Actinobacteria	Actinobacteria	Streptomycetales	Streptomycetaceae	Streptacidiphilus	Streptacidiphilus sp. DSM 106435
+SAMN02769648	Dehalobacter restrictus	97.633	55583	Firmicutes	Clostridia	Clostridiales	Peptococcaceae	Dehalobacter	Dehalobacter restrictus
+SAMN02256443	Gallibacterium anatis	97.662	750	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Gallibacterium	Gallibacterium anatis
+SAMN04487931	Desulfobacula toluolica	97.67	28223	Proteobacteria	Deltaproteobacteria	Desulfobacterales	Desulfobacteraceae	Desulfobacula	Desulfobacula toluolica
+SAMN05216403	Nitrosospira multiformis	97.687	1231	Proteobacteria	Betaproteobacteria	Nitrosomonadales	Nitrosomonadaceae	Nitrosospira	Nitrosospira multiformis
+SAMN05421788	Filimonas lacunae	97.692	477680	Bacteroidetes	Chitinophagia	Chitinophagales	Chitinophagaceae	Filimonas	Filimonas lacunae
+SAMN04489762	Terribacillus aidingensis	97.7	586416	Firmicutes	Bacilli	Bacillales	Bacillaceae	Terribacillus	Terribacillus aidingensis
+SAMN00103461	Atopobium parvulum	97.716	1382	Actinobacteria	Coriobacteriia	Coriobacteriales	Atopobiaceae	Atopobium	Atopobium parvulum
+SAMN06473743	Faecalitalea cylindroides	97.72	39483	Firmicutes	Erysipelotrichia	Erysipelotrichales	Erysipelotrichaceae	Faecalitalea	Faecalitalea cylindroides
+SAMN00102961	Veillonella parvula	97.772	29466	Firmicutes	Negativicutes	Veillonellales	Veillonellaceae	Veillonella	Veillonella parvula
+SAMD00020309	Komagataeibacter medellinensis	97.772	1177712	Proteobacteria	Alphaproteobacteria	Rhodospirillales	Acetobacteraceae	Komagataeibacter	Komagataeibacter medellinensis
+SAMEA4442169	Kingella kingae	97.857	504	Proteobacteria	Betaproteobacteria	Neisseriales	Neisseriaceae	Kingella	Kingella kingae
+SAMEA104569583	Leuconostoc mesenteroides	97.865	1245	Firmicutes	Bacilli	Lactobacillales	Leuconostocaceae	Leuconostoc	Leuconostoc mesenteroides
+SAMN02584943	Kocuria palustris	97.865	71999	Actinobacteria	Actinobacteria	Micrococcales	Micrococcaceae	Kocuria	Kocuria palustris
+SAMN06684312	Pectobacterium carotovorum	97.884	554	Proteobacteria	Gammaproteobacteria	Enterobacterales	Pectobacteriaceae	Pectobacterium	Pectobacterium carotovorum
+SAMN09932497	Nocardiopsis dassonvillei	97.91	2014	Actinobacteria	Actinobacteria	Streptosporangiales	Nocardiopsaceae	Nocardiopsis	Nocardiopsis dassonvillei
+SAMEA871978	Alistipes shahii	97.937	328814	Bacteroidetes	Bacteroidia	Bacteroidales	Rikenellaceae	Alistipes	Alistipes shahii
+SAMN02665667	Anaplasma phagocytophilum	97.981	948	Proteobacteria	Alphaproteobacteria	Rickettsiales	Anaplasmataceae	Anaplasma	Anaplasma phagocytophilum
+SAMD00064387	Microlunatus phosphovorus	98.017	29405	Actinobacteria	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Microlunatus	Microlunatus phosphovorus
+SAMN05660479	Microbulbifer thermotolerans	98.059	252514	Proteobacteria	Gammaproteobacteria	Cellvibrionales	Microbulbiferaceae	Microbulbifer	Microbulbifer thermotolerans
+SAMN02934513	Raoultella planticola	98.084	575	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Raoultella	Raoultella planticola
+SAMEA3206038	Propionibacterium freudenreichii	98.084	1744	Actinobacteria	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Propionibacterium	Propionibacterium freudenreichii
+SAMEA3545422	Anaerostipes hadrus	98.093	649756	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Anaerostipes	Anaerostipes hadrus
+SAMN09074743	Aneurinibacillus soli	98.095	1500254	Firmicutes	Bacilli	Bacillales	Paenibacillaceae	Aneurinibacillus	Aneurinibacillus soli
+SAMEA3319245	Actinotignum schaalii	98.107	59505	Actinobacteria	Actinobacteria	Actinomycetales	Actinomycetaceae	Actinotignum	Actinotignum schaalii
+SAMEA3545433	Faecalibacterium prausnitzii	98.13	853	Firmicutes	Clostridia	Clostridiales	Ruminococcaceae	Faecalibacterium	Faecalibacterium prausnitzii
+SAMN02745216	Desulfatibacillum alkenivorans	98.171	259354	Proteobacteria	Deltaproteobacteria	Desulfobacterales	Desulfobacteraceae	Desulfatibacillum	Desulfatibacillum alkenivorans
+SAMEA3643113	Ensifer adhaerens	98.183	106592	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Ensifer	Ensifer adhaerens
+SAMN06173302	Brevundimonas vesicularis	98.186	41276	Proteobacteria	Alphaproteobacteria	Caulobacterales	Caulobacteraceae	Brevundimonas	Brevundimonas vesicularis
+SAMN05216246	Actinomyces sp. Chiba101	98.188	1851395	Actinobacteria	Actinobacteria	Actinomycetales	Actinomycetaceae	Actinomyces	Actinomyces sp. Chiba101
+SAMEA3357455	Comamonas kerstersii	98.218	225992	Proteobacteria	Betaproteobacteria	Burkholderiales	Comamonadaceae	Comamonas	Comamonas kerstersii
+SAMN06269154	Photorhabdus laumondii	98.267	2218628	Proteobacteria	Gammaproteobacteria	Enterobacterales	Morganellaceae	Photorhabdus	Photorhabdus laumondii
+SAMN02261422	Marinitoga piezophila	98.276	149715	Thermotogae	Thermotogae	Petrotogales	Petrotogaceae	Marinitoga	Marinitoga piezophila
+SAMN02199001	Dermatophilus congolensis	98.282	1863	Actinobacteria	Actinobacteria	Micrococcales	Dermatophilaceae	Dermatophilus	Dermatophilus congolensis
+SAMN09912143	Clavibacter insidiosus	98.283	33014	Actinobacteria	Actinobacteria	Micrococcales	Microbacteriaceae	Clavibacter	Clavibacter michiganensis
+SAMN05428936	Pelagibacterium halotolerans	98.291	531813	Proteobacteria	Alphaproteobacteria	Rhizobiales	Hyphomicrobiaceae	Pelagibacterium	Pelagibacterium halotolerans
+SAMN02261385	Rahnella aquatilis	98.309	34038	Proteobacteria	Gammaproteobacteria	Enterobacterales	Yersiniaceae	Rahnella	Rahnella aquatilis
+SAMN04488083	Archangium gephyra	98.355	48	Proteobacteria	Deltaproteobacteria	Myxococcales	Archangiaceae	Archangium	Archangium gephyra
+SAMEA3545357	Ruminococcus bicirculans	98.385	1160721	Firmicutes	Clostridia	Clostridiales	Ruminococcaceae	Ruminococcus	Ruminococcus bicirculans
+SAMN05151727	Caldicellulosiruptor bescii	98.389	31899	Firmicutes	Clostridia	Thermoanaerobacterales	Thermoanaerobacterales Family III. Incertae Sedis	Caldicellulosiruptor	Caldicellulosiruptor bescii
+SAMEA3545317	Turicibacter sp. H121	98.393	1712675	Firmicutes	Erysipelotrichia	Erysipelotrichales	Erysipelotrichaceae	Turicibacter	Turicibacter sp. H121
+SAMEA2201860	Carnobacterium maltaromaticum	98.441	2751	Firmicutes	Bacilli	Lactobacillales	Carnobacteriaceae	Carnobacterium	Carnobacterium maltaromaticum
+SAMN03737945	Arcobacter bivalviorum	98.444	663364	Proteobacteria	Epsilonproteobacteria	Campylobacterales	Campylobacteraceae	Halarcobacter	Halarcobacter bivalviorum
+SAMN06173323	Streptobacillus moniliformis	98.466	34105	Fusobacteria	Fusobacteriia	Fusobacteriales	Leptotrichiaceae	Streptobacillus	Streptobacillus moniliformis
+SAMN09083439	Microvirgula aerodenitrificans	98.468	57480	Proteobacteria	Betaproteobacteria	Neisseriales	Chromobacteriaceae	Microvirgula	Microvirgula aerodenitrificans
+SAMN05992342	Microbacterium sp. 1.5R	98.487	1916917	Actinobacteria	Actinobacteria	Micrococcales	Microbacteriaceae	Microbacterium	Microbacterium sp. 1.5R
+SAMD00013964	Candidatus Tachikawaea gelatinosa	98.521	1410383	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Candidatus Tachikawaea	Candidatus Tachikawaea gelatinosa
+SAMN08125767	Alteromonas sp. MB-3u-76	98.528	2058133	Proteobacteria	Gammaproteobacteria	Alteromonadales	Alteromonadaceae	Alteromonas	Alteromonas sp. MB-3u-76
+SAMN03840759	Thermincola potens	98.552	863643	Firmicutes	Clostridia	Clostridiales	Peptococcaceae	Thermincola	Thermincola potens
+SAMN02797813	Pediococcus acidilactici	98.568	1254	Firmicutes	Bacilli	Lactobacillales	Lactobacillaceae	Pediococcus	Pediococcus acidilactici
+SAMN02927897	Kosakonia sacchari	98.571	1158459	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Kosakonia	Kosakonia sacchari
+SAMN02923802	Mageeibacillus indolicus	98.625	884684	Firmicutes	Clostridia	Clostridiales	Hungateiclostridiaceae	Mageeibacillus	Mageeibacillus indolicus
+SAMN05443572	Myxococcus fulvus	98.629	33	Proteobacteria	Deltaproteobacteria	Myxococcales	Myxococcaceae	Myxococcus	Myxococcus fulvus
+SAMN02910314	Denitrobacterium detoxificans	98.646	79604	Actinobacteria	Coriobacteriia	Eggerthellales	Eggerthellaceae	Denitrobacterium	Denitrobacterium detoxificans
+SAMN01923204	Desulfovibrio africanus	98.651	873	Proteobacteria	Deltaproteobacteria	Desulfovibrionales	Desulfovibrionaceae	Desulfocurvibacter	Desulfocurvibacter africanus
+SAMN05428934	Tessaracoccus flavus	98.68	1610493	Actinobacteria	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Tessaracoccus	Tessaracoccus flavus
+SAMN05216242	Thauera chlorobenzoica	98.682	96773	Proteobacteria	Betaproteobacteria	Rhodocyclales	Zoogloeaceae	Thauera	Thauera chlorobenzoica
+SAMN08778572	Dietzia psychralcaliphila	98.729	139021	Actinobacteria	Actinobacteria	Corynebacteriales	Dietziaceae	Dietzia	Dietzia psychralcaliphila
+SAMD00004193	Tannerella forsythia	98.731	28112	Bacteroidetes	Bacteroidia	Bacteroidales	Tannerellaceae	Tannerella	Tannerella forsythia
+SAMN05006657	Agrobacterium rhizogenes	98.748	359	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Agrobacterium	Agrobacterium rhizogenes
+SAMN06173357	Parabacteroides distasonis	98.762	823	Bacteroidetes	Bacteroidia	Bacteroidales	Tannerellaceae	Parabacteroides	Parabacteroides distasonis
+SAMN02199108	Actinoalloteichus sp. AHMU CJ021	98.764	2072503	Actinobacteria	Actinobacteria	Pseudonocardiales	Pseudonocardiaceae	Actinoalloteichus	Actinoalloteichus sp. AHMU CJ021
+SAMN00771507	Thioflavicoccus mobilis	98.789	80679	Proteobacteria	Gammaproteobacteria	Chromatiales	Chromatiaceae	Thioflavicoccus	Thioflavicoccus mobilis
+SAMN00713634	Isoptericola variabilis	98.791	139208	Actinobacteria	Actinobacteria	Micrococcales	Promicromonosporaceae	Isoptericola	Isoptericola variabilis
+SAMN10228558	Pseudopropionibacterium propionicum	98.792	1750	Actinobacteria	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Pseudopropionibacterium	Pseudopropionibacterium propionicum
+SAMN03262798	Ruminiclostridium cellulolyticum	98.794	1521	Firmicutes	Clostridia	Clostridiales	Hungateiclostridiaceae	Ruminiclostridium	Ruminiclostridium cellulolyticum
+SAMD00042785	Fischerella sp. NIES-3754	98.818	1752063	Cyanobacteria		Nostocales	Hapalosiphonaceae	Fischerella	Fischerella sp. NIES-3754
+SAMN02440594	Carboxydothermus hydrogenoformans	98.837	129958	Firmicutes	Clostridia	Thermoanaerobacterales	Thermoanaerobacteraceae	Carboxydothermus	Carboxydothermus hydrogenoformans
+SAMN02584910	Thermacetogenium phaeum	98.851	85874	Firmicutes	Clostridia	Thermoanaerobacterales	Thermoanaerobacteraceae	Thermacetogenium	Thermacetogenium phaeum
+SAMN00008797	Blautia hansenii	98.865	1322	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Blautia	Blautia hansenii
+SAMN02744133	Thalassospira xiamenensis	98.871	220697	Proteobacteria	Alphaproteobacteria	Rhodospirillales	Rhodospirillaceae	Thalassospira	Thalassospira xiamenensis
+SAMN10107884	Kurthia sp. 11kri321	98.877	1750719	Firmicutes	Bacilli	Bacillales	Planococcaceae	Kurthia	Kurthia sp. 11kri321
+SAMN02169294	[Eubacterium] eligens	98.9	39485	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Lachnospira	Lachnospira eligens
+SAMN03996303	Hafnia alvei	98.902	569	Proteobacteria	Gammaproteobacteria	Enterobacterales	Hafniaceae	Hafnia	Hafnia alvei
+SAMD00064389	Kitasatospora setae	98.906	2066	Actinobacteria	Actinobacteria	Streptomycetales	Streptomycetaceae	Kitasatospora	Kitasatospora setae
+SAMN02440509	Candidatus Thioglobus singularis	98.906	1427364	Proteobacteria	Gammaproteobacteria			Candidatus Thioglobus	Candidatus Thioglobus singularis
+SAMN05004741	Pluralibacter gergoviae	98.917	61647	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Pluralibacter	Pluralibacter gergoviae
+SAMN00713577	Pseudoxanthomonas suwonensis	98.924	314722	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Pseudoxanthomonas	Pseudoxanthomonas suwonensis
+SAMN02232048	Rhodanobacter denitrificans	98.944	666685	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Rhodanobacteraceae	Rhodanobacter	Rhodanobacter denitrificans
+SAMN08125741	Polaribacter sp. ALD11	98.944	2058137	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Polaribacter	Polaribacter sp. ALD11
+SAMD00047327	Candidatus Rhodoluna planktonica	99.004	535712	Actinobacteria	Actinobacteria	Micrococcales	Microbacteriaceae	Rhodoluna	Candidatus Rhodoluna planktonica
+SAMN05421671	Pimelobacter simplex	99.012	2045	Actinobacteria	Actinobacteria	Propionibacteriales	Nocardioidaceae	Pimelobacter	Pimelobacter simplex
+SAMN07340702	[Clostridium] bolteae	99.027	208479	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Enterocloster	Enterocloster bolteae
+SAMN07809952	Erwinia tasmaniensis	99.046	338565	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	Erwinia	Erwinia tasmaniensis
+SAMN02199231	Laribacter hongkongensis	99.047	168471	Proteobacteria	Betaproteobacteria	Neisseriales	Chromobacteriaceae	Laribacter	Laribacter hongkongensis
+SAMN02261421	Thermanaerovibrio velox	99.05	108007	Synergistetes	Synergistia	Synergistales	Synergistaceae	Thermanaerovibrio	Thermanaerovibrio velox
+SAMN08125751	Lacinutrix sp. Bg11-31	99.056	2057808	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Lacinutrix	Lacinutrix sp. Bg11-31
+SAMN02440596	Teredinibacter turnerae	99.064	2426	Proteobacteria	Gammaproteobacteria	Cellvibrionales	Cellvibrionaceae	Teredinibacter	Teredinibacter turnerae
+SAMN05216534	Candidatus Aquiluna sp. UB-MaderosW2red	99.078	1855377	Actinobacteria	Actinobacteria	Micrococcales	Microbacteriaceae	Candidatus Aquiluna	Candidatus Aquiluna sp. UB-MaderosW2red
+SAMN03568969	Wolinella succinogenes	99.087	844	Proteobacteria	Epsilonproteobacteria	Campylobacterales	Helicobacteraceae	Wolinella	Wolinella succinogenes
+SAMN00691412	Dialister pneumosintes	99.093	39950	Firmicutes	Negativicutes	Veillonellales	Veillonellaceae	Dialister	Dialister pneumosintes
+SAMN09213727	Megasphaera sp. AJH120	99.105	2144175	Firmicutes	Negativicutes	Veillonellales	Veillonellaceae	Megasphaera	Megasphaera stantonii
+SAMD00064378	Jonesia denitrificans	99.109	43674	Actinobacteria	Actinobacteria	Micrococcales	Jonesiaceae	Jonesia	Jonesia denitrificans
+SAMN03996307	Pantoea agglomerans	99.114	549	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	Pantoea	Pantoea agglomerans
+SAMN09210803	Kluyvera intermedia	99.13	61648	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Kluyvera	Kluyvera intermedia
+SAMN05444141	Pseudovibrio sp. FO-BEG1	99.132	911045	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Pseudovibrio	Pseudovibrio sp. FO-BEG1
+SAMN08125778	Planococcus sp. MB-3u-03	99.136	2058136	Firmicutes	Bacilli	Bacillales	Planococcaceae	Planococcus	Planococcus sp. MB-3u-03
+SAMN04487195	Aggregatibacter actinomycetemcomitans	99.155	714	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Aggregatibacter	Aggregatibacter actinomycetemcomitans
+SAMN00017498	Kyrpidia tusciae	99.171	33943	Firmicutes	Bacilli	Bacillales	Alicyclobacillaceae	Kyrpidia	Kyrpidia tusciae
+SAMN02769651	Desulfurella acetivorans	99.179	33002	Proteobacteria	Deltaproteobacteria	Desulfurellales	Desulfurellaceae	Desulfurella	Desulfurella acetivorans
+SAMN02769652	Rhizobium leguminosarum	99.21	384	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Rhizobium	Rhizobium leguminosarum
+SAMN02261375	Acetomicrobium mobile	99.215	97477	Synergistetes	Synergistia	Synergistales	Synergistaceae	Acetomicrobium	Acetomicrobium mobile
+SAMN09064259	Prauserella marina	99.24	530584	Actinobacteria	Actinobacteria	Pseudonocardiales	Pseudonocardiaceae	Prauserella	Prauserella marina
+SAMN02745572	Zunongwangia profunda	99.247	398743	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Zunongwangia	Zunongwangia profunda
+SAMEA3138214	Candidatus Protochlamydia amoebophila	99.254	362787	Chlamydiae	Chlamydiia	Parachlamydiales	Parachlamydiaceae	Candidatus Protochlamydia	Candidatus Protochlamydia amoebophila
+SAMN00117523	Thermobacillus composti	99.257	377615	Firmicutes	Bacilli	Bacillales	Paenibacillaceae	Thermobacillus	Thermobacillus composti
+SAMN02199308	Sporosarcina ureae	99.26	1571	Firmicutes	Bacilli	Bacillales	Planococcaceae	Sporosarcina	Sporosarcina ureae
+SAMN03996327	Grimontia hollisae	99.261	673	Proteobacteria	Gammaproteobacteria	Vibrionales	Vibrionaceae	Grimontia	Grimontia hollisae
+SAMN03856234	Flavonifractor plautii	99.264	292800	Firmicutes	Clostridia	Clostridiales	Ruminococcaceae	Flavonifractor	Flavonifractor plautii
+SAMD00012323	Plesiomonas shigelloides	99.278	703	Proteobacteria	Gammaproteobacteria	Enterobacterales		Plesiomonas	Plesiomonas shigelloides
+SAMN02256539	Brenneria sp. EniD312	99.279	598467	Proteobacteria	Gammaproteobacteria	Enterobacterales	Pectobacteriaceae	Brenneria	Brenneria sp. EniD312
+SAMN08776254	Halothiobacillus neapolitanus	99.298	927	Proteobacteria	Gammaproteobacteria	Chromatiales	Halothiobacillaceae	Halothiobacillus	Halothiobacillus neapolitanus
+SAMN03771189	Wolbachia endosymbiont of Brugia malayi	99.325	80849	Proteobacteria	Alphaproteobacteria	Rickettsiales	Anaplasmataceae	Wolbachia	Wolbachia endosymbiont of Brugia malayi
+SAMN02048828	Bibersteinia trehalosi	99.329	47735	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Bibersteinia	Bibersteinia trehalosi
+SAMD00064368	Acidimicrobium ferrooxidans	99.33	53635	Actinobacteria	Acidimicrobiia	Acidimicrobiales	Acidimicrobiaceae	Acidimicrobium	Acidimicrobium ferrooxidans
+SAMN04366573	Histophilus somni	99.335	731	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Histophilus	Histophilus somni
+SAMN04297038	Oenococcus oeni	99.339	1247	Firmicutes	Bacilli	Lactobacillales	Leuconostocaceae	Oenococcus	Oenococcus oeni
+SAMN03287929	Desulfuromonas soudanensis	99.348	1603606	Proteobacteria	Deltaproteobacteria	Desulfuromonadales	Desulfuromonadaceae	Desulfuromonas	Desulfuromonas soudanensis
+SAMN04329591	Cronobacter sakazakii	99.354	28141	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Cronobacter	Cronobacter sakazakii
+SAMN00008859	Selenomonas sputigena	99.361	69823	Firmicutes	Negativicutes	Selenomonadales	Selenomonadaceae	Selenomonas	Selenomonas sputigena
+SAMN06670431	Weissella cibaria	99.376	137591	Firmicutes	Bacilli	Lactobacillales	Leuconostocaceae	Weissella	Weissella cibaria
+SAMN07327752	Photobacterium gaetbulicola	99.384	1295392	Proteobacteria	Gammaproteobacteria	Vibrionales	Vibrionaceae	Photobacterium	Photobacterium gaetbulicola
+SAMEA104168227	Sodalis glossinidius	99.391	63612	Proteobacteria	Gammaproteobacteria	Enterobacterales	Pectobacteriaceae	Sodalis	Sodalis glossinidius
+SAMN00120026	Ilyobacter polytropus	99.399	167642	Fusobacteria	Fusobacteriia	Fusobacteriales	Fusobacteriaceae	Ilyobacter	Ilyobacter polytropus
+SAMN00778265	Barnesiella viscericola	99.406	397865	Bacteroidetes	Bacteroidia	Bacteroidales	Barnesiellaceae	Barnesiella	Barnesiella viscericola
+SAMN02256540	Marichromatium purpuratum	99.409	37487	Proteobacteria	Gammaproteobacteria	Chromatiales	Chromatiaceae	Marichromatium	Marichromatium purpuratum
+SAMN02232021	Fervidobacterium pennivorans	99.413	93466	Thermotogae	Thermotogae	Thermotogales	Fervidobacteriaceae	Fervidobacterium	Fervidobacterium pennivorans
+SAMN07134948	Roseovarius sp. TM1035	99.414	391613	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Roseovarius	Roseovarius sp. TM1035
+SAMN05660752	Rhodobaca barguzinensis	99.417	441209	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Rhodobaca	Rhodobaca barguzinensis
+SAMN02261388	Saprospira grandis	99.431	1008	Bacteroidetes	Saprospiria	Saprospirales	Saprospiraceae	Saprospira	Saprospira grandis
+SAMN07452765	Citrobacter farmeri	99.437	67824	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Citrobacter	Citrobacter farmeri
+SAMEA44026918	Muribaculum intestinale	99.44	1796646	Bacteroidetes	Bacteroidia	Bacteroidales	Muribaculaceae	Muribaculum	Muribaculum intestinale
+SAMN00001901	Alicyclobacillus acidocaldarius	99.443	405212	Firmicutes	Bacilli	Bacillales	Alicyclobacillaceae	Alicyclobacillus	Alicyclobacillus acidocaldarius
+SAMN06473710	Megamonas hypermegale	99.448	158847	Firmicutes	Negativicutes	Selenomonadales	Selenomonadaceae	Megamonas	Megamonas hypermegale
+SAMEA43986418	Faecalibaculum rodentium	99.451	1702221	Firmicutes	Erysipelotrichia	Erysipelotrichales	Erysipelotrichaceae	Faecalibaculum	Faecalibaculum rodentium
+SAMN09935166	Candidatus Liberibacter asiaticus	99.452	34021	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Liberibacter	Candidatus Liberibacter asiaticus
+SAMD00046889	Halorhodospira halochloris	99.455	1052	Proteobacteria	Gammaproteobacteria	Chromatiales	Ectothiorhodospiraceae	Halorhodospira	Halorhodospira halochloris
+SAMN00102929	Oxalobacter formigenes	99.456	847	Proteobacteria	Betaproteobacteria	Burkholderiales	Oxalobacteraceae	Oxalobacter	Oxalobacter formigenes
+SAMD00064381	Salinispora tropica	99.459	168695	Actinobacteria	Actinobacteria	Micromonosporales	Micromonosporaceae	Salinispora	Salinispora tropica
+SAMN09074966	Pseudorhodoplanes sinuspersici	99.473	1235591	Proteobacteria	Alphaproteobacteria	Rhizobiales		Pseudorhodoplanes	Pseudorhodoplanes sinuspersici
+SAMN00713609	Dokdonia sp. 4H-3-7-5	99.477	983548	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Dokdonia	Dokdonia sp. 4H-3-7-5
+SAMN00713606	Alicycliphilus denitrificans	99.483	179636	Proteobacteria	Betaproteobacteria	Burkholderiales	Comamonadaceae	Alicycliphilus	Alicycliphilus denitrificans
+SAMD00089905	Cellulomonas fimi	99.497	1708	Actinobacteria	Actinobacteria	Micrococcales	Cellulomonadaceae	Cellulomonas	Cellulomonas fimi
+SAMN03571539	Thioalkalivibrio versutus	99.5	106634	Proteobacteria	Gammaproteobacteria	Chromatiales	Ectothiorhodospiraceae	Thioalkalivibrio	Thioalkalivibrio versutus
+SAMN06817956	Monoglobus pectinilyticus	99.501	1981510	Firmicutes	Clostridia	Clostridiales		Monoglobus	Monoglobus pectinilyticus
+SAMD00064371	Catenulispora acidiphila	99.503	304895	Actinobacteria	Actinobacteria	Catenulisporales	Catenulisporaceae	Catenulispora	Catenulispora acidiphila
+SAMD00009750	Arcanobacterium phocae	99.514	131112	Actinobacteria	Actinobacteria	Actinomycetales	Actinomycetaceae	Arcanobacterium	Arcanobacterium phocae
+SAMD00064384	Saccharopolyspora erythraea	99.515	1836	Actinobacteria	Actinobacteria	Pseudonocardiales	Pseudonocardiaceae	Saccharopolyspora	Saccharopolyspora erythraea
+SAMN04480372	Actinomyces meyeri	99.515	52773	Actinobacteria	Actinobacteria	Actinomycetales	Actinomycetaceae	Schaalia	Schaalia meyeri
+SAMEA1886134	Glaesserella parasuis	99.516	738	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Glaesserella	Glaesserella parasuis
+SAMN00713590	Cellulophaga lytica	99.516	979	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Cellulophaga	Cellulophaga lytica
+SAMN04244577	Moorella thermoacetica	99.522	1525	Firmicutes	Clostridia	Thermoanaerobacterales	Thermoanaerobacteraceae	Moorella	Moorella thermoacetica
+SAMN02367297	Neorickettsia helminthoeca	99.527	33994	Proteobacteria	Alphaproteobacteria	Rickettsiales	Anaplasmataceae	Neorickettsia	Neorickettsia helminthoeca
+SAMD00029041	Blastochloris viridis	99.529	1079	Proteobacteria	Alphaproteobacteria	Rhizobiales	Hyphomicrobiaceae	Blastochloris	Blastochloris viridis
+SAMN02232056	Sulfurospirillum barnesii	99.538	44674	Proteobacteria	Epsilonproteobacteria	Campylobacterales	Campylobacteraceae	Sulfurospirillum	Sulfurospirillum barnesii
+SAMN08777811	Eubacterium limosum	99.544	1736	Firmicutes	Clostridia	Clostridiales	Eubacteriaceae	Eubacterium	Eubacterium limosum
+SAMEA1982609	Bordetella trematum	99.548	123899	Proteobacteria	Betaproteobacteria	Burkholderiales	Alcaligenaceae	Bordetella	Bordetella trematum
+SAMN08049187	Borreliella burgdorferi	99.549	139	Spirochaetes	Spirochaetia	Spirochaetales	Borreliaceae	Borreliella	Borreliella burgdorferi
+SAMN02440754	Thermodesulfovibrio yellowstonii	99.55	28262	Nitrospirae	Nitrospira	Nitrospirales	Nitrospiraceae	Thermodesulfovibrio	Thermodesulfovibrio yellowstonii
+SAMN07694637	Butyrivibrio fibrisolvens	99.553	831	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Butyrivibrio	Butyrivibrio fibrisolvens
+SAMN08152918	Dickeya dianthicola	99.553	204039	Proteobacteria	Gammaproteobacteria	Enterobacterales	Pectobacteriaceae	Dickeya	Dickeya dianthicola
+SAMD00048612	Rhizobacter gummiphilus	99.554	946333	Proteobacteria	Betaproteobacteria	Burkholderiales		Rhizobacter	Rhizobacter gummiphilus
+SAMN02256523	Myroides odoratus	99.556	256	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Myroides	Myroides odoratus
+SAMEA104038634	Dinoroseobacter shibae	99.556	215813	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Dinoroseobacter	Dinoroseobacter shibae
+SAMN02584912	Hyphomicrobium sp. MC1	99.564	717785	Proteobacteria	Alphaproteobacteria	Rhizobiales	Hyphomicrobiaceae	Hyphomicrobium	Hyphomicrobium sp. MC1
+SAMN02232058	Thermodesulfobacterium geofontis	99.566	1295609	Thermodesulfobacteria	Thermodesulfobacteria	Thermodesulfobacteriales	Thermodesulfobacteriaceae	Thermodesulfobacterium	Thermodesulfobacterium geofontis
+SAMN00002585	Streptosporangium roseum	99.574	2001	Actinobacteria	Actinobacteria	Streptosporangiales	Streptosporangiaceae	Streptosporangium	Streptosporangium roseum
+SAMN09232890	Mesorhizobium ciceri	99.576	39645	Proteobacteria	Alphaproteobacteria	Rhizobiales	Phyllobacteriaceae	Mesorhizobium	Mesorhizobium ciceri
+SAMN02356577	Lysinibacillus sphaericus	99.577	1421	Firmicutes	Bacilli	Bacillales	Bacillaceae	Lysinibacillus	Lysinibacillus sphaericus
+SAMN00713610	Glaciecola sp. 4H-3-7+YE-5	99.581	983545	Proteobacteria	Gammaproteobacteria	Alteromonadales	Alteromonadaceae	Glaciecola	Glaciecola sp. 4H-3-7+YE-5
+SAMN01779560	Acidaminococcus intestini	99.589	187327	Firmicutes	Negativicutes	Acidaminococcales	Acidaminococcaceae	Acidaminococcus	Acidaminococcus intestini
+SAMN04295762	Zymomonas mobilis	99.591	542	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Zymomonas	Zymomonas mobilis
+SAMD00064382	Nakamurella multipartita	99.591	53461	Actinobacteria	Actinobacteria	Nakamurellales	Nakamurellaceae	Nakamurella	Nakamurella multipartita
+SAMN03737952	Arcobacter halophilus	99.597	197482	Proteobacteria	Epsilonproteobacteria	Campylobacterales	Campylobacteraceae	Arcobacter	Arcobacter halophilus
+SAMEA2003369	Morganella morganii	99.603	582	Proteobacteria	Gammaproteobacteria	Enterobacterales	Morganellaceae	Morganella	Morganella morganii
+SAMN03743787	Enterobacter cloacae	99.607	550	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Enterobacter	Enterobacter cloacae
+SAMN07312406	Roseomonas sp. FDAARGOS_362	99.61	2018065	Proteobacteria	Alphaproteobacteria	Rhodospirillales	Acetobacteraceae	Roseomonas	Roseomonas sp. FDAARGOS_362
+SAMN02261408	Thermus oshimai	99.615	56957	Deinococcus-Thermus	Deinococci	Thermales	Thermaceae	Thermus	Thermus oshimai
+SAMN02873951	Ochrobactrum anthropi	99.619	529	Proteobacteria	Alphaproteobacteria	Rhizobiales	Brucellaceae	Ochrobactrum	Ochrobactrum anthropi
+SAMD00064377	Intrasporangium calvum	99.623	53358	Actinobacteria	Actinobacteria	Micrococcales	Intrasporangiaceae	Intrasporangium	Intrasporangium calvum
+SAMD00064390	Tsukamurella paurometabola	99.624	2061	Actinobacteria	Actinobacteria	Corynebacteriales	Tsukamurellaceae	Tsukamurella	Tsukamurella paurometabola
+SAMD00064388	Sanguibacter keddieii	99.624	60920	Actinobacteria	Actinobacteria	Micrococcales	Sanguibacteraceae	Sanguibacter	Sanguibacter keddieii
+SAMN02598540	Desulfallas gibsoniae	99.625	102134	Firmicutes	Clostridia	Clostridiales	Peptococcaceae	Desulfallas	Desulfallas gibsoniae
+SAMN03763311	Massilia sp. WG5	99.627	1707785	Proteobacteria	Betaproteobacteria	Burkholderiales	Oxalobacteraceae	Massilia	Massilia sp. WG5
+SAMN01797701	Nostoc sp. PCC 7524	99.629	28072	Cyanobacteria		Nostocales	Nostocaceae	Nostoc	Nostoc sp. PCC 7524
+SAMN06040428	Sphingomonas koreensis	99.633	93064	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingomonas	Sphingomonas koreensis
+SAMN05017605	Acidipropionibacterium acidipropionici	99.634	1748	Actinobacteria	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Acidipropionibacterium	Acidipropionibacterium acidipropionici
+SAMN10150410	Thermoanaerobacterium thermosaccharolyticum	99.64	1517	Firmicutes	Clostridia	Thermoanaerobacterales	Thermoanaerobacterales Family III. Incertae Sedis	Thermoanaerobacterium	Thermoanaerobacterium thermosaccharolyticum
+SAMN00191237	Leadbetterella byssophila	99.642	316068	Bacteroidetes	Cytophagia	Cytophagales	Cytophagaceae	Leadbetterella	Leadbetterella byssophila
+SAMN03996253	Bartonella bacilliformis	99.645	774	Proteobacteria	Alphaproteobacteria	Rhizobiales	Bartonellaceae	Bartonella	Bartonella bacilliformis
+SAMN02256510	Frankia sp. QA3	99.653	710111	Actinobacteria	Actinobacteria	Frankiales	Frankiaceae	Frankia	Frankia sp. QA3
+SAMN00103049	Simonsiella muelleri	99.654	72	Proteobacteria	Betaproteobacteria	Neisseriales	Neisseriaceae	Simonsiella	Simonsiella muelleri
+SAMN08131267	Zhihengliuella sp. ISTPL4	99.657	2058657	Actinobacteria	Actinobacteria	Micrococcales	Micrococcaceae	Zhihengliuella	Zhihengliuella sp. ISTPL4
+SAMD00015847	Burkholderia insecticola	99.658	758793	Proteobacteria	Betaproteobacteria	Burkholderiales	Burkholderiaceae	Burkholderia	Burkholderia insecticola
+SAMN02982997	Tatlockia micdadei	99.66	451	Proteobacteria	Gammaproteobacteria	Legionellales	Legionellaceae	Tatlockia	Tatlockia micdadei
+SAMD00064370	Beutenbergia cavernae	99.662	84757	Actinobacteria	Actinobacteria	Micrococcales	Beutenbergiaceae	Beutenbergia	Beutenbergia cavernae
+SAMN02769646	Leisingera methylohalidivorans	99.664	133924	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Leisingera	Leisingera methylohalidivorans
+SAMN02232011	Azospira oryzae	99.666	146939	Proteobacteria	Betaproteobacteria	Rhodocyclales	Rhodocyclaceae	Azospira	Dechlorosoma suillum
+SAMN02194602	Pseudoalteromonas piscicida	99.669	43662	Proteobacteria	Gammaproteobacteria	Alteromonadales	Pseudoalteromonadaceae	Pseudoalteromonas	Pseudoalteromonas piscicida
+SAMN01797693	Cylindrospermum stagnale	99.672	142864	Cyanobacteria		Nostocales	Nostocaceae	Cylindrospermum	Cylindrospermum stagnale
+SAMN02261415	Frateuria aurantia	99.675	81475	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Rhodanobacteraceae	Frateuria	Frateuria aurantia
+SAMN00138957	Oceanithermus profundus	99.676	187137	Deinococcus-Thermus	Deinococci	Thermales	Thermaceae	Oceanithermus	Oceanithermus profundus
+SAMEA871988	Brachyspira pilosicoli	99.686	52584	Spirochaetes	Spirochaetia	Brachyspirales	Brachyspiraceae	Brachyspira	Brachyspira pilosicoli
+SAMD00064385	Saccharothrix espanaensis	99.69	103731	Actinobacteria	Actinobacteria	Pseudonocardiales	Pseudonocardiaceae	Saccharothrix	Saccharothrix espanaensis
+SAMN02864172	Streptomyces lydicus	99.692	47763	Actinobacteria	Actinobacteria	Streptomycetales	Streptomycetaceae	Streptomyces	Streptomyces lydicus
+SAMN07786750	Candidatus Fonsibacter ubiquis	99.704	1925548	Proteobacteria	Alphaproteobacteria	Pelagibacterales		Candidatus Fonsibacter	Candidatus Fonsibacter ubiquis
+SAMN03457231	Delftia tsuruhatensis	99.706	180282	Proteobacteria	Betaproteobacteria	Burkholderiales	Comamonadaceae	Delftia	Delftia tsuruhatensis
+SAMN02440787	Cupriavidus taiwanensis	99.709	164546	Proteobacteria	Betaproteobacteria	Burkholderiales	Burkholderiaceae	Cupriavidus	Cupriavidus taiwanensis
+SAMEA1034371	Trueperella pyogenes	99.713	1661	Actinobacteria	Actinobacteria	Actinomycetales	Actinomycetaceae	Trueperella	Trueperella pyogenes
+SAMN02261379	Rhodothermus marinus	99.718	29549	Bacteroidetes		Bacteroidetes Order II. Incertae sedis	Rhodothermaceae	Rhodothermus	Rhodothermus marinus
+SAMEA3724636	Acinetobacter baumannii	99.719	470	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	Acinetobacter baumannii
+SAMD00064376	Stackebrandtia nassauensis	99.723	283811	Actinobacteria	Actinobacteria	Glycomycetales	Glycomycetaceae	Stackebrandtia	Stackebrandtia nassauensis
+SAMN02864944	Nitrosococcus oceani	99.726	1229	Proteobacteria	Gammaproteobacteria	Chromatiales	Chromatiaceae	Nitrosococcus	Nitrosococcus oceani
+SAMN03996290	Achromobacter xylosoxidans	99.731	85698	Proteobacteria	Betaproteobacteria	Burkholderiales	Alcaligenaceae	Achromobacter	Achromobacter xylosoxidans
+SAMN02598516	Segniliparus rotundus	99.734	286802	Actinobacteria	Actinobacteria	Corynebacteriales	Segniliparaceae	Segniliparus	Segniliparus rotundus
+SAMEA3642838	Methylorubrum extorquens	99.74	408	Proteobacteria	Alphaproteobacteria	Rhizobiales	Methylobacteriaceae	Methylorubrum	Methylorubrum extorquens
+SAMN02584996	Entomoplasma somnilux	99.741	215578	Tenericutes	Mollicutes	Entomoplasmatales	Entomoplasmataceae	Entomoplasma	Entomoplasma somnilux
+SAMN05296524	Candidatus Planktophila lacus	99.752	1884913	Actinobacteria	Actinobacteria	Candidatus Nanopelagicales	Candidatus Nanopelagicaceae	Candidatus Planktophila	Candidatus Planktophila lacus
+SAMN02261398	Saccharomonospora azurea	99.753	40988	Actinobacteria	Actinobacteria	Pseudonocardiales	Pseudonocardiaceae	Saccharomonospora	Saccharomonospora azurea
+SAMEA1687863	Melissococcus plutonius	99.754	33970	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	Melissococcus	Melissococcus plutonius
+SAMN09063457	Hungateiclostridium thermocellum	99.756	1515	Firmicutes	Clostridia	Clostridiales	Hungateiclostridiaceae	Hungateiclostridium	Hungateiclostridium thermocellum
+SAMN03068687	Rhodopseudomonas palustris	99.758	1076	Proteobacteria	Alphaproteobacteria	Rhizobiales	Bradyrhizobiaceae	Rhodopseudomonas	Rhodopseudomonas palustris
+SAMD00064386	Xylanimonas cellulosilytica	99.76	186189	Actinobacteria	Actinobacteria	Micrococcales	Promicromonosporaceae	Xylanimonas	Xylanimonas cellulosilytica
+SAMN04943348	Curvibacter sp. AEP1-3	99.76	1844971	Proteobacteria	Betaproteobacteria	Burkholderiales	Comamonadaceae	Curvibacter	Curvibacter sp. AEP1-3
+SAMN03175440	Xanthomonas vesicatoria	99.763	56460	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Xanthomonas	Xanthomonas vesicatoria
+SAMN02261412	Jonquetella anthropi	99.768	428712	Synergistetes	Synergistia	Synergistales	Synergistaceae	Jonquetella	Jonquetella anthropi
+SAMN07488153	Chryseobacterium piperi	99.773	558152	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Chryseobacterium	Chryseobacterium piperi
+SAMN00191235	Spirochaeta thermophila	99.779	154	Spirochaetes	Spirochaetia	Spirochaetales	Spirochaetaceae	Spirochaeta	Spirochaeta thermophila
+SAMN05216235	Salinicoccus halodurans	99.783	407035	Firmicutes	Bacilli	Bacillales	Staphylococcaceae	Salinicoccus	Salinicoccus halodurans
+SAMN08777664	Ruegeria pomeroyi	99.789	89184	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Ruegeria	Ruegeria pomeroyi
+SAMN02904571	Providencia stuartii	99.79	588	Proteobacteria	Gammaproteobacteria	Enterobacterales	Morganellaceae	Providencia	Providencia stuartii
+SAMN00016994	Shewanella baltica	99.792	62322	Proteobacteria	Gammaproteobacteria	Alteromonadales	Shewanellaceae	Shewanella	Shewanella baltica
+SAMN05967630	Nodularia spumigena	99.794	70799	Cyanobacteria		Nostocales	Aphanizomenonaceae	Nodularia	Nodularia spumigena
+SAMN03262644	Serratia marcescens	99.797	615	Proteobacteria	Gammaproteobacteria	Enterobacterales	Yersiniaceae	Serratia	Serratia marcescens
+SAMN00713557	Acidithiobacillus ferrivorans	99.797	160808	Proteobacteria	Acidithiobacillia	Acidithiobacillales	Acidithiobacillaceae	Acidithiobacillus	Acidithiobacillus ferrivorans
+SAMN04297299	Leifsonia xyli	99.799	1575	Actinobacteria	Actinobacteria	Micrococcales	Microbacteriaceae	Leifsonia	Leifsonia xyli
+SAMN02256538	Thiomicrospira aerophila	99.799	92245	Proteobacteria	Gammaproteobacteria	Thiotrichales	Piscirickettsiaceae	Thiomicrospira	Thiomicrospira aerophila
+SAMEA37041418	Gluconobacter oxydans	99.804	442	Proteobacteria	Alphaproteobacteria	Rhodospirillales	Acetobacteraceae	Gluconobacter	Gluconobacter oxydans
+SAMEA2248198	Chthonomonas calidirosea	99.805	454171	Armatimonadetes	Chthonomonadetes	Chthonomonadales	Chthonomonadaceae	Chthonomonas	Chthonomonas calidirosea
+SAMEA103954257	Candidatus Nitrospira inopinata	99.806	1715989	Nitrospirae	Nitrospira	Nitrospirales	Nitrospiraceae	Nitrospira	Candidatus Nitrospira inopinata
+SAMN06754875	Capnocytophaga sputigena	99.807	1019	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Capnocytophaga	Capnocytophaga sputigena
+SAMEA3258552	Pandoraea apista	99.809	93218	Proteobacteria	Betaproteobacteria	Burkholderiales	Burkholderiaceae	Pandoraea	Pandoraea apista
+SAMN09671431	Yersinia enterocolitica	99.811	630	Proteobacteria	Gammaproteobacteria	Enterobacterales	Yersiniaceae	Yersinia	Yersinia enterocolitica
+SAMN00713578	Nitratifractor salsuginis	99.812	269261	Proteobacteria	Epsilonproteobacteria	Campylobacterales		Nitratifractor	Nitratifractor salsuginis
+SAMN00103052	Parascardovia denticolens	99.813	78258	Actinobacteria	Actinobacteria	Bifidobacteriales	Bifidobacteriaceae	Parascardovia	Parascardovia denticolens
+SAMN02666059	Sphingobium yanoikuyae	99.815	13690	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingobium	Sphingobium yanoikuyae
+SAMEA4555993	Gardnerella vaginalis	99.818	2702	Actinobacteria	Actinobacteria	Bifidobacteriales	Bifidobacteriaceae	Gardnerella	Gardnerella vaginalis
+SAMN06226867	Lactococcus lactis	99.82	1358	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Lactococcus	Lactococcus lactis
+SAMN02364995	Ehrlichia chaffeensis	99.822	945	Proteobacteria	Alphaproteobacteria	Rickettsiales	Anaplasmataceae	Ehrlichia	Ehrlichia chaffeensis
+SAMN02262084	Mannheimia haemolytica	99.83	75985	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Mannheimia	Mannheimia haemolytica
+SAMN00001914	Chitinophaga pinensis	99.836	79329	Bacteroidetes	Chitinophagia	Chitinophagales	Chitinophagaceae	Chitinophaga	Chitinophaga pinensis
+SAMN04002920	Micrococcus luteus	99.839	1270	Actinobacteria	Actinobacteria	Micrococcales	Micrococcaceae	Micrococcus	Micrococcus luteus
+SAMN00713633	Desulfotomaculum ruminis	99.839	1564	Firmicutes	Clostridia	Clostridiales	Peptococcaceae	Desulfotomaculum	Desulfotomaculum ruminis
+SAMN03893430	Paracoccus denitrificans	99.84	266	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus	Paracoccus denitrificans
+SAMN02744631	Candidatus Pelagibacter sp. HIMB1321	99.841	1388755	Proteobacteria	Alphaproteobacteria	Pelagibacterales	Pelagibacteraceae	Candidatus Pelagibacter	Candidatus Pelagibacter sp. HIMB1321
+SAMN02982999	Altererythrobacter ishigakiensis	99.842	476157	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Erythrobacteraceae	Altererythrobacter	Altererythrobacter ishigakiensis
+SAMN02207450	Desulfococcus multivorans	99.848	897	Proteobacteria	Deltaproteobacteria	Desulfobacterales	Desulfobacteraceae	Desulfococcus	Desulfococcus multivorans
+SAMN00779242	Odoribacter splanchnicus	99.848	28118	Bacteroidetes	Bacteroidia	Bacteroidales	Odoribacteraceae	Odoribacter	Odoribacter splanchnicus
+SAMN08458216	Nocardia cyriacigeorgica	99.848	135487	Actinobacteria	Actinobacteria	Corynebacteriales	Nocardiaceae	Nocardia	Nocardia cyriacigeorgica
+SAMN02232049	Rivularia sp. PCC 7116	99.848	373994	Cyanobacteria		Nostocales	Rivulariaceae	Rivularia	Rivularia sp. PCC 7116
+SAMN07431401	Kineococcus radiotolerans	99.849	131568	Actinobacteria	Actinobacteria	Kineosporiales	Kineosporiaceae	Kineococcus	Kineococcus radiotolerans
+SAMN00713602	Marinithermus hydrothermalis	99.853	186192	Deinococcus-Thermus	Deinococci	Thermales	Thermaceae	Marinithermus	Marinithermus hydrothermalis
+SAMN02441730	Martelella mediterranea	99.855	293089	Proteobacteria	Alphaproteobacteria	Rhizobiales	Aurantimonadaceae	Martelella	Martelella mediterranea
+SAMN08125769	Nonlabens sp. MB-3u-79	99.857	2058134	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Nonlabens	Nonlabens sp. MB-3u-79
+SAMN09505630	Hydrogenobaculum sp. Y04AAS1	99.858	380749	Aquificae	Aquificae	Aquificales	Aquificaceae	Hydrogenobaculum	Hydrogenobaculum sp. Y04AAS1
+SAMEA3982759	Tumebacillus algifaecis	99.861	1214604	Firmicutes	Bacilli	Bacillales	Alicyclobacillaceae	Tumebacillus	Tumebacillus algifaecis
+SAMN05296518	Candidatus Nanopelagicus abundans	99.861	1884916	Actinobacteria	Actinobacteria	Candidatus Nanopelagicales	Candidatus Nanopelagicaceae	Candidatus Nanopelagicus	Candidatus Nanopelagicus abundans
+SAMN09004573	Neisseria gonorrhoeae	99.864	485	Proteobacteria	Betaproteobacteria	Neisseriales	Neisseriaceae	Neisseria	Neisseria gonorrhoeae
+SAMN05660666	Novosphingobium aromaticivorans	99.866	48935	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Novosphingobium	Novosphingobium aromaticivorans
+SAMN02194519	Brevibacillus laterosporus	99.869	1465	Firmicutes	Bacilli	Bacillales	Paenibacillaceae	Brevibacillus	Brevibacillus laterosporus
+SAMN00713628	Methylomonas methanica	99.87	421	Proteobacteria	Gammaproteobacteria	Methylococcales	Methylococcaceae	Methylomonas	Methylomonas methanica
+SAMN04263499	Paeniclostridium sordellii	99.87	1505	Firmicutes	Clostridia	Clostridiales	Peptostreptococcaceae	Paeniclostridium	Paeniclostridium sordellii
+SAMN00808754	Thermanaeromonas toyohensis	99.878	161154	Firmicutes	Clostridia	Thermoanaerobacterales	Thermoanaerobacteraceae	Thermanaeromonas	Thermanaeromonas toyohensis
+SAMN02232018	Echinicola vietnamensis	99.881	390884	Bacteroidetes	Cytophagia	Cytophagales	Cyclobacteriaceae	Echinicola	Echinicola vietnamensis
+SAMN06049048	Flavobacterium johnsoniae	99.882	986	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Flavobacterium	Flavobacterium johnsoniae
+SAMN06173342	Oligella urethralis	99.882	90245	Proteobacteria	Betaproteobacteria	Burkholderiales	Alcaligenaceae	Oligella	Oligella urethralis
+SAMN02356056	Paraburkholderia sp. SOS3	99.886	1926494	Proteobacteria	Betaproteobacteria	Burkholderiales	Burkholderiaceae	Paraburkholderia	Paraburkholderia sp. SOS3
+SAMEA2564049	Dichelobacter nodosus	99.89	870	Proteobacteria	Gammaproteobacteria	Cardiobacteriales	Cardiobacteriaceae	Dichelobacter	Dichelobacter nodosus
+SAMN00120582	Rothia dentocariosa	99.89	2047	Actinobacteria	Actinobacteria	Micrococcales	Micrococcaceae	Rothia	Rothia dentocariosa
+SAMN03948578	Proteus mirabilis	99.891	584	Proteobacteria	Gammaproteobacteria	Enterobacterales	Morganellaceae	Proteus	Proteus mirabilis
+SAMN00713585	Weeksella virosa	99.891	1014	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Weeksella	Weeksella virosa
+SAMN05443635	Roseobacter denitrificans	99.892	2434	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Roseobacter	Roseobacter denitrificans
+SAMN00016989	Olsenella uli	99.893	133926	Actinobacteria	Coriobacteriia	Coriobacteriales	Atopobiaceae	Olsenella	Olsenella uli
+SAMN00713594	Sphingobacterium sp. 21	99.896	743722	Bacteroidetes	Sphingobacteriia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	Sphingobacterium sp. 21
+SAMN04216070	Ralstonia solanacearum	99.899	305	Proteobacteria	Betaproteobacteria	Burkholderiales	Burkholderiaceae	Ralstonia	Ralstonia solanacearum
+SAMN08886392	Prochlorococcus marinus	99.9	1219	Cyanobacteria		Synechococcales	Prochloraceae	Prochlorococcus	Prochlorococcus marinus
+SAMN02232062	Thiocystis violascens	99.903	73141	Proteobacteria	Gammaproteobacteria	Chromatiales	Chromatiaceae	Thiocystis	Thiocystis violascens
+SAMN09075502	Bradymonas sediminis	99.903	1548548	Proteobacteria	Deltaproteobacteria	Bradymonadales	Bradymonadaceae	Bradymonas	Bradymonas sediminis
+SAMN01797750	Stanieria cyanosphaera	99.905	102116	Cyanobacteria		Pleurocapsales	Dermocarpellaceae	Stanieria	Stanieria cyanosphaera
+SAMN00792205	Porphyromonas gingivalis	99.906	837	Bacteroidetes	Bacteroidia	Bacteroidales	Porphyromonadaceae	Porphyromonas	Porphyromonas gingivalis
+SAMN07640751	Sinorhizobium meliloti	99.908	382	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Sinorhizobium	Sinorhizobium meliloti
+SAMN02261389	Desulfitobacterium dehalogenans	99.908	36854	Firmicutes	Clostridia	Clostridiales	Peptococcaceae	Desulfitobacterium	Desulfitobacterium dehalogenans
+SAMN00001487	Rhodococcus hoagii	99.908	43767	Actinobacteria	Actinobacteria	Corynebacteriales	Nocardiaceae	Rhodococcus	Rhodococcus hoagii
+SAMN06265361	Laceyella sp. FBKL4.010	99.909	37482	Firmicutes	Bacilli	Bacillales	Thermoactinomycetaceae	Laceyella	Laceyella sacchari
+SAMN06197299	Thiomonas intermedia	99.912	926	Proteobacteria	Betaproteobacteria	Burkholderiales		Thiomonas	Thiomonas intermedia
+SAMN07428365	Caulobacter vibrioides	99.912	155892	Proteobacteria	Alphaproteobacteria	Caulobacterales	Caulobacteraceae	Caulobacter	Caulobacter vibrioides
+SAMN07680478	Aminobacter sp. MSH1	99.913	374606	Proteobacteria	Alphaproteobacteria	Rhizobiales	Phyllobacteriaceae	Aminobacter	Aminobacter sp. MSH1
+SAMEA1410955	Actinobacillus pleuropneumoniae	99.914	715	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Actinobacillus	Actinobacillus pleuropneumoniae
+SAMN05444282	Bacteroides ovatus	99.915	28116	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides ovatus
+SAMN03862123	Xylella fastidiosa	99.918	2371	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Xylella	Xylella fastidiosa
+SAMN00113373	Hippea maritima	99.918	84405	Proteobacteria	Deltaproteobacteria	Desulfurellales	Desulfurellaceae	Hippea	Hippea maritima
+SAMN00103051	Scardovia inopinata	99.92	78259	Actinobacteria	Actinobacteria	Bifidobacteriales	Bifidobacteriaceae	Scardovia	Scardovia inopinata
+SAMN00778807	Halanaerobium hydrogeniformans	99.922	656519	Firmicutes	Clostridia	Halanaerobiales	Halanaerobiaceae	Halanaerobium	Halanaerobium hydrogeniformans
+SAMN02745192	Prevotella ruminicola	99.924	839	Bacteroidetes	Bacteroidia	Bacteroidales	Prevotellaceae	Prevotella	Prevotella ruminicola
+SAMEA103973228	Tropheryma whipplei	99.924	2039	Actinobacteria	Actinobacteria	Micrococcales		Tropheryma	Tropheryma whipplei
+SAMN02261424	Desulfosporosinus orientis	99.925	1563	Firmicutes	Clostridia	Clostridiales	Peptococcaceae	Desulfosporosinus	Desulfosporosinus orientis
+SAMN08769559	Frischella perrara	99.925	1267021	Proteobacteria	Gammaproteobacteria	Orbales	Orbaceae	Frischella	Frischella perrara
+SAMEA1931619	Moritella viscosa	99.926	80854	Proteobacteria	Gammaproteobacteria	Alteromonadales	Moritellaceae	Moritella	Moritella viscosa
+SAMN02745946	Vogesella sp. LIG4	99.927	1192162	Proteobacteria	Betaproteobacteria	Neisseriales	Chromobacteriaceae	Vogesella	Vogesella sp. LIG4
+SAMN02261370	Bernardetia litoralis	99.929	999	Bacteroidetes	Cytophagia	Cytophagales	Bernardetiaceae	Bernardetia	Bernardetia litoralis
+SAMN00016993	Acetohalobium arabaticum	99.929	28187	Firmicutes	Clostridia	Halanaerobiales	Halobacteroidaceae	Acetohalobium	Acetohalobium arabaticum
+SAMN02744704	Candidatus Desulforudis audaxviator	99.929	471827	Firmicutes	Clostridia	Clostridiales	Peptococcaceae	Candidatus Desulforudis	Candidatus Desulforudis audaxviator
+SAMN00103628	Rubinisphaera brasiliensis	99.931	119	Planctomycetes	Planctomycetia	Planctomycetales	Planctomycetaceae	Rubinisphaera	Rubinisphaera brasiliensis
+SAMN02745783	Pseudothermotoga hypogea	99.932	57487	Thermotogae	Thermotogae	Thermotogales	Thermotogaceae	Pseudothermotoga	Pseudothermotoga hypogea
+SAMN02745151	Anaerotignum propionicum	99.933	28446	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Anaerotignum	Anaerotignum propionicum
+SAMN02256535	Mucilaginibacter paludis	99.933	423351	Bacteroidetes	Sphingobacteriia	Sphingobacteriales	Sphingobacteriaceae	Mucilaginibacter	Mucilaginibacter paludis
+SAMN02261366	Ornithobacterium rhinotracheale	99.935	28251	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Ornithobacterium	Ornithobacterium rhinotracheale
+SAMN08125748	Olleya sp. Bg11-27	99.938	2058135	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Olleya	Olleya sp. Bg11-27
+SAMN02261381	Desulfobacter postgatei	99.939	2293	Proteobacteria	Deltaproteobacteria	Desulfobacterales	Desulfobacteraceae	Desulfobacter	Desulfobacter postgatei
+SAMN02261327	Calothrix parietina	99.939	32054	Cyanobacteria		Nostocales	Calotrichaceae	Calothrix	Calothrix parietina
+SAMEA2747190	Bifidobacterium longum	99.939	216816	Actinobacteria	Actinobacteria	Bifidobacteriales	Bifidobacteriaceae	Bifidobacterium	Bifidobacterium longum
+SAMN08769570	Gilliamella apicola	99.94	1196095	Proteobacteria	Gammaproteobacteria	Orbales	Orbaceae	Gilliamella	Gilliamella apicola
+SAMD00022941	Bradyrhizobium diazoefficiens	99.942	1355477	Proteobacteria	Alphaproteobacteria	Rhizobiales	Bradyrhizobiaceae	Bradyrhizobium	Bradyrhizobium diazoefficiens
+SAMN08895444	Aerococcus urinae	99.944	1376	Firmicutes	Bacilli	Lactobacillales	Aerococcaceae	Aerococcus	Aerococcus urinae
+SAMN09809089	[Haemophilus] ducreyi	99.946	730	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Haemophilus	[Haemophilus] ducreyi
+SAMN00013395	Granulicella tundricola	99.946	940615	Acidobacteria	Acidobacteriia	Acidobacteriales	Acidobacteriaceae	Granulicella	Granulicella tundricola
+SAMN03372475	Spongiibacter sp. IMCC21906	99.946	1620392	Proteobacteria	Gammaproteobacteria	Cellvibrionales	Spongiibacteraceae	Spongiibacter	Spongiibacter sp. IMCC21906
+SAMN00002601	Meiothermus ruber	99.947	277	Deinococcus-Thermus	Deinococci	Thermales	Thermaceae	Meiothermus	Meiothermus ruber
+SAMEA1889257	Paenibacillus larvae	99.948	1464	Firmicutes	Bacilli	Bacillales	Paenibacillaceae	Paenibacillus	Paenibacillus larvae
+SAMN01797746	Microcoleus sp. PCC 7113	99.948	1173027	Cyanobacteria		Oscillatoriales	Microcoleaceae	Microcoleus	Microcoleus sp. PCC 7113
+SAMEA4004329	Moraxella catarrhalis	99.949	480	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Moraxella	Moraxella catarrhalis
+SAMN00713564	Thermovibrio ammonificans	99.949	228745	Aquificae	Aquificae	Desulfurobacteriales	Desulfurobacteriaceae	Thermovibrio	Thermovibrio ammonificans
+SAMN00103626	Pseudopedobacter saltans	99.95	151895	Bacteroidetes	Sphingobacteriia	Sphingobacteriales	Sphingobacteriaceae	Pseudopedobacter	Pseudopedobacter saltans
+SAMN07620883	Brevirhabdus pacifica	99.95	1267768	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Brevirhabdus	Brevirhabdus pacifica
+SAMN03769220	Clostridium botulinum	99.951	1491	Firmicutes	Clostridia	Clostridiales	Clostridiaceae	Clostridium	Clostridium botulinum
+SAMN00102793	Calditerrivibrio nitroreducens	99.951	477976	Deferribacteres	Deferribacteres	Deferribacterales	Deferribacteraceae	Calditerrivibrio	Calditerrivibrio nitroreducens
+SAMN01797753	Cyanobacterium aponinum	99.952	379064	Cyanobacteria		Chroococcales	Cyanobacteriaceae	Cyanobacterium	Cyanobacterium aponinum
+SAMN08172666	Campylobacter fetus	99.955	196	Proteobacteria	Epsilonproteobacteria	Campylobacterales	Campylobacteraceae	Campylobacter	Campylobacter fetus
+SAMEA4392574	Aeromonas salmonicida	99.955	645	Proteobacteria	Gammaproteobacteria	Aeromonadales	Aeromonadaceae	Aeromonas	Aeromonas salmonicida
+SAMN07709945	Mesoplasma lactucae	99.955	138853	Tenericutes	Mollicutes	Entomoplasmatales	Entomoplasmataceae	Mesoplasma	Mesoplasma lactucae
+SAMN00713608	Sphaerochaeta coccoides	99.955	273376	Spirochaetes	Spirochaetia	Spirochaetales	Spirochaetaceae	Sphaerochaeta	Sphaerochaeta coccoides
+SAMN00713599	Fluviicola taffensis	99.956	191579	Bacteroidetes	Flavobacteriia	Flavobacteriales	Crocinitomicaceae	Fluviicola	Fluviicola taffensis
+SAMN02232065	Turneriella parva	99.957	29510	Spirochaetes	Spirochaetia	Leptospirales	Leptospiraceae	Turneriella	Turneriella parva
+SAMN02232052	Solitalea canadensis	99.958	995	Bacteroidetes	Sphingobacteriia	Sphingobacteriales	Sphingobacteriaceae	Solitalea	Solitalea canadensis
+SAMN07428568	Gemmata obscuriglobus	99.96	114	Planctomycetes	Planctomycetia	Gemmatales	Gemmataceae	Gemmata	Gemmata obscuriglobus
+SAMN02261337	Synechococcus sp. PCC 6312	99.96	195253	Cyanobacteria		Synechococcales	Synechococcaceae	Synechococcus	Synechococcus sp. PCC 6312
+SAMN02261250	Leptolyngbya boryana	99.961	1184	Cyanobacteria		Synechococcales	Leptolyngbyaceae	Leptolyngbya	Leptolyngbya boryana
+SAMN06473757	Akkermansia muciniphila	99.961	239935	Verrucomicrobia	Verrucomicrobiae	Verrucomicrobiales	Akkermansiaceae	Akkermansia	Akkermansia muciniphila
+SAMN08776252	Bacteriovorax stolpii	99.963	960	Proteobacteria	Oligoflexia	Bacteriovoracales	Bacteriovoracaceae	Bacteriovorax	Bacteriovorax stolpii
+SAMN00001504	Lactobacillus reuteri	99.963	1598	Firmicutes	Bacilli	Lactobacillales	Lactobacillaceae	Lactobacillus	Lactobacillus reuteri
+SAMN00149467	Variovorax paradoxus	99.963	34073	Proteobacteria	Betaproteobacteria	Burkholderiales	Comamonadaceae	Variovorax	Variovorax paradoxus
+SAMN00114987	Singulisphaera acidiphila	99.963	466153	Planctomycetes	Planctomycetia	Isosphaerales	Isosphaeraceae	Singulisphaera	Singulisphaera acidiphila
+SAMN02261411	Terriglobus roseus	99.964	392734	Acidobacteria	Acidobacteriia	Acidobacteriales	Acidobacteriaceae	Terriglobus	Terriglobus roseus
+SAMN07786804	Phaeobacter inhibens	99.965	221822	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Phaeobacter	Phaeobacter inhibens
+SAMN05444421	Celeribacter marinus	99.965	1397108	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Celeribacter	Celeribacter marinus
+SAMD00025579	Geminocystis sp. NIES-3708	99.97	1615909	Cyanobacteria		Chroococcales	Chroococcaceae	Geminocystis	Geminocystis sp. NIES-3708
+SAMN07431564	Rhodobacter sphaeroides	99.971	1063	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Rhodobacter	Rhodobacter sphaeroides
+SAMN02261417	Owenweeksia hongkongensis	99.971	253245	Bacteroidetes	Flavobacteriia	Flavobacteriales	Cryomorphaceae	Owenweeksia	Owenweeksia hongkongensis
+SAMN00788606	Sediminispirochaeta smaragdinae	99.972	55206	Spirochaetes	Spirochaetia	Spirochaetales	Spirochaetaceae	Sediminispirochaeta	Sediminispirochaeta smaragdinae
+SAMN04913775	Elizabethkingia anophelis	99.972	1117645	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Elizabethkingia	Elizabethkingia anophelis
+SAMN02745113	Nitrosomonas europaea	99.973	915	Proteobacteria	Betaproteobacteria	Nitrosomonadales	Nitrosomonadaceae	Nitrosomonas	Nitrosomonas europaea
+SAMN02261335	Oscillatoria nigro-viridis	99.974	482564	Cyanobacteria		Oscillatoriales	Oscillatoriaceae	Oscillatoria	Oscillatoria nigro-viridis
+SAMN08776300	Kushneria marisflavi	99.975	157779	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Halomonadaceae	Kushneria	Kushneria marisflavi
+SAMN00114988	Halobacteroides halobius	99.976	42422	Firmicutes	Clostridia	Halanaerobiales	Halobacteroidaceae	Halobacteroides	Halobacteroides halobius
+SAMN02232041	Muricauda ruestringensis	99.976	111501	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Muricauda	Muricauda ruestringensis
+SAMN00996448	Pelosinus fermentans	99.976	365349	Firmicutes	Negativicutes	Selenomonadales	Sporomusaceae	Pelosinus	Pelosinus fermentans
+SAMN01909281	Pedobacter heparinus	99.977	984	Bacteroidetes	Sphingobacteriia	Sphingobacteriales	Sphingobacteriaceae	Pedobacter	Pedobacter heparinus
+SAMN02261390	Niabella soli	99.977	446683	Bacteroidetes	Chitinophagia	Chitinophagales	Chitinophagaceae	Niabella	Niabella soli
+SAMN05444391	Thermocrinis minervae	99.978	381751	Aquificae	Aquificae	Aquificales	Aquificaceae	Thermocrinis	Thermocrinis minervae
+SAMN03418623	Rathayibacter toxicus	99.979	145458	Actinobacteria	Actinobacteria	Micrococcales	Microbacteriaceae	Rathayibacter	Rathayibacter toxicus
+SAMN02440953	Candidatus Cloacimonas acidaminovorans	99.979	456827	Candidatus Cloacimonetes				Candidatus Cloacimonas	Candidatus Cloacimonas acidaminovorans
+SAMN02261347	Gloeocapsa sp. PCC 7428	99.98	1173026	Cyanobacteria		Chroococcales	Chroococcaceae	Gloeocapsa	Gloeocapsa sp. PCC 7428
+SAMN04917385	Orientia tsutsugamushi	99.981	784	Proteobacteria	Alphaproteobacteria	Rickettsiales	Rickettsiaceae	Orientia	Orientia tsutsugamushi
+SAMN06269301	Geobacter sp. DSM 9736	99.982	1277350	Proteobacteria	Deltaproteobacteria	Desulfuromonadales	Geobacteraceae	Geobacter	Geobacter sp. DSM 9736
+SAMN05444287	Octadecabacter temperatus	99.982	1458307	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Octadecabacter	Octadecabacter temperatus
+SAMN00713617	Tepidanaerobacter acetatoxydans	99.984	499229	Firmicutes	Clostridia	Thermoanaerobacterales	Thermoanaerobacteraceae	Tepidanaerobacter	Tepidanaerobacter acetatoxydans
+SAMN02598491	Fibrobacter succinogenes	99.985	833	Fibrobacteres	Fibrobacteria	Fibrobacterales	Fibrobacteraceae	Fibrobacter	Fibrobacter succinogenes
+SAMN07451160	Deinococcus radiodurans	99.985	1299	Deinococcus-Thermus	Deinococci	Deinococcales	Deinococcaceae	Deinococcus	Deinococcus radiodurans
+SAMN09227124	Halomonas elongata	99.987	2746	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Halomonadaceae	Halomonas	Halomonas elongata
+SAMN08470029	Devosia sp. I507	99.988	2083786	Proteobacteria	Alphaproteobacteria	Rhizobiales	Hyphomicrobiaceae	Devosia	Devosia sp. I507
+SAMN09088054	Mycolicibacterium smegmatis	99.989	1772	Actinobacteria	Actinobacteria	Corynebacteriales	Mycobacteriaceae	Mycolicibacterium	Mycolicibacterium smegmatis
+SAMN08769264	Acholeplasma laidlawii	99.989	2148	Tenericutes	Mollicutes	Acholeplasmatales	Acholeplasmataceae	Acholeplasma	Acholeplasma laidlawii
+SAMN00777080	Aquiflexum balticum	99.989	280473	Bacteroidetes	Cytophagia	Cytophagales	Cyclobacteriaceae	Aquiflexum	Aquiflexum balticum
+SAMN01797702	Pleurocapsa minor	99.99	54308	Cyanobacteria		Pleurocapsales	Hyellaceae	Pleurocapsa	Pleurocapsa minor
+SAMN00025417	Mesotoga prima	99.99	1184387	Thermotogae	Thermotogae	Kosmotogales	Kosmotogaceae	Mesotoga	Mesotoga prima
+SAMN06451438	Dehalococcoides mccartyi	99.991	61435	Chloroflexi	Dehalococcoidia	Dehalococcoidales	Dehalococcoidaceae	Dehalococcoides	Dehalococcoides mccartyi
+SAMEA4523478	Lachnoclostridium phytofermentans	99.992	66219	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Lachnoclostridium	Lachnoclostridium phytofermentans
+SAMN07946442	Corynebacterium diphtheriae	99.997	1717	Actinobacteria	Actinobacteria	Corynebacteriales	Corynebacteriaceae	Corynebacterium	Corynebacterium diphtheriae
+SAMN06754984	Marinomonas mediterranea	99.997	119864	Proteobacteria	Gammaproteobacteria	Oceanospirillales	Oceanospirillaceae	Marinomonas	Marinomonas mediterranea
+SAMN05444285	Draconibacterium orientale	99.997	1168034	Bacteroidetes	Bacteroidia	Marinilabiliales	Prolixibacteraceae	Draconibacterium	Draconibacterium orientale
+SAMN03375744	Hoeflea sp. IMCC20628	99.997	1620421	Proteobacteria	Alphaproteobacteria	Rhizobiales	Phyllobacteriaceae	Hoeflea	Hoeflea sp. IMCC20628
+SAMN04283684	Agromyces aureus	99.998	453304	Actinobacteria	Actinobacteria	Micrococcales	Microbacteriaceae	Agromyces	Agromyces aureus
+SAMEA3986617	Mycobacteroides abscessus	99.999	36809	Actinobacteria	Actinobacteria	Corynebacteriales	Mycobacteriaceae	Mycobacteroides	Mycobacteroides abscessus
+SAMN00254345	Leptospira interrogans	100.0	173	Spirochaetes	Spirochaetia	Leptospirales	Leptospiraceae	Leptospira	Leptospira interrogans
+SAMN08093273	Helicobacter pylori	100.0	210	Proteobacteria	Epsilonproteobacteria	Campylobacterales	Helicobacteraceae	Helicobacter	Helicobacter pylori
+SAMN07255131	Francisella tularensis	100.0	263	Proteobacteria	Gammaproteobacteria	Thiotrichales	Francisellaceae	Francisella	Francisella tularensis
+SAMN09209470	Pseudomonas putida	100.0	303	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	Pseudomonas putida
+SAMN03996793	Acetobacter aceti	100.0	435	Proteobacteria	Alphaproteobacteria	Rhodospirillales	Acetobacteraceae	Acetobacter	Acetobacter aceti
+SAMN10374758	Legionella pneumophila	100.0	446	Proteobacteria	Gammaproteobacteria	Legionellales	Legionellaceae	Legionella	Legionella pneumophila
+SAMD00058712	Alcaligenes faecalis	100.0	511	Proteobacteria	Betaproteobacteria	Burkholderiales	Alcaligenaceae	Alcaligenes	Alcaligenes faecalis
+SAMN06232396	Escherichia coli	100.0	562	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Escherichia	Escherichia coli
+SAMN07278976	Klebsiella pneumoniae	100.0	573	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Klebsiella	Klebsiella pneumoniae
+SAMEA104313147	Vibrio cholerae	100.0	666	Proteobacteria	Gammaproteobacteria	Vibrionales	Vibrionaceae	Vibrio	Vibrio cholerae
+SAMN04579285	Aliivibrio fischeri	100.0	668	Proteobacteria	Gammaproteobacteria	Vibrionales	Vibrionaceae	Aliivibrio	Aliivibrio fischeri
+SAMN06239969	Pasteurella multocida	100.0	747	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Pasteurella	Pasteurella multocida
+SAMN08029050	Coxiella burnetii	100.0	777	Proteobacteria	Gammaproteobacteria	Legionellales	Coxiellaceae	Coxiella	Coxiella burnetii
+SAMN00249586	Fusobacterium necrophorum	100.0	859	Fusobacteria	Fusobacteriia	Fusobacteriales	Fusobacteriaceae	Fusobacterium	Fusobacterium necrophorum
+SAMN07284948	Desulfovibrio vulgaris	100.0	881	Proteobacteria	Deltaproteobacteria	Desulfovibrionales	Desulfovibrionaceae	Desulfovibrio	Desulfovibrio vulgaris
+SAMN04304689	Staphylococcus simulans	100.0	1286	Firmicutes	Bacilli	Bacillales	Staphylococcaceae	Staphylococcus	Staphylococcus simulans
+SAMN05223080	Streptococcus pneumoniae	100.0	1313	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus pneumoniae
+SAMEA2785478	Enterococcus faecalis	100.0	1351	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	Enterococcus	Enterococcus faecalis
+SAMN06675502	Clostridioides difficile	100.0	1496	Firmicutes	Clostridia	Clostridiales	Peptostreptococcaceae	Clostridioides	Clostridioides difficile
+SAMN10141082	Listeria monocytogenes	100.0	1639	Firmicutes	Bacilli	Bacillales	Listeriaceae	Listeria	Listeria monocytogenes
+SAMEA4624184	Renibacterium salmoninarum	100.0	1646	Actinobacteria	Actinobacteria	Micrococcales	Micrococcaceae	Renibacterium	Renibacterium salmoninarum
+SAMD00029876	Erysipelothrix rhusiopathiae	100.0	1648	Firmicutes	Erysipelotrichia	Erysipelotrichales	Erysipelotrichaceae	Erysipelothrix	Erysipelothrix rhusiopathiae
+SAMN06437486	Cutibacterium acnes	100.0	1747	Actinobacteria	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Cutibacterium	Cutibacterium acnes
+SAMN05391748	Mycoplasma pneumoniae	100.0	2104	Tenericutes	Mollicutes	Mycoplasmatales	Mycoplasmataceae	Mycoplasma	Mycoplasma pneumoniae
+SAMN07428443	Colwellia psychrerythraea	100.0	28229	Proteobacteria	Gammaproteobacteria	Alteromonadales	Colwelliaceae	Colwellia	Colwellia psychrerythraea
+SAMEA104423913	Salmonella enterica	100.0	28901	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Salmonella	Salmonella enterica
+SAMD00128991	Lawsonia intracellularis	100.0	29546	Proteobacteria	Deltaproteobacteria	Desulfovibrionales	Desulfovibrionaceae	Lawsonia	Lawsonia intracellularis
+SAMN08630307	Taylorella equigenitalis	100.0	29575	Proteobacteria	Betaproteobacteria	Burkholderiales	Alcaligenaceae	Taylorella	Taylorella equigenitalis
+SAMN08795114	Stenotrophomonas maltophilia	100.0	40324	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Stenotrophomonas	Stenotrophomonas maltophilia
+SAMN06560374	Borrelia recurrentis	100.0	44449	Spirochaetes	Spirochaetia	Spirochaetales	Borreliaceae	Borrelia	Borrelia recurrentis
+SAMN03253055	Chlamydia pecorum	100.0	85991	Chlamydiae	Chlamydiia	Chlamydiales	Chlamydiaceae	Chlamydia	Chlamydia pecorum
+SAMN00139180	Aeromicrobium marinum	100.0	219314	Actinobacteria	Actinobacteria	Propionibacteriales	Nocardioidaceae	Aeromicrobium	Aeromicrobium marinum
+SAMN08913342	Mycobacterium colombiense	100.0	339268	Actinobacteria	Actinobacteria	Corynebacteriales	Mycobacteriaceae	Mycobacterium	Mycobacterium colombiense
+SAMN02379489	Treponema pedis	100.0	409322	Spirochaetes	Spirochaetia	Spirochaetales	Spirochaetaceae	Treponema	Treponema pedis
+SAMN08330872	Gloeobacter kilaueensis	100.0	1416614	Cyanobacteria	Gloeobacteria	Gloeobacterales	Gloeobacteraceae	Gloeobacter	Gloeobacter kilaueensis
+SAMN08912824	Bacillus glycinifermentans	100.0	1664069	Firmicutes	Bacilli	Bacillales	Bacillaceae	Bacillus	Bacillus glycinifermentans

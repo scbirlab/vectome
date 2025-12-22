@@ -40,10 +40,10 @@ jobs:
         run: |
           VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 113 --force --cache landmarks-113
 
-      - name: Generate landmarks 1000
+      - name: Generate landmarks 869
         if: github.ref_type == 'tag'
         run: |
-          VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 1000 --force --cache landmarks-1000
+          VECTOME_LANDMARKS_VERSION=${{ github.ref_name }} vectome build 869 --force --cache landmarks-869
 
       - name: Package landmarks
         run: |

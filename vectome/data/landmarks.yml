@@ -7,22 +7,25 @@ groups:
       - Klebsiella pneumoniae
   - name: group-8900
     queries:
-      - file://strain-list-report-taxid.txt
+      - file://lists/strain-list-report-taxid.txt
   - name: group-113
     queries:
-      - file://strain-list-113-taxid.txt
+      - file://lists/strain-list-113-taxid.txt
   - name: group-50
     queries:
-      - file://strain-list-ENA2018-bacteria-50.txt
+      - file://lists/strain-list-ENA2018-bacteria-50.txt
+  - name: group-869
+    queries:
+      - file://lists/strain-list-ENA2018-bacteria-1_per_genus.txt
   - name: group-100
     queries:
-      - file://strain-list-ENA2018-bacteria-100.txt
+      - file://lists/strain-list-ENA2018-bacteria-100.txt
   - name: group-1000
     queries:
-      - file://strain-list-ENA2018-bacteria-1k.txt
+      - file://lists/strain-list-ENA2018-bacteria-1k.txt
   - name: group-10000
     queries:
-      - file://strain-list-ENA2018-bacteria-10k.txt
+      - file://lists/strain-list-ENA2018-bacteria-10k.txt
   - name: group-600000
     queries:
-      - file://strain-list-ENA2018-bacteria-661k.txt
+      - file://lists/strain-list-ENA2018-bacteria-661k.txt
