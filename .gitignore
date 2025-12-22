@@ -27,4 +27,5 @@ __pycache__/
 
 # data
 /vectome/data/landmarks/
+/vectome/data/landmarks-dl/
 /vectome/data/sketches/

@@ -286,6 +286,7 @@ def fetch_landmarks(
         try:
             _ = download_landmark_cache(
                 suffix=group,
+                quiet=quiet,
                 cache_dir=cache_dir,
             )
         except HTTPError:

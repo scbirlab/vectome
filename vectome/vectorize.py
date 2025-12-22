@@ -14,7 +14,7 @@ from .caching import CACHE_DIR
 from .genomes import GenomeInfo, fetch_landmarks, name_or_taxon_to_genome_info
 from .sketching import sketch_genome, DEFAULT_K, DEFAULT_N
 
-DEFAULT_DIM: int = 256
+DEFAULT_DIM: int = 4096
 
 
 def _mix_u64(x: int) -> int:
@@ -54,11 +54,11 @@ def _bucket_index(h: int, dim: int, salt: int) -> int:
     >>> # _bucket_index/_bucket_sign are deterministic and stable
     >>> h = _mix_u64(0x1234)
     >>> h, _bucket_index(h, 1024, 0), _bucket_sign(h, 0)
-    (11969492833970939502, 635, 1)
+    (11969492833970939502, 635, -1)
     >>> _bucket_index(h, 1024, 1), _bucket_sign(h, 1)
-    (580, -1)
+    (580, 1)
     >>> _bucket_index(h, 10, 2), _bucket_sign(h, 2)
-    (3, -1)
+    (3, 1)
 
     """
     y = (h ^ ((salt + 1) * 0x9E3779B97F4A7C15)) & 0xFFFFFFFFFFFFFFFF
@@ -72,9 +72,10 @@ def _bucket_sign(h: int, salt: int) -> int:
     across Python versions/platforms.
     """
     b = h.to_bytes(8, "little", signed=False) + salt.to_bytes(4, "little", signed=False)
-    return 1 if (int(hashlib.sha1(b).hexdigest(), 16) & 1) else -1    
+    return 1 if (_mix_u64(h ^ (salt * 0x9E3779B97F4A7C15)) & 1) else -1    
 
 
+@cache
 def _vectorize_landmark(
     file: str,
     k: int = DEFAULT_K,
@@ -94,7 +95,7 @@ def _vectorize_landmark(
             cache_dir=cache_dir,
         )
     ]
-    _iter = iter if hide_progress else partial(tqdm, desc="Sketching landmarks") 
+    _iter = iter #if hide_progress else partial(tqdm, desc="Sketching landmarks") 
     landmark_mh = [
         sketch_genome(
             file=f,
@@ -113,7 +114,7 @@ def _vectorize_landmark(
         cache_dir=cache_dir,
     )
 
-    _iter = iter if hide_progress else partial(tqdm, desc="Calculating landmark similarity") 
+    _iter = iter #if hide_progress else partial(tqdm, desc="Calculating landmark similarity") 
     return [query_mh.similarity(lm) for lm in _iter(landmark_mh)]
 
 
@@ -153,7 +154,7 @@ def _vectorize_countsketch(
     query_mh,
     dim: int = None, 
     num_hash_fns: int = 4,
-    use_sign: bool = False,
+    drop_sign: bool = False,
     cache_dir: Optional[str] = None,
     **kwargs
 ):
@@ -183,7 +184,7 @@ def _vectorize_countsketch(
     >>> len(v), np.allclose(np.sqrt(v @ v), 1.)  # length and unit norm
     (16, True)
     >>> round(v[4], 3), round(v[10], 3), round(v[13], 3), round(v[0], 3), round(v[11], 3)
-    (0.354, 0.354, 0.354, 0.354, 0.707)
+    (0.408, 0.408, 0.0, -0.408, -0.408)
 
     """
     import numpy as np
@@ -194,9 +195,9 @@ def _vectorize_countsketch(
     for _hash in query_mh.hashes.keys():
         base = _hash & 0xFFFFFFFFFFFFFFFF
         for i in range(num_hash_fns):
-            hk = _mix_u64(base ^ i)
+            hk = _mix_u64(base)
             idx = _bucket_index(hk, dim, i)
-            if use_sign:
+            if not drop_sign:
                 sign = _bucket_sign(hk, i)
             else:
                 sign = 1.
@@ -218,6 +219,7 @@ def vectorize(
     projection: Optional[int] = None,
     seed: int = 42,
     cache_dir: Optional[str] = None,
+    max_workers: int = 1,
     quiet: bool = False,
     hide_progress: bool = False,
     **kwargs
@@ -225,6 +227,7 @@ def vectorize(
     from dataclasses import asdict
     from joblib import Memory
     import numpy as np
+    # from tqdm.contrib.concurrent import process_map
 
     cache_dir = cache_dir or CACHE_DIR
     mem = Memory(
@@ -232,7 +235,7 @@ def vectorize(
         verbose=0,
     )
 
-    _iter = iter if hide_progress else partial(tqdm, desc="Gathering genomes")
+    _iter = iter #if hide_progress else partial(tqdm, desc="Gathering genomes")
     genome_info = [
         GenomeInfo.from_any(
             q, 
@@ -250,7 +253,12 @@ def vectorize(
     else:
         raise ValueError(f"Vectorization {method=} is not implemented.")
 
-    _iter = iter if hide_progress else partial(tqdm, desc="Vectorizing genomes")
+    _iter = iter if hide_progress else partial(
+        tqdm, 
+        # max_workers=max_workers,
+        total=len(genome_info),
+        desc="Vectorizing genomes",
+    )
     default_size = fn(
         file=GenomeInfo.from_any(
             83333,  # E. coli K-12 MG1655
@@ -261,6 +269,7 @@ def vectorize(
         k=k,
         cache_dir=cache_dir, 
         quiet=True,
+        hide_progress=True,
         **kwargs,
     )
     vectors = np.stack([
