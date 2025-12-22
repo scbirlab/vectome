@@ -23,6 +23,9 @@ groups:
   - name: group-1000
     queries:
       - file://lists/strain-list-ENA2018-bacteria-1k.txt
+  - name: group-2594
+    queries:
+      - file://lists/strain-list-ENA2018-bacteria-1_per_species.txt
   - name: group-10000
     queries:
       - file://lists/strain-list-ENA2018-bacteria-10k.txt
