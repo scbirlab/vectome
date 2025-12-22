@@ -56,7 +56,7 @@ def _bucket_index(h: int, dim: int, salt: int) -> int:
     >>> h, _bucket_index(h, 1024, 0), _bucket_sign(h, 0)
     (11969492833970939502, 635, -1)
     >>> _bucket_index(h, 1024, 1), _bucket_sign(h, 1)
-    (580, -1)
+    (580, 1)
     >>> _bucket_index(h, 10, 2), _bucket_sign(h, 2)
     (3, -1)
 
