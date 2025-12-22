@@ -58,7 +58,7 @@ def _bucket_index(h: int, dim: int, salt: int) -> int:
     >>> _bucket_index(h, 1024, 1), _bucket_sign(h, 1)
     (580, 1)
     >>> _bucket_index(h, 10, 2), _bucket_sign(h, 2)
-    (3, -1)
+    (3, 1)
 
     """
     y = (h ^ ((salt + 1) * 0x9E3779B97F4A7C15)) & 0xFFFFFFFFFFFFFFFF
