@@ -72,7 +72,7 @@ def _bucket_sign(h: int, salt: int) -> int:
     across Python versions/platforms.
     """
     b = h.to_bytes(8, "little", signed=False) + salt.to_bytes(4, "little", signed=False)
-    return 1 if (_mix_u64(hk ^ (salt * C)) & 1) else -1    
+    return 1 if (_mix_u64(h ^ (salt * 0x9E3779B97F4A7C15)) & 1) else -1    
 
 
 @cache
