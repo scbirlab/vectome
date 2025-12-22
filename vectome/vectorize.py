@@ -94,7 +94,7 @@ def _vectorize_landmark(
             cache_dir=cache_dir,
         )
     ]
-    _iter = iter if hide_progress else partial(tqdm, desc="Sketching landmarks") 
+    _iter = iter #if hide_progress else partial(tqdm, desc="Sketching landmarks") 
     landmark_mh = [
         sketch_genome(
             file=f,
@@ -113,7 +113,7 @@ def _vectorize_landmark(
         cache_dir=cache_dir,
     )
 
-    _iter = iter if hide_progress else partial(tqdm, desc="Calculating landmark similarity") 
+    _iter = iter #if hide_progress else partial(tqdm, desc="Calculating landmark similarity") 
     return [query_mh.similarity(lm) for lm in _iter(landmark_mh)]
 
 
@@ -232,7 +232,7 @@ def vectorize(
         verbose=0,
     )
 
-    _iter = iter if hide_progress else partial(tqdm, desc="Gathering genomes")
+    _iter = iter #if hide_progress else partial(tqdm, desc="Gathering genomes")
     genome_info = [
         GenomeInfo.from_any(
             q, 
@@ -261,6 +261,7 @@ def vectorize(
         k=k,
         cache_dir=cache_dir, 
         quiet=True,
+        hide_progress=True,
         **kwargs,
     )
     vectors = np.stack([
