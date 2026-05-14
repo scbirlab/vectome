@@ -4,6 +4,8 @@
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/vectome)
 ![PyPI](https://img.shields.io/pypi/v/vectome)
 
+<img src="docs/source/_static/logo.svg" width="200">
+
 **vectome** is a python package for deterministic vectorization of genomes. 
 
 - [Installation](#installation)

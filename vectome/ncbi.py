@@ -101,14 +101,19 @@ def download_genomic_info(
             for f in contents
             if f.endswith(".fna") 
         ),
-        "gff": next(
+    }
+    try:
+        gff = next(
             z.extract(f, path=cache_dir) 
             if not os.path.exists(os.path.join(cache_dir, f))  # another process got there first?
             else os.path.join(cache_dir, f)  # another process extracted it, nothing to do
             for f in contents
             if f.endswith(".gff")
-        ),
-    }
+        )
+    except StopIteration:
+        pass
+    else:
+        files["gff"] = gff
 
     # normalize filenames
     normalized_files = _normalize_and_compress(
