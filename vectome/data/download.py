@@ -51,7 +51,7 @@ def download_landmark_cache(
         )
     except HTTPError as e:
         os.rmdir(dl_dir_temp)
-        os.rmdir(dl_dir)
+        # os.rmdir(dl_dir)
         raise e
 
     with tarfile.open(archive, "r:*") as tf:

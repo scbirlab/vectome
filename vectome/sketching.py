@@ -56,13 +56,16 @@ def sketch_genome(
         mh = MinHash(n=n, ksize=k, **kwargs)
         opener = partial(gzip.open, mode="rb") if file.endswith(".gz") else partial(open, mode="r")
         with opener(file) as f:
-            contents = f.read()
-            if isinstance(contents, bytes):
-                contents = contents.decode()
-            fr = StringIO(contents)
-            fasta = FastaCollection.from_file(fr)
-            for seq in fasta.sequences:
-                mh.add_sequence(seq.sequence, force=True)
+            try:
+                contents = f.read()
+            except gzip.BadGzipFile as e:
+                print_err(f"File '{file}' is not GZIP or is corrupted.")
+                raise e
+        if isinstance(contents, bytes):
+            contents = contents.decode()
+        fasta = FastaCollection.from_file(StringIO(contents))
+        for seq in fasta.sequences:
+            mh.add_sequence(seq.sequence, force=True)
 
         sig = SourmashSignature(mh, name=os.path.basename(file))
 
@@ -71,8 +74,8 @@ def sketch_genome(
             print_err(f"Caching signature for {file} at {sketch_file}...", end=" ")
         with open(sketch_file, "w") as f:
             save_signatures([sig], f)
-            if not quiet:
-                print_err("ok")
+        if not quiet:
+            print_err("ok")
 
     return mh
 
