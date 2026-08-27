@@ -168,7 +168,7 @@ def name_or_taxon_to_genome_info(
     strict: bool = False,    # `True` allows fallback to species name
     _landmark: bool = False  # prevents cache hits on landmark downloads
 ):  
-    from .ncbi import download_genomic_info, name_to_taxon_ncbi, spellcheck, taxon_to_accession
+    from .ncbi import download_genomic_info, name_to_taxon_ncbi, spellcheck, taxon_to_accession, taxon_to_annotated_accession
     if query is None:
         return None
     if not quiet:
@@ -179,6 +179,7 @@ def name_or_taxon_to_genome_info(
         taxon_id = spellchecked
         strain_info = parse_strain_label(taxon_id)
         search_query = strain_info.species
+        accession = None
     elif isinstance(query, str) and query.startswith(("GCF_", "GCA_")) and query[-1].isdigit():
         spellchecked = query
         check_spelling = False
@@ -194,7 +195,18 @@ def name_or_taxon_to_genome_info(
             if getattr(strain_info, key) is not None:
                 search_query += " " + getattr(strain_info, key)
         taxon_id = name_to_taxon_ncbi(search_query, key="tax_id")
-    accession = taxon_to_accession(taxon_id)
+        accession = None
+
+    has_deletions = (
+        strain_info.deletions is not None 
+        and isinstance(strain_info.deletions, list) 
+        and len(strain_info.deletions) > 0
+    )
+    if taxon_id is not None and accession is None:
+        if has_deletions:
+            accession = taxon_to_annotated_accession(taxon_id)
+        else:
+            accession = taxon_to_accession(taxon_id)
     if accession is None:
         if strict or _landmark:
             raise KeyError(
@@ -216,11 +228,12 @@ def name_or_taxon_to_genome_info(
         cache_dir=cache_dir,
         _landmark=_landmark,
     )
-    if (
-        strain_info.deletions is not None 
-        and isinstance(strain_info.deletions, list) 
-        and len(strain_info.deletions) > 0
-    ):
+    if has_deletions:
+        if "gff" not in data_files:
+            raise ValueError(
+                f"Cannot apply deletions {strain_info.deletions!r}: "
+                f"assembly {accession} has no GFF annotation"
+            )
         new_fasta = delete_loci(
             fasta_file=data_files["fasta"],
             gff_file=data_files["gff"],

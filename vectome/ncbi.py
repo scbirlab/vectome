@@ -132,7 +132,7 @@ def download_genomic_info(
 @api_get(
     url="https://api.ncbi.nlm.nih.gov/datasets/v2/genome/taxon/{query}/dataset_report",
     default_params={
-        # "filters.has_annotation": True,  # can exclude valid TaxID if assembly doesn't pass filter
+        #"filters.has_annotation": True,  # can exclude valid TaxID if assembly doesn't pass filter
         "filters.exclude_paired_reports": True,
         "filters.assembly_version": "current",
         "tax_exact_match": True,
@@ -141,6 +141,25 @@ def download_genomic_info(
     cache_dir=NCBI_CACHE,
 )
 def taxon_to_accession(query, r) -> str:
+    call_results = r.json().get("reports")
+    if call_results is not None and isinstance(call_results, list) and len(call_results) > 0:
+        return call_results[0].get("accession")
+    else:
+        return None
+
+
+@api_get(
+    url="https://api.ncbi.nlm.nih.gov/datasets/v2/genome/taxon/{query}/dataset_report",
+    default_params={
+        "filters.has_annotation": True,  # can exclude valid TaxID if assembly doesn't pass filter
+        "filters.exclude_paired_reports": True,
+        "filters.assembly_version": "current",
+        "tax_exact_match": True,
+        "table_fields": "ASSM_ACC",
+    },
+    cache_dir=NCBI_CACHE,
+)
+def taxon_to_annotated_accession(query, r) -> str:
     call_results = r.json().get("reports")
     if call_results is not None and isinstance(call_results, list) and len(call_results) > 0:
         return call_results[0].get("accession")
