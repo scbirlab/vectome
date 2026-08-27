@@ -1,6 +1,6 @@
 [project]
 name = "vectome"
-version = "0.0.6"
+version = "0.0.7"
 authors = [
   { name="Eachan Johnson", email="eachan.johnson@crick.ac.uk" },
 ]
@@ -31,7 +31,7 @@ classifiers = [
 
 dependencies = [
   "bioino",
-  "carabiner-tools>=0.0.4",
+  "carabiner-tools>=0.0.5.post3",
   "joblib",
   "numpy",
   "platformdirs>=4.4.0",
