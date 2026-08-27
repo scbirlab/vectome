@@ -1,12 +1,12 @@
 [project]
 name = "vectome"
-version = "0.0.6"
+version = "0.0.7"
 authors = [
   { name="Eachan Johnson", email="eachan.johnson@crick.ac.uk" },
 ]
 description = "Deterministic vectorization of genomes."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 license = { file = "LICENSE" }
 keywords = [
   "template",
@@ -22,16 +22,16 @@ classifiers = [
 
   "License :: OSI Approved :: MIT License",
 
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
   "Programming Language :: Python :: 3 :: Only",
 ]
 
 dependencies = [
   "bioino",
-  "carabiner-tools>=0.0.4",
+  "carabiner-tools>=0.0.5.post3",
   "joblib",
   "numpy",
   "platformdirs>=4.4.0",
