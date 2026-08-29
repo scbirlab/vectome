@@ -83,8 +83,8 @@ def locked_cache(
     """
     from joblib import Memory
 
-    memory = Memory(cache_dir, verbose=0, **kwargs)
-    cached_fn = memory.cache(fn)
+    memory = Memory(cache_dir, verbose=0)
+    cached_fn = memory.cache(fn, **kwargs)
 
     namespace = namespace or (
         f"{fn.__module__}.{fn.__qualname__}"

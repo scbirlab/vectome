@@ -67,6 +67,7 @@ def api_get(
             requests.exceptions.Timeout,
         ) as error:
             retry = True
+            r = None
         else:
             retry = r.status_code in {
                 429,
@@ -118,20 +119,24 @@ def api_get(
             raise error
         r.raise_for_status()
 
-    @cache
+
     def cached_call(runtime_cache_dir):
         if cache_subdir is not None:
             runtime_cache_dir = os.path.join(
                 runtime_cache_dir,
                 cache_subdir,
             )
-
+        endpoint = (
+            f"{f.__module__}.{f.__qualname__}"
+        )
         return locked_cache(
             api_call,
             cache_dir=os.path.join(
                 runtime_cache_dir,
                 "api_calls",
             ),
+            namespace=endpoint,
+            ignore=["quiet", "wait", "_try"],
         )
     
 
@@ -143,7 +148,6 @@ def api_get(
     ):
         if skip_cache:
             return api_call(*args, **kwargs)
-
         return cached_call(cache_dir)(*args, **kwargs)
         
     return wrapper
