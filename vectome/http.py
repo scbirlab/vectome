@@ -119,6 +119,10 @@ def api_get(
             raise error
         r.raise_for_status()
 
+    endpoint = f"{f.__module__}.{f.__qualname__}.{url}"
+    api_call.__module__ = f.__module__
+    api_call.__name__ = f"{f.__name__}_api_call"
+    api_call.__qualname__ = f"{f.__qualname__}_api_call"
 
     def cached_call(runtime_cache_dir):
         if cache_subdir is not None:
@@ -126,9 +130,6 @@ def api_get(
                 runtime_cache_dir,
                 cache_subdir,
             )
-        endpoint = (
-            f"{f.__module__}.{f.__qualname__}"
-        )
         return locked_cache(
             api_call,
             cache_dir=os.path.join(

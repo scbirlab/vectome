@@ -84,29 +84,30 @@ def _normalize_and_compress(
 def _download_genomic_info(
     query,
     r,
-    cache_dir: str = CACHE_DIR,
+    genome_dir: str = CACHE_DIR,
     _landmark: bool = False  # prevents cache hits on landmark downloads
 ) -> List[str]:
 
     from zipfile import ZipFile
-    cache_dir = cache_dir or CACHE_DIR
     z = ZipFile(BytesIO(r.content))
 
-    contents = z.namelist() 
+    contents = z.namelist()
+    destination = os.path.join(genome_dir, "genomes")
+    os.makedirs(destination, exist_ok=True)
     files = {
         "fasta": next(
-            z.extract(f, path=cache_dir) 
-            if not os.path.exists(os.path.join(cache_dir, f))  # another process got there first?
-            else os.path.join(cache_dir, f)  # another process extracted it, nothing to do
+            z.extract(f, path=destination) 
+            if not os.path.exists(os.path.join(destination, f))  # another process got there first?
+            else os.path.join(destination, f)  # another process extracted it, nothing to do
             for f in contents
             if f.endswith(".fna") 
         ),
     }
     try:
         gff = next(
-            z.extract(f, path=cache_dir) 
-            if not os.path.exists(os.path.join(cache_dir, f))  # another process got there first?
-            else os.path.join(cache_dir, f)  # another process extracted it, nothing to do
+            z.extract(f, path=destination) 
+            if not os.path.exists(os.path.join(destination, f))  # another process got there first?
+            else os.path.join(destination, f)  # another process extracted it, nothing to do
             for f in contents
             if f.endswith(".gff")
         )
@@ -120,7 +121,7 @@ def _download_genomic_info(
         files,
         query=query,
         quiet=True,
-        cache_dir=cache_dir,
+        cache_dir=destination,
         move=True,
     )
     if all(os.path.exists(f) for key, f in normalized_files.items()):
@@ -136,11 +137,12 @@ def download_genomic_info(
     query,
     quiet: bool = False,
     cache_dir: str = CACHE_DIR,
-    _landmark: bool = False,
+    _landmark: bool = False
 ):
 
-    fasta = os.path.join(cache_dir, f"{query}.fna.gz")
-    gff = os.path.join(cache_dir, f"{query}.gff.gz")
+    genomes_dir = os.path.join(cache_dir, "genomes")
+    fasta = os.path.join(genomes_dir, f"{query}.fna.gz")
+    gff = os.path.join(genomes_dir, f"{query}.gff.gz")
 
     if os.path.exists(fasta):
         files = {"fasta": fasta}
@@ -161,7 +163,7 @@ def download_genomic_info(
 
         return _download_genomic_info(
             query=query,
-            cache_dir=cache_dir,
+            genome_dir=cache_dir,
             quiet=quiet,
             _landmark=_landmark,
         )
@@ -178,7 +180,10 @@ def download_genomic_info(
     },
     cache_subdir=NCBI_CACHE,
 )
-def taxon_to_accession(query, r) -> str:
+def taxon_to_accession(
+    query, 
+    r
+) -> str:
     call_results = r.json().get("reports")
     if call_results is not None and isinstance(call_results, list) and len(call_results) > 0:
         return call_results[0].get("accession")
@@ -197,7 +202,10 @@ def taxon_to_accession(query, r) -> str:
     },
     cache_subdir=NCBI_CACHE,
 )
-def taxon_to_annotated_accession(query, r) -> str:
+def taxon_to_annotated_accession(
+    query, 
+    r
+) -> str:
     call_results = r.json().get("reports")
     if call_results is not None and isinstance(call_results, list) and len(call_results) > 0:
         return call_results[0].get("accession")
