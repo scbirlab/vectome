@@ -9,7 +9,6 @@ from carabiner import print_err
 from sourmash import load_one_signature, MinHash, SourmashSignature, save_signatures
 
 from .caching import CACHE_DIR
-from .data import APPDATA_DIR
 from .genomes import fetch_landmarks
 
 DEFAULT_K: int = 21
@@ -85,7 +84,7 @@ def sketch_landmarks(
     check_spelling: bool = False,
     force: bool = False,
     validate_fasta: bool = True,
-    cache_dir: Optional[str] = None,
+    cache_dir: str = CACHE_DIR,
     max_workers: int = 1,
     **kwargs
 ) -> Tuple[MinHash]:

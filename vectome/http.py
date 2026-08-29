@@ -2,6 +2,7 @@
 
 from typing import Any, Callable, Mapping, Optional
 from functools import cache, wraps
+from importlib.metadata import metadata
 import os
 import time
 
@@ -11,18 +12,18 @@ import requests
 from requests import Response
 
 from . import app_name, __version__, __author__
-from importlib.metadata import metadata
+from .caching import CACHE_DIR, locked_cache
 
 
 @decorator_with_params
 def api_get(
-    f: Callable[[str, Response], Any],
+    f: Callable[[str, Response], ...],
     url: str,
     max_tries: int = 3,
-    query_key: Optional[str] = None,
-    default_params: Optional[Mapping[str, Any]] = None,
-    cache_dir: Optional[str] = None
-) -> Callable[[Optional[str], Optional[dict]], Any]:
+    query_key: str | None = None,
+    default_params: Mapping[str, ...] | None = None,
+    cache_dir: str = CACHE_DIR
+) -> Callable[[str | None, dict | None], None]:
     default_params = default_params or {}
     url0 = url
 
@@ -34,7 +35,6 @@ def api_get(
             .strip()
         ),
     }
-
 
     def api_call(
         query=None, 
@@ -84,9 +84,10 @@ def api_get(
             return f(query, r, *args, **kwargs)
 
     if cache_dir is not None and isinstance(cache_dir, str):
-        from joblib import Memory
-        mem = Memory(location=os.path.join(cache_dir, "api_calls"), verbose=0)
-        api_call = mem.cache(api_call)
+        api_call = locked_cache(
+            api_call, 
+            cache_dir=os.path.join(cache_dir, "api_calls"),
+        )
         
     return wraps(f)(cache(api_call))
 
@@ -97,7 +98,7 @@ def download_url(
     max_tries: int = 3,
     wait: float = .2,
     quiet: bool = False,
-    cache_dir: Optional[str] = None
+    cache_dir: str = CACHE_DIR
 ) -> str:
 
     @api_get(

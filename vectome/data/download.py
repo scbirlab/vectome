@@ -34,9 +34,9 @@ def download_landmark_cache(
     suffix: str,
     version: str = __version__,
     quiet: bool = True,
-    cache_dir: Optional[str] = None
+    cache_dir: str = CACHE_DIR
 ) -> str:
-    cache_dir = cache_dir or CACHE_DIR
+
     landmark_version = os.environ.get('VECTOME_LANDMARKS_VERSION', f"v{version}")
     dl_dir = os.path.join(cache_dir, "landmark-dl", landmark_version)
     dl_dir_temp = os.path.join(dl_dir, "temp")
