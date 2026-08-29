@@ -5,6 +5,7 @@ from functools import cache, wraps
 from importlib.metadata import metadata
 import os
 import random
+from tempfile import NamedTemporaryFile
 import time
 
 from carabiner import print_err, pprint_dict
@@ -24,6 +25,7 @@ def api_get(
     query_key: str | None = None,
     default_params: Mapping[str, ...] | None = None,
     cache_dir: str = CACHE_DIR,
+    cache_subdir: str | None = None,
     skip_cache: bool = False
 ) -> Callable[[str | None, dict | None], None]:
     default_params = default_params or {}
@@ -116,15 +118,35 @@ def api_get(
             raise error
         r.raise_for_status()
 
-    if not skip_cache and cache_dir is not None and isinstance(cache_dir, str):
-        api_call = locked_cache(
-            api_call, 
-            cache_dir=os.path.join(cache_dir, "api_calls"),
+    @cache
+    def cached_call(runtime_cache_dir):
+        if cache_subdir is not None:
+            runtime_cache_dir = os.path.join(
+                runtime_cache_dir,
+                cache_subdir,
+            )
+
+        return locked_cache(
+            api_call,
+            cache_dir=os.path.join(
+                runtime_cache_dir,
+                "api_calls",
+            ),
         )
-    if not skip_cache:
-        api_call = cache(api_call)
+    
+
+    @wraps(f)
+    def wrapper(
+        *args,
+        cache_dir=cache_dir,
+        **kwargs,
+    ):
+        if skip_cache:
+            return api_call(*args, **kwargs)
+
+        return cached_call(cache_dir)(*args, **kwargs)
         
-    return wraps(f)(api_call)
+    return wrapper
 
 
 def download_url(
@@ -145,8 +167,11 @@ def download_url(
         query,
         r: Response
     ):
-        with open(destination, 'wb') as f:
+        with NamedTemporaryFile(dir=cache_dir, delete=False) as f:
             f.write(r.content)
+            os.replace(f.name, destination)
+        if os.path.exists(f.name):
+            os.remove(f.name)
         return destination
 
     return _download_url(query=(url, destination), quiet=quiet, wait=wait)

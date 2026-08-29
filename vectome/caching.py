@@ -116,3 +116,32 @@ def locked_cache(
             return cached_fn(*args, **kwargs)
 
     return wrapper
+
+
+def single_flight(
+    key,
+    build: Callable,
+    check: Callable,
+    cache_dir: str = CACHE_DIR,
+):
+    result = check()
+    if result is not None:
+        return result
+
+    with cache_lock(
+        key=key,
+        cache_dir=cache_dir,
+    ):
+        result = check()
+        if result is not None:
+            return result
+
+        built = build()
+
+        result = check()
+        if result is None:
+            raise RuntimeError(
+                f"[INFO] Single-flight build for {key!r} did not produce a valid result"
+            )
+
+        return result

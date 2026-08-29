@@ -53,6 +53,7 @@ def _generate_sketch(
         mh.add_sequence(seq.sequence, force=True)
     return mh
 
+
 @cache
 def sketch_genome(
     file: str,
@@ -117,14 +118,15 @@ def sketch_genome(
             dir=sketch_dir,
             prefix=".tmp-",
             suffix=".sig",
-            delete=False
+            delete=False,
         ) as f:
             save_signatures([sig], f)
             os.replace(
                 f.name,
                 sketch_file,
             )
-
+        if os.path.exists(f.name):
+            os.remove(f.name)
         if not quiet:
             print_err("ok")
 

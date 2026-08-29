@@ -12,13 +12,12 @@ from .caching import CACHE_DIR, cache_lock
 from .http import api_get
 from . import __version__
 
-NCBI_CACHE = os.path.join(CACHE_DIR, "ncbi")
-
+NCBI_CACHE = "ncbi"
 
 @api_get(
     url="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/espell.fcgi",
     query_key="term",
-    cache_dir=NCBI_CACHE,
+    cache_subdir=NCBI_CACHE,
 )
 def spellcheck(query, r) -> str:
     import xml.etree.ElementTree as ET
@@ -80,12 +79,12 @@ def _normalize_and_compress(
         "filename": "ncbi-dataset.zip",
     },
     skip_cache=True,
-    cache_dir=NCBI_CACHE,
+    cache_subdir=NCBI_CACHE,
 )
 def _download_genomic_info(
     query,
     r,
-    cache_dir: Optional[str] = None,
+    cache_dir: str = CACHE_DIR,
     _landmark: bool = False  # prevents cache hits on landmark downloads
 ) -> List[str]:
 
@@ -127,7 +126,10 @@ def _download_genomic_info(
     if all(os.path.exists(f) for key, f in normalized_files.items()):
         return normalized_files
     else:
-        raise IOError(f"Some files are missing! {({key: f for key, f in normalized_files.items() if not os.path.exists(f)})}")
+        raise IOError(
+            "Some files are missing! ",
+            f"{({key: f for key, f in normalized_files.items() if not os.path.exists(f)})}",
+        )
 
 
 def download_genomic_info(
@@ -174,7 +176,7 @@ def download_genomic_info(
         "tax_exact_match": True,
         "table_fields": "ASSM_ACC",
     },
-    cache_dir=NCBI_CACHE,
+    cache_subdir=NCBI_CACHE,
 )
 def taxon_to_accession(query, r) -> str:
     call_results = r.json().get("reports")
@@ -193,7 +195,7 @@ def taxon_to_accession(query, r) -> str:
         "tax_exact_match": True,
         "table_fields": "ASSM_ACC",
     },
-    cache_dir=NCBI_CACHE,
+    cache_subdir=NCBI_CACHE,
 )
 def taxon_to_annotated_accession(query, r) -> str:
     call_results = r.json().get("reports")
@@ -209,9 +211,9 @@ def taxon_to_annotated_accession(query, r) -> str:
         "tax_rank_filter": "species",
         "taxon_resource_filter": "TAXON_RESOURCE_FILTER_GENOME", 
     },
-    cache_dir=NCBI_CACHE,
+    cache_subdir=NCBI_CACHE,
 )
-def name_to_taxon_ncbi(query, r, key: str = "tax_id", rank: Optional[str] = None) -> str:
+def name_to_taxon_ncbi(query, r, key: str = "tax_id", rank: str | None = None) -> str:
     call_results = r.json().get("sci_name_and_ids")
     if call_results is not None and isinstance(call_results, list):
         if rank is None:
@@ -240,7 +242,7 @@ def name_to_taxon_ncbi(query, r, key: str = "tax_id", rank: Optional[str] = None
         "sort": "organism_name asc",
     },
     query_key="query",
-    cache_dir=NCBI_CACHE,
+    cache_subdir=NCBI_CACHE,
 )
 def name_to_taxon(query, r, key: str = "taxonId") -> str:
     call_results = r.json().get("results")

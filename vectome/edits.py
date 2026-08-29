@@ -6,13 +6,12 @@ import gzip
 from hashlib import md5
 from io import StringIO
 import os
+from tempfile import NamedTemporaryFile
 
 from carabiner import print_err
 from joblib import Memory
  
-from .caching import CACHE_DIR
-
-mem = Memory(location=CACHE_DIR, verbose=0)
+from .caching import CACHE_DIR, locked_cache, cache_lock
 
 ATTRIBUTE_KEY_PRECEDENT = (
     "ID",
@@ -77,7 +76,6 @@ def _resolve_gene(
 
 
 @cache
-@mem.cache
 def _resolve_gene_loci(
     gff_file: str,
     loci: Union[str, Iterable[str]]
@@ -112,11 +110,9 @@ def _resolve_gene_loci(
 def delete_loci(
     fasta_file: str,
     gff_file: str,
-    loci: Union[str, Union[Iterable[str], Iterable[int]]],
-    cache_dir: Optional[str] = None
+    loci: str | Iterable[str] | Iterable[int],
+    cache_dir: str = CACHE_DIR
 ) -> str:
-
-    cache_dir = cache_dir or CACHE_DIR
 
     if isinstance(loci, str):
         loci = [loci]
@@ -124,6 +120,10 @@ def delete_loci(
         loci = list(loci)
     
     loci_to_delete = []
+    resolve_gene_loci = locked_cache(
+        _resolve_gene_loci,
+        cache_dir=os.path.join(cache_dir, "gene-loci"),
+    )
     for locus in loci:
         if (
             isinstance(locus, str) 
@@ -134,7 +134,7 @@ def delete_loci(
             )
         ):  
             loci_to_delete.append(
-                _resolve_gene_loci(
+                resolve_gene_loci(
                     gff_file,
                     loci=locus,
                 )
@@ -156,7 +156,14 @@ def delete_loci(
     
     if os.path.exists(output_file):
         return output_file
-    else:
+    
+    with cache_lock(
+        key=("delete-loci", output_file),
+        cache_dir=cache_dir,
+    ):
+        if os.path.exists(output_file):
+            return output_file
+        
         from bioino import FastaCollection
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
         opener = partial(gzip.open, mode="rb") if fasta_file.endswith(".gz") else partial(open, mode="r")
@@ -174,8 +181,11 @@ def delete_loci(
                 locus=locus,
             )  
         print_err(f"Caching edited sequence at {output_file}...", end=" ")
-        with open(output_file, "w") as fh:
-            fasta.write(fh)
+        with NamedTemporaryFile(mode="w", dir=cache_dir, delete=False) as f:
+            fasta.write(f)
+            os.replace(f.name, output_file)
+        if os.path.exists(f.name):
+            os.remove(f.name)
         print_err("ok")
 
     return output_file

@@ -10,7 +10,7 @@ from carabiner import cast, print_err
 from sourmash import MinHash
 from tqdm.auto import tqdm
 
-from .caching import CACHE_DIR
+from .caching import CACHE_DIR, locked_cache
 from .genomes import GenomeInfo, fetch_landmarks, name_or_taxon_to_genome_info
 from .sketching import sketch_genome, DEFAULT_K, DEFAULT_N
 
@@ -227,12 +227,6 @@ def vectorize(
     from dataclasses import asdict
     from joblib import Memory
     import numpy as np
-    # from tqdm.contrib.concurrent import process_map
-
-    mem = Memory(
-        location=os.path.join(cache_dir, "vectors"),
-        verbose=0,
-    )
 
     _iter = iter #if hide_progress else partial(tqdm, desc="Gathering genomes")
     genome_info = [
@@ -246,9 +240,15 @@ def vectorize(
     ]
 
     if method == "landmark":
-        fn = cache(mem.cache(_vectorize_landmark))
+        fn = cache(locked_cache(
+            _vectorize_landmark,
+            cache_dir=os.path.join(cache_dir, "vectors"),
+        ))
     elif method == "countsketch":
-        fn = cache(mem.cache(_vectorize_countsketch_from_file))
+        fn = cache(locked_cache(
+            _vectorize_countsketch_from_file,
+            cache_dir=os.path.join(cache_dir, "vectors"),
+        ))
     else:
         raise ValueError(f"Vectorization {method=} is not implemented.")
 

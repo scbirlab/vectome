@@ -178,24 +178,28 @@ def name_or_taxon_to_genome_info(
         spellchecked = str(query)
         check_spelling = False
         taxon_id = spellchecked
-        strain_info = parse_strain_label(taxon_id)
+        strain_info = parse_strain_label(taxon_id, cache_dir=cache_dir)
         search_query = strain_info.species
         accession = None
     elif isinstance(query, str) and query.startswith(("GCF_", "GCA_")) and query[-1].isdigit():
         spellchecked = query
         check_spelling = False
         taxon_id = None
-        strain_info = parse_strain_label(query)
+        strain_info = parse_strain_label(query, cache_dir=cache_dir)
         accession = query
     else:
         species, remainder = _extract_species(query)
-        spellchecked = spellcheck(species) if check_spelling else str(species)
-        strain_info = parse_strain_label(spellchecked + " " + remainder)
+        spellchecked = spellcheck(species, cache_dir=cache_dir) if check_spelling else str(species)
+        strain_info = parse_strain_label(spellchecked + " " + remainder, cache_dir=cache_dir)
         search_query = strain_info.species
         for key in ("strain", "substrain"):
             if getattr(strain_info, key) is not None:
                 search_query += " " + getattr(strain_info, key)
-        taxon_id = name_to_taxon_ncbi(search_query, key="tax_id")
+        taxon_id = name_to_taxon_ncbi(
+            search_query, 
+            key="tax_id", 
+            cache_dir=cache_dir,
+        )
         accession = None
 
     has_deletions = (
@@ -205,9 +209,9 @@ def name_or_taxon_to_genome_info(
     )
     if taxon_id is not None and accession is None:
         if has_deletions:
-            accession = taxon_to_annotated_accession(taxon_id)
+            accession = taxon_to_annotated_accession(taxon_id, cache_dir=cache_dir)
         else:
-            accession = taxon_to_accession(taxon_id)
+            accession = taxon_to_accession(taxon_id, cache_dir=cache_dir)
     if accession is None:
         if strict or _landmark:
             raise KeyError(

@@ -2,6 +2,7 @@ from typing import List, Optional, Tuple, Union
 from dataclasses import dataclass, field
 import re
 
+from .caching import CACHE_DIR
 from .ncbi import name_to_taxon_ncbi
 
 # --- Helpers ---
@@ -215,7 +216,8 @@ def _parse_mutations(
 # --- Public API ---
 
 def parse_strain_label(
-    query: Union[str, int]
+    query: Union[str, int],
+    cache_dir: str = CACHE_DIR
 ) -> Strain:
     """Parse a free text strain name into components.
 
@@ -245,7 +247,7 @@ def parse_strain_label(
 
     """
     if isinstance(query, int) or (isinstance(query, str) and query.isdigit()):
-        query = name_to_taxon_ncbi(query, key="sci_name")
+        query = name_to_taxon_ncbi(query, key="sci_name", cache_dir=cache_dir)
     species, remainder = _extract_species(query, normalize=True)
     if remainder is not None:
         strain, substrain, remainder = _extract_strain_and_substrain(remainder)
