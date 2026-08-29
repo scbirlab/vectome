@@ -60,14 +60,14 @@ def download_landmark_cache(
         except HTTPError as e:
             raise e
 
-        extract_dir = os.path.join(tmpdir, "extract")
+        extract_dir = os.path.join(tempdir, "extract")
         os.makedirs(extract_dir, exist_ok=True)
         with tarfile.open(archive, "r:*") as tf:
             tf.extractall(extract_dir)
 
         downloaded_dir = os.path.join(extract_dir, dir_suffix)
 
-        with open(os.path.join(landmark_dir, "manifest.json"), "r") as f:
+        with open(os.path.join(downloaded_dir, "manifest.json"), "r") as f:
             d = json.load(f)
         for item in d:
             for key in item["files"]:
@@ -75,7 +75,7 @@ def download_landmark_cache(
                     landmark_destination, 
                     os.path.basename(item["files"][key]),
                 )
-        with open(os.path.join(landmark_dir, "manifest.json"), "w") as f:
+        with open(os.path.join(downloaded_dir, "manifest.json"), "w") as f:
             json.dump(d, f, indent=4)
     
         sketch_destination = os.path.join(cache_dir, "sketches")
@@ -94,7 +94,7 @@ def download_landmark_cache(
         if os.path.exists(landmark_destination):
             shutil.rmtree(landmark_destination)
         shutil.move(
-            landmark_dir,
+            downloaded_dir,
             landmark_destination,
         )
     return cache_dir
