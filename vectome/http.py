@@ -22,7 +22,8 @@ def api_get(
     max_tries: int = 3,
     query_key: str | None = None,
     default_params: Mapping[str, ...] | None = None,
-    cache_dir: str = CACHE_DIR
+    cache_dir: str = CACHE_DIR,
+    skip_cache: bool = False
 ) -> Callable[[str | None, dict | None], None]:
     default_params = default_params or {}
     url0 = url
@@ -83,13 +84,15 @@ def api_get(
                 print_err(f"... ok")
             return f(query, r, *args, **kwargs)
 
-    if cache_dir is not None and isinstance(cache_dir, str):
+    if not skip_cache and cache_dir is not None and isinstance(cache_dir, str):
         api_call = locked_cache(
             api_call, 
             cache_dir=os.path.join(cache_dir, "api_calls"),
         )
+    if not skip_cache:
+        api_call = cache(api_call)
         
-    return wraps(f)(cache(api_call))
+    return wraps(f)(api_call)
 
 
 def download_url(

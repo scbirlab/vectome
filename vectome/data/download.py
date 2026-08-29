@@ -6,6 +6,7 @@ import json
 import tarfile
 import os
 import shutil
+from tempfile import TemporaryDirectory
 
 from requests import HTTPError
 
@@ -38,9 +39,12 @@ def download_landmark_cache(
 ) -> str:
 
     landmark_version = os.environ.get('VECTOME_LANDMARKS_VERSION', f"v{version}")
-    dl_dir = os.path.join(cache_dir, "landmark-dl", landmark_version)
-    dl_dir_temp = os.path.join(dl_dir, "temp")
-    os.makedirs(dl_dir_temp, exist_ok=True)
+    dir_suffix = os.path.join(
+        "landmarks",
+        landmark_version,
+        f"group-{suffix}",
+    )
+    landmark_destination = os.path.join(cache_dir, dir_suffix)
     
     url = _release_url(suffix=suffix, version=landmark_version)
     with TemporaryDirectory(
@@ -54,42 +58,30 @@ def download_landmark_cache(
                 destination=os.path.join(tempdir, os.path.basename(url)),
             )
         except HTTPError as e:
-            os.rmdir(dl_dir_temp)
-            # os.rmdir(dl_dir)
             raise e
 
-        extract_dir = os.path.join(
-            tmpdir,
-            "extract",
-        )
-        os.makedirs(extract_dir)
-
+        extract_dir = os.path.join(tmpdir, "extract")
+        os.makedirs(extract_dir, exist_ok=True)
         with tarfile.open(archive, "r:*") as tf:
             tf.extractall(extract_dir)
 
-        landmark_dirs = glob(
-            os.path.join(
-                extract_dir,
-                "landmarks",
-                "*",
-                "group-*",
-            )
-        )
-        landmark_destination = os.path.join(cache_dir, "landmarks", landmark_version)
-        for landmark_dir in landmark_dirs:
-            with open(os.path.join(landmark_dir, "manifest.json"), "r") as f:
-                d = json.load(f)
-            for item in d:
-                for key in item["files"]:
-                    item["files"][key] = os.path.join(this_destination, os.path.basename(item["files"][key]))
-            this_destination = os.path.join(landmark_destination, os.path.basename(landmark_dir))
-            with open(os.path.join(landmark_dir, "manifest.json"), "w") as f:
-                json.dump(d, f, indent=4)
+        downloaded_dir = os.path.join(extract_dir, dir_suffix)
+
+        with open(os.path.join(landmark_dir, "manifest.json"), "r") as f:
+            d = json.load(f)
+        for item in d:
+            for key in item["files"]:
+                item["files"][key] = os.path.join(
+                    landmark_destination, 
+                    os.path.basename(item["files"][key]),
+                )
+        with open(os.path.join(landmark_dir, "manifest.json"), "w") as f:
+            json.dump(d, f, indent=4)
     
         sketch_destination = os.path.join(cache_dir, "sketches")
         os.makedirs(sketch_destination, exist_ok=True)
         for sketch_file in glob(os.path.join(extract_dir, "sketches", "*.sig")):
-            os.rename(
+            os.replace(
                 sketch_file, 
                 os.path.join(sketch_destination, os.path.basename(sketch_file)),
             )
@@ -101,7 +93,6 @@ def download_landmark_cache(
 
         if os.path.exists(landmark_destination):
             shutil.rmtree(landmark_destination)
-
         shutil.move(
             landmark_dir,
             landmark_destination,

@@ -8,7 +8,7 @@ import shutil
 
 from carabiner import print_err
 
-from .caching import CACHE_DIR
+from .caching import CACHE_DIR, cache_lock
 from .http import api_get
 from . import __version__
 
@@ -79,9 +79,10 @@ def _normalize_and_compress(
         "hydrated": "FULLY_HYDRATED",
         "filename": "ncbi-dataset.zip",
     },
+    skip_cache=True,
     cache_dir=NCBI_CACHE,
 )
-def download_genomic_info(
+def _download_genomic_info(
     query,
     r,
     cache_dir: Optional[str] = None,
@@ -127,6 +128,41 @@ def download_genomic_info(
         return normalized_files
     else:
         raise IOError(f"Some files are missing! {({key: f for key, f in normalized_files.items() if not os.path.exists(f)})}")
+
+
+def download_genomic_info(
+    query,
+    quiet: bool = False,
+    cache_dir: str = CACHE_DIR,
+    _landmark: bool = False,
+):
+
+    fasta = os.path.join(cache_dir, f"{query}.fna.gz")
+    gff = os.path.join(cache_dir, f"{query}.gff.gz")
+
+    if os.path.exists(fasta):
+        files = {"fasta": fasta}
+        if os.path.exists(gff):
+            files["gff"] = gff
+        return files
+    
+    with cache_lock(
+        key=("genome", query),
+        cache_dir=cache_dir,
+    ):
+        # Double check
+        if os.path.exists(fasta):
+            result = {"fasta": fasta}
+            if os.path.exists(gff):
+                result["gff"] = gff
+            return result
+
+        return _download_genomic_info(
+            query=query,
+            cache_dir=cache_dir,
+            quiet=quiet,
+            _landmark=_landmark,
+        )
 
 
 @api_get(

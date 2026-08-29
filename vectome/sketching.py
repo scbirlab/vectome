@@ -21,12 +21,12 @@ def sketch_genome(
     n: int = DEFAULT_N,
     force: bool = False,
     quiet: bool = False,
-    cache_dir: Optional[str] = None,
+    cache_dir: str = CACHE_DIR,
     _landmark: bool = False,  # prevents cache hits on landmark downloads
     **kwargs
 ) -> MinHash:
     
-    cache_dir = os.path.join(cache_dir or CACHE_DIR, "sketches")
+    cache_dir = os.path.join(cache_dir, "sketches")
     sketch_file = os.path.join(cache_dir, f"{os.path.basename(file)}_{n=}_{k=}.sig")
 
     if os.path.exists(sketch_file) and not force:
@@ -91,7 +91,6 @@ def sketch_landmarks(
     from tqdm.auto import tqdm
     from tqdm.contrib.concurrent import process_map
 
-    cache_dir = cache_dir or APPDATA_DIR
     landmark_info = fetch_landmarks(
         check_spelling=check_spelling,
         group=group,
