@@ -4,6 +4,7 @@ from typing import Any, Callable, Mapping, Optional
 from functools import cache, wraps
 from importlib.metadata import metadata
 import os
+import random
 import time
 
 from carabiner import print_err, pprint_dict
@@ -45,7 +46,7 @@ def api_get(
         _try: int = 0,
         *args, **kwargs
     ):
-        time.sleep(wait)
+        time.sleep(random.uniform(wait * .5, wait * 1.5))
         params = default_params | (params or {})
         url = url0
         if query_key is not None and query is not None:
@@ -59,30 +60,61 @@ def api_get(
             )
         try:
             r = requests.get(url, params=params, headers=headers)
-        except requests.exceptions.ConnectionError as e:
-            print_err(e)
-            next_try = _try + 1
+        except (
+            requests.exceptions.ConnectionError,
+            requests.exceptions.Timeout,
+        ) as error:
+            retry = True
+        else:
+            retry = r.status_code in {
+                429,
+                500,
+                502,
+                503,
+                504,
+            }
+            error = None
+            if not quiet:
+                print_err(f"[INFO] ({_try + 1} / {max_tries}) Tried {r.url}... {r.status_code}", end="")
+            if not retry:
+                r.raise_for_status()
+                if not quiet:
+                    print_err(f"... ok")
+                return f(query, r, *args, **kwargs)
+            else:
+                if not quiet:
+                    print_err(f"... retrying")
+
+        next_try = _try + 1
+        
+        if next_try < max_tries:
+            print_err("")
+            if r is not None:
+                retry_after = r.headers.get("Retry-After")
+                try:
+                    next_wait = float(retry_after)
+                except ValueError:
+                    next_wait = wait * 2.
+            else:
+                retry_after = None
+                next_wait = random.uniform(
+                    wait,
+                    wait * 2.,
+                )
             if not quiet:
                 print_err(f"[INFO] Tried {next_try} / {max_tries} times...", end=" ")
-            if next_try < max_tries:
-                print_err("")
-                return api_call(
-                    query=query, 
-                    params=params,
-                    wait=wait * 2,
-                    _try=next_try,
-                    *args, **kwargs
-                )
-            else:
-                print_err("stopping!")
-                raise e
-        else:
-            if not quiet:
-                print_err(f"Trying {r.url}... {r.status_code}", end="")
-            r.raise_for_status()
-            if not quiet:
-                print_err(f"... ok")
-            return f(query, r, *args, **kwargs)
+            time.sleep(next_wait)
+            return api_call(
+                query=query, 
+                params=params,
+                wait=min(wait * 2., 30),
+                _try=next_try,
+                *args, **kwargs
+            )
+        if error is not None:
+            print_err("stopping!")
+            raise error
+        r.raise_for_status()
 
     if not skip_cache and cache_dir is not None and isinstance(cache_dir, str):
         api_call = locked_cache(
