@@ -107,8 +107,9 @@ def build(args: Namespace) -> None:
 @clicommand(message="Running info")
 def info(args: Namespace) -> None:
     from .data import landmark_info
+    from .caching import CACHE_DIR
     pprint_dict(
-        landmark_info(cache_dir=args.cache),
+        landmark_info(cache_dir=args.cache or CACHE_DIR),
         message=f"vectome version {__version__}"
     )
     return None

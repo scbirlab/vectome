@@ -9,13 +9,13 @@ from ..caching import CACHE_DIR
 APPDATA_DIR = os.path.dirname(__file__)
 
 def load_landmarks(
-    cache_dir: str = CACHE_DIR
+    cache_dir: str = APPDATA_DIR
 ) -> Dict[str, Any]:
 
     import yaml
 
     landmarks_path = os.path.join(
-        APPDATA_DIR, 
+        cache_dir, 
         "landmarks.yml",
     )
     with open(landmarks_path, "r") as f:
@@ -41,7 +41,7 @@ def landmark_info(
 ):
     info = {
         key: len(value) if isinstance(value, (list, tuple)) else value
-        for key, value in load_landmarks(cache_dir=cache_dir).items()
+        for key, value in load_landmarks(cache_dir=APPDATA_DIR).items()
     }
     cache_dir = os.path.join(cache_dir, "landmarks", __version__)
 
