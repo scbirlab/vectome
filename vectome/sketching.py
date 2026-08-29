@@ -1,18 +1,57 @@
 """"""
 
-from typing import Optional, Tuple
+from typing import Tuple
 from functools import cache, partial
 from io import StringIO
 import os
+from tempfile import NamedTemporaryFile
 
 from carabiner import print_err
 from sourmash import load_one_signature, MinHash, SourmashSignature, save_signatures
 
-from .caching import CACHE_DIR
+from .caching import CACHE_DIR, cache_lock
 from .genomes import fetch_landmarks
 
 DEFAULT_K: int = 21
 DEFAULT_N: int = 10_000
+
+
+def _load_sketch(
+    file: str,
+    sketch_file: str,
+    quiet: bool = False
+):
+    if not quiet:
+        print_err(f"Loading cached signature for {file} at {sketch_file}...", end=" ")
+    mh = load_one_signature(sketch_file).minhash
+    if not quiet:
+        print_err("ok")
+    return mh 
+
+
+def _generate_sketch(
+    file: str,
+    k: int,
+    n: int,
+    **kwargs
+):
+    import gzip
+    from bioino import FastaCollection
+
+    mh = MinHash(n=n, ksize=k, **kwargs)
+    opener = partial(gzip.open, mode="rb") if file.endswith(".gz") else partial(open, mode="r")
+    with opener(file) as f:
+        try:
+            contents = f.read()
+        except gzip.BadGzipFile as e:
+            print_err(f"File '{file}' is not GZIP or is corrupted.")
+            raise e
+    if isinstance(contents, bytes):
+        contents = contents.decode()
+    fasta = FastaCollection.from_file(StringIO(contents))
+    for seq in fasta.sequences:
+        mh.add_sequence(seq.sequence, force=True)
+    return mh
 
 @cache
 def sketch_genome(
@@ -25,54 +64,67 @@ def sketch_genome(
     _landmark: bool = False,  # prevents cache hits on landmark downloads
     **kwargs
 ) -> MinHash:
+    from joblib import hash as joblib_hash
+    sketch_id = joblib_hash((
+        os.path.basename(file),
+        n,
+        k,
+        kwargs,
+    ))[:12]
     
-    cache_dir = os.path.join(cache_dir, "sketches")
-    sketch_file = os.path.join(cache_dir, f"{os.path.basename(file)}_{n=}_{k=}.sig")
+    sketch_dir = os.path.join(cache_dir, "sketches")
+    sketch_file = os.path.join(sketch_dir, f"{os.path.basename(file)}_{n=}_{k=}_{sketch_id}.sig")
 
     if os.path.exists(sketch_file) and not force:
-        if not quiet:
-            print_err(f"Loading cached signature for {file} at {sketch_file}...", end=" ")
         try:
-            mh = load_one_signature(sketch_file).minhash
-        except ValueError: # no signatures to load
-            print_err("failed!! Falling back to generating a sketch")
-            return sketch_genome(
-                file=file,
-                k=k,
-                n=n,
-                force=True,
-                cache_dir=os.path.dirname(cache_dir),
-                _landmark=_landmark,
-                **kwargs,
-            )
-        else:
+            return _load_sketch(file, sketch_file, quiet=quiet)
+        except ValueError:
             if not quiet:
-                print_err("ok")
-    else:
-        import gzip
-        from bioino import FastaCollection
+                print_err(f"[WARN] Cached signature for {file} at {sketch_file} invalid; regenerating.")
+    
+    os.makedirs(sketch_dir, exist_ok=True)
 
-        mh = MinHash(n=n, ksize=k, **kwargs)
-        opener = partial(gzip.open, mode="rb") if file.endswith(".gz") else partial(open, mode="r")
-        with opener(file) as f:
+    with cache_lock(
+        key=(
+            "sketch",
+            os.path.basename(file),
+            n,
+            k,
+            kwargs,
+        ),
+        cache_dir=cache_dir,
+    ):
+        # The process ahead of us may have populated/repaired it.
+        if os.path.exists(sketch_file) and not force:
             try:
-                contents = f.read()
-            except gzip.BadGzipFile as e:
-                print_err(f"File '{file}' is not GZIP or is corrupted.")
-                raise e
-        if isinstance(contents, bytes):
-            contents = contents.decode()
-        fasta = FastaCollection.from_file(StringIO(contents))
-        for seq in fasta.sequences:
-            mh.add_sequence(seq.sequence, force=True)
+                return _load_sketch(file, sketch_file, quiet=quiet)
+            except ValueError:
+                pass
 
+        mh = _generate_sketch(
+            file,
+            n=n,
+            k=k,
+            **kwargs,
+        )
         sig = SourmashSignature(mh, name=os.path.basename(file))
 
-        os.makedirs(os.path.dirname(sketch_file), exist_ok=True)
         if not quiet:
-            print_err(f"Caching signature for {file} at {sketch_file}...", end=" ")
-        with open(sketch_file, "w") as f:
+            print_err(f"[INFO] Caching signature for {file} at {sketch_file}...", end=" ")
+        
+        with NamedTemporaryFile(
+            mode="w",
+            dir=sketch_dir,
+            prefix=".tmp-",
+            suffix=".sig",
+            delete=False
+        ) as f:
             save_signatures([sig], f)
+            os.replace(
+                f.name,
+                sketch_file,
+            )
+
         if not quiet:
             print_err("ok")
 
