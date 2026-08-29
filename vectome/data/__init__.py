@@ -4,22 +4,20 @@ from typing import Any, Dict, Optional
 import os
 
 from .. import __version__
+from ..caching import CACHE_DIR
 
 APPDATA_DIR = os.path.dirname(__file__)
 
 def load_landmarks(
-    cache_dir: Optional[str] = None
+    cache_dir: str = APPDATA_DIR
 ) -> Dict[str, Any]:
 
     import yaml
 
-    cache_dir = cache_dir or APPDATA_DIR
-
     landmarks_path = os.path.join(
-        APPDATA_DIR, 
+        cache_dir, 
         "landmarks.yml",
     )
-
     with open(landmarks_path, "r") as f:
          data = yaml.safe_load(f)
 
@@ -28,7 +26,7 @@ def load_landmarks(
         to_append = []
         for q in item["queries"]:
             if q.startswith("file://"):
-                pathname = os.path.join(APPDATA_DIR, q.split("file://")[-1])
+                pathname = os.path.join(cache_dir, q.split("file://")[-1])
                 with open(pathname, "r") as f:
                     for line in f:
                         to_append.append(line.rstrip())
@@ -39,13 +37,12 @@ def load_landmarks(
 
 
 def landmark_info(
-    cache_dir: Optional[str] = None
+    cache_dir: str = CACHE_DIR
 ):
     info = {
         key: len(value) if isinstance(value, (list, tuple)) else value
-        for key, value in load_landmarks(cache_dir=cache_dir).items()
+        for key, value in load_landmarks(cache_dir=APPDATA_DIR).items()
     }
-    cache_dir = cache_dir or APPDATA_DIR
     cache_dir = os.path.join(cache_dir, "landmarks", __version__)
 
     for key in info:

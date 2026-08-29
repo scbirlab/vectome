@@ -8,17 +8,16 @@ import shutil
 
 from carabiner import print_err
 
-from .caching import CACHE_DIR
+from .caching import CACHE_DIR, cache_lock
 from .http import api_get
 from . import __version__
 
-NCBI_CACHE = os.path.join(CACHE_DIR, "ncbi")
-
+NCBI_CACHE = "ncbi"
 
 @api_get(
     url="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/espell.fcgi",
     query_key="term",
-    cache_dir=NCBI_CACHE,
+    cache_subdir=NCBI_CACHE,
 )
 def spellcheck(query, r) -> str:
     import xml.etree.ElementTree as ET
@@ -79,34 +78,36 @@ def _normalize_and_compress(
         "hydrated": "FULLY_HYDRATED",
         "filename": "ncbi-dataset.zip",
     },
-    cache_dir=NCBI_CACHE,
+    skip_cache=True,
+    cache_subdir=NCBI_CACHE,
 )
-def download_genomic_info(
+def _download_genomic_info(
     query,
     r,
-    cache_dir: Optional[str] = None,
+    genome_dir: str = CACHE_DIR,
     _landmark: bool = False  # prevents cache hits on landmark downloads
 ) -> List[str]:
 
     from zipfile import ZipFile
-    cache_dir = cache_dir or CACHE_DIR
     z = ZipFile(BytesIO(r.content))
 
-    contents = z.namelist() 
+    contents = z.namelist()
+    destination = os.path.join(genome_dir, "genomes")
+    os.makedirs(destination, exist_ok=True)
     files = {
         "fasta": next(
-            z.extract(f, path=cache_dir) 
-            if not os.path.exists(os.path.join(cache_dir, f))  # another process got there first?
-            else os.path.join(cache_dir, f)  # another process extracted it, nothing to do
+            z.extract(f, path=destination) 
+            if not os.path.exists(os.path.join(destination, f))  # another process got there first?
+            else os.path.join(destination, f)  # another process extracted it, nothing to do
             for f in contents
             if f.endswith(".fna") 
         ),
     }
     try:
         gff = next(
-            z.extract(f, path=cache_dir) 
-            if not os.path.exists(os.path.join(cache_dir, f))  # another process got there first?
-            else os.path.join(cache_dir, f)  # another process extracted it, nothing to do
+            z.extract(f, path=destination) 
+            if not os.path.exists(os.path.join(destination, f))  # another process got there first?
+            else os.path.join(destination, f)  # another process extracted it, nothing to do
             for f in contents
             if f.endswith(".gff")
         )
@@ -120,13 +121,52 @@ def download_genomic_info(
         files,
         query=query,
         quiet=True,
-        cache_dir=cache_dir,
+        cache_dir=destination,
         move=True,
     )
     if all(os.path.exists(f) for key, f in normalized_files.items()):
         return normalized_files
     else:
-        raise IOError(f"Some files are missing! {({key: f for key, f in normalized_files.items() if not os.path.exists(f)})}")
+        raise IOError(
+            "Some files are missing! ",
+            f"{({key: f for key, f in normalized_files.items() if not os.path.exists(f)})}",
+        )
+
+
+def download_genomic_info(
+    query,
+    quiet: bool = False,
+    cache_dir: str = CACHE_DIR,
+    _landmark: bool = False
+):
+
+    genomes_dir = os.path.join(cache_dir, "genomes")
+    fasta = os.path.join(genomes_dir, f"{query}.fna.gz")
+    gff = os.path.join(genomes_dir, f"{query}.gff.gz")
+
+    if os.path.exists(fasta):
+        files = {"fasta": fasta}
+        if os.path.exists(gff):
+            files["gff"] = gff
+        return files
+    
+    with cache_lock(
+        key=("genome", query),
+        cache_dir=cache_dir,
+    ):
+        # Double check
+        if os.path.exists(fasta):
+            result = {"fasta": fasta}
+            if os.path.exists(gff):
+                result["gff"] = gff
+            return result
+
+        return _download_genomic_info(
+            query=query,
+            genome_dir=cache_dir,
+            quiet=quiet,
+            _landmark=_landmark,
+        )
 
 
 @api_get(
@@ -138,9 +178,12 @@ def download_genomic_info(
         "tax_exact_match": True,
         "table_fields": "ASSM_ACC",
     },
-    cache_dir=NCBI_CACHE,
+    cache_subdir=NCBI_CACHE,
 )
-def taxon_to_accession(query, r) -> str:
+def taxon_to_accession(
+    query, 
+    r
+) -> str:
     call_results = r.json().get("reports")
     if call_results is not None and isinstance(call_results, list) and len(call_results) > 0:
         return call_results[0].get("accession")
@@ -157,9 +200,12 @@ def taxon_to_accession(query, r) -> str:
         "tax_exact_match": True,
         "table_fields": "ASSM_ACC",
     },
-    cache_dir=NCBI_CACHE,
+    cache_subdir=NCBI_CACHE,
 )
-def taxon_to_annotated_accession(query, r) -> str:
+def taxon_to_annotated_accession(
+    query, 
+    r
+) -> str:
     call_results = r.json().get("reports")
     if call_results is not None and isinstance(call_results, list) and len(call_results) > 0:
         return call_results[0].get("accession")
@@ -173,9 +219,9 @@ def taxon_to_annotated_accession(query, r) -> str:
         "tax_rank_filter": "species",
         "taxon_resource_filter": "TAXON_RESOURCE_FILTER_GENOME", 
     },
-    cache_dir=NCBI_CACHE,
+    cache_subdir=NCBI_CACHE,
 )
-def name_to_taxon_ncbi(query, r, key: str = "tax_id", rank: Optional[str] = None) -> str:
+def name_to_taxon_ncbi(query, r, key: str = "tax_id", rank: str | None = None) -> str:
     call_results = r.json().get("sci_name_and_ids")
     if call_results is not None and isinstance(call_results, list):
         if rank is None:
@@ -204,7 +250,7 @@ def name_to_taxon_ncbi(query, r, key: str = "tax_id", rank: Optional[str] = None
         "sort": "organism_name asc",
     },
     query_key="query",
-    cache_dir=NCBI_CACHE,
+    cache_subdir=NCBI_CACHE,
 )
 def name_to_taxon(query, r, key: str = "taxonId") -> str:
     call_results = r.json().get("results")

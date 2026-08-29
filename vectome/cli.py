@@ -66,7 +66,7 @@ def embed(args: Namespace) -> None:
         dim=args.dimensionality,
         projection=args.projection,
         seed=args.seed,
-        cache_dir=args.cache,
+        cache_dir=args.cache or CACHE_DIR,
         quiet=False,
     )
     
@@ -74,7 +74,7 @@ def embed(args: Namespace) -> None:
         from .genomes import get_landmark_ids
         header = get_landmark_ids(
             group=args.group, 
-            cache_dir=args.cache,
+            cache_dir=args.cache or CACHE_DIR,
         )
     else:
         header = list(map(str, range(vectors.shape[1])))
@@ -99,7 +99,7 @@ def build(args: Namespace) -> None:
         group=args.group,
         check_spelling=args.spellcheck,
         force=args.force,
-        cache_dir=args.cache,
+        cache_dir=args.cache or CACHE_DIR,
     )
     return None
 
@@ -107,8 +107,9 @@ def build(args: Namespace) -> None:
 @clicommand(message="Running info")
 def info(args: Namespace) -> None:
     from .data import landmark_info
+    from .caching import CACHE_DIR
     pprint_dict(
-        landmark_info(cache_dir=args.cache),
+        landmark_info(cache_dir=args.cache or CACHE_DIR),
         message=f"vectome version {__version__}"
     )
     return None

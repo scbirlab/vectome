@@ -1,6 +1,6 @@
 """Getting and processing genome data."""
 
-from typing import Iterable, Optional, Tuple, Union
+from typing import Iterable, Mapping, Optional, Tuple, Union
 from dataclasses import asdict, dataclass
 from functools import cache, partial
 import json
@@ -8,6 +8,7 @@ import os
 
 from carabiner import pprint_dict, print_err
 
+from .caching import CACHE_DIR, cache_lock
 from .data.download import download_landmark_cache
 from .edits import delete_loci
 from .names import _extract_species, Strain, parse_strain_label
@@ -177,24 +178,28 @@ def name_or_taxon_to_genome_info(
         spellchecked = str(query)
         check_spelling = False
         taxon_id = spellchecked
-        strain_info = parse_strain_label(taxon_id)
+        strain_info = parse_strain_label(taxon_id, cache_dir=cache_dir)
         search_query = strain_info.species
         accession = None
     elif isinstance(query, str) and query.startswith(("GCF_", "GCA_")) and query[-1].isdigit():
         spellchecked = query
         check_spelling = False
         taxon_id = None
-        strain_info = parse_strain_label(query)
+        strain_info = parse_strain_label(query, cache_dir=cache_dir)
         accession = query
     else:
         species, remainder = _extract_species(query)
-        spellchecked = spellcheck(species) if check_spelling else str(species)
-        strain_info = parse_strain_label(spellchecked + " " + remainder)
+        spellchecked = spellcheck(species, cache_dir=cache_dir) if check_spelling else str(species)
+        strain_info = parse_strain_label(spellchecked + " " + remainder, cache_dir=cache_dir)
         search_query = strain_info.species
         for key in ("strain", "substrain"):
             if getattr(strain_info, key) is not None:
                 search_query += " " + getattr(strain_info, key)
-        taxon_id = name_to_taxon_ncbi(search_query, key="tax_id")
+        taxon_id = name_to_taxon_ncbi(
+            search_query, 
+            key="tax_id", 
+            cache_dir=cache_dir,
+        )
         accession = None
 
     has_deletions = (
@@ -204,9 +209,9 @@ def name_or_taxon_to_genome_info(
     )
     if taxon_id is not None and accession is None:
         if has_deletions:
-            accession = taxon_to_annotated_accession(taxon_id)
+            accession = taxon_to_annotated_accession(taxon_id, cache_dir=cache_dir)
         else:
-            accession = taxon_to_accession(taxon_id)
+            accession = taxon_to_accession(taxon_id, cache_dir=cache_dir)
     if accession is None:
         if strict or _landmark:
             raise KeyError(
@@ -252,6 +257,103 @@ def name_or_taxon_to_genome_info(
     )
 
 
+def _download_landmarks_from_source(
+    group_queries,
+    landmarks_dir: str,
+    check_spelling: bool = False,
+    hide_progress: bool = False,
+    quiet: bool = False
+):
+    from tqdm.auto import tqdm
+    manifest_filename = os.path.join(
+        landmarks_dir, 
+        "manifest.json",
+    )
+    results = []
+    errors = {}
+    _iter = iter if hide_progress else partial(tqdm, desc="Fetching landmarks") 
+    for q in _iter(group_queries):
+        try:
+            genome_info = GenomeInfo.from_any(
+                query=q,
+                check_spelling=check_spelling,
+                cache_dir=landmarks_dir,
+                _landmark=True,
+            )
+        except Exception as e:
+            genome_info = None
+            errors[q] = e
+            if not quiet:
+                print_err(e)
+                print_err(f"[WARN] Failed to get genome info for query {q}!")
+        else:
+            if not quiet and genome_info is not None:
+                pprint_dict(asdict(genome_info), message="Parsed strain name:")
+        results.append(asdict(genome_info))
+    if len(errors) > 0:
+        message = f"[ERROR] Failed to fetch {len(errors)} queries!"
+        print_err(message)
+        print_err("\n".join(errors))
+        raise ValueError(errors[list(errors)[0]])
+    with open(manifest_filename, "w") as f:
+        json.dump(results, f, indent=4)
+    return results, manifest_filename
+
+
+def _load_json(filename: str):
+    with open(filename, "r") as f:
+        j = json.load(f)
+    return j
+
+
+def _validate_manifest(
+    results: Mapping[str, ...],
+    group: str,
+    allow_missing_files: bool = False,
+    quiet: bool = False
+
+):
+    rebuild = False
+    for item in results:
+        for key, filename in item["files"].items():
+            if not allow_missing_files and not os.path.exists(filename):
+                if not quiet:
+                    print_err(
+                        f"[WARN] The '{key}' file ({filename}) for {item['query']} is missing!",
+                        f"Rebuilding group {group} landmarks.",
+                    )
+                rebuild = True
+                break
+            else:
+                if not quiet:
+                    print_err(
+                        f"[INFO] Found '{key}' file ({filename}) for {item['query']}",
+                    )
+    return rebuild
+
+
+def _check_and_validate_manifest(
+    manifest_filename: str,
+    group: str,
+    allow_missing_files: bool = False,
+    quiet: bool = False,
+):
+    if os.path.exists(manifest_filename):
+        # fast path
+        results = _load_json(manifest_filename)
+        rebuild = _validate_manifest(
+            results,
+            group=group,
+            allow_missing_files=allow_missing_files,
+            quiet=quiet,
+        )
+        if rebuild:
+            os.remove(manifest_filename)
+        return results, rebuild
+    else:
+        return None, True
+
+
 def fetch_landmarks(
     group: int = 0,
     check_spelling: bool = False,
@@ -260,12 +362,13 @@ def fetch_landmarks(
     hide_progress: bool = False,
     allow_missing_files: bool = False,
     redownload: bool = False,
-    cache_dir: Optional[str] = None
+    cache_dir: str = CACHE_DIR,
+    version: str = __version__
 ):
-    from tqdm.auto import tqdm
+    
     from requests import HTTPError
 
-    from .data import load_landmarks, APPDATA_DIR
+    from .data import load_landmarks
 
     landmarks_info = load_landmarks()
 
@@ -275,113 +378,89 @@ def fetch_landmarks(
         raise KeyError(
             f"Group {group} not in landmarks. Available: {', '.join(landmarks_info)}"
         )
+    landmark_version = os.environ.get(
+        'VECTOME_LANDMARKS_VERSION', 
+        f"v{version}",
+    )
+    landmarks_dir = os.path.join(
+        cache_dir, 
+        "landmarks", 
+        landmark_version, 
+        f"group-{group}",
+    )
+    os.makedirs(landmarks_dir, exist_ok=True)
+    manifest_filename = os.path.join(
+        landmarks_dir, 
+        "manifest.json",
+    )
     
-    cache_dir = cache_dir or APPDATA_DIR
-    landmark_version = os.environ.get('VECTOME_LANDMARKS_VERSION', f"v{__version__}")
-    landmarks_dir = os.path.join(cache_dir, "landmarks", landmark_version, f"group-{group}")
-    manifest_filename = os.path.join(landmarks_dir, "manifest.json")
-
-    if os.path.exists(manifest_filename) and not force:
-        with open(manifest_filename, "r") as f:
-            try:
-                results = json.load(f)
-            except json.JSONDecodeError as e:
-                print_err(f.read())
-                return fetch_landmarks(
-                    group=group,
-                    check_spelling=check_spelling,
-                    force=True,
-                    quiet=quiet,
-                    hide_progress=hide_progress,
-                    cache_dir=cache_dir,
-                )
-    elif not redownload:
-        try:
-            _ = download_landmark_cache(
-                suffix=group,
-                quiet=quiet,
-                cache_dir=cache_dir,
-            )
-        except HTTPError:
-            print_err("Could not find downloadable cache. Downloading from original source")
-            return fetch_landmarks(
-                group=group,
-                check_spelling=check_spelling,
-                force=force,
-                redownload=True,
-                allow_missing_files=allow_missing_files,
-                quiet=quiet,
-                hide_progress=hide_progress,
-                cache_dir=cache_dir,
-            )
-        else:
-            with open(manifest_filename, "r") as f:
-                results = json.load(f)
-    else:
-        os.makedirs(landmarks_dir, exist_ok=True)
-
-        results = []
-        errors = {}
-        _iter = iter if hide_progress else partial(tqdm, desc="Fetching landmarks") 
-        for q in _iter(group_queries):
-            try:
-                genome_info = GenomeInfo.from_any(
-                    query=q,
-                    check_spelling=check_spelling,
-                    cache_dir=landmarks_dir,
-                    _landmark=True,
-                )
-            except Exception as e:
-                genome_info = None
-                errors[q] = e
-                if not quiet:
-                    print_err(e)
-                    print_err(f"[WARN] Failed to get genome info for query {q}!")
-                # raise e
-            else:
-                if not quiet:
-                    pprint_dict(asdict(genome_info), message="Parsed strain name:")
-            results.append(asdict(genome_info))
-        if len(errors) > 0:
-            message = f"[ERROR] Failed to fetch {len(errors)} queries!"
-            print_err(message)
-            print_err("\n".join(errors))
-            raise ValueError(errors[list(errors)[0]])
-        with open(manifest_filename, "w") as f:
-            json.dump(results, f, indent=4)
-
-    # check all files exist, otherwise delete manifest and regenerate
-    rebuild = False
-    for item in results:
-        for key, filename in item["files"].items():
-            if not allow_missing_files and not os.path.exists(filename):
-                if not quiet:
-                    print_err(
-                        f"[WARN] The '{key}' file ({filename}) for {item['query']} is missing!",
-                        f"Deleting manifest and rebuilding group {group} landmarks.",
-                    )
-                os.remove(manifest_filename)
-                rebuild = True
-                break
-            else:
-                if not quiet:
-                    print_err(
-                        f"[INFO] Found '{key}' file ({filename}) for {item['query']}",
-                    )
-
-    if rebuild:
-        return fetch_landmarks(
+    # fast path
+    if not force and not redownload:
+        results, rebuild = _check_and_validate_manifest(
+            manifest_filename,
             group=group,
-            check_spelling=check_spelling,
-            force=True,
-            redownload=redownload,
             allow_missing_files=allow_missing_files,
             quiet=quiet,
-            hide_progress=hide_progress,
-            cache_dir=cache_dir,
         )
-    else:
-        return results
+        if not rebuild:
+            return results
+
+    with cache_lock(
+        key=("landmarks", landmark_version, group),
+        cache_dir=cache_dir,
+    ):
+        if not force and not redownload:
+            results, rebuild = _check_and_validate_manifest(
+                manifest_filename,
+                group=group,
+                allow_missing_files=allow_missing_files,
+                quiet=quiet,
+            )
+            if not rebuild:
+                return results
+        
+        if redownload:
+            try:
+                landmarks_dir = download_landmark_cache(
+                    suffix=group,
+                    quiet=quiet,
+                    cache_dir=landmarks_dir,
+                )
+            except HTTPError:
+                print_err("[WARN] Could not find downloadable cache. Downloading from original source")
+                force = True
+            else:
+                results, rebuild = _check_and_validate_manifest(
+                    manifest_filename,
+                    group=group,
+                    allow_missing_files=allow_missing_files,
+                    quiet=quiet,
+                )
+                if not rebuild:
+                    return results
+                else:
+                    force = True
+    
+        if force:
+            results, manifest_filename = _download_landmarks_from_source(
+                group_queries,
+                landmarks_dir=landmarks_dir,
+                check_spelling=check_spelling,
+                hide_progress=hide_progress,
+                quiet=quiet,
+            )
+            results, rebuild = _check_and_validate_manifest(
+                manifest_filename,
+                group=group,
+                allow_missing_files=allow_missing_files,
+                quiet=quiet,
+            )
+            if not rebuild:
+                return results
+            else:
+                raise FileNotFoundError(f"Could not download from source.")
+        else:
+            raise Exception("Should be unreachable")
 
 
 def get_landmark_ids(
@@ -389,7 +468,7 @@ def get_landmark_ids(
     check_spelling: bool = False,
     id_keys: Optional[Iterable[Union[int, str]]] = None,
     force: bool = False,
-    cache_dir: Optional[str] = None
+    cache_dir: str = CACHE_DIR
 ):
     id_keys = id_keys or ("query", "taxon_id", "accession")
     landmark_info = fetch_landmarks(

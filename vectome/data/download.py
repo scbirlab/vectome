@@ -6,6 +6,7 @@ import json
 import tarfile
 import os
 import shutil
+from tempfile import TemporaryDirectory
 
 from requests import HTTPError
 
@@ -34,53 +35,67 @@ def download_landmark_cache(
     suffix: str,
     version: str = __version__,
     quiet: bool = True,
-    cache_dir: Optional[str] = None
+    cache_dir: str = CACHE_DIR
 ) -> str:
-    cache_dir = cache_dir or CACHE_DIR
+
     landmark_version = os.environ.get('VECTOME_LANDMARKS_VERSION', f"v{version}")
-    dl_dir = os.path.join(cache_dir, "landmark-dl", landmark_version)
-    dl_dir_temp = os.path.join(dl_dir, "temp")
-    os.makedirs(dl_dir_temp, exist_ok=True)
+    dir_suffix = os.path.join(
+        "landmarks",
+        landmark_version,
+        f"group-{suffix}",
+    )
+    landmark_destination = os.path.join(cache_dir, dir_suffix)
     
     url = _release_url(suffix=suffix, version=landmark_version)
-    try:
-        archive = download_url(
-            url,
-            quiet=quiet,
-            destination=os.path.join(dl_dir_temp, os.path.basename(url)),
-        )
-    except HTTPError as e:
-        os.rmdir(dl_dir_temp)
-        # os.rmdir(dl_dir)
-        raise e
+    with TemporaryDirectory(
+        prefix="landmark-dl-",
+        dir=cache_dir,
+    ) as tempdir:
+        try:
+            archive = download_url(
+                url,
+                quiet=quiet,
+                destination=os.path.join(tempdir, os.path.basename(url)),
+            )
+        except HTTPError as e:
+            raise e
 
-    with tarfile.open(archive, "r:*") as tf:
-        tf.extractall(dl_dir)
-    os.remove(archive)
-    os.rmdir(dl_dir_temp)
-    landmark_destination = os.path.join(cache_dir, "landmarks", landmark_version)
-    for landmark_dir in glob(os.path.join(dl_dir, "landmarks", "*", "group-*")):
-        this_destination = os.path.join(landmark_destination, os.path.basename(landmark_dir))
-        if os.path.exists(this_destination):
-            shutil.rmtree(this_destination)
-        shutil.move(
-            landmark_dir,
-            this_destination,
-        )
-        with open(os.path.join(this_destination, "manifest.json"), "r") as f:
+        extract_dir = os.path.join(tempdir, "extract")
+        os.makedirs(extract_dir, exist_ok=True)
+        with tarfile.open(archive, "r:*") as tf:
+            tf.extractall(extract_dir)
+
+        downloaded_dir = os.path.join(extract_dir, dir_suffix)
+
+        with open(os.path.join(downloaded_dir, "manifest.json"), "r") as f:
             d = json.load(f)
         for item in d:
             for key in item["files"]:
-                item["files"][key] = os.path.join(this_destination, os.path.basename(item["files"][key]))
-        with open(os.path.join(this_destination, "manifest.json"), "w") as f:
+                item["files"][key] = os.path.join(
+                    landmark_destination, 
+                    os.path.basename(item["files"][key]),
+                )
+        with open(os.path.join(downloaded_dir, "manifest.json"), "w") as f:
             json.dump(d, f, indent=4)
-    sketch_destination = os.path.join(cache_dir, "sketches")
-    os.makedirs(sketch_destination, exist_ok=True)
-    for sketch_file in glob(os.path.join(dl_dir, "sketches", "*.sig")):
-        os.rename(
-            sketch_file, 
-            os.path.join(sketch_destination, os.path.basename(sketch_file)),
+    
+        sketch_destination = os.path.join(cache_dir, "sketches")
+        os.makedirs(sketch_destination, exist_ok=True)
+        for sketch_file in glob(os.path.join(extract_dir, "sketches", "*.sig")):
+            os.replace(
+                sketch_file, 
+                os.path.join(sketch_destination, os.path.basename(sketch_file)),
+            )
+
+        os.makedirs(
+            os.path.dirname(landmark_destination),
+            exist_ok=True,
         )
-    os.rmdir(os.path.join(dl_dir, "sketches"))
+
+        if os.path.exists(landmark_destination):
+            shutil.rmtree(landmark_destination)
+        shutil.move(
+            downloaded_dir,
+            landmark_destination,
+        )
     return cache_dir
     

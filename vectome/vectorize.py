@@ -10,7 +10,7 @@ from carabiner import cast, print_err
 from sourmash import MinHash
 from tqdm.auto import tqdm
 
-from .caching import CACHE_DIR
+from .caching import CACHE_DIR, locked_cache
 from .genomes import GenomeInfo, fetch_landmarks, name_or_taxon_to_genome_info
 from .sketching import sketch_genome, DEFAULT_K, DEFAULT_N
 
@@ -83,7 +83,7 @@ def _vectorize_landmark(
     group: int = 0,
     quiet: bool = False,
     hide_progress: bool = False,
-    cache_dir: Optional[str] = None,
+    cache_dir: str = CACHE_DIR,
     **kwargs
 ):
     landmarks = [
@@ -125,7 +125,7 @@ def _vectorize_countsketch_from_file(
     k: int = DEFAULT_K,
     n: int = DEFAULT_N,
     quiet: bool = False,
-    cache_dir: Optional[str] = None,
+    cache_dir: str = CACHE_DIR,
     **kwargs
 ):
     """Convert a sourmash MinHash (which holds a set of 64-bit hashes) into a fixed-length
@@ -155,7 +155,7 @@ def _vectorize_countsketch(
     dim: int = None, 
     num_hash_fns: int = 4,
     drop_sign: bool = False,
-    cache_dir: Optional[str] = None,
+    cache_dir: str = CACHE_DIR,
     **kwargs
 ):
     """Convert a sourmash MinHash (which holds a set of 64-bit hashes) into a fixed-length
@@ -212,13 +212,13 @@ def _vectorize_countsketch(
 
 
 def vectorize(
-    query: Union[str, int, Iterable[Union[str, int]]],
+    query: str | int | Iterable[str | int],
     check_spelling: bool = False,
     k: int = DEFAULT_K,
     method: str = "countsketch",
-    projection: Optional[int] = None,
+    projection: int | None = None,
     seed: int = 42,
-    cache_dir: Optional[str] = None,
+    cache_dir: str = CACHE_DIR,
     max_workers: int = 1,
     quiet: bool = False,
     hide_progress: bool = False,
@@ -227,13 +227,6 @@ def vectorize(
     from dataclasses import asdict
     from joblib import Memory
     import numpy as np
-    # from tqdm.contrib.concurrent import process_map
-
-    cache_dir = cache_dir or CACHE_DIR
-    mem = Memory(
-        location=os.path.join(cache_dir, "vectors"),
-        verbose=0,
-    )
 
     _iter = iter #if hide_progress else partial(tqdm, desc="Gathering genomes")
     genome_info = [
@@ -247,9 +240,15 @@ def vectorize(
     ]
 
     if method == "landmark":
-        fn = cache(mem.cache(_vectorize_landmark))
+        fn = cache(locked_cache(
+            _vectorize_landmark,
+            cache_dir=os.path.join(cache_dir, "vectors"),
+        ))
     elif method == "countsketch":
-        fn = cache(mem.cache(_vectorize_countsketch_from_file))
+        fn = cache(locked_cache(
+            _vectorize_countsketch_from_file,
+            cache_dir=os.path.join(cache_dir, "vectors"),
+        ))
     else:
         raise ValueError(f"Vectorization {method=} is not implemented.")
 

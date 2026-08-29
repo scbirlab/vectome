@@ -2,6 +2,7 @@ from typing import List, Optional, Tuple, Union
 from dataclasses import dataclass, field
 import re
 
+from .caching import CACHE_DIR
 from .ncbi import name_to_taxon_ncbi
 
 # --- Helpers ---
@@ -38,7 +39,8 @@ def _split_operon(query: str) -> List[str]:
 
 def _extract_species(
     query: str,
-    normalize: bool = False
+    normalize: bool = False,
+    cache_dir: str = CACHE_DIR
 ) -> Tuple[str, str]:
     """Extract 'Genus species' (with optional abbreviated genus) from the start.
 
@@ -62,8 +64,8 @@ def _extract_species(
         remainder = query[m.end():].strip()
         species_full = f"{genus} {species}"
         if normalize:
-            species_full = name_to_taxon_ncbi(species_full, key="sci_name", rank="species")
-            species_full = _extract_species(species_full, normalize=False)[0]
+            species_full = name_to_taxon_ncbi(species_full, key="sci_name", rank="species", cache_dir=cache_dir)
+            species_full = _extract_species(species_full, normalize=False, cache_dir=cache_dir)[0]
         return species_full, remainder
     elif query is None:
         return None, None
@@ -215,7 +217,8 @@ def _parse_mutations(
 # --- Public API ---
 
 def parse_strain_label(
-    query: Union[str, int]
+    query: Union[str, int],
+    cache_dir: str = CACHE_DIR
 ) -> Strain:
     """Parse a free text strain name into components.
 
@@ -245,8 +248,8 @@ def parse_strain_label(
 
     """
     if isinstance(query, int) or (isinstance(query, str) and query.isdigit()):
-        query = name_to_taxon_ncbi(query, key="sci_name")
-    species, remainder = _extract_species(query, normalize=True)
+        query = name_to_taxon_ncbi(query, key="sci_name", cache_dir=cache_dir)
+    species, remainder = _extract_species(query, normalize=True, cache_dir=cache_dir)
     if remainder is not None:
         strain, substrain, remainder = _extract_strain_and_substrain(remainder)
         deletions = _parse_deletions(remainder)

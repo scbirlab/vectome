@@ -11,6 +11,7 @@ PROJ=4
 mkdir -p $OUTDIR
 
 vectome build $GROUP --force --cache "$CACHE"
+vectome build $GROUP --cache "$CACHE"
 vectome info
 vectome info --cache "$CACHE"
 
